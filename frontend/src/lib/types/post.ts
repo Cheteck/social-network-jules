@@ -12,5 +12,6 @@ export interface Post {
   likes_count?: number;    // À VÉRIFIER: S'assurer que l'API inclut ces compteurs
   retweets_count?: number; // À VÉRIFIER: Moins probable sans système de retweet dédié
   comments_count?: number; // À VÉRIFIER: S'assurer que l'API inclut ces compteurs
+  is_liked_by_current_user?: boolean; // À VÉRIFIER: Si l'API peut fournir cette info (via `with('likers')` et une transformation)
   // Ajoutez d'autres champs si l'API les fournit (ex: media, source, etc.)
 }

@@ -32,8 +32,8 @@ export default function NewPostForm({ onPostPosted }: NewPostFormProps) { // Ren
     setError(null);
 
     try {
-      // L'API /api/v1/social/posts attend probablement un champ 'body' pour le contenu
-      const response = await apiClient.post('/api/v1/social/posts', { body: content });
+      // L'API /api/v1/social/posts attend un champ 'content' (confirmé par analyse du PostController)
+      const response = await apiClient.post('/api/v1/social/posts', { content: content });
 
       // Si l'API retourne le tweet créé (ce qui est une bonne pratique)
       if (onPostPosted && response.data) {

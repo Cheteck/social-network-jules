@@ -1,14 +1,14 @@
-import { Tweet } from './tweet'; // Si les tweets sont inclus directement dans le profil
+import { Post } from './post'; // Chemin et type mis à jour
 
 export interface UserProfile {
   id: number | string;
-  name: string;
-  username: string;
-  avatar_url: string;
-  bio?: string;
-  followers_count: number;
-  following_count: number;
-  tweets_count: number; // Ou calculer à partir de la liste des tweets
-  created_at: string; // Date d'inscription
-  // tweets?: Tweet[]; // Optionnel: si l'API retourne les tweets avec le profil
+  name: string; // À VÉRIFIER: Nom du champ dans l'API
+  username: string; // À VÉRIFIER: Nom du champ dans l'API
+  avatar_url: string; // À VÉRIFIER: Nom du champ et source (ex: media-uploader)
+  bio?: string; // À VÉRIFIER: Nom du champ dans l'API
+  followers_count: number; // À VÉRIFIER: S'assurer que l'API fournit ce compteur
+  following_count: number; // À VÉRIFIER: S'assurer que l'API fournit ce compteur
+  posts_count: number; // RENOMMÉ de tweets_count. À VÉRIFIER: S'assurer que l'API fournit ce compteur
+  created_at: string; // À VÉRIFIER: Format de la date et nom du champ
+  // posts?: Post[]; // Optionnel: si l'API retourne les posts avec le profil
 }

@@ -39,9 +39,11 @@ Liste des tâches pour le développement du frontend, inspiré de Twitter et des
     - [ ] Option d'upload de médias (intégration `ijideals/media-uploader`).
     - [ ] Mettre à jour le flux après la création.
 - [ ] Page de détail d'un Post (`/main_group/posts/[post_id]` ou `/main_group/status/[post_id]`).
-    - [ ] Afficher le post principal.
-    - [ ] Afficher les commentaires (via `ijideals/commentable`).
-    - [ ] Formulaire pour ajouter un commentaire.
+    - [X] Afficher le post principal (appel API `GET /api/v1/social/posts/{post_id}`).
+    - [ ] Lister les commentaires pour le post (appel API `GET /api/v1/comments/posts/{post_id}`).
+    - [ ] Formulaire pour ajouter un nouveau commentaire (appel API `POST /api/v1/comments/posts/{post_id}` avec `{ content: "..." }`).
+    - [ ] (Optionnel) UI pour répondre à un commentaire (utilisation de `parent_id`).
+    - [ ] (Optionnel) UI pour modifier/supprimer ses propres commentaires.
 - [ ] Intégrer les Likes (via `ijideals/likeable`) sur les posts et commentaires.
 - [ ] Intégrer les Hashtags (via `ijideals/hashtag-system`).
     - [ ] Affichage des hashtags cliquables dans les posts.
@@ -55,8 +57,12 @@ Liste des tâches pour le développement du frontend, inspiré de Twitter et des
     - [ ] Afficher la liste des médias de l'utilisateur.
     - [ ] Afficher les posts likés par l'utilisateur.
 - [ ] Fonctionnalité de Suivi/Abonnement (via `ijideals/followable`).
-    - [ ] Boutons Suivre/Ne plus suivre sur les profils.
-    - [ ] Pages listant les abonnés/abonnements.
+    - [ ] Sur `UserProfileHeader`, ajouter un bouton "Suivre"/"Ne plus suivre" ou "Toggle Follow".
+    - [ ] Implémenter les appels API pour suivre (`POST /api/users/{user_id}/follow`), ne plus suivre (`DELETE /api/users/{user_id}/unfollow`), ou basculer (`POST /api/users/{user_id}/toggle-follow`).
+    *   [ ] Utiliser `GET /api/users/{user_id}/is-following` pour déterminer l'état initial du bouton.
+    - [ ] Mettre à jour l'UI (texte du bouton, compteurs de followers/abonnements) de manière optimiste et après confirmation de l'API.
+    - [ ] (Optionnel) Créer des pages ou modales pour afficher la liste des abonnés (`GET /users/{user_id}/followers`).
+    - [ ] (Optionnel) Créer des pages ou modales pour afficher la liste des abonnements (`GET /users/{user_id}/followings`).
 - [ ] Paramètres du profil utilisateur (`/main_group/settings/profile` - via `ijideals/user-settings` et `ijideals/user-profile`).
     - [ ] Modification des informations du profil (bio, nom, etc.).
     - [ ] Modification de l'avatar et de la bannière (intégration `ijideals/media-uploader`).
