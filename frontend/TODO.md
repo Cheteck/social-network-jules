@@ -74,8 +74,8 @@ Liste des tâches pour le développement du frontend, inspiré de Twitter et des
 
 ## Phase 4: Notifications
 - [ ] Page des Notifications (`/main_group/notifications` - via `ijideals/notification-system`).
-    - [ ] Afficher la liste des notifications (nouveaux likes, commentaires, abonnés, etc.).
-    - [ ] Marquer les notifications comme lues.
+    - [X] Afficher la liste des notifications (nouveaux likes, commentaires, abonnés, etc.) - Fetch et affichage de base.
+    - [X] Marquer les notifications comme lues (individuellement et "tout marquer comme lu").
     - [ ] (Optionnel) Notifications en temps réel (polling ou WebSockets si backend le supporte).
 - [ ] Préférences de notification dans les paramètres utilisateur (via `ijideals/user-settings`).
 

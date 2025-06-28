@@ -360,5 +360,79 @@ Préfixe: `/api/v1/comments` (configurable)
 - **Middleware:** `auth:api` (nécessite d'être l'auteur)
 - **Réponse Succès (`204 No Content` ou message JSON):** Message de succès.
 
+## Notifications - `ijideals/notification-system`
+Préfixe: `/api/v1/notifications` (configurable via `notification-system.route_prefix`)
+Middleware: `auth:api` (ex: `auth:sanctum`) pour toutes les routes.
+
+### 1. Lister les Notifications de l'Utilisateur
+- **Endpoint:** `/`
+- **Méthode:** `GET`
+- **Paramètres de Requête (Optionnel):**
+    - `page={numero}`: Pour la pagination.
+    - `per_page={nombre}`: Nombre d'éléments par page (défaut 20).
+    - `status=read|unread`: Pour filtrer par statut de lecture.
+- **Réponse Succès (`200 OK`):** Structure paginée de Laravel.
+  ```json
+  {
+    "data": [
+      {
+        "id": "uuid-de-la-notification", // UUID
+        "type": "App\\Notifications\\NewFollower", // Nom de la classe de la notification
+        "notifiable_type": "App\\Models\\User",
+        "notifiable_id": 123,
+        "data": {
+          // La structure de 'data' varie selon le 'type' de notification
+          // Ex: pour NewFollower:
+          // "follower_id": 456,
+          // "follower_name": "Nom du Follower",
+          // "message": "Nom du Follower vous suit maintenant."
+          // Ex: pour NewLikeOnPost:
+          // "liker_id": 789,
+          // "liker_name": "Nom du Liker",
+          // "post_id": 101,
+          // "post_summary": "Début du contenu du post...",
+          // "message": "Nom du Liker a aimé votre post."
+        },
+        "read_at": null, // ou "YYYY-MM-DD HH:MM:SS" si lue
+        "created_at": "YYYY-MM-DD HH:MM:SS",
+        "updated_at": "YYYY-MM-DD HH:MM:SS"
+      }
+    ],
+    "links": { /* ... liens de pagination ... */ },
+    "meta": { /* ... méta-données de pagination ... */ }
+  }
+  ```
+
+### 2. Obtenir le Nombre de Notifications Non Lues
+- **Endpoint:** `/unread-count`
+- **Méthode:** `GET`
+- **Réponse Succès (`200 OK`):**
+  ```json
+  {
+    "unread_count": 5
+  }
+  ```
+
+### 3. Marquer une Notification comme Lue
+- **Endpoint:** `/{notificationId}/read` (où `notificationId` est l'UUID)
+- **Méthode:** `PATCH`
+- **Réponse Succès (`200 OK`):** `{ "message": "Notification marquée comme lue." }`
+
+### 4. Marquer Toutes les Notifications comme Lues
+- **Endpoint:** `/mark-all-as-read`
+- **Méthode:** `POST`
+- **Réponse Succès (`200 OK`):** `{ "message": "Toutes les notifications ont été marquées comme lues." }`
+
+### 5. Supprimer une Notification
+- **Endpoint:** `/{notificationId}` (où `notificationId` est l'UUID)
+- **Méthode:** `DELETE`
+- **Réponse Succès (`200 OK`):** `{ "message": "Notification supprimée avec succès." }`
+
+### 6. Supprimer Toutes les Notifications
+- **Endpoint:** `/clear-all`
+- **Méthode:** `DELETE`
+- **Paramètres de Requête (Optionnel):** `only_read=true` (pour ne supprimer que les lues).
+- **Réponse Succès (`200 OK`):** `{ "message": "X notifications supprimées." }`
+
 ---
 *Cette documentation est une première ébauche et devra être affinée et complétée au fur et à mesure que les intégrations sont testées et que la structure exacte des réponses API est confirmée.*

@@ -96,8 +96,13 @@ Créer une interface web frontend (Next.js) qui utilise et s'harmonise avec le b
         *   [X] Transformer les hashtags en composants `Link` pointant vers `/main_group/tags/{tagname}`.
     *   [X] Créer la page `/main_group/tags/[tagname]/page.tsx` pour afficher les posts par hashtag (logique de fetch de base implémentée).
 3.  **Notifications (Frontend)**
-    *   Créer la page `/notifications` pour afficher les notifications de l'utilisateur (API via `ijideals/notification-system`).
-    *   Marquer les notifications comme lues.
+    *   [X] Analyser l'API de `ijideals/notification-system` et mettre à jour `api_documentation.md`.
+    *   [X] Définir le type `Notification` dans `frontend/src/lib/types/notification.ts`.
+    *   [X] Créer la page `/main_group/notifications/page.tsx` (`NotificationsPage`) (logique de fetch de base implémentée).
+    *   [X] Implémenter l'affichage de chaque notification via `NotificationCard.tsx`.
+        *   [X] Créer un composant `NotificationCard.tsx`.
+        *   [X] Intégrer `NotificationCard` dans `NotificationsPage`.
+    *   [X] Implémenter la fonctionnalité pour marquer les notifications comme lues (individuellement via `NotificationCard` et "Marquer tout comme lu" dans `NotificationsPage`).
 4.  **Recherche (Frontend)**
     *   Intégrer une barre de recherche dans la `Navbar` ou une page dédiée `/search`.
     *   Appel API à l'endpoint de recherche de `ijideals/search-engine` pour rechercher utilisateurs, posts, hashtags.
