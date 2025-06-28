@@ -44,21 +44,22 @@ Créer une interface web frontend (Next.js) qui utilise et s'harmonise avec le b
 
 ### Phase 2: Fonctionnalités Sociales de Base (Priorité Haute)
 1.  **Affichage du Fil d'Actualité (Frontend)**
-    *   Remplacer les données mockées dans `HomePage` par un appel API réel à `/api/v1/feed` (via `ijideals/news-feed-generator`) ou `/api/v1/social/posts`.
-    *   Gérer le chargement, les erreurs, et l'affichage des tweets via `TweetCard`.
-    *   Implémenter la pagination ou le défilement infini.
+    *   [X] Remplacer les données mockées dans `HomePage` par un appel API réel à `/api/v1/feed`.
+    *   [X] Gérer le chargement, les erreurs, et l'affichage des posts via `PostCard`.
+    *   [X] Vérifier/Ajuster `PostCard.tsx` et types `Post` pour correspondre aux données API (commentaires ajoutés aux types pour vérification ultérieure).
+    *   [ ] Implémenter la pagination ou le défilement infini (Optionnel - à détailler en fonction de l'API).
 2.  **Création de Posts (Frontend)**
-    *   Développer `NewTweetForm.tsx`.
-    *   Permettre la saisie de texte.
-    *   Appel API à `POST /api/v1/social/posts` pour créer un nouveau post.
-    *   Mettre à jour le fil d'actualité localement ou re-fetcher.
+    *   [X] Développer `NewPostForm.tsx` (avec saisie, compteur, appel API de base).
+    *   [X] Intégrer `NewPostForm.tsx` dans `HomePage.tsx`.
+    *   [X] Appel API à `POST /api/v1/social/posts` pour créer un nouveau post (implémenté dans `NewPostForm`).
+    *   [ ] Mettre à jour le fil d'actualité localement ou re-fetcher (Option 1 implémentée via callback, à affiner).
 3.  **Affichage des Profils Utilisateurs (Frontend)**
     *   Remplacer les données mockées dans `UserProfilePage` et `UserProfileHeader`.
     *   Appel API à `GET /api/users/{username}/profile` (via `ijideals/user-profile`).
-    *   Appel API pour lister les posts de l'utilisateur.
+    *   Appel API pour lister les posts de l'utilisateur (`ijideals/social-posts`).
 4.  **Interactions sur les Posts (Likes, Commentaires - Frontend)**
-    *   **Likes**: Implémenter la logique de like/unlike sur `TweetCard` en appelant `POST /api/posts/{post}/like` et `DELETE /api/posts/{post}/like` (via `ijideals/likeable`). Mettre à jour l'UI en conséquence.
-    *   **Commentaires (Base)**: Afficher le nombre de commentaires. Sur la page de détail d'un post (`/status/[tweet_id]`), lister les commentaires (API via `ijideals/commentable`) et ajouter un formulaire pour poster un nouveau commentaire.
+    *   **Likes**: Implémenter la logique de like/unlike sur `PostCard` en appelant `POST /api/posts/{post}/like` et `DELETE /api/posts/{post}/like` (via `ijideals/likeable`). Mettre à jour l'UI en conséquence.
+    *   **Commentaires (Base)**: Afficher le nombre de commentaires. Sur la page de détail d'un post (`/posts/[post_id]` ou `/status/[post_id]`), lister les commentaires (API via `ijideals/commentable`) et ajouter un formulaire pour poster un nouveau commentaire.
 
 ### Phase 3: Fonctionnalités Sociales Avancées (Priorité Moyenne)
 1.  **Système de Suivi (Follow/Unfollow - Frontend)**
@@ -66,7 +67,7 @@ Créer une interface web frontend (Next.js) qui utilise et s'harmonise avec le b
     *   Appels API à `POST /api/users/{user}/follow` et `DELETE /api/users/{user}/unfollow` (via `ijideals/followable`).
     *   Mettre à jour l'UI et les comptes de followers/followings.
 2.  **Hashtags (Frontend)**
-    *   Rendre les hashtags cliquables dans `TweetCard`.
+    *   Rendre les hashtags cliquables dans `PostCard`.
     *   Créer une page `/tags/[tagname]` pour afficher les posts contenant un hashtag spécifique (API via `ijideals/hashtag-system`).
 3.  **Notifications (Frontend)**
     *   Créer la page `/notifications` pour afficher les notifications de l'utilisateur (API via `ijideals/notification-system`).
@@ -95,3 +96,21 @@ Créer une interface web frontend (Next.js) qui utilise et s'harmonise avec le b
 - Chaque phase sera décomposée en tâches plus petites.
 - Les priorités indiquées peuvent être ajustées en fonction des retours.
 - L'accent sera mis sur la fourniture de fonctionnalités de base fonctionnelles avant de passer aux fonctionnalités plus avancées ou complexes.
+
+### Étape Corrective : Refactorisation Terminologique
+
+1.  [X] **Mettre à jour `dev_plan.md`**: Remplacer systématiquement la terminologie "Tweet" (et dérivés comme "TweetCard", "NewTweetForm") par "Post" (et dérivés "PostCard", "NewPostForm") pour s'aligner sur la nomenclature du package `ijideals/social-posts`.
+2.  [X] **Mettre à jour `frontend/TODO.md`**: Appliquer la même refactorisation terminologique.
+3.  **Refactoriser les types Frontend**:
+    *   [X] Renommer `frontend/src/lib/types/tweet.ts` en `frontend/src/lib/types/post.ts`.
+    *   [X] Dans le nouveau `post.ts`, renommer l'interface `Tweet` en `Post` et `TweetAuthor` en `PostAuthor`.
+4.  **Refactoriser les composants Frontend**:
+    *   [X] Renommer `frontend/src/components/feed/TweetCard.tsx` en `frontend/src/components/feed/PostCard.tsx`.
+    *   [X] Mettre à jour le contenu de `PostCard.tsx` pour utiliser les types et props renommés.
+    *   [X] Renommer `frontend/src/components/feed/NewTweetForm.tsx` en `frontend/src/components/feed/NewPostForm.tsx`.
+    *   [X] Mettre à jour le contenu de `NewPostForm.tsx` pour utiliser les types et props renommés.
+5.  **Mettre à jour les utilisations des composants et types renommés** dans les pages (ex: `HomePage`, `UserProfilePage`).
+    *   [X] `HomePage.tsx` mis à jour.
+    *   [X] `UserProfilePage.tsx` mis à jour.
+6.  **Soumettre les modifications de refactorisation** avec un message de commit clair.
+7.  **Reprendre le `dev_plan.md`** à la Phase 2, Étape 2 (maintenant concernant `NewPostForm`).

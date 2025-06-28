@@ -1,70 +1,59 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import TweetCard from '@/components/feed/TweetCard';
-import { Tweet, TweetAuthor } from '@/lib/types/tweet';
-import { useAuth } from '@/lib/contexts/AuthContext'; // Pourrait être utilisé pour la redirection ou des messages spécifiques
+import PostCard from '@/components/feed/PostCard'; // Renommé
+import { Post, PostAuthor } from '@/lib/types/post'; // Renommé
+import NewPostForm from '@/components/feed/NewPostForm'; // Renommé
+import { useAuth } from '@/lib/contexts/AuthContext';
+import apiClient from '@/lib/api'; // Import du client API
 
-// Données de simulation pour les tweets
-const mockTweets: Tweet[] = [
-  {
-    id: '1',
-    author: {
-      name: 'Jules Verne',
-      username: 'jverne',
-      avatar_url: 'https://via.placeholder.com/48/007bff/ffffff?Text=JV',
-    },
-    content: 'Exploration des fonds marins à bord du Nautilus. Vingt mille lieues sous les mers, une aventure incroyable ! 🌊🐠 #aventure #sciencefiction',
-    created_at: new Date(Date.now() - 1000 * 60 * 15).toISOString(), // Il y a 15 minutes
-    likes_count: 150,
-    retweets_count: 30,
-    comments_count: 12,
-  },
-  {
-    id: '2',
-    author: {
-      name: 'Marie Curie',
-      username: 'mcurie',
-      avatar_url: 'https://via.placeholder.com/48/28a745/ffffff?Text=MC',
-    },
-    content: 'Découvertes passionnantes sur la radioactivité. Le travail acharné porte ses fruits. La science est une lumière dans l\'obscurité. ✨🔬 #science #recherche',
-    created_at: new Date(Date.now() - 1000 * 60 * 60 * 2).toISOString(), // Il y a 2 heures
-    likes_count: 275,
-    retweets_count: 55,
-    comments_count: 25,
-  },
-  {
-    id: '3',
-    author: {
-      name: 'Elon Musk',
-      username: 'elon',
-      avatar_url: 'https://via.placeholder.com/48/ffc107/000000?Text=EM',
-    },
-    content: 'To the moon! 🚀🌕 #SpaceX #Future',
-    created_at: new Date(Date.now() - 1000 * 60 * 60 * 24).toISOString(), // Il y a 1 jour
-    likes_count: 1200,
-    retweets_count: 400,
-    comments_count: 150,
-  },
-];
+// Données de simulation pour les tweets - SERONT SUPPRIMÉES
+// const mockPosts: Post[] = [ ... ]; // Supprimé
 
 export default function HomePage() {
   const { user, isLoading: authLoading } = useAuth();
-  const [tweets, setTweets] = useState<Tweet[]>([]);
+  const [posts, setPosts] = useState<Post[]>([]); // Renommé et typé avec Post
   const [isLoadingTweets, setIsLoadingTweets] = useState(true);
+  const [fetchError, setFetchError] = useState<string | null>(null);
 
   useEffect(() => {
-    // Simuler la récupération des tweets
     const fetchTweets = async () => {
+      if (!user || authLoading) {
+        // Attendre que l'utilisateur soit chargé et authentifié
+        // Si authLoading est true, ou si user est null après chargement, ne rien faire.
+        // ProtectedRouteWrapper devrait gérer la redirection si user est null après authLoading.
+        if (!authLoading && !user) {
+          setIsLoadingTweets(false); // Pas de tweets à charger si pas d'utilisateur
+        }
+        return;
+      }
+
       setIsLoadingTweets(true);
-      // TODO: Remplacer par un véritable appel API à GET /api/v1/social/posts ou /api/v1/feed
-      await new Promise(resolve => setTimeout(resolve, 1000)); // Simule la latence réseau
-      setTweets(mockTweets);
-      setIsLoadingTweets(false);
+      setFetchError(null);
+      try {
+        // L'API /api/v1/feed semble être la plus appropriée pour un fil d'actualité personnalisé
+        const response = await apiClient.get('/api/v1/feed');
+        // La structure exacte des données de l'API doit être vérifiée.
+        // Supposons que response.data est un tableau de tweets ou un objet avec une clé 'data'
+        setPosts(response.data.data || response.data || []); // Renommé
+      } catch (error: any) {
+        console.error("Failed to fetch tweets:", error);
+        setFetchError(error.message || "Impossible de charger le fil d'actualité.");
+        setPosts([]); // Renommé
+      } finally {
+        setIsLoadingTweets(false);
+      }
     };
 
     fetchTweets();
-  }, []);
+  }, [user, authLoading]); // Déclencher si user ou authLoading change
+
+  const handlePostPosted = (newPost: Post) => { // Renommé
+    // Ajouter le nouveau tweet en haut de la liste existante
+    // ou re-fetcher toute la liste pour une approche plus simple au début
+    // Pour l'instant, ajout en haut :
+    setPosts(prevPosts => [newPost, ...prevPosts]); // Renommé
+  };
 
   if (authLoading || isLoadingTweets) {
     return (
@@ -74,23 +63,26 @@ export default function HomePage() {
     );
   }
 
-  // Optionnel: Rediriger vers login si pas d'utilisateur et chargement terminé
-  // if (!user) {
-  //   // router.push('/login'); // Nécessite useRouter de next/navigation
-  //   return <div className="text-white text-center p-8">Veuillez vous connecter pour voir le fil.</div>;
-  // }
+  // ProtectedRouteWrapper devrait déjà gérer la redirection si !user après chargement auth.
+  // Mais on peut ajouter un message si l'utilisateur est null et que les chargements sont terminés.
+  if (!user) {
+     return <div className="text-center py-10 text-x-secondary-text">Veuillez vous connecter pour voir votre fil d'actualité.</div>;
+  }
 
   return (
-    <main className="container mx-auto max-w-2xl py-8 px-4 text-white">
-      <h1 className="text-3xl font-bold mb-6">Fil d'actualité</h1>
+    <main className="w-full max-w-xl mx-auto"> {/* Similaire au template.html pour le conteneur principal */}
+      <div className="border-b border-x-border px-4 py-3">
+        <h1 className="text-xl font-bold text-x-primary-text">Accueil</h1>
+      </div>
 
-      {/* TODO: Ajouter le formulaire NewTweetForm ici plus tard */}
+      <NewPostForm onPostPosted={handlePostPosted} /> {/* Renommé */}
 
       <div className="space-y-4">
-        {tweets.length === 0 && !isLoadingTweets ? (
-          <p>Aucun tweet à afficher pour le moment.</p>
+        {fetchError && <div className="p-4 text-red-500 text-center">{fetchError}</div>}
+        {posts.length === 0 && !isLoadingTweets ? (
+          <p>Aucun post à afficher pour le moment.</p> // Renommé
         ) : (
-          tweets.map(tweet => <TweetCard key={tweet.id} tweet={tweet} />)
+          posts.map(post => <PostCard key={post.id} post={post} />) // Renommé
         )}
       </div>
     </main>

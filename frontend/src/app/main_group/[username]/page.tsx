@@ -2,10 +2,10 @@
 
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
-import TweetCard from '@/components/feed/TweetCard';
+import PostCard from '@/components/feed/PostCard'; // Renommé
 import UserProfileHeader from '@/components/profile/UserProfileHeader'; // À créer
 import { UserProfile } from '@/lib/types/user';
-import { Tweet, TweetAuthor } from '@/lib/types/tweet'; // Pour les tweets mockés
+import { Post, PostAuthor } from '@/lib/types/post'; // Renommé et typé avec Post
 
 // Données de simulation
 const mockUserProfiles: Record<string, UserProfile> = {
@@ -16,8 +16,8 @@ const mockUserProfiles: Record<string, UserProfile> = {
     avatar_url: 'https://via.placeholder.com/150/007bff/ffffff?Text=JV',
     bio: 'Écrivain français, auteur de romans d\'aventure et de science-fiction. Passionné par les voyages extraordinaires.',
     followers_count: 1250,
-    following_count: 80,
-    tweets_count: 35,
+    following_count: 80, // Ce champ 'tweets_count' sur UserProfile pourrait être renommé 'posts_count'
+    tweets_count: 35, // ou déduit de la liste des posts
     created_at: new Date('1828-02-08').toISOString(),
   },
   mcurie: {
@@ -33,23 +33,23 @@ const mockUserProfiles: Record<string, UserProfile> = {
   }
 };
 
-const mockUserTweets: Record<string, Tweet[]> = {
+const mockUserPosts: Record<string, Post[]> = { // Renommé
   jverne: [
-    { id: 'jv_tweet1', author: mockUserProfiles.jverne as unknown as TweetAuthor, content: 'Le Nautilus est prêt pour une nouvelle expédition !', created_at: new Date().toISOString(), likes_count: 12, retweets_count: 3, comments_count: 2 },
-    { id: 'jv_tweet2', author: mockUserProfiles.jverne as unknown as TweetAuthor, content: 'Pensées sur le voyage au centre de la Terre...', created_at: new Date(Date.now() - 1000 * 60 * 60 * 5).toISOString(), likes_count: 25, retweets_count: 5, comments_count: 4  },
+    { id: 'jv_post1', author: mockUserProfiles.jverne as unknown as PostAuthor, content: 'Le Nautilus est prêt pour une nouvelle expédition !', created_at: new Date().toISOString(), likes_count: 12, retweets_count: 3, comments_count: 2 },
+    { id: 'jv_post2', author: mockUserProfiles.jverne as unknown as PostAuthor, content: 'Pensées sur le voyage au centre de la Terre...', created_at: new Date(Date.now() - 1000 * 60 * 60 * 5).toISOString(), likes_count: 25, retweets_count: 5, comments_count: 4  },
   ],
   mcurie: [
-    { id: 'mc_tweet1', author: mockUserProfiles.mcurie as unknown as TweetAuthor, content: 'Nouvelle expérience en cours. Les résultats préliminaires sont prometteurs.', created_at: new Date().toISOString(), likes_count: 45, retweets_count: 10, comments_count: 8 },
+    { id: 'mc_post1', author: mockUserProfiles.mcurie as unknown as PostAuthor, content: 'Nouvelle expérience en cours. Les résultats préliminaires sont prometteurs.', created_at: new Date().toISOString(), likes_count: 45, retweets_count: 10, comments_count: 8 },
   ]
 };
 
 
 export default function UserProfilePage() {
   const params = useParams();
-  const username = params.username as string;
+  const username = params.username as string; // TODO: Gérer le cas où username est un array
 
   const [profile, setProfile] = useState<UserProfile | null>(null);
-  const [tweets, setTweets] = useState<Tweet[]>([]);
+  const [posts, setPosts] = useState<Post[]>([]); // Renommé et typé avec Post
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -63,11 +63,11 @@ export default function UserProfilePage() {
         await new Promise(resolve => setTimeout(resolve, 700)); // Simule la latence
 
         const foundProfile = mockUserProfiles[username];
-        const foundTweets = mockUserTweets[username] || [];
+        const foundPosts = mockUserPosts[username] || []; // Renommé
 
         if (foundProfile) {
           setProfile(foundProfile);
-          setTweets(foundTweets);
+          setPosts(foundPosts); // Renommé
         } else {
           setError('Profil non trouvé.');
         }
@@ -94,10 +94,10 @@ export default function UserProfilePage() {
       <UserProfileHeader userProfile={profile} /> {/* À créer */}
 
       <div className="mt-8">
-        <h2 className="text-xl font-semibold mb-4">Tweets</h2>
-        {tweets.length > 0 ? (
+        <h2 className="text-xl font-semibold mb-4 text-x-primary-text">Posts</h2>
+        {posts.length > 0 ? (
           <div className="space-y-4">
-            {tweets.map(tweet => <TweetCard key={tweet.id} tweet={tweet} />)}
+            {posts.map(post => <PostCard key={post.id} post={post} />)} {/* Renommé */}
           </div>
         ) : (
           <p>Cet utilisateur n'a encore rien posté.</p>
