@@ -44,6 +44,8 @@ Créer une interface web frontend (Next.js) qui utilise et s'harmonise avec le b
     *   [X] Créer un composant `ProtectedRouteWrapper.tsx` qui gère la redirection si l'utilisateur n'est pas authentifié.
     *   [X] Envelopper les layouts des groupes de routes protégées (ex: `main_group`) avec `ProtectedRouteWrapper`.
     *   [X] Afficher conditionnellement des éléments UI (ex: Navbar) en fonction de l'état d'authentification (vérifié et amélioré).
+6.  **Configuration de la Page d'Accueil Racine (`/`)**
+    *   [X] Configurer `frontend/src/app/page.tsx` pour rediriger vers `/main_group/home` (si connecté) ou `/auth_group/login` (si non connecté).
 
 ### Phase 2: Fonctionnalités Sociales de Base (Priorité Haute)
 1.  **Affichage du Fil d'Actualité (Frontend)**

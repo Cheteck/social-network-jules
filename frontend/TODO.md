@@ -29,6 +29,8 @@ Liste des tâches pour le développement du frontend, inspiré de Twitter et des
 - [X] Créer un composant Sidebar (`Sidebar.tsx`).
     - [X] Liens de navigation principaux.
     - [ ] Logique d'ouverture/fermeture sur mobile.
++- [X] Configurer la page d'accueil racine (`/`) pour rediriger en fonction de l'état d'authentification.
+
 
 ## Phase 2: Fonctionnalités Sociales de Base (Posts)
 - [X] Créer un composant `PostCard.tsx` pour afficher un post.
