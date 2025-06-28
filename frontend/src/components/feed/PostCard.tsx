@@ -1,16 +1,18 @@
-import { Post } from '@/lib/types/post'; // Mise à jour du chemin et du type
-import Image from 'next/image';
-import React, { useState, useEffect } from 'react'; // Ajout de useState, useEffect
-import { useAuth } from '@/lib/contexts/AuthContext'; // Pour vérifier si l'utilisateur est connecté
-import apiClient from '@/lib/api'; // Pour les appels API
-import { useRouter } from 'next/navigation'; // Pour la redirection si non connecté
+'use client'; // Assurez-vous que c'est bien un Client Component
 
-interface PostCardProps { // Renommage de l'interface
-  post: Post; // Renommage de la prop et utilisation du type Post
-  onLikeToggle?: () => void; // Optionnel: Callback pour rafraîchir la liste des posts si nécessaire
+import { Post } from '@/lib/types/post';
+import Image from 'next/image';
+import React, { useState, useEffect } from 'react';
+import { useAuth } from '@/lib/contexts/AuthContext';
+import apiClient from '@/lib/api';
+import { useRouter } from 'next/navigation';
+import Link from 'next/link'; // Pour les liens de hashtag
+
+interface PostCardProps {
+  post: Post;
+  onLikeToggle?: () => void;
 }
 
-// Fonction utilitaire pour formater la date (peut être déplacée dans lib/utils.ts)
 const formatDate = (dateString: string) => {
   const date = new Date(dateString);
   return date.toLocaleDateString('fr-FR', {
@@ -26,11 +28,9 @@ export default function PostCard({ post: initialPost, onLikeToggle }: PostCardPr
   const { user } = useAuth();
   const router = useRouter();
 
-  // État local pour la mise à jour optimiste des likes
-  // Initialiser avec les données du post, si l'API fournit 'is_liked_by_current_user'
   const [isLiked, setIsLiked] = useState(initialPost.is_liked_by_current_user || false);
   const [likesCount, setLikesCount] = useState(initialPost.likes_count || 0);
-  const [post, setPost] = useState<Post>(initialPost); // Pour gérer le post complet si l'API le retourne après like/unlike
+  const [post, setPost] = useState<Post>(initialPost);
 
   useEffect(() => {
     setPost(initialPost);
@@ -38,14 +38,12 @@ export default function PostCard({ post: initialPost, onLikeToggle }: PostCardPr
     setLikesCount(initialPost.likes_count || 0);
   }, [initialPost]);
 
-
   const handleLikeToggle = async () => {
     if (!user) {
-      router.push('/auth_group/login'); // Rediriger vers login si pas connecté
+      router.push('/auth_group/login');
       return;
     }
 
-    // Mise à jour optimiste
     const originalIsLiked = isLiked;
     const originalLikesCount = likesCount;
 
@@ -53,28 +51,41 @@ export default function PostCard({ post: initialPost, onLikeToggle }: PostCardPr
     setLikesCount(isLiked ? likesCount - 1 : likesCount + 1);
 
     try {
-      if (isLiked) {
-        await apiClient.delete(`/api/posts/${post.id}/like`);
-      } else {
-        await apiClient.post(`/api/posts/${post.id}/like`);
+      if (isLiked) { // Si c'était liké, on unlike
+        await apiClient.delete(`/api/v1/likeable/posts/${post.id}/unlike`); // Utilisation de l'endpoint polymorphique
+      } else { // Sinon, on like
+        await apiClient.post(`/api/v1/likeable/posts/${post.id}/like`); // Utilisation de l'endpoint polymorphique
       }
-      // Optionnel: si l'API retourne le post mis à jour, on peut mettre à jour l'état `post`
-      // ou si un callback onLikeToggle est fourni pour rafraîchir la liste parente
       if (onLikeToggle) onLikeToggle();
     } catch (error) {
       console.error("Failed to toggle like:", error);
-      // Annuler la mise à jour optimiste en cas d'erreur
       setIsLiked(originalIsLiked);
       setLikesCount(originalLikesCount);
-      // TODO: Afficher une notification d'erreur à l'utilisateur
     }
+  };
+
+  const renderContentWithHashtags = (content: string) => {
+    const hashtagRegex = /#([a-zA-Z0-9_]+)/g;
+    const parts = content.split(hashtagRegex);
+
+    return parts.map((part, index) => {
+      if (index % 2 === 1) {
+        const tagName = part;
+        return (
+          <Link key={index} href={`/main_group/tags/${tagName.toLowerCase()}`} className="text-x-accent hover:underline">
+            #{tagName}
+          </Link>
+        );
+      }
+      return part;
+    });
   };
 
   return (
     <article className="border border-x-border bg-x-card-bg p-4 rounded-lg shadow-sm hover:bg-opacity-75 hover:bg-x-card-bg transition-colors duration-150 mb-4">
       <div className="flex items-start space-x-3">
         <Image
-          src={post.author.avatar_url || '/default-avatar.png'} // Utilisation de post.author
+          src={post.author.avatar_url || '/default-avatar.png'}
           alt={`${post.author.name}'s avatar`}
           width={48}
           height={48}
@@ -90,22 +101,23 @@ export default function PostCard({ post: initialPost, onLikeToggle }: PostCardPr
             </time>
           </div>
           <div className="mt-1 text-x-primary-text whitespace-pre-wrap">
-            {post.content}
+            {renderContentWithHashtags(post.content)}
           </div>
-          {/* TODO: Afficher les médias si présents */}
         </div>
       </div>
-      <div className="mt-3 flex justify-start space-x-6 pl-12"> {/* Aligné avec le contenu du tweet */}
+      <div className="mt-3 flex justify-start space-x-6 pl-12">
         <button className="text-x-secondary-text hover:text-blue-500 flex items-center space-x-1 text-xs">
           <span>💬</span> <span>{post.comments_count ?? 0}</span>
         </button>
         <button className="text-x-secondary-text hover:text-green-500 flex items-center space-x-1 text-xs">
           <span>🔁</span> <span>{post.retweets_count ?? 0}</span>
         </button>
-        <button className="text-x-secondary-text hover:text-red-500 flex items-center space-x-1 text-xs">
-          <span>❤️</span> <span>{post.likes_count ?? 0}</span>
+        <button
+          onClick={handleLikeToggle}
+          className={`flex items-center space-x-1 text-xs ${isLiked ? 'text-red-500' : 'text-x-secondary-text hover:text-red-500'}`}
+        >
+          <span>{isLiked ? '❤️' : '🤍'}</span> <span>{likesCount}</span>
         </button>
-        {/* TODO: Bouton Partager/Plus d'options */}
       </div>
     </article>
   );

@@ -76,17 +76,19 @@ Créer une interface web frontend (Next.js) qui utilise et s'harmonise avec le b
 
 ### Phase 3: Fonctionnalités Sociales Avancées (Priorité Moyenne)
 1.  **Système de Suivi (Follow/Unfollow - Frontend)**
-    *   [ ] Ajouter des boutons "Suivre"/"Ne plus suivre" (ou "Toggle Follow") sur `UserProfileHeader`.
-    *   [ ] Implémenter les appels API :
+    *   [X] Ajouter des boutons "Suivre"/"Ne plus suivre" (ou "Toggle Follow") sur `UserProfileHeader`.
+    *   [X] Implémenter les appels API :
         - `POST /api/users/{user_id}/follow`
         - `DELETE /api/users/{user_id}/unfollow`
         - Ou `POST /api/users/{user_id}/toggle-follow` (alternative plus simple).
-    *   [ ] Vérifier l'état de suivi initial avec `GET /api/users/{user_id}/is-following`.
-    *   Mettre à jour l'UI et les comptes de followers/followings.
+    *   [X] Vérifier l'état de suivi initial avec `GET /api/users/{user_id}/is-following`.
+    *   [X] Mettre à jour l'UI (bouton, compteur de followers) et les comptes de followers/followings (mise à jour optimiste du compteur local).
     *   [ ] (Optionnel) Créer des pages/modales pour lister les abonnés (`GET /users/{user_id}/followers`) et abonnements (`GET /users/{user_id}/followings`).
 2.  **Hashtags (Frontend)**
-    *   Rendre les hashtags cliquables dans `PostCard`.
-    *   Créer une page `/tags/[tagname]` pour afficher les posts contenant un hashtag spécifique (API via `ijideals/hashtag-system`).
+    *   [X] Rendre les hashtags cliquables dans `PostCard.tsx`.
+        *   [X] Parser le contenu du post pour identifier les hashtags.
+        *   [X] Transformer les hashtags en composants `Link` pointant vers `/main_group/tags/{tagname}`.
+    *   [X] Créer la page `/main_group/tags/[tagname]/page.tsx` pour afficher les posts par hashtag (logique de fetch de base implémentée).
 3.  **Notifications (Frontend)**
     *   Créer la page `/notifications` pour afficher les notifications de l'utilisateur (API via `ijideals/notification-system`).
     *   Marquer les notifications comme lues.

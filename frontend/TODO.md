@@ -51,8 +51,8 @@ Liste des tâches pour le développement du frontend, inspiré de Twitter et des
     - [ ] (Optionnel) UI pour modifier/supprimer ses propres commentaires.
 - [ ] Intégrer les Likes (via `ijideals/likeable`) sur les posts et commentaires.
 - [ ] Intégrer les Hashtags (via `ijideals/hashtag-system`).
-    - [ ] Affichage des hashtags cliquables dans les posts.
-    - [ ] Page dédiée pour les posts par hashtag.
+    - [X] Affichage des hashtags cliquables dans les posts (`PostCard.tsx`).
+    - [X] Page dédiée pour les posts par hashtag (`/main_group/tags/[tagname]/page.tsx`).
 
 ## Phase 3: Profils Utilisateurs
 - [X] Créer une page de profil utilisateur (`/main_group/[username]`).

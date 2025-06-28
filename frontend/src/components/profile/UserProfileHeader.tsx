@@ -2,26 +2,75 @@
 
 import { UserProfile } from '@/lib/types/user';
 import Image from 'next/image';
-// import { useAuth } from '@/lib/contexts/AuthContext'; // Pourrait être utilisé pour le bouton Suivre/Modifier profil
-// import { useRouter } from 'next/navigation'; // Pour la navigation
+import { useAuth } from '@/lib/contexts/AuthContext'; // Utilisé pour le bouton Suivre/Modifier profil
+import { useRouter } from 'next/navigation'; // Pour la navigation
+import React, { useState, useEffect } from 'react'; // Ajout de useState, useEffect
+import apiClient from '@/lib/api'; // Pour les appels API
 
 interface UserProfileHeaderProps {
   userProfile: UserProfile;
 }
 
 export default function UserProfileHeader({ userProfile }: UserProfileHeaderProps) {
-  // const { user: currentUser } = useAuth(); // Pour vérifier si c'est le profil de l'utilisateur connecté
-  // const router = useRouter();
-  // const isCurrentUserProfile = currentUser?.username === userProfile.username;
+  const { user: currentUser, isLoading: authLoading } = useAuth();
+  const router = useRouter();
+  const isCurrentUserProfile = currentUser?.id === userProfile.id; // Comparer par ID
 
-  // const handleFollowToggle = async () => {
-  //   // TODO: Implémenter la logique de suivi/non-suivi
-  //   console.log('Toggle follow pour', userProfile.username);
-  // };
+  const [isFollowing, setIsFollowing] = useState(false);
+  const [isLoadingFollowStatus, setIsLoadingFollowStatus] = useState(true);
+  // Utiliser le followers_count de userProfile et le mettre à jour localement pour l'optimisme
+  const [localFollowersCount, setLocalFollowersCount] = useState(userProfile.followers_count);
 
-  // const handleEditProfile = () => {
-  //   router.push('/settings/profile'); // Ou une page d'édition de profil dédiée
-  // };
+  useEffect(() => {
+    setLocalFollowersCount(userProfile.followers_count); // Mettre à jour si la prop change
+  }, [userProfile.followers_count]);
+
+  useEffect(() => {
+    if (currentUser && !isCurrentUserProfile && userProfile.id) {
+      setIsLoadingFollowStatus(true);
+      apiClient.get(`/api/users/${userProfile.id}/is-following`)
+        .then(response => {
+          setIsFollowing(response.data.is_following);
+        })
+        .catch(error => console.error("Failed to fetch follow status:", error))
+        .finally(() => setIsLoadingFollowStatus(false));
+    } else if (!currentUser || isCurrentUserProfile) {
+      setIsLoadingFollowStatus(false); // Pas besoin de vérifier si c'est son propre profil ou si non connecté
+    }
+  }, [currentUser, isCurrentUserProfile, userProfile.id]);
+
+  const handleFollowToggle = async () => {
+    if (!currentUser) {
+      router.push('/auth_group/login');
+      return;
+    }
+    if (isCurrentUserProfile) return;
+
+    // Mise à jour optimiste
+    const originalIsFollowing = isFollowing;
+    const originalFollowersCount = localFollowersCount;
+
+    setIsFollowing(!originalIsFollowing);
+    setLocalFollowersCount(originalIsFollowing ? localFollowersCount - 1 : localFollowersCount + 1);
+
+    try {
+      // Utiliser l'endpoint toggle-follow pour simplicité
+      await apiClient.post(`/api/users/${userProfile.id}/toggle-follow`);
+      // Idéalement, l'API pourrait retourner le nouveau statut/compte pour re-synchroniser,
+      // mais pour l'instant, la mise à jour optimiste suffit.
+      // On pourrait re-fetch le statut is-following ou le profil pour s'assurer de la cohérence.
+    } catch (error) {
+      console.error("Failed to toggle follow:", error);
+      // Annuler la mise à jour optimiste
+      setIsFollowing(originalIsFollowing);
+      setLocalFollowersCount(originalFollowersCount);
+      // TODO: Afficher une erreur à l'utilisateur
+    }
+  };
+
+  const handleEditProfile = () => {
+    router.push('/main_group/settings'); // Adapter vers la page de paramètres de profil
+  };
 
   return (
     <div className="border-b border-x-border pb-6">
@@ -39,26 +88,27 @@ export default function UserProfileHeader({ userProfile }: UserProfileHeaderProp
             className="rounded-full border-4 border-x-bg bg-x-card-bg"
           />
           <div className="flex-grow flex justify-end items-center pb-4">
-            {/* {isCurrentUserProfile ? (
+            {authLoading ? null : isCurrentUserProfile ? (
               <button
                 onClick={handleEditProfile}
                 className="px-4 py-2 text-sm font-semibold border border-x-border rounded-full hover:bg-x-border/50 text-x-primary-text transition-colors"
               >
                 Modifier le profil
               </button>
-            ) : (
+            ) : currentUser && !isLoadingFollowStatus ? ( // Afficher seulement si currentUser est chargé et le statut de suivi aussi
               <button
                 onClick={handleFollowToggle}
-                className="px-4 py-2 text-sm font-semibold bg-x-primary-text text-x-bg rounded-full hover:bg-opacity-80 transition-colors"
+                className={`px-4 py-2 text-sm font-semibold rounded-full transition-colors
+                  ${isFollowing
+                    ? 'bg-transparent text-x-primary-text border border-x-border hover:bg-red-600/10 hover:border-red-500 hover:text-red-500'
+                    : 'bg-x-primary-text text-x-bg hover:bg-opacity-80'
+                  }`}
               >
-                { TODO: Vérifier si déjà suivi } Follow
+                {isFollowing ? 'Abonné' : 'Suivre'}
               </button>
-            )} */}
-             <button // Bouton placeholder pour l'instant
-                className="px-4 py-2 text-sm font-semibold border border-x-border rounded-full hover:bg-x-border/50 text-x-primary-text transition-colors"
-              >
-                Options
-              </button>
+            ) : currentUser ? ( // Si currentUser est chargé mais pas encore le statut de suivi
+              <div className="px-4 py-2 text-sm font-semibold border border-x-border rounded-full text-x-primary-text opacity-50">Chargement...</div>
+            ) : null /* Ne rien afficher si pas d'utilisateur connecté et ce n'est pas son profil */ }
           </div>
         </div>
 
@@ -81,11 +131,11 @@ export default function UserProfileHeader({ userProfile }: UserProfileHeaderProp
 
         <div className="mt-3 flex space-x-4 text-sm">
           <a href={`/${userProfile.username}/following`} className="hover:underline">
-            <span className="font-semibold text-x-primary-text">{userProfile.following_count}</span>
+            <span className="font-semibold text-x-primary-text">{userProfile.following_count}</span> {/* Ce compteur pourrait aussi être mis à jour localement si on suit/unfollow */}
             <span className="text-x-secondary-text ml-1">Abonnements</span>
           </a>
           <a href={`/${userProfile.username}/followers`} className="hover:underline">
-            <span className="font-semibold text-x-primary-text">{userProfile.followers_count}</span>
+            <span className="font-semibold text-x-primary-text">{localFollowersCount}</span>
             <span className="text-x-secondary-text ml-1">Abonnés</span>
           </a>
         </div>
