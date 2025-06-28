@@ -1,29 +1,40 @@
 'use client';
 
-import React, { useState } from 'react';
-// import { useAuth } from '@/lib/contexts/AuthContext'; // Sera ajouté plus tard
+import React, { useState, useEffect } from 'react';
+import { useAuth } from '@/lib/contexts/AuthContext';
+import { useRouter } from 'next/navigation';
 
 export default function LoginForm() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [error, setError] = useState<string | null>(null);
-  const [isLoading, setIsLoading] = useState(false);
-  // const { login } = useAuth(); // Sera ajouté plus tard
+  // Utiliser l'état d'erreur et de chargement du contexte
+  const { login, isLoading, error: authError, clearError, user } = useAuth();
+  const router = useRouter();
+
+  // Effacer les erreurs d'authentification précédentes lorsque le composant est monté ou que l'email/password change
+  useEffect(() => {
+    if (authError) { // Effacer l'erreur seulement si elle est présente et que les champs changent
+      clearError();
+    }
+  }, [email, password, clearError, authError]); // Dépendance à authError pour réagir à son changement
+
+  // Rediriger si l'utilisateur est déjà connecté (par exemple, après un F5 sur la page de login ou après login)
+  useEffect(() => {
+    if (user && !isLoading) { // S'assurer que isLoading est false pour éviter redirection prématurée
+      router.push('/main_group/home');
+    }
+  }, [user, isLoading, router]);
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    setError(null);
-    setIsLoading(true);
-
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    console.log('Login attempt with:', { email, password });
-    // try {
-    //   await login(email, password);
-    // } catch (err) {
-    //   setError('Failed to login. Please check your credentials.');
-    // }
-
-    setIsLoading(false);
+    try {
+      await login({ email, password });
+      // La redirection se fera via le useEffect ci-dessus après que `user` soit mis à jour.
+    } catch (err) {
+      // L'erreur est déjà gérée et stockée dans authError par AuthContext.
+      // On peut logguer ici si besoin, mais l'affichage se fait via authError.
+      console.log("Login component caught error (already set in authError by AuthContext)");
+    }
   };
 
   return (
@@ -73,7 +84,7 @@ export default function LoginForm() {
           {isLoading ? 'Connexion...' : 'Se connecter'}
         </button>
       </div>
-      {error && <p className="text-sm text-red-500 text-center">{error}</p>}
+      {authError && <p className="mt-2 text-sm text-red-500 text-center">{authError}</p>}
     </form>
   );
 }

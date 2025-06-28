@@ -15,23 +15,23 @@ export default function Navbar() {
 
   return (
     <nav className="fixed top-0 left-0 right-0 bg-x-bg border-b border-x-border p-4 flex justify-between items-center z-50 h-16">
-      <Link href={user ? "/home" : "/"} className="text-2xl font-bold text-x-accent hover:opacity-80 transition-opacity">
+      <Link href={user ? "/main_group/home" : "/"} className="text-2xl font-bold text-x-accent hover:opacity-80 transition-opacity">
         X
       </Link>
 
       <div className="flex items-center space-x-4">
         {user ? (
           <>
-            {/* <Link href="/profile" className="text-x-primary-text hover:text-x-accent">
+            <Link href={`/main_group/${user.username || user.id}`} className="text-sm text-x-primary-text hover:text-x-accent transition-colors">
               Profil ({user.name})
             </Link>
             <button
               onClick={logout}
-              className="text-x-secondary-text hover:text-x-accent transition-colors"
+              className="text-sm text-x-secondary-text hover:text-x-accent transition-colors"
             >
               Déconnexion
-            </button> */}
-            <div className="text-sm text-x-primary-text">Bienvenue, {user.name}</div>
+            </button>
+            {/* <div className="text-sm text-x-primary-text">Bienvenue, {user.name}</div> */}
           </>
         ) : (
           <>
