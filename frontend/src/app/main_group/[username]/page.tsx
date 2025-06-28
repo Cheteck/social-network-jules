@@ -1,13 +1,16 @@
 'use client';
 
+'use client';
+
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
-import TweetCard from '@/components/feed/TweetCard';
-import UserProfileHeader from '@/components/profile/UserProfileHeader'; // À créer
+import PostCard from '@/components/feed/PostCard'; // Renommé
+import UserProfileHeader from '@/components/profile/UserProfileHeader';
 import { UserProfile } from '@/lib/types/user';
-import { Tweet, TweetAuthor } from '@/lib/types/tweet'; // Pour les tweets mockés
+import { Post, PostAuthor } from '@/lib/types/post'; // Renommé et typé avec Post
+import apiClient from '@/lib/api'; // Importer apiClient
 
-// Données de simulation
+// Données de simulation - SERONT SUPPRIMÉES
 const mockUserProfiles: Record<string, UserProfile> = {
   jverne: {
     id: 'user1',
@@ -17,7 +20,7 @@ const mockUserProfiles: Record<string, UserProfile> = {
     bio: 'Écrivain français, auteur de romans d\'aventure et de science-fiction. Passionné par les voyages extraordinaires.',
     followers_count: 1250,
     following_count: 80,
-    tweets_count: 35,
+    tweets_count: 35, // Ce champ 'tweets_count' sur UserProfile sera probablement 'posts_count' ou similaire
     created_at: new Date('1828-02-08').toISOString(),
   },
   mcurie: {
@@ -33,23 +36,24 @@ const mockUserProfiles: Record<string, UserProfile> = {
   }
 };
 
-const mockUserTweets: Record<string, Tweet[]> = {
+const mockUserPosts: Record<string, Post[]> = {
   jverne: [
-    { id: 'jv_tweet1', author: mockUserProfiles.jverne as unknown as TweetAuthor, content: 'Le Nautilus est prêt pour une nouvelle expédition !', created_at: new Date().toISOString(), likes_count: 12, retweets_count: 3, comments_count: 2 },
-    { id: 'jv_tweet2', author: mockUserProfiles.jverne as unknown as TweetAuthor, content: 'Pensées sur le voyage au centre de la Terre...', created_at: new Date(Date.now() - 1000 * 60 * 60 * 5).toISOString(), likes_count: 25, retweets_count: 5, comments_count: 4  },
+    { id: 'jv_post1', author: mockUserProfiles.jverne as unknown as PostAuthor, content: 'Le Nautilus est prêt pour une nouvelle expédition !', created_at: new Date().toISOString(), likes_count: 12, retweets_count: 3, comments_count: 2 },
+    { id: 'jv_post2', author: mockUserProfiles.jverne as unknown as PostAuthor, content: 'Pensées sur le voyage au centre de la Terre...', created_at: new Date(Date.now() - 1000 * 60 * 60 * 5).toISOString(), likes_count: 25, retweets_count: 5, comments_count: 4  },
   ],
   mcurie: [
-    { id: 'mc_tweet1', author: mockUserProfiles.mcurie as unknown as TweetAuthor, content: 'Nouvelle expérience en cours. Les résultats préliminaires sont prometteurs.', created_at: new Date().toISOString(), likes_count: 45, retweets_count: 10, comments_count: 8 },
+    { id: 'mc_post1', author: mockUserProfiles.mcurie as unknown as PostAuthor, content: 'Nouvelle expérience en cours. Les résultats préliminaires sont prometteurs.', created_at: new Date().toISOString(), likes_count: 45, retweets_count: 10, comments_count: 8 },
   ]
 };
+// Fin des données de simulation
 
 
 export default function UserProfilePage() {
   const params = useParams();
-  const username = params.username as string;
+  const username = params.username as string; // TODO: Gérer le cas où username est un array
 
   const [profile, setProfile] = useState<UserProfile | null>(null);
-  const [tweets, setTweets] = useState<Tweet[]>([]);
+  const [posts, setPosts] = useState<Post[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -58,27 +62,40 @@ export default function UserProfilePage() {
       const fetchProfileData = async () => {
         setIsLoading(true);
         setError(null);
-        // TODO: Remplacer par un véritable appel API: GET /api/users/{username}/profile
-        // Et un autre pour les tweets de l'utilisateur: GET /api/v1/social/users/{userId}/posts (ou similaire)
-        await new Promise(resolve => setTimeout(resolve, 700)); // Simule la latence
+        try {
+          // 1. Récupérer le profil utilisateur
+          // L'endpoint exact /api/users/{username}/profile est une supposition,
+          // il pourrait être /api/profile/{username} ou nécessiter un ID.
+          // Pour l'instant, on assume que l'API peut résoudre par username.
+          const profileResponse = await apiClient.get(`/api/users/${username}/profile`);
+          const userProfileData = profileResponse.data.data || profileResponse.data; // Adapter si l'API enveloppe dans 'data'
+          setProfile(userProfileData);
 
-        const foundProfile = mockUserProfiles[username];
-        const foundTweets = mockUserTweets[username] || [];
-
-        if (foundProfile) {
-          setProfile(foundProfile);
-          setTweets(foundTweets);
-        } else {
-          setError('Profil non trouvé.');
+          // 2. Si le profil est trouvé, récupérer les posts de cet utilisateur
+          // Supposons que userProfileData.id contient l'ID de l'utilisateur
+          if (userProfileData && userProfileData.id) {
+            // L'endpoint /api/v1/social/posts?author_id={id} est une supposition.
+            // Il faudrait vérifier l'API de ijideals/social-posts pour la bonne méthode de filtrage.
+            const postsResponse = await apiClient.get(`/api/v1/social/posts?author_id=${userProfileData.id}`);
+            setPosts(postsResponse.data.data || postsResponse.data || []);
+          } else {
+            setPosts([]); // Pas de profil, donc pas de posts
+          }
+        } catch (err: any) {
+          console.error("Failed to fetch profile data:", err);
+          setError(err.response?.data?.message || "Profil non trouvé ou erreur lors de la récupération des données.");
+          setProfile(null);
+          setPosts([]);
+        } finally {
+          setIsLoading(false);
         }
-        setIsLoading(false);
       };
       fetchProfileData();
     }
   }, [username]);
 
   if (isLoading) {
-    return <div className="text-center py-10 text-white">Chargement du profil...</div>;
+    return <div className="text-center py-10 text-x-primary-text">Chargement du profil...</div>;
   }
 
   if (error) {
@@ -86,18 +103,18 @@ export default function UserProfilePage() {
   }
 
   if (!profile) {
-    return <div className="text-center py-10 text-white">Ce profil n'existe pas.</div>;
+    return <div className="text-center py-10 text-x-primary-text">Ce profil n'existe pas.</div>;
   }
 
   return (
-    <main className="container mx-auto max-w-2xl py-8 px-4 text-white">
-      <UserProfileHeader userProfile={profile} /> {/* À créer */}
+    <main className="container mx-auto max-w-2xl py-8 px-4 text-x-primary-text">
+      <UserProfileHeader userProfile={profile} />
 
       <div className="mt-8">
-        <h2 className="text-xl font-semibold mb-4">Tweets</h2>
-        {tweets.length > 0 ? (
+        <h2 className="text-xl font-semibold mb-4 text-x-primary-text">Posts</h2>
+        {posts.length > 0 ? (
           <div className="space-y-4">
-            {tweets.map(tweet => <TweetCard key={tweet.id} tweet={tweet} />)}
+            {posts.map(post => <PostCard key={post.id} post={post} />)}
           </div>
         ) : (
           <p>Cet utilisateur n'a encore rien posté.</p>

@@ -25,23 +25,25 @@ Liste des tâches pour le développement du frontend, inspiré de Twitter et des
     - [X] Liens de navigation principaux.
     - [ ] Logique d'ouverture/fermeture sur mobile.
 
-## Phase 2: Fonctionnalités Sociales de Base (Tweets/Posts)
-- [X] Créer un composant `TweetCard.tsx` pour afficher un post.
+## Phase 2: Fonctionnalités Sociales de Base (Posts)
+- [X] Créer un composant `PostCard.tsx` pour afficher un post.
     - [X] Afficher avatar, nom, @username, contenu, date.
     - [ ] Actions : like, retweet, commentaire (connexion API).
     - [ ] Affichage des médias attachés (via `ijideals/media-uploader`).
 - [X] Créer la page principale du Fil d'actualité (`/main_group/home`).
     - [ ] Récupérer et afficher la liste des posts depuis l'API (`ijideals/news-feed-generator` ou `ijideals/social-posts`).
     - [ ] Gérer le chargement, les erreurs, et la pagination/défilement infini.
-- [ ] Créer un composant `NewTweetForm.tsx`.
+- [ ] Créer un composant `NewPostForm.tsx`.
     - [ ] Permettre à un utilisateur authentifié de poster un nouveau post.
     - [ ] Validation (longueur, etc.).
     - [ ] Option d'upload de médias (intégration `ijideals/media-uploader`).
     - [ ] Mettre à jour le flux après la création.
-- [ ] Page de détail d'un Post (`/main_group/status/[post_id]`).
-    - [ ] Afficher le post principal.
-    - [ ] Afficher les commentaires (via `ijideals/commentable`).
-    - [ ] Formulaire pour ajouter un commentaire.
+- [ ] Page de détail d'un Post (`/main_group/posts/[post_id]` ou `/main_group/status/[post_id]`).
+    - [X] Afficher le post principal (appel API `GET /api/v1/social/posts/{post_id}`).
+    - [ ] Lister les commentaires pour le post (appel API `GET /api/v1/comments/posts/{post_id}`).
+    - [ ] Formulaire pour ajouter un nouveau commentaire (appel API `POST /api/v1/comments/posts/{post_id}` avec `{ content: "..." }`).
+    - [ ] (Optionnel) UI pour répondre à un commentaire (utilisation de `parent_id`).
+    - [ ] (Optionnel) UI pour modifier/supprimer ses propres commentaires.
 - [ ] Intégrer les Likes (via `ijideals/likeable`) sur les posts et commentaires.
 - [ ] Intégrer les Hashtags (via `ijideals/hashtag-system`).
     - [ ] Affichage des hashtags cliquables dans les posts.
@@ -55,8 +57,12 @@ Liste des tâches pour le développement du frontend, inspiré de Twitter et des
     - [ ] Afficher la liste des médias de l'utilisateur.
     - [ ] Afficher les posts likés par l'utilisateur.
 - [ ] Fonctionnalité de Suivi/Abonnement (via `ijideals/followable`).
-    - [ ] Boutons Suivre/Ne plus suivre sur les profils.
-    - [ ] Pages listant les abonnés/abonnements.
+    - [ ] Sur `UserProfileHeader`, ajouter un bouton "Suivre"/"Ne plus suivre" ou "Toggle Follow".
+    - [ ] Implémenter les appels API pour suivre (`POST /api/users/{user_id}/follow`), ne plus suivre (`DELETE /api/users/{user_id}/unfollow`), ou basculer (`POST /api/users/{user_id}/toggle-follow`).
+    *   [ ] Utiliser `GET /api/users/{user_id}/is-following` pour déterminer l'état initial du bouton.
+    - [ ] Mettre à jour l'UI (texte du bouton, compteurs de followers/abonnements) de manière optimiste et après confirmation de l'API.
+    - [ ] (Optionnel) Créer des pages ou modales pour afficher la liste des abonnés (`GET /users/{user_id}/followers`).
+    - [ ] (Optionnel) Créer des pages ou modales pour afficher la liste des abonnements (`GET /users/{user_id}/followings`).
 - [ ] Paramètres du profil utilisateur (`/main_group/settings/profile` - via `ijideals/user-settings` et `ijideals/user-profile`).
     - [ ] Modification des informations du profil (bio, nom, etc.).
     - [ ] Modification de l'avatar et de la bannière (intégration `ijideals/media-uploader`).
@@ -102,7 +108,7 @@ Liste des tâches pour le développement du frontend, inspiré de Twitter et des
 - [X] Appliquer un style inspiré de Twitter/X avec Tailwind CSS (base faite, à continuer).
 - [ ] Améliorer l'UX/UI sur tous les composants et pages.
 - [ ] Ajouter la gestion des erreurs et des notifications utilisateur (toaster, messages inline).
-- [ ] Optimiser les performances (Lazy loading, code splitting, memoization).
+- [ ] Optimiser les performances (Lazy loading, code splitting, memoization, etc.).
 - [ ] Responsive design complet.
 - [ ] Internationalisation (i18n) si nécessaire.
 - [ ] Accessibilité (a11y).
@@ -110,7 +116,7 @@ Liste des tâches pour le développement du frontend, inspiré de Twitter et des
 ## Phase 8: Tests
 - [ ] Mettre en place Jest et React Testing Library.
 - [ ] Écrire des tests unitaires pour les fonctions utilitaires et les hooks.
-- [ ] Écrire des tests d'intégration pour les composants critiques (LoginForm, TweetCard, UserProfileHeader, NewTweetForm, etc.).
+- [ ] Écrire des tests d'intégration pour les composants critiques (LoginForm, PostCard, UserProfileHeader, NewPostForm, etc.).
 - [ ] (Optionnel) Mettre en place des tests E2E avec Cypress ou Playwright pour les flux utilisateurs clés.
 
 ## Backlog / Idées Futures
