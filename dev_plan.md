@@ -13,6 +13,9 @@ Créer une interface web frontend (Next.js) qui utilise et s'harmonise avec le b
 - Backend Laravel fonctionnel et accessible (par défaut `http://localhost:8000`).
 - Frontend Next.js (démarré avec `npm run dev` dans `frontend/`, accessible sur `http://localhost:3000`).
 - Configuration CORS appropriée sur le backend Laravel pour accepter les requêtes du frontend.
++- **Fichiers d'environnement configurés :**
++  - `.env` à la racine (basé sur `.env.example`) pour le backend.
++  - `frontend/.env.local` (basé sur `frontend/.env.example`) pour le frontend, notamment `NEXT_PUBLIC_API_URL`.
 
 ## Phases de Développement
 
