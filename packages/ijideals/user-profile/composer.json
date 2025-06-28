@@ -1,0 +1,47 @@
+{
+    "name": "ijideals/user-profile",
+    "description": "A Laravel package to manage user profiles.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jules",
+            "email": "jules@example.com"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "illuminate/support": "^10.0|^11.0",
+        "illuminate/database": "^10.0|^11.0",
+        "illuminate/routing": "^10.0|^11.0",
+        "illuminate/http": "^10.0|^11.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ijideals\\UserProfile\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Ijideals\\UserProfile\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Ijideals\\UserProfile\\Providers\\UserProfileServiceProvider"
+            ]
+        }
+    },
+    "require-dev": {
+        "orchestra/testbench": "^8.0|^9.0",
+        "phpunit/phpunit": "^10.0|^11.0",
+        "laravel/sanctum": "^3.3|^4.0"
+    },
+    "scripts": {
+        "test": "phpunit",
+        "test-coverage": "phpunit --coverage-html coverage"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

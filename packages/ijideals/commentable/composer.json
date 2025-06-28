@@ -1,0 +1,38 @@
+{
+    "name": "ijideals/commentable",
+    "description": "A Laravel package to allow models to be commented on.",
+    "type": "laravel-package",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jules AI",
+            "email": "jules@ai.com"
+        }
+    ],
+    "require": {
+        "php": "^8.0",
+        "illuminate/support": "^9.0|^10.0|^11.0",
+        "illuminate/database": "^9.0|^10.0|^11.0",
+        "illuminate/routing": "^9.0|^10.0|^11.0",
+        "illuminate/events": "^9.0|^10.0|^11.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ijideals\\Commentable\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Ijideals\\Commentable\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Ijideals\\Commentable\\Providers\\CommentableServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

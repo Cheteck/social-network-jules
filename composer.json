@@ -1,0 +1,141 @@
+{
+    "name": "laravel/laravel",
+    "type": "project",
+    "description": "The skeleton application for the Laravel framework.",
+    "keywords": ["laravel", "framework"],
+    "license": "MIT",
+    "require": {
+        "php": "^8.1",
+        "guzzlehttp/guzzle": "^7.2",
+        "laravel/framework": "^10.10",
+        "laravel/jetstream": "^4.3",
+        "laravel/sanctum": "^3.3",
+        "laravel/tinker": "^2.8",
+        "laravel/scout": "^10.0",
+        "spatie/laravel-permission": "^5.10|^6.0",
+        "ijideals/social-posts": "@dev",
+        "ijideals/followable": "@dev",
+        "ijideals/likeable": "@dev",
+        "ijideals/commentable": "@dev",
+        "ijideals/media-uploader": "@dev",
+        "ijideals/news-feed-generator": "@dev",
+        "ijideals/notification-system": "@dev",
+        "ijideals/search-engine": "@dev",
+        "ijideals/shop-manager": "@dev",
+        "ijideals/catalog-manager": "@dev",
+        "ijideals/user-settings": "@dev",
+        "ijideals/hashtag-system": "@dev",
+        "ijideals/user-profile": "@dev",
+        "intervention/image": "^2.7|^3.0"
+    },
+    "require-dev": {
+        "fakerphp/faker": "^1.9.1",
+        "larastan/larastan": "^2.11",
+        "laravel/pint": "^1.0",
+        "laravel/sail": "^1.18",
+        "mockery/mockery": "^1.4.4",
+        "nunomaduro/collision": "^7.0",
+        "phpstan/extension-installer": "^1.4",
+        "phpunit/phpunit": "^10.1",
+        "spatie/laravel-ignition": "^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/",
+            "Database\\Factories\\": "database/factories/",
+            "Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "post-autoload-dump": [
+            "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
+            "@php artisan package:discover --ansi"
+        ],
+        "post-update-cmd": [
+            "@php artisan vendor:publish --tag=laravel-assets --ansi --force"
+        ],
+        "post-root-package-install": [
+            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+        ],
+        "post-create-project-cmd": [
+            "@php artisan key:generate --ansi"
+        ],
+        "analyse": "vendor/bin/phpstan analyse"
+    },
+    "extra": {
+        "laravel": {
+            "dont-discover": []
+        }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "php-http/discovery": true,
+            "phpstan/extension-installer": true
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "repositories": [
+        {
+            "type": "path",
+            "url": "packages/ijideals/social-posts"
+        },
+        {
+            "type": "path",
+            "url": "packages/ijideals/followable"
+        },
+        {
+            "type": "path",
+            "url": "packages/ijideals/likeable"
+        },
+        {
+            "type": "path",
+            "url": "packages/ijideals/commentable"
+        },
+        {
+            "type": "path",
+            "url": "packages/ijideals/media-uploader"
+        },
+        {
+            "type": "path",
+            "url": "packages/ijideals/news-feed-generator"
+        },
+        {
+            "type": "path",
+            "url": "packages/ijideals/notification-system"
+        },
+        {
+            "type": "path",
+            "url": "packages/ijideals/search-engine"
+        },
+        {
+            "type": "path",
+            "url": "packages/ijideals/shop-manager"
+        },
+        {
+            "type": "path",
+            "url": "packages/ijideals/catalog-manager"
+        },
+        {
+            "type": "path",
+            "url": "packages/ijideals/user-settings"
+        },
+        {
+            "type": "path",
+            "url": "packages/ijideals/hashtag-system"
+        },
+        {
+            "type": "path",
+            "url": "packages/ijideals/user-profile"
+        }
+    ]
+}

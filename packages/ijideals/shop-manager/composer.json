@@ -1,0 +1,43 @@
+{
+    "name": "ijideals/shop-manager",
+    "description": "A Laravel package for managing shops or business pages with granular role-based access control.",
+    "type": "laravel-package",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jules AI",
+            "email": "jules@ai.com"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "illuminate/support": "^10.0|^11.0",
+        "illuminate/database": "^10.0|^11.0",
+        "illuminate/http": "^10.0|^11.0",
+        "illuminate/routing": "^10.0|^11.0",
+        "spatie/laravel-permission": "^5.10|^6.0",
+        "ijideals/media-uploader": "@dev"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ijideals\\ShopManager\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Ijideals\\ShopManager\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Ijideals\\ShopManager\\Providers\\ShopManagerServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "repositories": [
+        { "type": "path", "url": "../media-uploader" }
+    ]
+}

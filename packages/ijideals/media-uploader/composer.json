@@ -1,0 +1,40 @@
+{
+    "name": "ijideals/media-uploader",
+    "description": "A Laravel package for uploading and managing media associated with models.",
+    "type": "laravel-package",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jules AI",
+            "email": "jules@ai.com"
+        }
+    ],
+    "require": {
+        "php": "^8.0",
+        "illuminate/support": "^9.0|^10.0|^11.0",
+        "illuminate/database": "^9.0|^10.0|^11.0",
+        "illuminate/filesystem": "^9.0|^10.0|^11.0",
+        "illuminate/http": "^9.0|^10.0|^11.0",
+        "illuminate/routing": "^9.0|^10.0|^11.0",
+        "intervention/image": "^2.7|^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ijideals\\MediaUploader\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Ijideals\\MediaUploader\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Ijideals\\MediaUploader\\Providers\\MediaUploaderServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
