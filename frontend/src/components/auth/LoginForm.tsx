@@ -30,10 +30,10 @@ export default function LoginForm() {
     try {
       await login({ email, password });
       // La redirection se fera via le useEffect ci-dessus après que `user` soit mis à jour.
-    } catch (err) {
+    } catch { // err n'est pas utilisé, donc on peut l'omettre ou le préfixer avec _
       // L'erreur est déjà gérée et stockée dans authError par AuthContext.
       // On peut logguer ici si besoin, mais l'affichage se fait via authError.
-      console.log("Login component caught error (already set in authError by AuthContext)");
+      // console.log("Login component caught error (already set in authError by AuthContext)");
     }
   };
 

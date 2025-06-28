@@ -1,4 +1,4 @@
-import { Post } from './post'; // Chemin et type mis à jour
+// import { Post } from './post'; // Post n'est pas utilisé directement dans UserProfile ici
 
 export interface UserProfile {
   id: number | string;

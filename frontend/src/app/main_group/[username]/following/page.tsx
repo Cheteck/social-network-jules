@@ -29,8 +29,8 @@ export default function FollowingPage() {
             const userProfileData = profileResponse.data.data || profileResponse.data;
             setProfileUser(userProfileData);
             userIdToFetchFollowing = userProfileData.id;
-          } catch (profileError: any) {
-            console.error(`Failed to fetch profile for ${username}:`, profileError);
+          } catch (profileError) {
+            console.error(`Failed to fetch profile for ${username}:`, profileError instanceof Error ? profileError.message : profileError);
             setError(`Impossible de trouver le profil pour @${username}.`);
             setIsLoading(false);
             return;
@@ -45,9 +45,10 @@ export default function FollowingPage() {
           const followingResponse = await apiClient.get(`/api/users/${userIdToFetchFollowing}/followings`);
           setFollowing(followingResponse.data || []);
 
-        } catch (err: any) {
-          console.error(`Failed to fetch followings for @${username}:`, err);
-          setError(`Impossible de charger la liste des abonnements pour @${username}.`);
+        } catch (err) {
+          const errorMessage = err instanceof Error ? err.message : String(err);
+          console.error(`Failed to fetch followings for @${username}:`, errorMessage);
+          setError(`Impossible de charger la liste des abonnements pour @${username}. Erreur: ${errorMessage}`);
           setFollowing([]);
         } finally {
           setIsLoading(false);

@@ -40,9 +40,23 @@ export default function NewPostForm({ onPostPosted }: NewPostFormProps) { // Ren
         onPostPosted(response.data.data || response.data); // Supposer que le post est dans response.data ou response.data.data
       }
       setContent(''); // Vider le textarea après succès
-    } catch (err: any) {
+    } catch (err: unknown) {
+      let message = "Une erreur est survenue lors de la publication du post.";
+      if (err instanceof Error) {
+        // Check for Axios-like error structure more safely
+        if (typeof err === 'object' && err !== null && 'response' in err) {
+          const errorResponse = (err as { response?: { data?: { message?: string } } }).response;
+          if (errorResponse?.data?.message) {
+            message = errorResponse.data.message;
+          } else {
+            message = err.message; // Fallback to generic error message
+          }
+        } else {
+          message = err.message; // Fallback if not an Axios-like error
+        }
+      }
       console.error("Failed to post:", err);
-      setError(err.response?.data?.message || "Une erreur est survenue lors de la publication du post.");
+      setError(message);
     } finally {
       setIsLoading(false);
     }

@@ -31,9 +31,23 @@ export default function FollowersPage() {
             const userProfileData = profileResponse.data.data || profileResponse.data;
             setProfileUser(userProfileData);
             userIdToFetchFollowers = userProfileData.id;
-          } catch (profileError: any) {
+          } catch (profileError: unknown) {
+            let message = `Impossible de trouver le profil pour @${username}.`;
+            if (profileError instanceof Error) {
+              // Check for Axios-like error structure more safely
+              if (typeof profileError === 'object' && profileError !== null && 'response' in profileError) {
+                const response = (profileError as { response?: { data?: { message?: string } } }).response;
+                if (response?.data?.message) {
+                  message = `${message} Détail: ${response.data.message}`;
+                } else {
+                  message = `${message} Erreur: ${profileError.message}`;
+                }
+              } else {
+                message = `${message} Erreur: ${profileError.message}`;
+              }
+            }
             console.error(`Failed to fetch profile for ${username}:`, profileError);
-            setError(`Impossible de trouver le profil pour @${username}.`);
+            setError(message);
             setIsLoading(false);
             return;
           }
@@ -48,9 +62,23 @@ export default function FollowersPage() {
           const followersResponse = await apiClient.get(`/api/users/${userIdToFetchFollowers}/followers`);
           setFollowers(followersResponse.data || []); // L'API retourne un tableau d'utilisateurs
 
-        } catch (err: any) {
+        } catch (err: unknown) {
+          let message = `Impossible de charger la liste des abonnés pour @${username}.`;
+          if (err instanceof Error) {
+            // Check for Axios-like error structure more safely
+            if (typeof err === 'object' && err !== null && 'response' in err) {
+              const response = (err as { response?: { data?: { message?: string } } }).response;
+              if (response?.data?.message) {
+                message = `${message} Détail: ${response.data.message}`;
+              } else {
+                message = `${message} Erreur: ${err.message}`;
+              }
+            } else {
+              message = `${message} Erreur: ${err.message}`;
+            }
+          }
           console.error(`Failed to fetch followers for @${username}:`, err);
-          setError(`Impossible de charger la liste des abonnés pour @${username}.`);
+          setError(message);
           setFollowers([]);
         } finally {
           setIsLoading(false);
@@ -89,7 +117,7 @@ export default function FollowersPage() {
       {error && <div className="p-4 text-red-500 text-center">{error}</div>}
 
       {!error && followers.length === 0 && !isLoading && (
-        <p className="p-4 text-x-secondary-text text-center">@{username} n'a aucun abonné pour le moment.</p>
+        <p className="p-4 text-x-secondary-text text-center">@{username} n&apos;a aucun abonné pour le moment.</p>
       )}
 
       <div className="divide-y divide-x-border">

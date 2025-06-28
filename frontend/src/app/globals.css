@@ -3,7 +3,9 @@
 @tailwind utilities;
 
 body {
-  @apply bg-x-bg text-x-primary-text antialiased;
+  background-color: var(--color-x-bg); /* Use CSS variable directly */
+  color: var(--color-x-primary-text); /* Use CSS variable directly */
+  @apply antialiased; /* Keep other applies like antialiased */
   font-family: var(--font-geist-sans), sans-serif; /* Assure que Geist Sans est la police principale */
 }
 

@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import PostCard from '@/components/feed/PostCard'; // Renommé
-import { Post, PostAuthor } from '@/lib/types/post'; // Renommé
+import { Post } from '@/lib/types/post'; // Renommé, PostAuthor non utilisé ici
 import NewPostForm from '@/components/feed/NewPostForm'; // Renommé
 import { useAuth } from '@/lib/contexts/AuthContext';
 import apiClient from '@/lib/api'; // Import du client API
@@ -36,9 +36,10 @@ export default function HomePage() {
         // La structure exacte des données de l'API doit être vérifiée.
         // Supposons que response.data est un tableau de tweets ou un objet avec une clé 'data'
         setPosts(response.data.data || response.data || []); // Renommé
-      } catch (error: any) {
-        console.error("Failed to fetch tweets:", error);
-        setFetchError(error.message || "Impossible de charger le fil d'actualité.");
+      } catch (error) {
+        const errorMessage = error instanceof Error ? error.message : String(error);
+        console.error("Failed to fetch tweets:", errorMessage);
+        setFetchError(errorMessage || "Impossible de charger le fil d'actualité.");
         setPosts([]); // Renommé
       } finally {
         setIsLoadingTweets(false);
@@ -66,7 +67,8 @@ export default function HomePage() {
   // ProtectedRouteWrapper devrait déjà gérer la redirection si !user après chargement auth.
   // Mais on peut ajouter un message si l'utilisateur est null et que les chargements sont terminés.
   if (!user) {
-     return <div className="text-center py-10 text-x-secondary-text">Veuillez vous connecter pour voir votre fil d'actualité.</div>;
+     // Ensuring this line is clean and uses &apos;
+     return <div className="text-center py-10 text-x-secondary-text">Veuillez vous connecter pour voir votre fil d&apos;actualité.</div>;
   }
 
   return (
@@ -79,10 +81,10 @@ export default function HomePage() {
 
       <div className="space-y-4">
         {fetchError && <div className="p-4 text-red-500 text-center">{fetchError}</div>}
-        {posts.length === 0 && !isLoadingTweets ? (
-          <p>Aucun post à afficher pour le moment.</p> // Renommé
+        {posts.length === 0 && !isLoadingTweets && !fetchError ? ( // Ajout de !fetchError ici pour éviter double message
+          <p className="p-4 text-x-secondary-text text-center">Aucun post à afficher pour le moment. Essayez de suivre d&apos;autres utilisateurs ou revenez plus tard !</p>
         ) : (
-          posts.map(post => <PostCard key={post.id} post={post} />) // Renommé
+          !fetchError && posts.map(post => <PostCard key={post.id} post={post} />) // Renommé
         )}
       </div>
     </main>
