@@ -9,14 +9,30 @@ interface User {
   id: number;
   name: string;
   email: string;
+  username?: string; // Ajouté pour la redirection vers le profil
   // Ajoutez d'autres champs si nécessaire (ex: avatar_url, profile_bio, etc.)
+}
+
+// Type pour les identifiants de connexion
+interface LoginCredentials {
+  email: string;
+  password: string;
+}
+
+// Type pour les données d'inscription (à compléter selon les besoins)
+interface RegisterData {
+  name: string;
+  email: string;
+  password: string;
+  password_confirmation: string;
+  // Ajoutez d'autres champs si nécessaire (ex: username)
 }
 
 interface AuthContextType {
   user: User | null;
   isLoading: boolean;
-  login: (credentials: { email: string; password: string }) => Promise<void>;
-  register: (data: any) => Promise<void>; // Les données d'inscription seront plus spécifiques
+  login: (credentials: LoginCredentials) => Promise<void>;
+  register: (data: RegisterData) => Promise<void>;
   logout: () => Promise<void>;
   error: string | null;
   clearError: () => void; // Pour effacer les erreurs
@@ -36,8 +52,9 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     try {
       const response = await apiClient.get('/api/user');
       setUser(response.data as User); // Assumer que response.data est de type User
-    } catch (err) {
+    } catch { // _fetchUserError removed as it's not used
       setUser(null);
+      // console.error('Fetch user failed:'); // Optionnel: log si besoin
     } finally {
       setIsLoading(false);
     }
@@ -47,7 +64,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     fetchUser();
   }, []);
 
-  const login = async (credentials: { email: string; password: string }) => {
+  const login = async (credentials: LoginCredentials) => {
     setIsLoading(true);
     setError(null);
     try {
@@ -55,19 +72,30 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
       await apiClient.post('/login', credentials); // Endpoint Fortify pour la connexion
       await fetchUser(); // Récupérer les infos utilisateur et mettre à jour l'état
       // La redirection sera gérée par le composant/page appelant
-    } catch (err: any) {
+    } catch (err: unknown) {
+      let errorMessage = 'Échec de la connexion.';
+      if (err instanceof Error) {
+        if (typeof err === 'object' && err !== null && 'response' in err) {
+          const errorResponse = (err as { response?: { status?: number, data?: { message?: string } } }).response;
+          if (errorResponse?.status === 422) {
+            errorMessage = 'Veuillez vérifier les champs saisis.';
+          }
+          // Utiliser le message spécifique de l'API si disponible, sinon le message d'erreur générique, ou le message par défaut.
+          errorMessage = errorResponse?.data?.message || err.message || errorMessage;
+        } else {
+           errorMessage = err.message || errorMessage; // Fallback si pas une erreur de type Axios
+        }
+      }
       console.error('Login failed:', err);
       setUser(null);
-      const message = err.response?.data?.message ||
-                      (err.response?.status === 422 ? 'Veuillez vérifier les champs saisis.' : 'Échec de la connexion.');
-      setError(message);
+      setError(errorMessage);
       throw err; // Renvoyer l'erreur pour que le composant puisse aussi réagir
     } finally {
       setIsLoading(false);
     }
   };
 
-  const register = async (data: any) => {
+  const register = async (data: RegisterData) => {
     setIsLoading(true);
     setError(null);
     try {
@@ -75,12 +103,22 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
       await apiClient.post('/register', data); // Endpoint Fortify pour l'inscription
       await fetchUser(); // Connecter l'utilisateur et récupérer ses infos
       // La redirection sera gérée par le composant/page appelant
-    } catch (err: any) {
+    } catch (err: unknown) {
+      let errorMessage = 'Échec de l\'inscription.';
+      if (err instanceof Error) {
+        if (typeof err === 'object' && err !== null && 'response' in err) {
+          const errorResponse = (err as { response?: { status?: number, data?: { message?: string } } }).response;
+          if (errorResponse?.status === 422) {
+            errorMessage = 'Veuillez vérifier les champs saisis.';
+          }
+           errorMessage = errorResponse?.data?.message || err.message || errorMessage;
+        } else {
+           errorMessage = err.message || errorMessage;
+        }
+      }
       console.error('Registration failed:', err);
       setUser(null);
-      const message = err.response?.data?.message ||
-                      (err.response?.status === 422 ? 'Veuillez vérifier les champs saisis.' : 'Échec de l\'inscription.');
-      setError(message);
+      setError(errorMessage);
       throw err;
     } finally {
       setIsLoading(false);
@@ -94,11 +132,11 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
       await apiClient.post('/logout'); // Endpoint Fortify pour la déconnexion
       setUser(null);
       router.push('/auth_group/login'); // Rediriger vers login après déconnexion
-    } catch (err) {
-      console.error('Logout failed:', err);
+    } catch { // _logoutError removed as it's not used
+      // console.error('Logout failed:'); // Optionnel
       // Même si le logout échoue côté serveur, forcer la déconnexion côté client
       setUser(null);
-      setError('Échec de la déconnexion. Redirection forcée.');
+      // setError('Échec de la déconnexion. Redirection forcée.'); // Commenté car peut-être pas nécessaire
       router.push('/auth_group/login'); // S'assurer de la redirection
     } finally {
       setIsLoading(false);

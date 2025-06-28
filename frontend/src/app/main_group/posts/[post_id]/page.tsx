@@ -31,9 +31,22 @@ export default function PostDetailPage() {
           const fetchedPost = response.data.data || response.data;
           setPost(fetchedPost);
 
-        } catch (err: any) {
+        } catch (err: unknown) {
+          let message = `Impossible de charger le post (ID: ${postId}).`;
+          if (err instanceof Error) {
+            if (typeof err === 'object' && err !== null && 'response' in err) {
+              const errorResponse = (err as { response?: { data?: { message?: string } } }).response;
+              if (errorResponse?.data?.message) {
+                message = errorResponse.data.message;
+              } else {
+                message = err.message;
+              }
+            } else {
+              message = err.message;
+            }
+          }
           console.error("Failed to fetch post details:", err);
-          setPostError(err.response?.data?.message || `Impossible de charger le post (ID: ${postId}).`);
+          setPostError(message);
           setPost(null);
         } finally {
           setIsLoadingPost(false);
@@ -49,9 +62,22 @@ export default function PostDetailPage() {
           const response = await apiClient.get(`/api/v1/comments/posts/${postId}`);
           // Supposons que la réponse est paginée et les commentaires sont dans response.data.data
           setComments(response.data.data || response.data || []);
-        } catch (err: any) {
+        } catch (err: unknown) {
+          let message = "Impossible de charger les commentaires.";
+          if (err instanceof Error) {
+            if (typeof err === 'object' && err !== null && 'response' in err) {
+              const errorResponse = (err as { response?: { data?: { message?: string } } }).response;
+              if (errorResponse?.data?.message) {
+                message = errorResponse.data.message;
+              } else {
+                message = err.message;
+              }
+            } else {
+              message = err.message;
+            }
+          }
           console.error("Failed to fetch comments:", err);
-          setCommentsError(err.response?.data?.message || "Impossible de charger les commentaires.");
+          setCommentsError(message);
           setComments([]);
         } finally {
           setIsLoadingComments(false);

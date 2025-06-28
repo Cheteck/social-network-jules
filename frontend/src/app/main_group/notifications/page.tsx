@@ -1,20 +1,20 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react'; // Import useCallback
 import apiClient from '@/lib/api';
 import { Notification } from '@/lib/types/notification'; // Importer le type Notification
 import NotificationCard from '@/components/notifications/NotificationCard'; // Importer NotificationCard
 import { useAuth } from '@/lib/contexts/AuthContext';
-import Link from 'next/link';
+// import Link from 'next/link'; // Link n'est pas utilisé
 
 export default function NotificationsPage() {
   const { user } = useAuth();
   const [notifications, setNotifications] = useState<Notification[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [filter, setFilter] = useState<'all' | 'unread' | 'read'>('all'); // Pour filtrer
+  const [filter, ] = useState<'all' | 'unread' | 'read'>('all'); // setFilter n'est pas utilisé pour l'instant
 
-  const fetchNotifications = async (currentFilter: typeof filter) => {
+  const fetchNotifications = useCallback(async (currentFilter: typeof filter) => {
     if (!user) {
       setIsLoading(false);
       return;
@@ -27,20 +27,33 @@ export default function NotificationsPage() {
         url += `?status=${currentFilter}`;
       }
       const response = await apiClient.get(url);
-      // Supposer que la réponse est paginée, prendre response.data.data ou response.data
       setNotifications(response.data.data || response.data || []);
-    } catch (err: any) {
+    } catch (err: unknown) {
+      let message = "Impossible de charger les notifications.";
+      if (err instanceof Error) {
+        // Check for Axios-like error structure more safely
+        if (typeof err === 'object' && err !== null && 'response' in err) {
+          const errorResponse = (err as { response?: { data?: { message?: string } } }).response;
+          if (errorResponse?.data?.message) {
+            message = errorResponse.data.message;
+          } else {
+            message = err.message; // Fallback to generic error message
+          }
+        } else {
+          message = err.message; // Fallback if not an Axios-like error
+        }
+      }
       console.error("Failed to fetch notifications:", err);
-      setError(err.response?.data?.message || "Impossible de charger les notifications.");
+      setError(message);
       setNotifications([]);
     } finally {
       setIsLoading(false);
     }
-  };
+  }, [user]); // user est une dépendance de fetchNotifications
 
   useEffect(() => {
     fetchNotifications(filter);
-  }, [user, filter]); // Re-fetch si l'utilisateur ou le filtre change
+  }, [user, filter, fetchNotifications]);
 
   const handleNotificationRead = (notificationId: string) => {
     setNotifications(prevNotifications =>
@@ -63,9 +76,23 @@ export default function NotificationsPage() {
       );
       // Optionnellement, re-fetch si on veut être sûr d'avoir les données serveur exactes
       // fetchNotifications(filter);
-    } catch (err) {
+    } catch (err: unknown) {
+      let message = "Impossible de marquer toutes les notifications comme lues.";
+      if (err instanceof Error) {
+         // Check for Axios-like error structure more safely (though less likely for a POST error to have detailed message like GET)
+        if (typeof err === 'object' && err !== null && 'response' in err) {
+          const errorResponse = (err as { response?: { data?: { message?: string } } }).response;
+          if (errorResponse?.data?.message) {
+            message = errorResponse.data.message;
+          } else {
+            message = err.message; // Fallback to generic error message
+          }
+        } else {
+          message = err.message; // Fallback if not an Axios-like error
+        }
+      }
       console.error("Failed to mark all as read:", err);
-      setError("Impossible de marquer toutes les notifications comme lues."); // Afficher une erreur
+      setError(message); // Afficher une erreur
     }
   };
 

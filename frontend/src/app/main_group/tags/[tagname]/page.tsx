@@ -31,13 +31,29 @@ export default function TagPage() {
           // Je vais supposer /api/hashtags/{tagName}/posts pour l'instant
           const response = await apiClient.get(`/api/hashtags/${tagName.toLowerCase()}/posts`);
           setPosts(response.data.data || response.data || []);
-        } catch (err: any) {
-          console.error(`Failed to fetch posts for tag #${tagName}:`, err);
-          if (err.response && err.response.status === 404) {
-            setError(`Le tag #${tagName} n'a pas été trouvé ou n'a aucun post associé.`);
-          } else {
-            setError(`Impossible de charger les posts pour le tag #${tagName}.`);
+        } catch (err: unknown) {
+          const errorMessageBase = `Impossible de charger les posts pour le tag #${tagName}.`;
+          let specificMessage = "";
+
+          if (err instanceof Error) {
+            specificMessage = err.message; // Default to generic error message
+            // Check for Axios-like error structure more safely
+            if (typeof err === 'object' && err !== null && 'response' in err) {
+              const errorResponse = (err as { response?: { status?: number, data?: { message?: string } } }).response;
+              if (errorResponse?.status === 404) {
+                setError(`Le tag #${tagName} n'a pas été trouvé ou n'a aucun post associé.`);
+                setPosts([]);
+                setIsLoading(false);
+                return; // Exit early for 404
+              }
+              if (errorResponse?.data?.message) {
+                specificMessage = errorResponse.data.message;
+              }
+            }
           }
+
+          console.error(`Failed to fetch posts for tag #${tagName}:`, err);
+          setError(specificMessage && specificMessage !== err.message ? `${errorMessageBase} Détail: ${specificMessage}` : errorMessageBase);
           setPosts([]);
         } finally {
           setIsLoading(false);

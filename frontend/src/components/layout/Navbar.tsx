@@ -8,10 +8,10 @@ export default function Navbar() {
   const { user, logout } = useAuth();
 
   // TODO: Ajouter la logique pour ouvrir/fermer la sidebar sur mobile
-  const toggleMobileSidebar = () => {
-    console.log('Toggle mobile sidebar');
-    // Dispatch un événement ou appeler une fonction d'un contexte de layout
-  };
+  // const toggleMobileSidebar = () => {
+  //   console.log('Toggle mobile sidebar');
+  //   // Dispatch un événement ou appeler une fonction d'un contexte de layout
+  // };
 
   return (
     <nav className="fixed top-0 left-0 right-0 bg-x-bg border-b border-x-border p-4 flex justify-between items-center z-50 h-16">
