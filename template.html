@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>X-Inspired Homepage with Sidebar (Tailwind)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles to better handle sidebar toggling and main content shift */
+        .sidebar {
+            transition: left 0.3s ease-in-out;
+        }
+        .sidebar.active {
+            left: 0;
+        }
+        .container.shifted {
+            margin-left: 17rem; /* Same as sidebar width + padding */
+        }
+        @media (max-width: 767px) { /* md breakpoint in Tailwind */
+            .container.shifted {
+                margin-left: 0; /* No shift on mobile when sidebar is overlay */
+            }
+            .sidebar {
+                /* Ensure sidebar is above content on mobile when active */
+                z-index: 30;
+            }
+            .sidebar:not(.active) {
+                left: -16rem; /* w-64 */
+            }
+        }
+    </style>
+</head>
+<body class="bg-black text-white font-sans">
+    <!-- Navbar supérieure -->
+    <nav class="fixed top-0 left-0 right-0 bg-black border-b border-gray-700 p-4 flex justify-between items-center z-20">
+        <a href="#" class="text-2xl font-bold text-white">X</a>
+        <div class="menu-icon text-2xl cursor-pointer md:hidden">☰</div>
+    </nav>
+
+    <!-- Sidebar -->
+    <aside class="sidebar fixed top-16 w-64 h-[calc(100vh-4rem)] bg-black border-r border-gray-700 p-6 md:left-0 -left-64">
+        <div class="flex flex-col gap-6">
+            <a href="#" class="flex items-center gap-3 text-lg text-white hover:text-blue-500 transition-colors">
+                <span>🏠</span> Home
+            </a>
+            <a href="#" class="flex items-center gap-3 text-lg text-white hover:text-blue-500 transition-colors">
+                <span>🔍</span> Explore
+            </a>
+            <a href="#" class="flex items-center gap-3 text-lg text-white hover:text-blue-500 transition-colors">
+                <span>🔔</span> Notifications
+            </a>
+            <a href="#" class="flex items-center gap-3 text-lg text-white hover:text-blue-500 transition-colors">
+                <span>✉️</span> Messages
+            </a>
+            <a href="#" class="flex items-center gap-3 text-lg text-white hover:text-blue-500 transition-colors">
+                <span>👤</span> Profile
+            </a>
+            <a href="#" class="flex items-center gap-3 text-lg text-white hover:text-blue-500 transition-colors">
+                <span>⚙️</span> Settings
+            </a>
+            <button class="bg-blue-500 text-white rounded-full py-2 px-4 text-base font-semibold hover:scale-105 transition-transform">
+                Post
+            </button>
+        </div>
+    </aside>
+
+    <!-- Conteneur principal -->
+    <div class="container mx-auto mt-20 px-4 max-w-xl md:max-w-3xl md:ml-[17rem] transition-all duration-300">
+        <!-- Exemple de post -->
+        <div class="bg-black border border-gray-700 rounded-xl p-4 mb-4 hover:-translate-y-1 hover:shadow-lg hover:shadow-white/10 transition-all duration-200">
+            <div class="flex items-center gap-3">
+                <img src="https://via.placeholder.com/40" alt="User Avatar" class="w-10 h-10 rounded-full">
+                <div>
+                    <span class="font-bold text-base">User Name</span>
+                    <span class="text-gray-500 text-sm">@username</span>
+                </div>
+            </div>
+            <div class="mt-3 text-base">
+                This is an example post inspired by the X platform. Loving the minimalist design and smooth animations! #WebDesign #MobileFirst
+            </div>
+            <div class="flex gap-6 mt-3 text-gray-500 text-sm">
+                <span class="cursor-pointer hover:text-blue-500 transition-colors">❤️ 12</span>
+                <span class="cursor-pointer hover:text-blue-500 transition-colors">🔁 5</span>
+                <span class="cursor-pointer hover:text-blue-500 transition-colors">💬 8</span>
+            </div>
+        </div>
+
+        <div class="bg-black border border-gray-700 rounded-xl p-4 mb-4 hover:-translate-y-1 hover:shadow-lg hover:shadow-white/10 transition-all duration-200">
+            <div class="flex items-center gap-3">
+                <img src="https://via.placeholder.com/40" alt="User Avatar" class="w-10 h-10 rounded-full">
+                <div>
+                    <span class="font-bold text-base">Another User</span>
+                    <span class="text-gray-500 text-sm">@anotheruser</span>
+                </div>
+            </div>
+            <div class="mt-3 text-base">
+                Check out this amazing mobile-first template with a sleek sidebar! It's modern and super responsive. 🚀 #HTML #TailwindCSS
+            </div>
+            <div class="flex gap-6 mt-3 text-gray-500 text-sm">
+                <span class="cursor-pointer hover:text-blue-500 transition-colors">❤️ 25</span>
+                <span class="cursor-pointer hover:text-blue-500 transition-colors">🔁 10</span>
+                <span class="cursor-pointer hover:text-blue-500 transition-colors">💬 15</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bouton flottant pour créer un post (mobile uniquement) -->
+    <button class="fixed bottom-5 right-5 bg-blue-500 text-white rounded-full w-12 h-12 flex items-center justify-center text-2xl shadow-lg hover:scale-110 transition-transform md:hidden z-10">
+        +
+    </button>
+
+    <!-- Script pour toggle sidebar sur mobile -->
+    <script>
+        const menuIcon = document.querySelector('.menu-icon');
+        const sidebar = document.querySelector('.sidebar');
+        const container = document.querySelector('.container'); // Main content container
+
+        if (menuIcon && sidebar && container) {
+            menuIcon.addEventListener('click', () => {
+                sidebar.classList.toggle('active');
+                // Only shift container if on md screens or larger and sidebar becomes active
+                if (window.innerWidth >= 768) { // Tailwind's md breakpoint
+                    container.classList.toggle('shifted', sidebar.classList.contains('active'));
+                } else {
+                    // On mobile, ensure container is not shifted as sidebar overlays
+                    container.classList.remove('shifted');
+                }
+            });
+        }
+
+        // Adjust container shift on resize
+        window.addEventListener('resize', () => {
+            if (window.innerWidth < 768) {
+                container.classList.remove('shifted');
+                 // If sidebar was active and screen resizes to mobile, ensure it's properly positioned
+                if (sidebar.classList.contains('active')) {
+                    sidebar.style.left = '0';
+                }
+            } else {
+                // If resizing to desktop and sidebar is active, ensure container is shifted
+                if (sidebar.classList.contains('active')) {
+                    container.classList.add('shifted');
+                    sidebar.style.left = '0'; // Ensure sidebar is visible
+                } else {
+                    container.classList.remove('shifted');
+                    sidebar.style.left = '-16rem'; // Ensure sidebar is hidden if not active
+                }
+            }
+        });
+
+        // Initial check in case the page loads on a smaller screen with sidebar potentially open
+        if (window.innerWidth < 768) {
+            container.classList.remove('shifted');
+        } else {
+            if (sidebar.classList.contains('active')) {
+                 container.classList.add('shifted');
+            }
+        }
+    </script>
+</body>
+</html>

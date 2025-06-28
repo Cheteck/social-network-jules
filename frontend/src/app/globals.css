@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-x-bg text-x-primary-text antialiased;
+  font-family: var(--font-geist-sans), sans-serif; /* Assure que Geist Sans est la police principale */
+}
+
+/* Optionnel: Styles de base pour les inputs si nécessaire, mais Tailwind Form plugin serait mieux */
+/* input, textarea, select {
+  @apply bg-x-card-bg border-x-border text-x-primary-text;
+} */
