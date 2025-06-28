@@ -64,8 +64,14 @@ Créer une interface web frontend (Next.js) qui utilise et s'harmonise avec le b
     *   **Commentaires (Base)**:
         *   [X] Créer la page de détail d'un post (`/main_group/posts/[post_id]/page.tsx`) affichant le post principal. (Endpoint: `GET /api/v1/social/posts/{post_id}`)
         *   [ ] Afficher le nombre de commentaires sur `PostCard` (déjà fait, mais vérifier la source des données).
-        *   [ ] Sur la page de détail, lister les commentaires (API: `GET /api/v1/comments/posts/{post_id}`).
-        *   [ ] Sur la page de détail, ajouter un formulaire pour poster un nouveau commentaire (API: `POST /api/v1/comments/posts/{post_id}` avec `{ content: "..." }`).
+        *   [X] Sur la page de détail, lister les commentaires (API: `GET /api/v1/comments/posts/{post_id}`) - Logique de fetch ajoutée.
+            *   [X] Définir le type `Comment` dans `frontend/src/lib/types/comment.ts`.
+            *   [X] Créer un composant `CommentCard.tsx` pour afficher un commentaire.
+            *   [X] Dans `PostDetailPage.tsx`, mapper sur l'état `comments` et rendre un `CommentCard` pour chaque commentaire.
+        *   [X] Sur la page de détail, ajouter un formulaire pour poster un nouveau commentaire (API: `POST /api/v1/comments/posts/{post_id}` avec `{ content: "..." }`).
+            *   [X] Créer un composant `NewCommentForm.tsx`.
+            *   [X] Intégrer `NewCommentForm.tsx` dans `PostDetailPage.tsx`.
+            *   [X] Mettre à jour `PostDetailPage.tsx` pour gérer le callback `onCommentPosted` (mise à jour optimiste).
         *   [ ] (Optionnel) Permettre la modification/suppression de ses propres commentaires.
 
 ### Phase 3: Fonctionnalités Sociales Avancées (Priorité Moyenne)

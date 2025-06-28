@@ -1,5 +1,10 @@
 # TODO - Frontend Social & Commercial Platform
 
+## Principes Directeurs & Consignes
+- **Terminologie :** Toujours utiliser la nomenclature définie par les packages backend `ijideals` (ex: "Post" au lieu de "Tweet"). Se référer à l'analyse des modèles backend en cas de doute.
+- **Mise à Jour des Plans :** Mettre à jour `dev_plan.md` (racine) et ce fichier `frontend/TODO.md` après chaque analyse significative des packages backend, découverte d'API, ou si de nouvelles informations/décisions impactent le plan de développement frontend.
+- **Documentation API :** Consulter et contribuer à `api_documentation.md` (racine) pour assurer une compréhension partagée des endpoints backend.
+
 Liste des tâches pour le développement du frontend, inspiré de Twitter et des fonctionnalités commerciales.
 
 ## Phase 1: Initialisation et Authentification
