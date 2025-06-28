@@ -15,20 +15,28 @@ return [
     |
     */
 
-    'paths' => ['api/*', 'sanctum/csrf-cookie'],
+    'paths' => [
+        'api/*',
+        'sanctum/csrf-cookie',
+        'login', // Ajouter les routes Fortify si nécessaire
+        'register',
+        'logout',
+        // 'forgot-password', // etc.
+        // 'reset-password',
+    ],
 
-    'allowed_methods' => ['*'],
+    'allowed_methods' => ['*'], // Peut être restreint si besoin (GET, POST, PUT, DELETE, etc.)
 
-    'allowed_origins' => ['*'],
+    'allowed_origins' => explode(',', env('SANCTUM_STATEFUL_DOMAINS', env('FRONTEND_URL', 'http://localhost:3000'))),
 
     'allowed_origins_patterns' => [],
 
-    'allowed_headers' => ['*'],
+    'allowed_headers' => ['*'], // Peut être restreint (Content-Type, X-XSRF-TOKEN, X-Requested-With, Accept, Authorization)
 
     'exposed_headers' => [],
 
     'max_age' => 0,
 
-    'supports_credentials' => false,
+    'supports_credentials' => true, // DOIT être true pour Sanctum SPA
 
 ];

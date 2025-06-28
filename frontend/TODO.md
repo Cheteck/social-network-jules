@@ -66,8 +66,8 @@ Liste des tâches pour le développement du frontend, inspiré de Twitter et des
     - [ ] Implémenter les appels API pour suivre (`POST /api/users/{user_id}/follow`), ne plus suivre (`DELETE /api/users/{user_id}/unfollow`), ou basculer (`POST /api/users/{user_id}/toggle-follow`).
     *   [ ] Utiliser `GET /api/users/{user_id}/is-following` pour déterminer l'état initial du bouton.
     - [ ] Mettre à jour l'UI (texte du bouton, compteurs de followers/abonnements) de manière optimiste et après confirmation de l'API.
-    - [ ] (Optionnel) Créer des pages ou modales pour afficher la liste des abonnés (`GET /users/{user_id}/followers`).
-    - [ ] (Optionnel) Créer des pages ou modales pour afficher la liste des abonnements (`GET /users/{user_id}/followings`).
+    - [X] (Optionnel) Créer des pages ou modales pour afficher la liste des abonnés (`GET /users/{user_id}/followers`). (`FollowersPage.tsx` créée)
+    - [X] (Optionnel) Créer des pages ou modales pour afficher la liste des abonnements (`GET /users/{user_id}/followings`). (`FollowingPage.tsx` créée)
 - [ ] Paramètres du profil utilisateur (`/main_group/settings/profile` - via `ijideals/user-settings` et `ijideals/user-profile`).
     - [ ] Modification des informations du profil (bio, nom, etc.).
     - [ ] Modification de l'avatar et de la bannière (intégration `ijideals/media-uploader`).

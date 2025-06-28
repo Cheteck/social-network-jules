@@ -83,10 +83,13 @@ Créer une interface web frontend (Next.js) qui utilise et s'harmonise avec le b
     *   [X] Implémenter les appels API :
         - `POST /api/users/{user_id}/follow`
         - `DELETE /api/users/{user_id}/unfollow`
-        - Ou `POST /api/users/{user_id}/toggle-follow` (alternative plus simple).
+        - Ou `POST /api/users/{user_id}/toggle-follow` (utilisée).
     *   [X] Vérifier l'état de suivi initial avec `GET /api/users/{user_id}/is-following`.
     *   [X] Mettre à jour l'UI (bouton, compteur de followers) et les comptes de followers/followings (mise à jour optimiste du compteur local).
-    *   [ ] (Optionnel) Créer des pages/modales pour lister les abonnés (`GET /users/{user_id}/followers`) et abonnements (`GET /users/{user_id}/followings`).
+    *   [ ] (Optionnel) Créer des pages/modales pour lister les abonnés et abonnements.
+        *   [X] Page `FollowersPage` créée (`GET /api/users/{user_id}/followers`).
+        *   [X] Page `FollowingPage` créée (`GET /api/users/{user_id}/followings`).
+        *   [X] Mettre à jour les liens dans `UserProfileHeader.tsx`.
 2.  **Hashtags (Frontend)**
     *   [X] Rendre les hashtags cliquables dans `PostCard.tsx`.
         *   [X] Parser le contenu du post pour identifier les hashtags.
