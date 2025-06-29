@@ -17,18 +17,18 @@
     },
     "autoload": {
         "psr-4": {
-            "IJIDeals\\ProductSpecifications\\": "src/"
+            "Ijideals\\ProductSpecifications\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "IJIDeals\\ProductSpecifications\\Tests\\": "tests/"
+            "Ijideals\\ProductSpecifications\\Tests\\": "tests/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "IJIDeals\\ProductSpecifications\\Providers\\ProductSpecificationsServiceProvider"
+                "Ijideals\\ProductSpecifications\\Providers\\ProductSpecificationsServiceProvider"
             ]
         }
     },

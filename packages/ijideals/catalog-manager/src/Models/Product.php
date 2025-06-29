@@ -10,10 +10,34 @@ use Illuminate\Database\Eloquent\Relations\HasMany; // Added for variants
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use Ijideals\MediaUploader\Concerns\HasMedia;
-use IJIDeals\ProductSpecifications\Models\ProductSpecificationValue;
-use IJIDeals\ProductSpecifications\Models\SpecificationKey;
+use Ijideals\ProductSpecifications\Models\ProductSpecificationValue; // Corrected namespace
+use Ijideals\ProductSpecifications\Models\SpecificationKey; // Corrected namespace
 use Laravel\Scout\Searchable;
 
+/**
+ * @property int $id
+ * @property int $shop_id
+ * @property string $name
+ * @property string $slug
+ * @property string|null $description
+ * @property string|null $sku
+ * @property float $price
+ * @property int|null $stock_quantity
+ * @property bool $is_active
+ * @property bool $is_featured
+ * @property array|null $properties
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ *
+ * @property-read \Ijideals\ShopManager\Models\Shop $shop
+ * @property-read \Illuminate\Database\Eloquent\Collection|\Ijideals\CatalogManager\Models\Category[] $categories
+ * @property-read \Illuminate\Database\Eloquent\Collection|\Ijideals\CatalogManager\Models\ProductOption[] $productOptions
+ * @property-read \Illuminate\Database\Eloquent\Collection|\Ijideals\CatalogManager\Models\ProductVariant[] $variants
+ * @property-read \Illuminate\Database\Eloquent\Collection|\Ijideals\ProductSpecifications\Models\ProductSpecificationValue[] $specificationValues
+ * @property-read array $specifications Accessor for key-value specifications.
+ * @property-read string|null $primary_image_url Accessor for primary image.
+ * @property-read array $all_image_urls Accessor for all images.
+ */
 class Product extends Model
 {
     use HasFactory, HasMedia, Searchable;
@@ -285,8 +309,10 @@ class Product extends Model
 
                 $key = null;
                 if (!empty($specData['key_id'])) {
+                    /** @var \Ijideals\ProductSpecifications\Models\SpecificationKey|null $key */
                     $key = SpecificationKey::find($specData['key_id']);
                 } elseif (!empty($specData['key_name'])) {
+                    /** @var \Ijideals\ProductSpecifications\Models\SpecificationKey $key */
                     $key = SpecificationKey::firstOrCreate(
                         ['name' => $specData['key_name']],
                         [
@@ -328,10 +354,12 @@ class Product extends Model
         }
 
         return $this->specificationValues->mapWithKeys(function (ProductSpecificationValue $value) {
-            $keyName = $value->specificationKey?->name ?? 'unknown_key_' . $value->specification_key_id;
+            /** @var \Ijideals\ProductSpecifications\Models\SpecificationKey|null $specKeyModel */
+            $specKeyModel = $value->specificationKey;
+            $keyName = $specKeyModel?->name ?? 'unknown_key_' . $value->specification_key_id;
             $val = $value->value;
-            if ($value->specificationKey?->unit) {
-                $val .= $value->specificationKey->unit; // Append unit if exists
+            if ($specKeyModel?->unit) {
+                $val .= $specKeyModel->unit; // Append unit if exists
             }
             return [$keyName => $val];
         })->toArray();

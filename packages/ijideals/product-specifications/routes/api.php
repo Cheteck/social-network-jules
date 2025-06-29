@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use IJIDeals\ProductSpecifications\Http\Controllers\Api\Admin\SpecificationKeyController;
+use Ijideals\ProductSpecifications\Http\Controllers\Api\Admin\SpecificationKeyController; // Corrected namespace
 
 Route::group(['prefix' => 'api/v1/admin', 'middleware' => ['api'/*, 'auth:sanctum', 'admin'*/]], function () {
     // TODO: Ensure 'auth:sanctum' and an 'admin' role/permission middleware are applied appropriately in a real app.

@@ -1,11 +1,11 @@
 <?php
 
-namespace IJIDeals\ProductSpecifications\Models;
+namespace Ijideals\ProductSpecifications\Models; // Corrected namespace
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory; // Optional
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use IJIDeals\CatalogManager\Models\Product; // Assuming Product model path from catalog-manager
+use Ijideals\CatalogManager\Models\Product; // Corrected casing
 
 class ProductSpecificationValue extends Model
 {
