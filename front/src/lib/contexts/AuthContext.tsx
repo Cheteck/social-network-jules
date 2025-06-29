@@ -1,6 +1,7 @@
 "use client";
 
-import React, { createContext, useContext, useEffect, useState } from 'react';
+import React, { createContext, useContext, useEffect, useState, useCallback } from 'react';
+import { getUser, logout as apiLogout } from '@/lib/api/auth'; // Import new functions
 
 interface User {
   id: number;
@@ -8,44 +9,67 @@ interface User {
   email: string;
   username?: string;
   avatar_url?: string;
+  // Add any other fields your User object might have from the backend
 }
 
 interface AuthContextProps {
   user: User | null;
   loading: boolean;
   isAuthenticated: boolean;
-  refresh: () => void;
+  refreshUser: () => void; // Renamed for clarity
+  logoutUser: () => Promise<void>; // Added logout function
 }
 
 const AuthContext = createContext<AuthContextProps>({
   user: null,
   loading: true,
   isAuthenticated: false,
-  refresh: () => {},
+  refreshUser: () => {},
+  logoutUser: async () => {},
 });
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
-  const [refreshIndex, setRefreshIndex] = useState(0);
+  const [refreshTrigger, setRefreshTrigger] = useState(0); // Used to trigger refresh
+
+  const fetchUser = useCallback(async () => {
+    setLoading(true);
+    try {
+      const userData = await getUser();
+      setUser(userData);
+    } catch (error) {
+      // console.error('Failed to fetch user:', error); // apiClient already logs
+      setUser(null); // Ensure user is null if fetch fails (e.g., 401)
+    } finally {
+      setLoading(false);
+    }
+  }, []);
 
   useEffect(() => {
-    setLoading(true);
-    fetch('/api/user', {
-      headers: { 'Accept': 'application/json' },
-      credentials: 'include',
-    })
-      .then(async res => {
-        if (!res.ok) throw new Error('Not authenticated');
-        return res.json();
-      })
-      .then(setUser)
-      .catch(() => setUser(null))
-      .finally(() => setLoading(false));
-  }, [refreshIndex]);
+    fetchUser();
+  }, [fetchUser, refreshTrigger]);
+
+  const refreshUser = useCallback(() => {
+    setRefreshTrigger(prev => prev + 1);
+  }, []);
+
+  const logoutUser = useCallback(async () => {
+    try {
+      await apiLogout();
+      setUser(null);
+      // Optionally, redirect to login page or home page
+      // For example: router.push('/auth/login'); (if router is available here)
+      // Or handle redirection in the component calling logoutUser
+    } catch (error) {
+      console.error('Logout failed:', error);
+      // Even if logout API call fails, clear user locally as a fallback
+      setUser(null);
+    }
+  }, []);
 
   return (
-    <AuthContext.Provider value={{ user, loading, isAuthenticated: !!user, refresh: () => setRefreshIndex(i => i + 1) }}>
+    <AuthContext.Provider value={{ user, loading, isAuthenticated: !!user, refreshUser, logoutUser }}>
       {children}
     </AuthContext.Provider>
   );
