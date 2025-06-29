@@ -1,10 +1,10 @@
 <?php
 
-namespace IJIDeals\ProductSpecifications\Http\Controllers\Api\Admin;
+namespace Ijideals\ProductSpecifications\Http\Controllers\Api\Admin; // Corrected namespace
 
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use IJIDeals\ProductSpecifications\Models\SpecificationKey;
+use Ijideals\ProductSpecifications\Models\SpecificationKey; // Corrected namespace for model
 use Illuminate\Validation\Rule;
 
 class SpecificationKeyController extends Controller

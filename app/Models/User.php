@@ -40,8 +40,9 @@ use Spatie\Permission\Traits\HasRoles; // Import HasSettings trait
  * @method \Illuminate\Database\Eloquent\Relations\MorphMany ijidealsSystemReadNotifications()
  * @method \Illuminate\Database\Eloquent\Relations\MorphMany ijidealsSystemUnreadNotifications()
  *
- * @mixin \Illuminate\Notifications\Notifiable
- * @mixin \Spatie\Permission\Traits\HasRoles
+ * // Rely on `use Notifiable;` and `use HasRoles;` for PHPStan to pick up methods from these traits.
+ * // @mixin \Illuminate\Notifications\Notifiable
+ * // @mixin \Spatie\Permission\Traits\HasRoles
  * @mixin \Ijideals\Followable\Followable
  * @mixin \Ijideals\SocialPosts\Concerns\HasSocialPosts
  * @mixin \Ijideals\UserProfile\Concerns\HasProfile

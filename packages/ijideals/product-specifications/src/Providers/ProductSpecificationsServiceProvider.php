@@ -1,6 +1,6 @@
 <?php
 
-namespace IJIDeals\ProductSpecifications\Providers;
+namespace Ijideals\ProductSpecifications\Providers; // Corrected namespace
 
 use Illuminate\Support\ServiceProvider;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace IJIDeals\ProductSpecifications\Models;
+namespace Ijideals\ProductSpecifications\Models; // Corrected namespace
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory; // Optional: if you plan to create factories for this model
