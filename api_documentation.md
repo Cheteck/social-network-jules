@@ -20,9 +20,18 @@ Cette documentation décrit les principaux endpoints API du backend Laravel, y c
     "email": "user@example.com",
     "password": "password123",
     "remember": false // Optionnel
+    // "device_name": "Nom de l'appareil" // Optionnel, si Jetstream API est activé pour émettre des tokens
   }
   ```
-- **Réponse Succès:** `200 OK` (Session établie) ou `204 No Content`.
+- **Réponse Succès:**
+  - `200 OK` ou `204 No Content` (Session établie).
+  - Si Jetstream API est activé et `device_name` est fourni, peut aussi inclure un token:
+    ```json
+    {
+      "token": "PLAIN_TEXT_API_TOKEN", // Token à utiliser pour les requêtes API suivantes si nécessaire
+      // ... potentiellement d'autres données utilisateur ...
+    }
+    ```
 - **Réponse Erreur (Validation):** `422 Unprocessable Entity` avec les erreurs de validation.
 - **Réponse Erreur (Identifiants):** `422 Unprocessable Entity` ou message d'erreur spécifique.
 
@@ -63,6 +72,245 @@ Cette documentation décrit les principaux endpoints API du backend Laravel, y c
   }
   ```
 - **Réponse Erreur:** `401 Unauthorized` si non authentifié.
+
+---
+
+## Gestion de Compte Utilisateur (Jetstream/Fortify)
+
+Cette section détaille les endpoints pour la gestion du compte utilisateur fournis par Jetstream et Fortify.
+
+### 1. Mettre à Jour les Informations du Profil Utilisateur
+- **Endpoint:** `/user/profile-information`
+- **Méthode:** `PUT`
+- **Middleware:** `auth:sanctum`
+- **Headers Requis:** `Accept: application/json`, `Content-Type: application/json`, `X-XSRF-TOKEN: {valeur du cookie}`.
+- **Corps de la Requête (JSON):**
+  ```json
+  {
+    "name": "Nouveau Nom", // Requis, string, max:255
+    "email": "nouvel.email@example.com" // Requis, email, max:255, unique:users,email
+    // D'autres champs peuvent être supportés par Fortify si configurés (ex: username)
+  }
+  ```
+- **Réponse Succès:** `200 OK` (Pas de corps de réponse par défaut, ou l'objet utilisateur mis à jour si personnalisé).
+- **Réponse Erreur (Validation):** `422 Unprocessable Entity` avec les erreurs.
+- **Réponse Erreur (Non authentifié):** `401 Unauthorized`.
+
+### 2. Mettre à Jour le Mot de Passe Utilisateur
+- **Endpoint:** `/user/password`
+- **Méthode:** `PUT`
+- **Middleware:** `auth:sanctum`
+- **Headers Requis:** `Accept: application/json`, `Content-Type: application/json`, `X-XSRF-TOKEN: {valeur du cookie}`.
+- **Corps de la Requête (JSON):**
+  ```json
+  {
+    "current_password": "mot_de_passe_actuel", // Requis
+    "password": "nouveau_mot_de_passe", // Requis, min:8, confirmed
+    "password_confirmation": "nouveau_mot_de_passe" // Requis
+  }
+  ```
+- **Réponse Succès:** `200 OK` (Pas de corps de réponse par défaut).
+- **Réponse Erreur (Validation):** `422 Unprocessable Entity` (ex: mot de passe actuel incorrect, non confirmation).
+- **Réponse Erreur (Non authentifié):** `401 Unauthorized`.
+
+### 3. Gestion de l'Authentification à Deux Facteurs (2FA)
+
+#### a. Activer la 2FA
+- **Endpoint:** `/user/two-factor-authentication`
+- **Méthode:** `POST`
+- **Middleware:** `auth:sanctum`
+- **Headers Requis:** `Accept: application/json`, `X-XSRF-TOKEN: {valeur du cookie}`.
+- **Réponse Succès:** `200 OK` (Pas de corps de réponse par défaut). L'utilisateur devra ensuite scanner le QR code et confirmer.
+
+#### b. Désactiver la 2FA
+- **Endpoint:** `/user/two-factor-authentication`
+- **Méthode:** `DELETE`
+- **Middleware:** `auth:sanctum`
+- **Headers Requis:** `Accept: application/json`, `X-XSRF-TOKEN: {valeur du cookie}`.
+- **Réponse Succès:** `200 OK` (Pas de corps de réponse par défaut).
+
+#### c. Récupérer le QR Code et Clé Secrète pour la 2FA
+- **Endpoint:** `/user/two-factor-qr-code`
+- **Méthode:** `GET`
+- **Middleware:** `auth:sanctum`
+- **Headers Requis:** `Accept: application/json`.
+- **Réponse Succès (`200 OK`):**
+  ```json
+  {
+    "svg": "<svg>...</svg>", // QR code en SVG
+    "secretKey": "BASE32_ENCODED_SECRET_KEY" // Clé secrète à entrer manuellement si QR code non utilisable
+  }
+  ```
+  *Note: Jetstream retourne `recovery_codes` ici si 2FA est déjà activée et que l'utilisateur veut voir son QR/secret. Si 2FA n'est pas encore confirmée, il retourne le QR/secret.*
+  *Le endpoint `/user/two-factor-secret-key` est aussi parfois utilisé par Fortify pour retourner juste la clé secrète.*
+
+#### d. Confirmer l'Activation de la 2FA
+- **Endpoint:** `/user/confirmed-two-factor-authentication` (si Fortify v2.14+) ou via un endpoint challenge après activation.
+- **Méthode:** `POST`
+- **Middleware:** `auth:sanctum`
+- **Headers Requis:** `Accept: application/json`, `Content-Type: application/json`, `X-XSRF-TOKEN: {valeur du cookie}`.
+- **Corps de la Requête (JSON):**
+  ```json
+  {
+    "code": "CODE_DE_L_APPLI_AUTH" // Le code OTP généré par l'application d'authentification
+  }
+  ```
+- **Réponse Succès:** `200 OK` ou `204 No Content`.
+
+#### e. Récupérer les Codes de Récupération 2FA
+- **Endpoint:** `/user/two-factor-recovery-codes`
+- **Méthode:** `GET`
+- **Middleware:** `auth:sanctum`
+- **Headers Requis:** `Accept: application/json`.
+- **Réponse Succès (`200 OK`):**
+  ```json
+  [
+    "CODE_RECUP_1",
+    "CODE_RECUP_2",
+    // ...
+  ]
+  ```
+  *Note: L'utilisateur doit être authentifié (potentiellement via un code 2FA si déjà activé) pour accéder à ceci.*
+
+#### f. Générer de Nouveaux Codes de Récupération 2FA
+- **Endpoint:** `/user/two-factor-recovery-codes`
+- **Méthode:** `POST`
+- **Middleware:** `auth:sanctum`
+- **Headers Requis:** `Accept: application/json`, `X-XSRF-TOKEN: {valeur du cookie}`.
+- **Réponse Succès:** `200 OK`. (Les nouveaux codes sont généralement affichés via une session flash dans un contexte web, ou retournés en JSON si l'API est configurée pour).
+
+### 4. Challenge 2FA (Lors de la Connexion)
+- **Endpoint:** `/two-factor-challenge`
+- **Méthode:** `POST`
+- **Headers Requis:** `Accept: application/json`, `Content-Type: application/json`, `X-XSRF-TOKEN: {valeur du cookie}`.
+- **Description:** Appelé lorsque la connexion initiale réussit mais que la 2FA est activée. Le backend redirige généralement vers une page de challenge 2FA ou retourne une réponse indiquant que la 2FA est requise. L'API doit être explicitement appelée si le frontend gère cela.
+- **Corps de la Requête (JSON):**
+  ```json
+  {
+    // "code": "CODE_DE_L_APPLI_AUTH", // Si l'utilisateur entre le code OTP
+    // "recovery_code": "CODE_DE_RECUPERATION" // Si l'utilisateur utilise un code de récupération
+  }
+  ```
+- **Réponse Succès (Session établie):** `204 No Content` ou `200 OK`.
+- **Réponse Erreur (Code invalide):** `422 Unprocessable Entity`.
+
+### 5. Gestion de la Photo de Profil (Jetstream)
+*Note: Jetstream gère cela via `Livewire` par défaut. Pour une API SPA, des endpoints spécifiques peuvent être nécessaires ou ceux de Fortify peuvent être utilisés si l'action sous-jacente est exposée.*
+
+#### a. Mettre à Jour la Photo de Profil
+- **Endpoint:** `/user/profile-photo`
+- **Méthode:** `POST`
+- **Middleware:** `auth:sanctum`
+- **Headers Requis:** `Accept: application/json`, `X-XSRF-TOKEN: {valeur du cookie}`. `Content-Type: multipart/form-data`.
+- **Corps de la Requête (Form-Data):**
+  - `photo`: Fichier image.
+- **Réponse Succès:** `200 OK` (Pas de corps de réponse par défaut).
+- **Réponse Erreur (Validation):** `422 Unprocessable Entity`.
+
+#### b. Supprimer la Photo de Profil
+- **Endpoint:** `/user/profile-photo`
+- **Méthode:** `DELETE`
+- **Middleware:** `auth:sanctum`
+- **Headers Requis:** `Accept: application/json`, `X-XSRF-TOKEN: {valeur du cookie}`.
+- **Réponse Succès:** `200 OK` (Pas de corps de réponse par défaut).
+
+### 6. Vérification d'Email (si activée)
+
+#### a. Envoyer la Notification de Vérification d'Email
+- **Endpoint:** `/email/verification-notification`
+- **Méthode:** `POST`
+- **Middleware:** `auth:sanctum`
+- **Headers Requis:** `Accept: application/json`, `X-XSRF-TOKEN: {valeur du cookie}`.
+- **Réponse Succès (`202 Accepted` ou `200 OK`):** Message indiquant que l'email a été envoyé.
+- **Réponse Erreur (Déjà vérifié / Throttled):** `400 Bad Request` ou `429 Too Many Requests`.
+
+*(Le lien de vérification envoyé par email (`/verify-email/{id}/{hash}`) est généralement une route web avec une signature. Pour une SPA, on peut rediriger vers le frontend après vérification, qui peut ensuite vérifier le statut de l'email de l'utilisateur via `/api/user`.)*
+
+### 7. Suppression de Compte Utilisateur
+- **Endpoint:** `/user` (Ou plus communément `/user/delete` ou `/profile/delete` selon l'implémentation spécifique, Fortify le gère via une action `DeleteUser` qui peut être invoquée)
+- **Méthode:** `DELETE`
+- **Middleware:** `auth:sanctum`
+- **Headers Requis:** `Accept: application/json`, `Content-Type: application/json`, `X-XSRF-TOKEN: {valeur du cookie}`.
+- **Corps de la Requête (JSON):** (Souvent requis pour confirmer le mot de passe)
+  ```json
+  {
+    "password": "mot_de_passe_actuel_utilisateur"
+  }
+  ```
+- **Réponse Succès:** `200 OK` ou `204 No Content`.
+- **Réponse Erreur (Mot de passe incorrect):** `422 Unprocessable Entity` ou `403 Forbidden`.
+
+### 8. Gestion des Tokens d'API Personnels (Jetstream)
+*Note: Ces endpoints sont pertinents si la fonctionnalité API de Jetstream est activée, permettant aux utilisateurs de générer des tokens pour des services tiers ou des applications mobiles.*
+
+#### a. Lister les Tokens d'API de l'Utilisateur
+- **Endpoint:** `/user/api-tokens`
+- **Méthode:** `GET`
+- **Middleware:** `auth:sanctum`
+- **Headers Requis:** `Accept: application/json`.
+- **Réponse Succès (`200 OK`):**
+  ```json
+  [
+    {
+      "id": "token_id",
+      "name": "Nom du Token",
+      "abilities": ["permission1", "permission2"],
+      "last_used_at": "YYYY-MM-DD HH:MM:SS" // ou null
+    }
+    // ... autres tokens
+  ]
+  ```
+
+#### b. Créer un Token d'API
+- **Endpoint:** `/user/api-tokens`
+- **Méthode:** `POST`
+- **Middleware:** `auth:sanctum`
+- **Headers Requis:** `Accept: application/json`, `Content-Type: application/json`, `X-XSRF-TOKEN: {valeur du cookie}`.
+- **Corps de la Requête (JSON):**
+  ```json
+  {
+    "name": "Nom du Nouveau Token", // Requis, string
+    "permissions": ["permission:create", "permission:read"] // Optionnel, tableau de strings (permissions/abilities)
+  }
+  ```
+- **Réponse Succès (`201 Created`):**
+  ```json
+  {
+    "token": { // L'objet token créé (similaire à la liste, mais sans le token en clair)
+      "id": "new_token_id",
+      "name": "Nom du Nouveau Token",
+      "abilities": ["permission:create", "permission:read"],
+      "last_used_at": null
+    },
+    "plainTextToken": "TOKEN_EN_CLAIR_A_AFFICHER_UNE_SEULE_FOIS" // Le token réel, à copier immédiatement
+  }
+  ```
+
+#### c. Mettre à Jour les Permissions d'un Token d'API
+- **Endpoint:** `/user/api-tokens/{tokenId}`
+- **Méthode:** `PUT`
+- **Middleware:** `auth:sanctum`
+- **Headers Requis:** `Accept: application/json`, `Content-Type: application/json`, `X-XSRF-TOKEN: {valeur du cookie}`.
+- **Paramètres URL:**
+    - `tokenId`: ID du token à mettre à jour.
+- **Corps de la Requête (JSON):**
+  ```json
+  {
+    "permissions": ["new:permission1", "new:permission2"] // Tableau des nouvelles permissions
+  }
+  ```
+- **Réponse Succès:** `200 OK` (Pas de corps de réponse par défaut).
+
+#### d. Supprimer un Token d'API
+- **Endpoint:** `/user/api-tokens/{tokenId}`
+- **Méthode:** `DELETE`
+- **Middleware:** `auth:sanctum`
+- **Headers Requis:** `Accept: application/json`, `X-XSRF-TOKEN: {valeur du cookie}`.
+- **Paramètres URL:**
+    - `tokenId`: ID du token à supprimer.
+- **Réponse Succès:** `204 No Content`.
+
+---
 
 ## Posts (Publications) - `ijideals/social-posts`
 Préfixe: `/api/v1/social`

@@ -7,8 +7,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany; // Added for variants
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use Ijideals\MediaUploader\Concerns\HasMedia;
+use IJIDeals\ProductSpecifications\Models\ProductSpecificationValue;
+use IJIDeals\ProductSpecifications\Models\SpecificationKey;
 use Laravel\Scout\Searchable;
 
 class Product extends Model
@@ -237,5 +240,100 @@ class Product extends Model
         }
         // For MVP, return all global values for this option type.
         return $option->values()->orderBy('order_column')->get();
+    }
+
+    /**
+     * Get the specification values associated with this product.
+     */
+    public function specificationValues(): HasMany
+    {
+        return $this->hasMany(ProductSpecificationValue::class, 'product_id');
+    }
+
+    /**
+     * Syncs product specifications.
+     *
+     * @param array $specificationsData Array of specifications.
+     *        Each item: ['key_id' => id, 'value' => val] OR ['key_name' => name, 'value' => val, 'key_type' => type, 'key_unit' => unit]
+     * @return void
+     */
+    public function syncSpecifications(array $specificationsData): void
+    {
+        if (empty($specificationsData)) {
+            $this->specificationValues()->delete();
+            return;
+        }
+
+        $currentSpecValues = $this->specificationValues()->with('specificationKey')->get()->keyBy('specificationKey.name');
+        $processedKeys = [];
+
+        DB::transaction(function () use ($specificationsData, &$currentSpecValues, &$processedKeys) {
+            $valuesToUpsert = [];
+
+            foreach ($specificationsData as $specData) {
+                if (empty($specData['value'])) { // Skip if value is empty
+                    if (isset($specData['key_name']) && $currentSpecValues->has($specData['key_name'])) {
+                        // If value is empty and key existed, mark for deletion by not adding to processedKeys
+                    } elseif (isset($specData['key_id'])) {
+                        $key = SpecificationKey::find($specData['key_id']);
+                        if ($key && $currentSpecValues->has($key->name)){
+                           // If value is empty and key existed, mark for deletion
+                        }
+                    }
+                    continue;
+                }
+
+                $key = null;
+                if (!empty($specData['key_id'])) {
+                    $key = SpecificationKey::find($specData['key_id']);
+                } elseif (!empty($specData['key_name'])) {
+                    $key = SpecificationKey::firstOrCreate(
+                        ['name' => $specData['key_name']],
+                        [
+                            'type' => $specData['key_type'] ?? 'string',
+                            'unit' => $specData['key_unit'] ?? null,
+                        ]
+                    );
+                }
+
+                if ($key) {
+                    $processedKeys[] = $key->name;
+                    $this->specificationValues()->updateOrCreate(
+                        ['specification_key_id' => $key->id],
+                        ['value' => $specData['value']]
+                    );
+                }
+            }
+
+            // Delete old specification values that were not in the new set
+            foreach ($currentSpecValues as $specName => $specValue) {
+                if (!in_array($specName, $processedKeys)) {
+                    $specValue->delete();
+                }
+            }
+        });
+        $this->load('specificationValues.specificationKey'); // Refresh the relation
+    }
+
+    /**
+     * Get specifications as a simple key-value array.
+     * Example: ['Material' => 'Cotton', 'Weight' => '200g']
+     *
+     * @return array
+     */
+    public function getSpecificationsAttribute(): array
+    {
+        if (!$this->relationLoaded('specificationValues')) {
+            $this->load('specificationValues.specificationKey');
+        }
+
+        return $this->specificationValues->mapWithKeys(function (ProductSpecificationValue $value) {
+            $keyName = $value->specificationKey?->name ?? 'unknown_key_' . $value->specification_key_id;
+            $val = $value->value;
+            if ($value->specificationKey?->unit) {
+                $val .= $value->specificationKey->unit; // Append unit if exists
+            }
+            return [$keyName => $val];
+        })->toArray();
     }
 }

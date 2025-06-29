@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9285b07f77480f682dd059f65f4866b2",
+    "content-hash": "02fa3f639dfcbdca85c42a02fb9336bd",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -1450,6 +1450,52 @@
             }
         },
         {
+            "name": "ijideals/mention-system",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "packages/ijideals/mention-system",
+                "reference": "28381e7cdd14b8da67cb348968c8363c6bd1391b"
+            },
+            "require": {
+                "illuminate/database": "^10.0|^11.0",
+                "illuminate/events": "^10.0|^11.0",
+                "illuminate/support": "^10.0|^11.0",
+                "php": "^8.1"
+            },
+            "type": "laravel-package",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "IJIDeals\\MentionSystem\\Providers\\MentionSystemServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "IJIDeals\\MentionSystem\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "IJIDeals\\MentionSystem\\Tests\\": "tests/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Your Name / Company",
+                    "email": "your@email.com"
+                }
+            ],
+            "description": "A Laravel package to handle @username mentions in content.",
+            "transport-options": {
+                "relative": true
+            }
+        },
+        {
             "name": "ijideals/news-feed-generator",
             "version": "dev-main",
             "dist": {
@@ -1547,6 +1593,52 @@
                 }
             ],
             "description": "A Laravel package for handling user notifications.",
+            "transport-options": {
+                "relative": true
+            }
+        },
+        {
+            "name": "ijideals/product-specifications",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "packages/ijideals/product-specifications",
+                "reference": "da41b9c5b29ea2d3478ba4301bd427725ae6d339"
+            },
+            "require": {
+                "ijideals/catalog-manager": "@dev",
+                "illuminate/database": "^10.0|^11.0",
+                "illuminate/support": "^10.0|^11.0",
+                "php": "^8.1"
+            },
+            "type": "laravel-package",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "IJIDeals\\ProductSpecifications\\Providers\\ProductSpecificationsServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "IJIDeals\\ProductSpecifications\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "IJIDeals\\ProductSpecifications\\Tests\\": "tests/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Your Name / Company",
+                    "email": "your@email.com"
+                }
+            ],
+            "description": "A Laravel package to manage non-variant-generating product specifications.",
             "transport-options": {
                 "relative": true
             }
@@ -10271,8 +10363,10 @@
         "ijideals/hashtag-system": 20,
         "ijideals/likeable": 20,
         "ijideals/media-uploader": 20,
+        "ijideals/mention-system": 20,
         "ijideals/news-feed-generator": 20,
         "ijideals/notification-system": 20,
+        "ijideals/product-specifications": 20,
         "ijideals/search-engine": 20,
         "ijideals/shop-manager": 20,
         "ijideals/social-posts": 20,
