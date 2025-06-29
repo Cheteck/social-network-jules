@@ -15,10 +15,28 @@ const apiClient = axios.create({
 export const fetchCsrfToken = async () => {
   try {
     await apiClient.get('/sanctum/csrf-cookie');
-    console.log('CSRF cookie fetched');
-  } catch (error) {
-    console.error('Error fetching CSRF cookie:', error);
-    // Gérer l'erreur comme il se doit, peut-être informer l'utilisateur
+    console.log('CSRF cookie fetched successfully.');
+  } catch (error: unknown) {
+    console.error('Error fetching CSRF cookie. Details:');
+    if (axios.isAxiosError(error)) {
+      console.error('Axios error:', error.toJSON());
+      if (error.response) {
+        console.error('Response data:', error.response.data);
+        console.error('Response status:', error.response.status);
+        console.error('Response headers:', error.response.headers);
+      } else if (error.request) {
+        console.error('Request data:', error.request);
+        console.error('No response received. Request was made but no response. This is often a Network Error or CORS issue.');
+      } else {
+        console.error('Error message:', error.message);
+        console.error('Error setting up request:', error.message);
+      }
+      console.error('Axios config:', error.config);
+    } else {
+      console.error('Non-Axios error:', error);
+    }
+    // Re-throw the error so calling functions can handle it and update UI state
+    throw error;
   }
 };
 
