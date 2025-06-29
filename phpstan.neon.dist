@@ -1,0 +1,18 @@
+includes:
+    - ./vendor/larastan/larastan/extension.neon
+
+parameters:
+    # paths parameter removed
+
+    # Level 9 is the strictest. Start lower, e.g., 5, and increase as you fix errors.
+    level: 4
+
+#    ignoreErrors:
+#        - '#PHPDoc tag @var contains unknown class .*#'
+#        - '#Service "auth" is private#'
+
+#    excludePaths:
+#        - ./*/*/Tests/*
+
+#    checkMissingIterableValueType: false
+#    checkGenericClassInNonGenericObjectType: false

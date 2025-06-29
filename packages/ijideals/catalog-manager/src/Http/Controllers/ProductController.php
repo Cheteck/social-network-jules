@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Gate;
 use Ijideals\ShopManager\Models\Shop; // From ShopManager package
 use Ijideals\CatalogManager\Models\Product; // This package's Product model
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Arr;
 
 class ProductController extends Controller
 {

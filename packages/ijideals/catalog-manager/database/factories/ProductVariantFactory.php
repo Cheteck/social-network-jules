@@ -18,7 +18,7 @@
 
             return [
                 'product_id' => $product->id,
-                'sku' => $this->faker->optional(0.9)->unique()->ean8 . '-VAR',
+                'sku' => $this->faker->optional(0.9)->unique()->numerify('########') . '-VAR',
                 // 'price' => $this->faker->randomFloat(2, $product->price - 5, $product->price + 20), // If variant has absolute price
                 'price_modifier' => $this->faker->randomElement([null, $this->faker->randomFloat(2, -5, 20)]), // Can be null
                 'stock_quantity' => $this->faker->numberBetween(0, 50),

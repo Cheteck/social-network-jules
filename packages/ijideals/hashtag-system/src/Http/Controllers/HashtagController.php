@@ -6,6 +6,7 @@ use Ijideals\HashtagSystem\Models\Hashtag;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Routing\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class HashtagController extends Controller
 {

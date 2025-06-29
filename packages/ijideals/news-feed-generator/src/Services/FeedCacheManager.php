@@ -25,7 +25,7 @@ class FeedCacheManager
      * @param int $page
      * @return string
      */
-    protected functiongetCacheKey(int|string $userId, int $page = 1): string
+    protected function getCacheKey(int|string $userId, int $page = 1): string
     {
         return "{$this->cachePrefix}:user:{$userId}:page:{$page}";
     }
@@ -37,7 +37,7 @@ class FeedCacheManager
      * @param int $page
      * @return mixed Returns the cached feed data (likely an array or PaginatedResource) or null if not found.
      */
-    public functiongetFeed(int|string $userId, int $page = 1): mixed
+    public function getFeed(int|string $userId, int $page = 1): mixed
     {
         $cacheKey = $this->getCacheKey($userId, $page);
 
@@ -53,7 +53,7 @@ class FeedCacheManager
      * @param mixed $feedData The feed data to cache.
      * @return bool
      */
-    public functionstoreFeed(int|string $userId, int $page = 1, mixed $feedData): bool
+    public function storeFeed(int|string $userId, int $page, mixed $feedData): bool
     {
         $cacheKey = $this->getCacheKey($userId, $page);
         $ttlSeconds = $this->cacheTtlMinutes * 60;
@@ -69,7 +69,7 @@ class FeedCacheManager
      * @param int|null $page If null, clears all pages for the user.
      * @return void
      */
-    public functionclearUserFeedCache(int|string $userId, ?int $page = null): void
+    public function clearUserFeedCache(int|string $userId, ?int $page = null): void
     {
         if ($page !== null) {
             $cacheKey = $this->getCacheKey($userId, $page);
@@ -95,7 +95,7 @@ class FeedCacheManager
      *
      * @return void
      */
-    public functionclearAllFeedCaches(): void
+    public function clearAllFeedCaches(): void
     {
         // This is highly dependent on the cache driver and prefixing strategy.
         // If using Redis and a consistent prefix, you might use SCAN and DEL.

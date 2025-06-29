@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
 use Ijideals\ShopManager\Models\Shop; // As per your config
 use App\Models\User; // As per your config, likely App\Models\User
+use Illuminate\Support\Arr;
 
 class ShopController extends Controller
 {

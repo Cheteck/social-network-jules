@@ -6,6 +6,7 @@ use Ijideals\CatalogManager\Models\Product;
 use Ijideals\CatalogManager\Models\ProductVariant;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Arr;
+use Illuminate\Support\Str;
 
 class VariantGeneratorService
 {

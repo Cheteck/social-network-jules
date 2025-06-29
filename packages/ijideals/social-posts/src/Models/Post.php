@@ -63,7 +63,7 @@ class Post extends Model implements LikeableContract, CommentableContract
     /**
      * Create a new factory instance for the model.
      *
-     * @return \IJIDeals\SocialPosts\Database\Factories\PostFactory
+     * @return \Ijideals\SocialPosts\Database\Factories\PostFactory
      */
     protected static function newFactory()
     {

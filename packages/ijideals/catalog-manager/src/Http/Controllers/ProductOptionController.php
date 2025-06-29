@@ -7,6 +7,7 @@ use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth; // For future permission checks
 use Ijideals\CatalogManager\Models\ProductOption;
 use Ijideals\CatalogManager\Models\ProductOptionValue;
+use Illuminate\Validation\Rule;
 
 class ProductOptionController extends Controller
 {

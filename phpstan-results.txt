@@ -1,0 +1,917 @@
+/app/packages/ijideals/catalog-manager/database/factories/ProductFactory.php:49:Parameter #1 $callback of method Illuminate\Database\Eloquent\Factories\Factory<Illuminate\Database\Eloquent\Model>::afterCreating() expects Closure(Illuminate\Database\Eloquent\Model): mixed, Closure(Ijideals\CatalogManager\Models\Product): void given.
+/app/packages/ijideals/catalog-manager/database/factories/ProductFactory.php:53:Result of || is always true.
+/app/packages/ijideals/catalog-manager/database/factories/ProductVariantFactory.php:39:Parameter #1 $callback of method Illuminate\Database\Eloquent\Factories\Factory<Illuminate\Database\Eloquent\Model>::afterCreating() expects Closure(Illuminate\Database\Eloquent\Model): mixed, Closure(Ijideals\CatalogManager\Models\ProductVariant): void given.
+/app/packages/ijideals/catalog-manager/database/migrations/2023_11_02_000300_create_product_variants_table.php:15:Anonymous function has an unused use $shopsTable.
+/app/packages/ijideals/catalog-manager/src/Http/Controllers/ProductController.php:47:Access to an undefined property Ijideals\ShopManager\Models\Shop::$is_active.
+/app/packages/ijideals/catalog-manager/src/Http/Controllers/ProductController.php:51:Call to an undefined method Ijideals\ShopManager\Models\Shop::products().
+/app/packages/ijideals/catalog-manager/src/Http/Controllers/ProductController.php:83:Access to an undefined property Ijideals\ShopManager\Models\Shop::$owner_id.
+/app/packages/ijideals/catalog-manager/src/Http/Controllers/ProductController.php:83:Call to an undefined method App\Models\User::hasShopRole().
+/app/packages/ijideals/catalog-manager/src/Http/Controllers/ProductController.php:132:Access to an undefined property Ijideals\ShopManager\Models\Shop::$is_active.
+/app/packages/ijideals/catalog-manager/src/Http/Controllers/ProductController.php:137:Access to an undefined property Ijideals\CatalogManager\Models\Product::$is_active.
+/app/packages/ijideals/catalog-manager/src/Http/Controllers/ProductController.php:164:Access to an undefined property Ijideals\ShopManager\Models\Shop::$owner_id.
+/app/packages/ijideals/catalog-manager/src/Http/Controllers/ProductController.php:164:Call to an undefined method App\Models\User::hasShopRole().
+/app/packages/ijideals/catalog-manager/src/Http/Controllers/ProductController.php:212:Access to an undefined property Ijideals\ShopManager\Models\Shop::$owner_id.
+/app/packages/ijideals/catalog-manager/src/Http/Controllers/ProductController.php:212:Call to an undefined method App\Models\User::hasShopRole().
+/app/packages/ijideals/catalog-manager/src/Http/Controllers/ProductController.php:224:Call to an undefined method Ijideals\ShopManager\Models\Shop::products().
+/app/packages/ijideals/catalog-manager/src/Http/Controllers/ProductOptionController.php:121:Call to static method unique() on an unknown class Ijideals\CatalogManager\Http\Controllers\Rule.
+/app/packages/ijideals/catalog-manager/src/Http/Controllers/ProductOptionController.php:146:Call to static method unique() on an unknown class Ijideals\CatalogManager\Http\Controllers\Rule.
+/app/packages/ijideals/catalog-manager/src/Http/Controllers/ProductVariantController.php:39:Call to an undefined method Ijideals\ShopManager\Models\Shop::products().
+/app/packages/ijideals/catalog-manager/src/Http/Controllers/ProductVariantController.php:76:Access to an undefined property Ijideals\ShopManager\Models\Shop::$owner_id.
+/app/packages/ijideals/catalog-manager/src/Http/Controllers/ProductVariantController.php:76:Call to an undefined method App\Models\User::hasShopRole().
+/app/packages/ijideals/catalog-manager/src/Http/Controllers/ProductVariantController.php:94:Call to protected method findExistingVariant() of class Ijideals\CatalogManager\Services\VariantGeneratorService.
+/app/packages/ijideals/catalog-manager/src/Http/Controllers/ProductVariantController.php:127:Access to an undefined property Ijideals\ShopManager\Models\Shop::$owner_id.
+/app/packages/ijideals/catalog-manager/src/Http/Controllers/ProductVariantController.php:127:Call to an undefined method App\Models\User::hasShopRole().
+/app/packages/ijideals/catalog-manager/src/Http/Controllers/ProductVariantController.php:149:Call to an undefined method Illuminate\Support\Collection::load().
+/app/packages/ijideals/catalog-manager/src/Http/Controllers/ProductVariantController.php:166:Access to an undefined property Illuminate\Database\Eloquent\Model::$is_active.
+/app/packages/ijideals/catalog-manager/src/Http/Controllers/ProductVariantController.php:186:Access to an undefined property Ijideals\ShopManager\Models\Shop::$owner_id.
+/app/packages/ijideals/catalog-manager/src/Http/Controllers/ProductVariantController.php:186:Call to an undefined method App\Models\User::hasShopRole().
+/app/packages/ijideals/catalog-manager/src/Http/Controllers/ProductVariantController.php:192:Access to an undefined property Illuminate\Database\Eloquent\Model::$id.
+/app/packages/ijideals/catalog-manager/src/Http/Controllers/ProductVariantController.php:207:Call to an undefined method Illuminate\Database\Eloquent\Model::optionValues().
+/app/packages/ijideals/catalog-manager/src/Http/Controllers/ProductVariantController.php:211:Call to protected method findExistingVariant() of class Ijideals\CatalogManager\Services\VariantGeneratorService.
+/app/packages/ijideals/catalog-manager/src/Http/Controllers/ProductVariantController.php:212:Access to an undefined property Illuminate\Database\Eloquent\Model::$id.
+/app/packages/ijideals/catalog-manager/src/Http/Controllers/ProductVariantController.php:215:Call to an undefined method Illuminate\Database\Eloquent\Model::optionValues().
+/app/packages/ijideals/catalog-manager/src/Http/Controllers/ProductVariantController.php:239:Access to an undefined property Ijideals\ShopManager\Models\Shop::$owner_id.
+/app/packages/ijideals/catalog-manager/src/Http/Controllers/ProductVariantController.php:239:Call to an undefined method App\Models\User::hasShopRole().
+/app/packages/ijideals/catalog-manager/src/Models/Product.php:44:Access to an undefined property Ijideals\CatalogManager\Models\Product::$shop_id.
+/app/packages/ijideals/catalog-manager/src/Models/Product.php:117:Call to an undefined method Illuminate\Database\Eloquent\Model::getFullUrl().
+/app/packages/ijideals/catalog-manager/src/Models/Product.php:129:Access to an undefined property Ijideals\CatalogManager\Models\Product::$name.
+/app/packages/ijideals/catalog-manager/src/Models/Product.php:130:Access to an undefined property Ijideals\CatalogManager\Models\Product::$slug.
+/app/packages/ijideals/catalog-manager/src/Models/Product.php:131:Access to an undefined property Ijideals\CatalogManager\Models\Product::$description.
+/app/packages/ijideals/catalog-manager/src/Models/Product.php:132:Access to an undefined property Ijideals\CatalogManager\Models\Product::$sku.
+/app/packages/ijideals/catalog-manager/src/Models/Product.php:133:Access to an undefined property Ijideals\CatalogManager\Models\Product::$shop_id.
+/app/packages/ijideals/catalog-manager/src/Models/Product.php:134:Access to an undefined property Illuminate\Database\Eloquent\Model::$name.
+/app/packages/ijideals/catalog-manager/src/Models/Product.php:142:Access to an undefined property Illuminate\Database\Eloquent\Model::$optionValues.
+/app/packages/ijideals/catalog-manager/src/Models/ProductVariant.php:57:Negated boolean expression is always true.
+/app/packages/ijideals/catalog-manager/src/Models/ProductVariant.php:86:Access to an undefined property Illuminate\Database\Eloquent\Model::$value.
+/app/packages/ijideals/catalog-manager/src/Models/ProductVariant.php:90:Access to an undefined property Ijideals\CatalogManager\Models\ProductVariant::$sku.
+/app/packages/ijideals/catalog-manager/src/Services/VariantGeneratorService.php:35:Parameter #1 $option of method Ijideals\CatalogManager\Models\Product::getAllowedValuesForOption() expects Ijideals\CatalogManager\Models\ProductOption, Illuminate\Database\Eloquent\Model given.
+/app/packages/ijideals/catalog-manager/src/Services/VariantGeneratorService.php:63:Call to an undefined method Illuminate\Database\Eloquent\Model::optionValues().
+/app/packages/ijideals/catalog-manager/src/Services/VariantGeneratorService.php:81:Access to an undefined property Ijideals\CatalogManager\Models\Product::$sku.
+/app/packages/ijideals/catalog-manager/src/Services/VariantGeneratorService.php:90:Access to an undefined property Ijideals\CatalogManager\Models\Product::$slug.
+/app/packages/ijideals/catalog-manager/src/Services/VariantGeneratorService.php:110:Method Ijideals\CatalogManager\Services\VariantGeneratorService::findExistingVariant() should return Ijideals\CatalogManager\Models\ProductVariant|null but returns Illuminate\Database\Eloquent\Model|null.
+/app/packages/ijideals/catalog-manager/tests/Feature/CatalogManagerTest.php:16:Class Ijideals\CatalogManager\Tests\Feature\CatalogManagerTest extends unknown class Ijideals\CatalogManager\Tests\TestCase.
+/app/packages/ijideals/catalog-manager/tests/Feature/CatalogManagerTest.php:27:Ijideals\CatalogManager\Tests\Feature\CatalogManagerTest::setUp() calls parent::setUp() but Ijideals\CatalogManager\Tests\Feature\CatalogManagerTest does not extend any class.
+/app/packages/ijideals/catalog-manager/tests/Feature/CatalogManagerTest.php:30:Access to an undefined property Ijideals\CatalogManager\Tests\Feature\CatalogManagerTest::$platformAdmin.
+/app/packages/ijideals/catalog-manager/tests/Feature/CatalogManagerTest.php:30:Call to an undefined method Ijideals\CatalogManager\Tests\Feature\CatalogManagerTest::actingAs().
+/app/packages/ijideals/catalog-manager/tests/Feature/CatalogManagerTest.php:31:Call to an undefined method Ijideals\CatalogManager\Tests\Feature\CatalogManagerTest::postJson().
+/app/packages/ijideals/catalog-manager/tests/Feature/CatalogManagerTest.php:34:Call to an undefined method Ijideals\CatalogManager\Tests\Feature\CatalogManagerTest::postJson().
+/app/packages/ijideals/catalog-manager/tests/Feature/CatalogManagerTest.php:55:Access to an undefined property Ijideals\CatalogManager\Tests\Feature\CatalogManagerTest::$platformAdmin.
+/app/packages/ijideals/catalog-manager/tests/Feature/CatalogManagerTest.php:55:Call to an undefined method Ijideals\CatalogManager\Tests\Feature\CatalogManagerTest::actingAs().
+/app/packages/ijideals/catalog-manager/tests/Feature/CatalogManagerTest.php:58:Call to an undefined method Ijideals\CatalogManager\Tests\Feature\CatalogManagerTest::postJson().
+/app/packages/ijideals/catalog-manager/tests/Feature/CatalogManagerTest.php:61:Call to an undefined method Ijideals\CatalogManager\Tests\Feature\CatalogManagerTest::assertDatabaseHas().
+/app/packages/ijideals/catalog-manager/tests/Feature/CatalogManagerTest.php:64:Call to an undefined method Ijideals\CatalogManager\Tests\Feature\CatalogManagerTest::getJson().
+/app/packages/ijideals/catalog-manager/tests/Feature/CatalogManagerTest.php:68:Call to an undefined method Ijideals\CatalogManager\Tests\Feature\CatalogManagerTest::putJson().
+/app/packages/ijideals/catalog-manager/tests/Feature/CatalogManagerTest.php:70:Call to an undefined method Ijideals\CatalogManager\Tests\Feature\CatalogManagerTest::assertDatabaseHas().
+/app/packages/ijideals/catalog-manager/tests/Feature/CatalogManagerTest.php:74:Call to an undefined method Ijideals\CatalogManager\Tests\Feature\CatalogManagerTest::deleteJson().
+/app/packages/ijideals/catalog-manager/tests/Feature/CatalogManagerTest.php:76:Call to an undefined method Ijideals\CatalogManager\Tests\Feature\CatalogManagerTest::assertDatabaseMissing().
+/app/packages/ijideals/catalog-manager/tests/Feature/CatalogManagerTest.php:82:Access to an undefined property Ijideals\CatalogManager\Tests\Feature\CatalogManagerTest::$shopOwner.
+/app/packages/ijideals/catalog-manager/tests/Feature/CatalogManagerTest.php:82:Call to an undefined method Ijideals\CatalogManager\Tests\Feature\CatalogManagerTest::actingAs().
+/app/packages/ijideals/catalog-manager/tests/Feature/CatalogManagerTest.php:84:Call to an undefined method Ijideals\CatalogManager\Tests\Feature\CatalogManagerTest::postJson().
+/app/packages/ijideals/catalog-manager/tests/Feature/CatalogManagerTest.php:87:Access to an undefined property Ijideals\CatalogManager\Models\Category::$slug.
+/app/packages/ijideals/catalog-manager/tests/Feature/CatalogManagerTest.php:87:Call to an undefined method Ijideals\CatalogManager\Tests\Feature\CatalogManagerTest::putJson().
+/app/packages/ijideals/catalog-manager/tests/Feature/CatalogManagerTest.php:90:Access to an undefined property Ijideals\CatalogManager\Models\Category::$slug.
+/app/packages/ijideals/catalog-manager/tests/Feature/CatalogManagerTest.php:90:Call to an undefined method Ijideals\CatalogManager\Tests\Feature\CatalogManagerTest::deleteJson().
+/app/packages/ijideals/catalog-manager/tests/Feature/CatalogManagerTest.php:100:Access to an undefined property Ijideals\CatalogManager\Tests\Feature\CatalogManagerTest::$shopOwner.
+/app/packages/ijideals/catalog-manager/tests/Feature/CatalogManagerTest.php:100:Call to an undefined method Ijideals\CatalogManager\Tests\Feature\CatalogManagerTest::actingAs().
+/app/packages/ijideals/catalog-manager/tests/Feature/CatalogManagerTest.php:112:Access to an undefined property Ijideals\CatalogManager\Tests\Feature\CatalogManagerTest::$testShop.
+/app/packages/ijideals/catalog-manager/tests/Feature/CatalogManagerTest.php:112:Call to an undefined method Ijideals\CatalogManager\Tests\Feature\CatalogManagerTest::postJson().
+/app/packages/ijideals/catalog-manager/tests/Feature/CatalogManagerTest.php:115:Access to an undefined property Ijideals\CatalogManager\Tests\Feature\CatalogManagerTest::$testShop.
+/app/packages/ijideals/catalog-manager/tests/Feature/CatalogManagerTest.php:117:Access to an undefined property Ijideals\CatalogManager\Tests\Feature\CatalogManagerTest::$testShop.
+/app/packages/ijideals/catalog-manager/tests/Feature/CatalogManagerTest.php:117:Call to an undefined method Ijideals\CatalogManager\Tests\Feature\CatalogManagerTest::assertDatabaseHas().
+/app/packages/ijideals/catalog-manager/tests/Feature/CatalogManagerTest.php:119:Call to an undefined method Ijideals\CatalogManager\Tests\Feature\CatalogManagerTest::assertTrue().
+/app/packages/ijideals/catalog-manager/tests/Feature/CatalogManagerTest.php:125:Access to an undefined property Ijideals\CatalogManager\Tests\Feature\CatalogManagerTest::$shopOwner.
+/app/packages/ijideals/catalog-manager/tests/Feature/CatalogManagerTest.php:125:Call to an undefined method Ijideals\CatalogManager\Tests\Feature\CatalogManagerTest::actingAs().
+/app/packages/ijideals/catalog-manager/tests/Feature/CatalogManagerTest.php:132:Access to an undefined property Ijideals\CatalogManager\Tests\Feature\CatalogManagerTest::$testShop.
+/app/packages/ijideals/catalog-manager/tests/Feature/CatalogManagerTest.php:132:Call to an undefined method Ijideals\CatalogManager\Tests\Feature\CatalogManagerTest::postJson().
+/app/packages/ijideals/catalog-manager/tests/Feature/CatalogManagerTest.php:135:Call to an undefined method Ijideals\CatalogManager\Tests\Feature\CatalogManagerTest::assertCount().
+/app/packages/ijideals/catalog-manager/tests/Feature/CatalogManagerTest.php:142:Access to an undefined property Ijideals\CatalogManager\Tests\Feature\CatalogManagerTest::$testShop.
+/app/packages/ijideals/catalog-manager/tests/Feature/CatalogManagerTest.php:143:Access to an undefined property Ijideals\CatalogManager\Tests\Feature\CatalogManagerTest::$shopOwner.
+/app/packages/ijideals/catalog-manager/tests/Feature/CatalogManagerTest.php:143:Call to an undefined method Ijideals\CatalogManager\Tests\Feature\CatalogManagerTest::actingAs().
+/app/packages/ijideals/catalog-manager/tests/Feature/CatalogManagerTest.php:150:Call to an undefined method Ijideals\CatalogManager\Tests\Feature\CatalogManagerTest::putJson().
+/app/packages/ijideals/catalog-manager/tests/Feature/CatalogManagerTest.php:151:Access to an undefined property Ijideals\CatalogManager\Tests\Feature\CatalogManagerTest::$testShop.
+/app/packages/ijideals/catalog-manager/tests/Feature/CatalogManagerTest.php:157:Call to an undefined method Ijideals\CatalogManager\Tests\Feature\CatalogManagerTest::assertEquals().
+/app/packages/ijideals/catalog-manager/tests/Feature/CatalogManagerTest.php:158:Call to an undefined method Ijideals\CatalogManager\Tests\Feature\CatalogManagerTest::assertTrue().
+/app/packages/ijideals/catalog-manager/tests/Feature/CatalogManagerTest.php:159:Call to an undefined method Ijideals\CatalogManager\Tests\Feature\CatalogManagerTest::assertTrue().
+/app/packages/ijideals/catalog-manager/tests/Feature/CatalogManagerTest.php:165:Access to an undefined property Ijideals\CatalogManager\Tests\Feature\CatalogManagerTest::$testShop.
+/app/packages/ijideals/catalog-manager/tests/Feature/CatalogManagerTest.php:166:Access to an undefined property Ijideals\CatalogManager\Tests\Feature\CatalogManagerTest::$shopOwner.
+/app/packages/ijideals/catalog-manager/tests/Feature/CatalogManagerTest.php:166:Call to an undefined method Ijideals\CatalogManager\Tests\Feature\CatalogManagerTest::actingAs().
+/app/packages/ijideals/catalog-manager/tests/Feature/CatalogManagerTest.php:168:Call to an undefined method Ijideals\CatalogManager\Tests\Feature\CatalogManagerTest::deleteJson().
+/app/packages/ijideals/catalog-manager/tests/Feature/CatalogManagerTest.php:169:Access to an undefined property Ijideals\CatalogManager\Tests\Feature\CatalogManagerTest::$testShop.
+/app/packages/ijideals/catalog-manager/tests/Feature/CatalogManagerTest.php:174:Call to an undefined method Ijideals\CatalogManager\Tests\Feature\CatalogManagerTest::assertDatabaseMissing().
+/app/packages/ijideals/catalog-manager/tests/Feature/CatalogManagerTest.php:180:Access to an undefined property Ijideals\CatalogManager\Tests\Feature\CatalogManagerTest::$basicUser.
+/app/packages/ijideals/catalog-manager/tests/Feature/CatalogManagerTest.php:180:Call to an undefined method Ijideals\CatalogManager\Tests\Feature\CatalogManagerTest::actingAs().
+/app/packages/ijideals/catalog-manager/tests/Feature/CatalogManagerTest.php:182:Access to an undefined property Ijideals\CatalogManager\Tests\Feature\CatalogManagerTest::$testShop.
+/app/packages/ijideals/catalog-manager/tests/Feature/CatalogManagerTest.php:182:Call to an undefined method Ijideals\CatalogManager\Tests\Feature\CatalogManagerTest::postJson().
+/app/packages/ijideals/catalog-manager/tests/Feature/CatalogManagerTest.php:189:Access to an undefined property Ijideals\CatalogManager\Tests\Feature\CatalogManagerTest::$testShop.
+/app/packages/ijideals/catalog-manager/tests/Feature/CatalogManagerTest.php:190:Access to an undefined property Ijideals\CatalogManager\Tests\Feature\CatalogManagerTest::$testShop.
+/app/packages/ijideals/catalog-manager/tests/Feature/CatalogManagerTest.php:192:Access to an undefined property Ijideals\CatalogManager\Tests\Feature\CatalogManagerTest::$testShop.
+/app/packages/ijideals/catalog-manager/tests/Feature/CatalogManagerTest.php:192:Call to an undefined method Ijideals\CatalogManager\Tests\Feature\CatalogManagerTest::getJson().
+/app/packages/ijideals/catalog-manager/tests/Feature/CatalogManagerTest.php:200:Access to an undefined property Ijideals\CatalogManager\Tests\Feature\CatalogManagerTest::$testShop.
+/app/packages/ijideals/catalog-manager/tests/Feature/CatalogManagerTest.php:201:Access to an undefined property Ijideals\CatalogManager\Tests\Feature\CatalogManagerTest::$testShop.
+/app/packages/ijideals/catalog-manager/tests/Feature/CatalogManagerTest.php:201:Call to an undefined method Ijideals\CatalogManager\Tests\Feature\CatalogManagerTest::getJson().
+/app/packages/ijideals/catalog-manager/tests/Feature/CatalogManagerTest.php:209:Access to an undefined property Ijideals\CatalogManager\Tests\Feature\CatalogManagerTest::$testShop.
+/app/packages/ijideals/catalog-manager/tests/Feature/CatalogManagerTest.php:210:Access to an undefined property Ijideals\CatalogManager\Tests\Feature\CatalogManagerTest::$testShop.
+/app/packages/ijideals/catalog-manager/tests/Feature/CatalogManagerTest.php:210:Call to an undefined method Ijideals\CatalogManager\Tests\Feature\CatalogManagerTest::getJson().
+/app/packages/ijideals/commentable/database/factories/CommentFactory.php:35:Access to an undefined property Illuminate\Database\Eloquent\Model::$id.
+/app/packages/ijideals/commentable/database/factories/CommentFactory.php:56:Access to an undefined property Ijideals\Commentable\Models\Comment::$commentable_id.
+/app/packages/ijideals/commentable/database/factories/CommentFactory.php:57:Access to an undefined property Ijideals\Commentable\Models\Comment::$commentable_type.
+/app/packages/ijideals/commentable/src/Concerns/CanBeCommentedOn.php (in context of class Ijideals\SocialPosts\Models\Post):23:Call to an undefined method Illuminate\Database\Eloquent\Model::comments().
+/app/packages/ijideals/commentable/src/Concerns/CanBeCommentedOn.php (in context of class Ijideals\SocialPosts\Models\Post):73:Access to an undefined property Ijideals\Commentable\Models\Comment::$commentable_id.
+/app/packages/ijideals/commentable/src/Concerns/CanBeCommentedOn.php (in context of class Ijideals\SocialPosts\Models\Post):73:Access to an undefined property Ijideals\Commentable\Models\Comment::$commentable_type.
+/app/packages/ijideals/commentable/src/Concerns/CanBeCommentedOn.php (in context of class Ijideals\SocialPosts\Models\Post):82:Access to an undefined property Ijideals\Commentable\Models\Comment::$parent_id.
+/app/packages/ijideals/commentable/src/Concerns/CanComment.php (in context of class App\Models\User):48:Access to an undefined property Ijideals\Commentable\Models\Comment::$user_id.
+/app/packages/ijideals/commentable/src/Concerns/CanComment.php (in context of class App\Models\User):64:Access to an undefined property Ijideals\Commentable\Models\Comment::$user_id.
+/app/packages/ijideals/commentable/src/Http/Controllers/CommentController.php:36:Call to an undefined method Illuminate\Database\Eloquent\Model::comments().
+/app/packages/ijideals/commentable/src/Http/Controllers/CommentController.php:80:Parameter #1 $commentable of method App\Models\User::comment() expects Ijideals\Commentable\Contracts\CommentableContract, Illuminate\Database\Eloquent\Model given.
+/app/packages/ijideals/commentable/src/Models/Comment.php:40:Call to an undefined static method Ijideals\Commentable\Models\Comment::addTrait().
+/app/packages/ijideals/commentable/src/Models/Comment.php:106:Access to an undefined property Ijideals\Commentable\Models\Comment::$approved_at.
+/app/packages/ijideals/commentable/src/Models/Comment.php:116:Unsafe usage of new static().
+/app/packages/ijideals/commentable/tests/Feature/CommentableTest.php:12:Class Ijideals\Commentable\Tests\Feature\CommentableTest extends unknown class Ijideals\Commentable\Tests\TestCase.
+/app/packages/ijideals/commentable/tests/Feature/CommentableTest.php:21:Ijideals\Commentable\Tests\Feature\CommentableTest::setUp() calls parent::setUp() but Ijideals\Commentable\Tests\Feature\CommentableTest does not extend any class.
+/app/packages/ijideals/commentable/tests/Feature/CommentableTest.php:37:Call to an undefined method Ijideals\Commentable\Tests\Feature\CommentableTest::createUser().
+/app/packages/ijideals/commentable/tests/Feature/CommentableTest.php:40:Call to an undefined method Ijideals\Commentable\Tests\Feature\CommentableTest::createPost().
+/app/packages/ijideals/commentable/tests/Feature/CommentableTest.php:46:Call to an undefined method Ijideals\Commentable\Tests\Feature\CommentableTest::actingAs().
+/app/packages/ijideals/commentable/tests/Feature/CommentableTest.php:49:Call to an undefined method Ijideals\Commentable\Tests\Feature\CommentableTest::postJson().
+/app/packages/ijideals/commentable/tests/Feature/CommentableTest.php:59:Call to an undefined method Ijideals\Commentable\Tests\Feature\CommentableTest::assertDatabaseHas().
+/app/packages/ijideals/commentable/tests/Feature/CommentableTest.php:66:Call to an undefined method Ijideals\Commentable\Tests\Feature\CommentableTest::assertEquals().
+/app/packages/ijideals/commentable/tests/Feature/CommentableTest.php:72:Call to an undefined method Ijideals\Commentable\Tests\Feature\CommentableTest::actingAs().
+/app/packages/ijideals/commentable/tests/Feature/CommentableTest.php:76:Call to an undefined method Ijideals\Commentable\Tests\Feature\CommentableTest::postJson().
+/app/packages/ijideals/commentable/tests/Feature/CommentableTest.php:85:Call to an undefined method Ijideals\Commentable\Tests\Feature\CommentableTest::assertDatabaseHas().
+/app/packages/ijideals/commentable/tests/Feature/CommentableTest.php:89:Call to an undefined method Ijideals\Commentable\Tests\Feature\CommentableTest::assertEquals().
+/app/packages/ijideals/commentable/tests/Feature/CommentableTest.php:95:Call to an undefined method Ijideals\Commentable\Tests\Feature\CommentableTest::actingAs().
+/app/packages/ijideals/commentable/tests/Feature/CommentableTest.php:99:Call to an undefined method Ijideals\Commentable\Tests\Feature\CommentableTest::putJson().
+/app/packages/ijideals/commentable/tests/Feature/CommentableTest.php:106:Call to an undefined method Ijideals\Commentable\Tests\Feature\CommentableTest::assertEquals().
+/app/packages/ijideals/commentable/tests/Feature/CommentableTest.php:112:Call to an undefined method Ijideals\Commentable\Tests\Feature\CommentableTest::createUser().
+/app/packages/ijideals/commentable/tests/Feature/CommentableTest.php:115:Call to an undefined method Ijideals\Commentable\Tests\Feature\CommentableTest::actingAs().
+/app/packages/ijideals/commentable/tests/Feature/CommentableTest.php:116:Call to an undefined method Ijideals\Commentable\Tests\Feature\CommentableTest::putJson().
+/app/packages/ijideals/commentable/tests/Feature/CommentableTest.php:126:Call to an undefined method Ijideals\Commentable\Tests\Feature\CommentableTest::actingAs().
+/app/packages/ijideals/commentable/tests/Feature/CommentableTest.php:129:Call to an undefined method Ijideals\Commentable\Tests\Feature\CommentableTest::deleteJson().
+/app/packages/ijideals/commentable/tests/Feature/CommentableTest.php:134:Call to an undefined method Ijideals\Commentable\Tests\Feature\CommentableTest::assertSoftDeleted().
+/app/packages/ijideals/commentable/tests/Feature/CommentableTest.php:136:Call to an undefined method Ijideals\Commentable\Tests\Feature\CommentableTest::assertDatabaseMissing().
+/app/packages/ijideals/commentable/tests/Feature/CommentableTest.php:147:Call to an undefined method Ijideals\Commentable\Tests\Feature\CommentableTest::actingAs().
+/app/packages/ijideals/commentable/tests/Feature/CommentableTest.php:152:Call to an undefined method Ijideals\Commentable\Tests\Feature\CommentableTest::assertCount().
+/app/packages/ijideals/commentable/tests/Feature/CommentableTest.php:154:Call to an undefined method Ijideals\Commentable\Tests\Feature\CommentableTest::deleteJson().
+/app/packages/ijideals/commentable/tests/Feature/CommentableTest.php:157:Call to an undefined method Ijideals\Commentable\Tests\Feature\CommentableTest::assertSoftDeleted().
+/app/packages/ijideals/commentable/tests/Feature/CommentableTest.php:158:Call to an undefined method Ijideals\Commentable\Tests\Feature\CommentableTest::assertSoftDeleted().
+/app/packages/ijideals/commentable/tests/Feature/CommentableTest.php:159:Call to an undefined method Ijideals\Commentable\Tests\Feature\CommentableTest::assertSoftDeleted().
+/app/packages/ijideals/commentable/tests/Feature/CommentableTest.php:161:Call to an undefined method Ijideals\Commentable\Tests\Feature\CommentableTest::assertDatabaseMissing().
+/app/packages/ijideals/commentable/tests/Feature/CommentableTest.php:162:Call to an undefined method Ijideals\Commentable\Tests\Feature\CommentableTest::assertDatabaseMissing().
+/app/packages/ijideals/commentable/tests/Feature/CommentableTest.php:163:Call to an undefined method Ijideals\Commentable\Tests\Feature\CommentableTest::assertDatabaseMissing().
+/app/packages/ijideals/commentable/tests/Feature/CommentableTest.php:172:Call to an undefined method Ijideals\Commentable\Tests\Feature\CommentableTest::getJson().
+/app/packages/ijideals/commentable/tests/Feature/CommentableTest.php:183:Call to an undefined method Ijideals\Commentable\Tests\Feature\CommentableTest::assertCount().
+/app/packages/ijideals/commentable/tests/Feature/CommentableTest.php:188:Call to an undefined method Ijideals\Commentable\Tests\Feature\CommentableTest::assertSoftDeleted().
+/app/packages/ijideals/commentable/tests/Feature/CommentableTest.php:189:Call to an undefined method Ijideals\Commentable\Tests\Feature\CommentableTest::assertSoftDeleted().
+/app/packages/ijideals/commentable/tests/Feature/CommentableTest.php:191:Call to an undefined method Ijideals\Commentable\Tests\Feature\CommentableTest::assertDatabaseMissing().
+/app/packages/ijideals/commentable/tests/Feature/CommentableTest.php:192:Call to an undefined method Ijideals\Commentable\Tests\Feature\CommentableTest::assertDatabaseMissing().
+/app/packages/ijideals/commentable/tests/Feature/CommentableTest.php:199:Call to an undefined method Ijideals\Commentable\Tests\Feature\CommentableTest::actingAs().
+/app/packages/ijideals/commentable/tests/Feature/CommentableTest.php:204:Call to an undefined method Ijideals\Commentable\Tests\Feature\CommentableTest::withHeaders().
+/app/packages/ijideals/commentable/tests/Feature/CommentableTest.php:213:Call to an undefined method Ijideals\Commentable\Tests\Feature\CommentableTest::withHeaders().
+/app/packages/ijideals/commentable/tests/Feature/CommentableTest.php:219:Call to an undefined method Ijideals\Commentable\Tests\Feature\CommentableTest::withHeaders().
+/app/packages/ijideals/commentable/tests/Feature/CommentableTest.php:225:Call to an undefined method Ijideals\Commentable\Tests\Feature\CommentableTest::withHeaders().
+/app/packages/ijideals/followable/tests/Feature/FollowableTest.php:35:Call to an undefined method Ijideals\Followable\Tests\Feature\FollowableTest::actingAs().
+/app/packages/ijideals/followable/tests/Feature/FollowableTest.php:39:Call to an undefined method Ijideals\Followable\Tests\Feature\FollowableTest::assertTrue().
+/app/packages/ijideals/followable/tests/Feature/FollowableTest.php:40:Call to an undefined method Ijideals\Followable\Tests\Feature\FollowableTest::assertFalse().
+/app/packages/ijideals/followable/tests/Feature/FollowableTest.php:42:Call to an undefined method Ijideals\Followable\Tests\Feature\FollowableTest::assertTrue().
+/app/packages/ijideals/followable/tests/Feature/FollowableTest.php:43:Call to an undefined method Ijideals\Followable\Tests\Feature\FollowableTest::assertEquals().
+/app/packages/ijideals/followable/tests/Feature/FollowableTest.php:44:Call to an undefined method Ijideals\Followable\Tests\Feature\FollowableTest::assertEquals().
+/app/packages/ijideals/followable/tests/Feature/FollowableTest.php:49:Call to an undefined method Ijideals\Followable\Tests\Feature\FollowableTest::actingAs().
+/app/packages/ijideals/followable/tests/Feature/FollowableTest.php:51:Call to an undefined method Ijideals\Followable\Tests\Feature\FollowableTest::assertFalse().
+/app/packages/ijideals/followable/tests/Feature/FollowableTest.php:56:Call to an undefined method Ijideals\Followable\Tests\Feature\FollowableTest::actingAs().
+/app/packages/ijideals/followable/tests/Feature/FollowableTest.php:58:Call to an undefined method Ijideals\Followable\Tests\Feature\FollowableTest::assertTrue().
+/app/packages/ijideals/followable/tests/Feature/FollowableTest.php:61:Call to an undefined method Ijideals\Followable\Tests\Feature\FollowableTest::assertFalse().
+/app/packages/ijideals/followable/tests/Feature/FollowableTest.php:62:Call to an undefined method Ijideals\Followable\Tests\Feature\FollowableTest::assertEquals().
+/app/packages/ijideals/followable/tests/Feature/FollowableTest.php:63:Call to an undefined method Ijideals\Followable\Tests\Feature\FollowableTest::assertEquals().
+/app/packages/ijideals/followable/tests/Feature/FollowableTest.php:68:Call to an undefined method Ijideals\Followable\Tests\Feature\FollowableTest::actingAs().
+/app/packages/ijideals/followable/tests/Feature/FollowableTest.php:72:Call to an undefined method Ijideals\Followable\Tests\Feature\FollowableTest::assertTrue().
+/app/packages/ijideals/followable/tests/Feature/FollowableTest.php:76:Call to an undefined method Ijideals\Followable\Tests\Feature\FollowableTest::assertFalse().
+/app/packages/ijideals/followable/tests/Feature/FollowableTest.php:81:Call to an undefined method Ijideals\Followable\Tests\Feature\FollowableTest::actingAs().
+/app/packages/ijideals/followable/tests/Feature/FollowableTest.php:82:Call to an undefined method Ijideals\Followable\Tests\Feature\FollowableTest::assertFalse().
+/app/packages/ijideals/followable/tests/Feature/FollowableTest.php:85:Call to an undefined method Ijideals\Followable\Tests\Feature\FollowableTest::assertTrue().
+/app/packages/ijideals/followable/tests/Feature/FollowableTest.php:99:Access to an undefined property App\Models\User::$followers.
+/app/packages/ijideals/followable/tests/Feature/FollowableTest.php:99:Call to an undefined method Ijideals\Followable\Tests\Feature\FollowableTest::assertCount().
+/app/packages/ijideals/followable/tests/Feature/FollowableTest.php:100:Access to an undefined property App\Models\User::$followers.
+/app/packages/ijideals/followable/tests/Feature/FollowableTest.php:100:Call to an undefined method Ijideals\Followable\Tests\Feature\FollowableTest::assertTrue().
+/app/packages/ijideals/followable/tests/Feature/FollowableTest.php:101:Access to an undefined property App\Models\User::$followers.
+/app/packages/ijideals/followable/tests/Feature/FollowableTest.php:101:Call to an undefined method Ijideals\Followable\Tests\Feature\FollowableTest::assertTrue().
+/app/packages/ijideals/followable/tests/Feature/FollowableTest.php:104:Access to an undefined property App\Models\User::$followings.
+/app/packages/ijideals/followable/tests/Feature/FollowableTest.php:104:Call to an undefined method Ijideals\Followable\Tests\Feature\FollowableTest::assertCount().
+/app/packages/ijideals/followable/tests/Feature/FollowableTest.php:105:Access to an undefined property App\Models\User::$followings.
+/app/packages/ijideals/followable/tests/Feature/FollowableTest.php:105:Call to an undefined method Ijideals\Followable\Tests\Feature\FollowableTest::assertTrue().
+/app/packages/ijideals/followable/tests/Feature/FollowableTest.php:106:Access to an undefined property App\Models\User::$followings.
+/app/packages/ijideals/followable/tests/Feature/FollowableTest.php:106:Call to an undefined method Ijideals\Followable\Tests\Feature\FollowableTest::assertTrue().
+/app/packages/ijideals/followable/tests/Feature/FollowableTest.php:109:Access to an undefined property App\Models\User::$followers.
+/app/packages/ijideals/followable/tests/Feature/FollowableTest.php:109:Call to an undefined method Ijideals\Followable\Tests\Feature\FollowableTest::assertCount().
+/app/packages/ijideals/followable/tests/Feature/FollowableTest.php:112:Access to an undefined property App\Models\User::$followings.
+/app/packages/ijideals/followable/tests/Feature/FollowableTest.php:112:Call to an undefined method Ijideals\Followable\Tests\Feature\FollowableTest::assertCount().
+/app/packages/ijideals/followable/tests/Feature/FollowableTest.php:120:Call to an undefined method Ijideals\Followable\Tests\Feature\FollowableTest::assertEquals().
+/app/packages/ijideals/followable/tests/Feature/FollowableTest.php:121:Call to an undefined method Ijideals\Followable\Tests\Feature\FollowableTest::assertEquals().
+/app/packages/ijideals/followable/tests/Feature/FollowableTest.php:129:Call to an undefined method Ijideals\Followable\Tests\Feature\FollowableTest::assertEquals().
+/app/packages/ijideals/followable/tests/Feature/FollowableTest.php:130:Call to an undefined method Ijideals\Followable\Tests\Feature\FollowableTest::assertEquals().
+/app/packages/ijideals/followable/tests/Feature/FollowableTest.php:137:Call to an undefined method Ijideals\Followable\Tests\Feature\FollowableTest::actingAs().
+/app/packages/ijideals/followable/tests/Feature/FollowableTest.php:138:Call to an undefined method Ijideals\Followable\Tests\Feature\FollowableTest::postJson().
+/app/packages/ijideals/followable/tests/Feature/FollowableTest.php:141:Call to an undefined method Ijideals\Followable\Tests\Feature\FollowableTest::assertTrue().
+/app/packages/ijideals/followable/tests/Feature/FollowableTest.php:146:Call to an undefined method Ijideals\Followable\Tests\Feature\FollowableTest::actingAs().
+/app/packages/ijideals/followable/tests/Feature/FollowableTest.php:149:Call to an undefined method Ijideals\Followable\Tests\Feature\FollowableTest::postJson().
+/app/packages/ijideals/followable/tests/Feature/FollowableTest.php:156:Call to an undefined method Ijideals\Followable\Tests\Feature\FollowableTest::actingAs().
+/app/packages/ijideals/followable/tests/Feature/FollowableTest.php:157:Call to an undefined method Ijideals\Followable\Tests\Feature\FollowableTest::postJson().
+/app/packages/ijideals/followable/tests/Feature/FollowableTest.php:164:Call to an undefined method Ijideals\Followable\Tests\Feature\FollowableTest::actingAs().
+/app/packages/ijideals/followable/tests/Feature/FollowableTest.php:167:Call to an undefined method Ijideals\Followable\Tests\Feature\FollowableTest::deleteJson().
+/app/packages/ijideals/followable/tests/Feature/FollowableTest.php:170:Call to an undefined method Ijideals\Followable\Tests\Feature\FollowableTest::assertFalse().
+/app/packages/ijideals/followable/tests/Feature/FollowableTest.php:175:Call to an undefined method Ijideals\Followable\Tests\Feature\FollowableTest::actingAs().
+/app/packages/ijideals/followable/tests/Feature/FollowableTest.php:177:Call to an undefined method Ijideals\Followable\Tests\Feature\FollowableTest::deleteJson().
+/app/packages/ijideals/followable/tests/Feature/FollowableTest.php:184:Call to an undefined method Ijideals\Followable\Tests\Feature\FollowableTest::actingAs().
+/app/packages/ijideals/followable/tests/Feature/FollowableTest.php:187:Call to an undefined method Ijideals\Followable\Tests\Feature\FollowableTest::postJson().
+/app/packages/ijideals/followable/tests/Feature/FollowableTest.php:190:Call to an undefined method Ijideals\Followable\Tests\Feature\FollowableTest::assertTrue().
+/app/packages/ijideals/followable/tests/Feature/FollowableTest.php:193:Call to an undefined method Ijideals\Followable\Tests\Feature\FollowableTest::postJson().
+/app/packages/ijideals/followable/tests/Feature/FollowableTest.php:196:Call to an undefined method Ijideals\Followable\Tests\Feature\FollowableTest::assertFalse().
+/app/packages/ijideals/followable/tests/Feature/FollowableTest.php:201:Call to an undefined method Ijideals\Followable\Tests\Feature\FollowableTest::actingAs().
+/app/packages/ijideals/followable/tests/Feature/FollowableTest.php:202:Call to an undefined method Ijideals\Followable\Tests\Feature\FollowableTest::postJson().
+/app/packages/ijideals/followable/tests/Feature/FollowableTest.php:209:Call to an undefined method Ijideals\Followable\Tests\Feature\FollowableTest::actingAs().
+/app/packages/ijideals/followable/tests/Feature/FollowableTest.php:212:Call to an undefined method Ijideals\Followable\Tests\Feature\FollowableTest::getJson().
+/app/packages/ijideals/followable/tests/Feature/FollowableTest.php:218:Call to an undefined method Ijideals\Followable\Tests\Feature\FollowableTest::getJson().
+/app/packages/ijideals/followable/tests/Feature/FollowableTest.php:228:Call to an undefined method Ijideals\Followable\Tests\Feature\FollowableTest::actingAs().
+/app/packages/ijideals/followable/tests/Feature/FollowableTest.php:229:Call to an undefined method Ijideals\Followable\Tests\Feature\FollowableTest::getJson().
+/app/packages/ijideals/followable/tests/Feature/FollowableTest.php:243:Call to an undefined method Ijideals\Followable\Tests\Feature\FollowableTest::actingAs().
+/app/packages/ijideals/followable/tests/Feature/FollowableTest.php:244:Call to an undefined method Ijideals\Followable\Tests\Feature\FollowableTest::getJson().
+/app/packages/ijideals/followable/tests/TestCase.php:13:Class Ijideals\Followable\Tests\TestCase extends unknown class Orchestra\Testbench\TestCase.
+/app/packages/ijideals/followable/tests/TestCase.php:19:Ijideals\Followable\Tests\TestCase::setUp() calls parent::setUp() but Ijideals\Followable\Tests\TestCase does not extend any class.
+/app/packages/ijideals/followable/tests/TestCase.php:35:Call to an undefined method Ijideals\Followable\Tests\TestCase::loadMigrationsFrom().
+/app/packages/ijideals/hashtag-system/database/factories/HashtagFactory.php:16:PHPDoc type string of property Ijideals\HashtagSystem\Database\Factories\HashtagFactory::$model is not covariant with PHPDoc type class-string<Illuminate\Database\Eloquent\Model> of overridden property Illuminate\Database\Eloquent\Factories\Factory<Illuminate\Database\Eloquent\Model>::$model.
+/app/packages/ijideals/hashtag-system/src/Http/Controllers/HashtagController.php:80:Call to static method studly() on an unknown class Ijideals\HashtagSystem\Http\Controllers\Str.
+/app/packages/ijideals/hashtag-system/src/Http/Controllers/HashtagController.php:104:Call to static method camel() on an unknown class Ijideals\HashtagSystem\Http\Controllers\Str.
+/app/packages/ijideals/hashtag-system/src/Http/Controllers/HashtagController.php:104:Call to static method plural() on an unknown class Ijideals\HashtagSystem\Http\Controllers\Str.
+/app/packages/ijideals/hashtag-system/src/Models/Hashtag.php:43:Call to an undefined static method Illuminate\Support\Str::ends_with().
+/app/packages/ijideals/hashtag-system/src/Traits/HasHashtags.php (in context of class Ijideals\HashtagSystem\Tests\TestSupport\Models\TestPost):88:Access to an undefined property Ijideals\HashtagSystem\Models\Hashtag::$name.
+/app/packages/ijideals/hashtag-system/src/Traits/HasHashtags.php (in context of class Ijideals\HashtagSystem\Tests\TestSupport\Models\TestPost):88:Access to an undefined property Ijideals\HashtagSystem\Models\Hashtag::$name.
+/app/packages/ijideals/hashtag-system/src/Traits/HasHashtags.php (in context of class Ijideals\HashtagSystem\Tests\TestSupport\Models\TestPost):88:Access to an undefined property Ijideals\HashtagSystem\Models\Hashtag::$name.
+/app/packages/ijideals/hashtag-system/src/Traits/HasHashtags.php (in context of class Ijideals\SocialPosts\Models\Post):88:Access to an undefined property Ijideals\HashtagSystem\Models\Hashtag::$name.
+/app/packages/ijideals/hashtag-system/src/Traits/HasHashtags.php (in context of class Ijideals\SocialPosts\Models\Post):88:Access to an undefined property Ijideals\HashtagSystem\Models\Hashtag::$name.
+/app/packages/ijideals/hashtag-system/src/Traits/HasHashtags.php (in context of class Ijideals\SocialPosts\Models\Post):88:Access to an undefined property Ijideals\HashtagSystem\Models\Hashtag::$name.
+/app/packages/ijideals/hashtag-system/tests/Feature/HashtagApiTest.php:26:Call to an undefined method Ijideals\HashtagSystem\Tests\Feature\HashtagApiTest::getJson().
+/app/packages/ijideals/hashtag-system/tests/Feature/HashtagApiTest.php:37:Call to an undefined method Ijideals\HashtagSystem\Tests\Feature\HashtagApiTest::getJson().
+/app/packages/ijideals/hashtag-system/tests/Feature/HashtagApiTest.php:50:Call to an undefined method Ijideals\HashtagSystem\Tests\Feature\HashtagApiTest::getJson().
+/app/packages/ijideals/hashtag-system/tests/Feature/HashtagApiTest.php:69:Call to an undefined method Ijideals\HashtagSystem\Tests\Feature\HashtagApiTest::getJson().
+/app/packages/ijideals/hashtag-system/tests/Feature/HashtagApiTest.php:77:Call to an undefined method Ijideals\HashtagSystem\Tests\Feature\HashtagApiTest::getJson().
+/app/packages/ijideals/hashtag-system/tests/Feature/HashtagApiTest.php:90:Call to an undefined method Ijideals\HashtagSystem\Tests\Feature\HashtagApiTest::getJson().
+/app/packages/ijideals/hashtag-system/tests/Feature/HashtagApiTest.php:131:Call to an undefined method Ijideals\HashtagSystem\Tests\Feature\HashtagApiTest::getJson().
+/app/packages/ijideals/hashtag-system/tests/Feature/HashtagApiTest.php:152:Call to an undefined method Ijideals\HashtagSystem\Tests\Feature\HashtagApiTest::getJson().
+/app/packages/ijideals/hashtag-system/tests/TestCase.php:9:Class Ijideals\HashtagSystem\Tests\TestCase extends unknown class Orchestra\Testbench\TestCase.
+/app/packages/ijideals/hashtag-system/tests/TestCase.php:15:Ijideals\HashtagSystem\Tests\TestCase::setUp() calls parent::setUp() but Ijideals\HashtagSystem\Tests\TestCase does not extend any class.
+/app/packages/ijideals/hashtag-system/tests/TestCase.php:18:Access to an undefined property Ijideals\HashtagSystem\Tests\TestCase::$app.
+/app/packages/ijideals/hashtag-system/tests/TestCase.php:21:Call to an undefined method Ijideals\HashtagSystem\Tests\TestCase::loadMigrationsFrom().
+/app/packages/ijideals/hashtag-system/tests/TestCase.php:22:Call to an undefined method Ijideals\HashtagSystem\Tests\TestCase::artisan().
+/app/packages/ijideals/hashtag-system/tests/TestCase.php:75:Call to an undefined method Ijideals\HashtagSystem\Tests\TestCase::loadLaravelMigrations().
+/app/packages/ijideals/hashtag-system/tests/TestCase.php:76:Call to an undefined method Ijideals\HashtagSystem\Tests\TestCase::loadMigrationsFrom().
+/app/packages/ijideals/hashtag-system/tests/TestCase.php:78:Call to an undefined method Ijideals\HashtagSystem\Tests\TestCase::artisan().
+/app/packages/ijideals/hashtag-system/tests/TestSupport/Models/TestPost.php:25:Unsafe usage of new static().
+/app/packages/ijideals/hashtag-system/tests/TestSupport/Models/TestPost.php:26:Unsafe usage of new static().
+/app/packages/ijideals/hashtag-system/tests/Unit/HasHashtagsTraitTest.php:32:Call to an undefined method Ijideals\HashtagSystem\Tests\Unit\HasHashtagsTraitTest::assertCount().
+/app/packages/ijideals/hashtag-system/tests/Unit/HasHashtagsTraitTest.php:33:Access to an undefined property Ijideals\HashtagSystem\Models\Hashtag::$name.
+/app/packages/ijideals/hashtag-system/tests/Unit/HasHashtagsTraitTest.php:33:Call to an undefined method Ijideals\HashtagSystem\Tests\Unit\HasHashtagsTraitTest::assertEquals().
+/app/packages/ijideals/hashtag-system/tests/Unit/HasHashtagsTraitTest.php:34:Call to an undefined method Ijideals\HashtagSystem\Tests\Unit\HasHashtagsTraitTest::assertDatabaseHas().
+/app/packages/ijideals/hashtag-system/tests/Unit/HasHashtagsTraitTest.php:43:Call to an undefined method Ijideals\HashtagSystem\Tests\Unit\HasHashtagsTraitTest::assertCount().
+/app/packages/ijideals/hashtag-system/tests/Unit/HasHashtagsTraitTest.php:44:Call to an undefined method Ijideals\HashtagSystem\Tests\Unit\HasHashtagsTraitTest::assertDatabaseHas().
+/app/packages/ijideals/hashtag-system/tests/Unit/HasHashtagsTraitTest.php:45:Call to an undefined method Ijideals\HashtagSystem\Tests\Unit\HasHashtagsTraitTest::assertDatabaseHas().
+/app/packages/ijideals/hashtag-system/tests/Unit/HasHashtagsTraitTest.php:46:Call to an undefined method Ijideals\HashtagSystem\Tests\Unit\HasHashtagsTraitTest::assertDatabaseHas().
+/app/packages/ijideals/hashtag-system/tests/Unit/HasHashtagsTraitTest.php:55:Call to an undefined method Ijideals\HashtagSystem\Tests\Unit\HasHashtagsTraitTest::assertCount().
+/app/packages/ijideals/hashtag-system/tests/Unit/HasHashtagsTraitTest.php:56:Call to an undefined method Ijideals\HashtagSystem\Tests\Unit\HasHashtagsTraitTest::assertEqualsCanonicalizing().
+/app/packages/ijideals/hashtag-system/tests/Unit/HasHashtagsTraitTest.php:64:Call to an undefined method Ijideals\HashtagSystem\Tests\Unit\HasHashtagsTraitTest::assertCount().
+/app/packages/ijideals/hashtag-system/tests/Unit/HasHashtagsTraitTest.php:72:Call to an undefined method Ijideals\HashtagSystem\Tests\Unit\HasHashtagsTraitTest::assertCount().
+/app/packages/ijideals/hashtag-system/tests/Unit/HasHashtagsTraitTest.php:73:Call to an undefined method Ijideals\HashtagSystem\Tests\Unit\HasHashtagsTraitTest::assertEqualsCanonicalizing().
+/app/packages/ijideals/hashtag-system/tests/Unit/HasHashtagsTraitTest.php:74:Call to an undefined method Ijideals\HashtagSystem\Tests\Unit\HasHashtagsTraitTest::assertDatabaseHas().
+/app/packages/ijideals/hashtag-system/tests/Unit/HasHashtagsTraitTest.php:75:Call to an undefined method Ijideals\HashtagSystem\Tests\Unit\HasHashtagsTraitTest::assertDatabaseHas().
+/app/packages/ijideals/hashtag-system/tests/Unit/HasHashtagsTraitTest.php:83:Call to an undefined method Ijideals\HashtagSystem\Tests\Unit\HasHashtagsTraitTest::assertCount().
+/app/packages/ijideals/hashtag-system/tests/Unit/HasHashtagsTraitTest.php:88:Call to an undefined method Ijideals\HashtagSystem\Tests\Unit\HasHashtagsTraitTest::assertCount().
+/app/packages/ijideals/hashtag-system/tests/Unit/HasHashtagsTraitTest.php:89:Call to an undefined method Ijideals\HashtagSystem\Tests\Unit\HasHashtagsTraitTest::assertEqualsCanonicalizing().
+/app/packages/ijideals/hashtag-system/tests/Unit/HasHashtagsTraitTest.php:90:Call to an undefined method Ijideals\HashtagSystem\Tests\Unit\HasHashtagsTraitTest::assertDatabaseMissing().
+/app/packages/ijideals/hashtag-system/tests/Unit/HasHashtagsTraitTest.php:91:Access to an undefined property Ijideals\HashtagSystem\Tests\TestSupport\Models\TestPost::$id.
+/app/packages/ijideals/hashtag-system/tests/Unit/HasHashtagsTraitTest.php:91:Call to an undefined method Ijideals\HashtagSystem\Tests\Unit\HasHashtagsTraitTest::assertDatabaseMissing().
+/app/packages/ijideals/hashtag-system/tests/Unit/HasHashtagsTraitTest.php:99:Call to an undefined method Ijideals\HashtagSystem\Tests\Unit\HasHashtagsTraitTest::assertCount().
+/app/packages/ijideals/hashtag-system/tests/Unit/HasHashtagsTraitTest.php:104:Call to an undefined method Ijideals\HashtagSystem\Tests\Unit\HasHashtagsTraitTest::assertCount().
+/app/packages/ijideals/hashtag-system/tests/Unit/HasHashtagsTraitTest.php:105:Access to an undefined property Ijideals\HashtagSystem\Models\Hashtag::$name.
+/app/packages/ijideals/hashtag-system/tests/Unit/HasHashtagsTraitTest.php:105:Call to an undefined method Ijideals\HashtagSystem\Tests\Unit\HasHashtagsTraitTest::assertEquals().
+/app/packages/ijideals/hashtag-system/tests/Unit/HasHashtagsTraitTest.php:113:Call to an undefined method Ijideals\HashtagSystem\Tests\Unit\HasHashtagsTraitTest::assertCount().
+/app/packages/ijideals/hashtag-system/tests/Unit/HasHashtagsTraitTest.php:118:Call to an undefined method Ijideals\HashtagSystem\Tests\Unit\HasHashtagsTraitTest::assertCount().
+/app/packages/ijideals/hashtag-system/tests/Unit/HasHashtagsTraitTest.php:131:Call to an undefined method Ijideals\HashtagSystem\Tests\Unit\HasHashtagsTraitTest::assertEqualsCanonicalizing().
+/app/packages/ijideals/hashtag-system/tests/Unit/HasHashtagsTraitTest.php:134:Call to an undefined method Ijideals\HashtagSystem\Tests\Unit\HasHashtagsTraitTest::assertEmpty().
+/app/packages/ijideals/hashtag-system/tests/Unit/HasHashtagsTraitTest.php:137:Call to an undefined method Ijideals\HashtagSystem\Tests\Unit\HasHashtagsTraitTest::assertEqualsCanonicalizing().
+/app/packages/ijideals/hashtag-system/tests/Unit/HasHashtagsTraitTest.php:145:Call to an undefined method Ijideals\HashtagSystem\Tests\Unit\HasHashtagsTraitTest::assertCount().
+/app/packages/ijideals/hashtag-system/tests/Unit/HasHashtagsTraitTest.php:146:Call to an undefined method Ijideals\HashtagSystem\Tests\Unit\HasHashtagsTraitTest::assertEqualsCanonicalizing().
+/app/packages/ijideals/hashtag-system/tests/Unit/HasHashtagsTraitTest.php:147:Call to an undefined method Ijideals\HashtagSystem\Tests\Unit\HasHashtagsTraitTest::assertDatabaseMissing().
+/app/packages/ijideals/hashtag-system/tests/Unit/HasHashtagsTraitTest.php:148:Call to an undefined method Ijideals\HashtagSystem\Tests\Unit\HasHashtagsTraitTest::assertDatabaseMissing().
+/app/packages/ijideals/hashtag-system/tests/Unit/HasHashtagsTraitTest.php:160:Call to an undefined method Ijideals\HashtagSystem\Tests\Unit\HasHashtagsTraitTest::assertCount().
+/app/packages/ijideals/hashtag-system/tests/Unit/HasHashtagsTraitTest.php:161:Call to an undefined method Ijideals\HashtagSystem\Tests\Unit\HasHashtagsTraitTest::assertEqualsCanonicalizing().
+/app/packages/ijideals/hashtag-system/tests/Unit/HasHashtagsTraitTest.php:171:Call to an undefined method Ijideals\HashtagSystem\Tests\Unit\HasHashtagsTraitTest::assertCount().
+/app/packages/ijideals/hashtag-system/tests/Unit/HasHashtagsTraitTest.php:172:Call to an undefined method Ijideals\HashtagSystem\Tests\Unit\HasHashtagsTraitTest::assertEqualsCanonicalizing().
+/app/packages/ijideals/hashtag-system/tests/Unit/HashtagModelTest.php:24:Call to an undefined method Ijideals\HashtagSystem\Tests\Unit\HashtagModelTest::assertInstanceOf().
+/app/packages/ijideals/hashtag-system/tests/Unit/HashtagModelTest.php:25:Access to an undefined property Ijideals\HashtagSystem\Models\Hashtag::$name.
+/app/packages/ijideals/hashtag-system/tests/Unit/HashtagModelTest.php:25:Call to an undefined method Ijideals\HashtagSystem\Tests\Unit\HashtagModelTest::assertEquals().
+/app/packages/ijideals/hashtag-system/tests/Unit/HashtagModelTest.php:26:Access to an undefined property Ijideals\HashtagSystem\Models\Hashtag::$slug.
+/app/packages/ijideals/hashtag-system/tests/Unit/HashtagModelTest.php:26:Call to an undefined method Ijideals\HashtagSystem\Tests\Unit\HashtagModelTest::assertEquals().
+/app/packages/ijideals/hashtag-system/tests/Unit/HashtagModelTest.php:27:Call to an undefined method Ijideals\HashtagSystem\Tests\Unit\HashtagModelTest::assertDatabaseHas().
+/app/packages/ijideals/hashtag-system/tests/Unit/HashtagModelTest.php:35:Access to an undefined property Ijideals\HashtagSystem\Models\Hashtag::$slug.
+/app/packages/ijideals/hashtag-system/tests/Unit/HashtagModelTest.php:35:Call to an undefined method Ijideals\HashtagSystem\Tests\Unit\HashtagModelTest::assertEquals().
+/app/packages/ijideals/hashtag-system/tests/Unit/HashtagModelTest.php:44:Access to an undefined property Ijideals\HashtagSystem\Models\Hashtag::$slug.
+/app/packages/ijideals/hashtag-system/tests/Unit/HashtagModelTest.php:44:Call to an undefined method Ijideals\HashtagSystem\Tests\Unit\HashtagModelTest::assertEquals().
+/app/packages/ijideals/hashtag-system/tests/Unit/HashtagModelTest.php:50:Call to an undefined method Ijideals\HashtagSystem\Tests\Unit\HashtagModelTest::expectException().
+/app/packages/ijideals/hashtag-system/tests/Unit/HashtagModelTest.php:58:Call to an undefined method Ijideals\HashtagSystem\Tests\Unit\HashtagModelTest::expectException().
+/app/packages/ijideals/hashtag-system/tests/Unit/HashtagModelTest.php:72:Access to an undefined property Ijideals\HashtagSystem\Models\Hashtag::$name.
+/app/packages/ijideals/hashtag-system/tests/Unit/HashtagModelTest.php:72:Call to an undefined method Ijideals\HashtagSystem\Tests\Unit\HashtagModelTest::assertEquals().
+/app/packages/ijideals/hashtag-system/tests/Unit/HashtagModelTest.php:73:Access to an undefined property Ijideals\HashtagSystem\Models\Hashtag::$slug.
+/app/packages/ijideals/hashtag-system/tests/Unit/HashtagModelTest.php:73:Call to an undefined method Ijideals\HashtagSystem\Tests\Unit\HashtagModelTest::assertEquals().
+/app/packages/ijideals/hashtag-system/tests/Unit/HashtagModelTest.php:83:Access to an undefined property Ijideals\HashtagSystem\Models\Hashtag::$slug.
+/app/packages/ijideals/hashtag-system/tests/Unit/HashtagModelTest.php:83:Call to an undefined method Ijideals\HashtagSystem\Tests\Unit\HashtagModelTest::assertEquals().
+/app/packages/ijideals/hashtag-system/tests/Unit/HashtagModelTest.php:86:Access to an undefined property Ijideals\HashtagSystem\Models\Hashtag::$slug.
+/app/packages/ijideals/hashtag-system/tests/Unit/HashtagModelTest.php:86:Call to an undefined method Ijideals\HashtagSystem\Tests\Unit\HashtagModelTest::assertEquals().
+/app/packages/ijideals/likeable/database/factories/LikeFactory.php:37:Access to an undefined property Illuminate\Database\Eloquent\Model::$id.
+/app/packages/ijideals/likeable/src/Concerns/CanBeLiked.php (in context of class Ijideals\Likeable\Tests\Feature\TestPost):25:Call to an undefined method Illuminate\Database\Eloquent\Model::removeLikes().
+/app/packages/ijideals/likeable/src/Concerns/CanBeLiked.php (in context of class Ijideals\Likeable\Tests\Unit\LikeableTestModel):25:Call to an undefined method Illuminate\Database\Eloquent\Model::removeLikes().
+/app/packages/ijideals/likeable/src/Concerns/CanBeLiked.php (in context of class Ijideals\SocialPosts\Models\Post):25:Call to an undefined method Illuminate\Database\Eloquent\Model::removeLikes().
+/app/packages/ijideals/likeable/src/Concerns/CanLike.php (in context of class App\Models\User):104:Method App\Models\User::getLikedItems() should return Illuminate\Database\Eloquent\Collection but returns Illuminate\Support\Collection<(int|string), mixed>.
+/app/packages/ijideals/likeable/src/Concerns/CanLike.php (in context of class Ijideals\Likeable\Tests\Feature\TestUser):104:Method Ijideals\Likeable\Tests\Feature\TestUser::getLikedItems() should return Illuminate\Database\Eloquent\Collection but returns Illuminate\Support\Collection<(int|string), mixed>.
+/app/packages/ijideals/likeable/src/Concerns/CanLike.php (in context of class@anonymous/packages/ijideals/likeable/tests/Unit/CanLikeTraitTest.php:23):104:Method class@anonymous/packages/ijideals/likeable/tests/Unit/CanLikeTraitTest.php:23::getLikedItems() should return Illuminate\Database\Eloquent\Collection but returns Illuminate\Support\Collection<(int|string), mixed>.
+/app/packages/ijideals/likeable/src/Http/Controllers/LikeController.php:42:Parameter #1 $likeable of method App\Models\User::hasLiked() expects Ijideals\Likeable\Contracts\Likeable, Illuminate\Database\Eloquent\Model given.
+/app/packages/ijideals/likeable/src/Http/Controllers/LikeController.php:43:Call to an undefined method Illuminate\Database\Eloquent\Model::likes().
+/app/packages/ijideals/likeable/src/Http/Controllers/LikeController.php:47:Access to an undefined property Illuminate\Database\Eloquent\Model::$likes_count.
+/app/packages/ijideals/likeable/src/Http/Controllers/LikeController.php:51:Parameter #1 $likeable of method App\Models\User::like() expects Ijideals\Likeable\Contracts\Likeable, Illuminate\Database\Eloquent\Model given.
+/app/packages/ijideals/likeable/src/Http/Controllers/LikeController.php:57:Access to an undefined property Illuminate\Database\Eloquent\Model::$likes_count.
+/app/packages/ijideals/likeable/src/Http/Controllers/LikeController.php:84:Parameter #1 $likeable of method App\Models\User::hasLiked() expects Ijideals\Likeable\Contracts\Likeable, Illuminate\Database\Eloquent\Model given.
+/app/packages/ijideals/likeable/src/Http/Controllers/LikeController.php:88:Parameter #1 $likeable of method App\Models\User::unlike() expects Ijideals\Likeable\Contracts\Likeable, Illuminate\Database\Eloquent\Model given.
+/app/packages/ijideals/likeable/src/Http/Controllers/LikeController.php:91:Access to an undefined property Illuminate\Database\Eloquent\Model::$likes_count.
+/app/packages/ijideals/likeable/src/Http/Controllers/LikeController.php:118:Parameter #1 $likeable of method App\Models\User::toggleLike() expects Ijideals\Likeable\Contracts\Likeable, Illuminate\Database\Eloquent\Model given.
+/app/packages/ijideals/likeable/src/Http/Controllers/LikeController.php:125:Access to an undefined property Illuminate\Database\Eloquent\Model::$likes_count.
+/app/packages/ijideals/likeable/src/Http/Controllers/LikeController.php:132:Access to an undefined property Illuminate\Database\Eloquent\Model::$likes_count.
+/app/packages/ijideals/likeable/src/Tests/Feature/LikeableTest.php:38:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::assertFalse().
+/app/packages/ijideals/likeable/src/Tests/Feature/LikeableTest.php:39:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::assertEquals().
+/app/packages/ijideals/likeable/src/Tests/Feature/LikeableTest.php:43:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::assertTrue().
+/app/packages/ijideals/likeable/src/Tests/Feature/LikeableTest.php:44:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::assertEquals().
+/app/packages/ijideals/likeable/src/Tests/Feature/LikeableTest.php:45:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::assertCount().
+/app/packages/ijideals/likeable/src/Tests/Feature/LikeableTest.php:55:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::assertTrue().
+/app/packages/ijideals/likeable/src/Tests/Feature/LikeableTest.php:56:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::assertEquals().
+/app/packages/ijideals/likeable/src/Tests/Feature/LikeableTest.php:60:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::assertFalse().
+/app/packages/ijideals/likeable/src/Tests/Feature/LikeableTest.php:61:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::assertEquals().
+/app/packages/ijideals/likeable/src/Tests/Feature/LikeableTest.php:71:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::assertTrue().
+/app/packages/ijideals/likeable/src/Tests/Feature/LikeableTest.php:72:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::assertEquals().
+/app/packages/ijideals/likeable/src/Tests/Feature/LikeableTest.php:75:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::assertFalse().
+/app/packages/ijideals/likeable/src/Tests/Feature/LikeableTest.php:76:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::assertEquals().
+/app/packages/ijideals/likeable/src/Tests/Feature/LikeableTest.php:82:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::assertFalse().
+/app/packages/ijideals/likeable/src/Tests/Feature/LikeableTest.php:83:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::assertEquals().
+/app/packages/ijideals/likeable/src/Tests/Feature/LikeableTest.php:87:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::assertTrue().
+/app/packages/ijideals/likeable/src/Tests/Feature/LikeableTest.php:88:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::assertEquals().
+/app/packages/ijideals/likeable/src/Tests/Feature/LikeableTest.php:100:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::assertEquals().
+/app/packages/ijideals/likeable/src/Tests/Feature/LikeableTest.php:101:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::assertTrue().
+/app/packages/ijideals/likeable/src/Tests/Feature/LikeableTest.php:102:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::assertTrue().
+/app/packages/ijideals/likeable/src/Tests/Feature/LikeableTest.php:111:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::assertEquals().
+/app/packages/ijideals/likeable/src/Tests/Feature/LikeableTest.php:120:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::assertEquals().
+/app/packages/ijideals/likeable/src/Tests/Feature/LikeableTest.php:134:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::assertCount().
+/app/packages/ijideals/likeable/src/Tests/Feature/LikeableTest.php:135:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::assertTrue().
+/app/packages/ijideals/likeable/src/Tests/Feature/LikeableTest.php:136:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::assertTrue().
+/app/packages/ijideals/likeable/src/Tests/Feature/LikeableTest.php:137:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::assertFalse().
+/app/packages/ijideals/likeable/src/Tests/Feature/LikeableTest.php:150:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::assertCount().
+/app/packages/ijideals/likeable/src/Tests/Feature/LikeableTest.php:151:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::assertTrue().
+/app/packages/ijideals/likeable/src/Tests/Feature/LikeableTest.php:152:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::assertTrue().
+/app/packages/ijideals/likeable/src/Tests/Feature/LikeableTest.php:168:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::assertCount().
+/app/packages/ijideals/likeable/src/Tests/Feature/LikeableTest.php:169:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::assertTrue().
+/app/packages/ijideals/likeable/src/Tests/Feature/LikeableTest.php:170:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::assertTrue().
+/app/packages/ijideals/likeable/src/Tests/Feature/LikeableTest.php:171:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::assertFalse().
+/app/packages/ijideals/likeable/src/Tests/Feature/LikeableTest.php:174:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::assertCount().
+/app/packages/ijideals/likeable/src/Tests/Feature/LikeableTest.php:175:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::assertTrue().
+/app/packages/ijideals/likeable/src/Tests/Feature/LikeableTest.php:176:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::assertTrue().
+/app/packages/ijideals/likeable/src/Tests/Feature/LikeableTest.php:183:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::assertEquals().
+/app/packages/ijideals/likeable/src/Tests/Feature/LikeableTest.php:184:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::assertEquals().
+/app/packages/ijideals/likeable/src/Tests/Feature/LikeableTest.php:188:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::assertEquals().
+/app/packages/ijideals/likeable/src/Tests/Feature/LikeableTest.php:198:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::assertEquals().
+/app/packages/ijideals/likeable/src/Tests/Feature/LikeableTest.php:199:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::assertEquals().
+/app/packages/ijideals/likeable/src/Tests/Feature/LikeableTest.php:203:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::assertEquals().
+/app/packages/ijideals/likeable/src/Tests/Feature/LikeableTest.php:204:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::assertEquals().
+/app/packages/ijideals/likeable/src/Tests/Feature/LikeableTest.php:205:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::assertFalse().
+/app/packages/ijideals/likeable/src/Tests/Feature/LikeableTest.php:206:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::assertTrue().
+/app/packages/ijideals/likeable/src/Tests/Feature/LikeableTest.php:214:Access to an undefined property Ijideals\Likeable\Tests\User::$api_token.
+/app/packages/ijideals/likeable/src/Tests/Feature/LikeableTest.php:214:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::withHeaders().
+/app/packages/ijideals/likeable/src/Tests/Feature/LikeableTest.php:215:Access to an undefined property Ijideals\Likeable\Tests\Post::$id.
+/app/packages/ijideals/likeable/src/Tests/Feature/LikeableTest.php:222:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::assertTrue().
+/app/packages/ijideals/likeable/src/Tests/Feature/LikeableTest.php:231:Access to an undefined property Ijideals\Likeable\Tests\User::$api_token.
+/app/packages/ijideals/likeable/src/Tests/Feature/LikeableTest.php:231:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::withHeaders().
+/app/packages/ijideals/likeable/src/Tests/Feature/LikeableTest.php:232:Access to an undefined property Ijideals\Likeable\Tests\Post::$id.
+/app/packages/ijideals/likeable/src/Tests/Feature/LikeableTest.php:236:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::assertEquals().
+/app/packages/ijideals/likeable/src/Tests/Feature/LikeableTest.php:244:Access to an undefined property Ijideals\Likeable\Tests\User::$api_token.
+/app/packages/ijideals/likeable/src/Tests/Feature/LikeableTest.php:244:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::withHeaders().
+/app/packages/ijideals/likeable/src/Tests/Feature/LikeableTest.php:245:Access to an undefined property Ijideals\Likeable\Tests\Post::$id.
+/app/packages/ijideals/likeable/src/Tests/Feature/LikeableTest.php:252:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::assertFalse().
+/app/packages/ijideals/likeable/src/Tests/Feature/LikeableTest.php:259:Access to an undefined property Ijideals\Likeable\Tests\User::$api_token.
+/app/packages/ijideals/likeable/src/Tests/Feature/LikeableTest.php:259:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::withHeaders().
+/app/packages/ijideals/likeable/src/Tests/Feature/LikeableTest.php:260:Access to an undefined property Ijideals\Likeable\Tests\Post::$id.
+/app/packages/ijideals/likeable/src/Tests/Feature/LikeableTest.php:264:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::assertEquals().
+/app/packages/ijideals/likeable/src/Tests/Feature/LikeableTest.php:270:Access to an undefined property Ijideals\Likeable\Tests\User::$api_token.
+/app/packages/ijideals/likeable/src/Tests/Feature/LikeableTest.php:270:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::withHeaders().
+/app/packages/ijideals/likeable/src/Tests/Feature/LikeableTest.php:274:Access to an undefined property Ijideals\Likeable\Tests\User::$api_token.
+/app/packages/ijideals/likeable/src/Tests/Feature/LikeableTest.php:274:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::withHeaders().
+/app/packages/ijideals/likeable/src/Tests/Feature/LikeableTest.php:282:Access to an undefined property Ijideals\Likeable\Tests\Post::$id.
+/app/packages/ijideals/likeable/src/Tests/Feature/LikeableTest.php:282:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::postJson().
+/app/packages/ijideals/likeable/src/Tests/Feature/LikeableTest.php:285:Access to an undefined property Ijideals\Likeable\Tests\Post::$id.
+/app/packages/ijideals/likeable/src/Tests/Feature/LikeableTest.php:285:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::deleteJson().
+/app/packages/ijideals/likeable/src/Tests/Feature/LikeableTest.php:292:Access to an undefined property Ijideals\Likeable\Tests\User::$api_token.
+/app/packages/ijideals/likeable/src/Tests/Feature/LikeableTest.php:292:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::withHeaders().
+/app/packages/ijideals/likeable/src/Tests/Feature/LikeableTest.php:293:Access to an undefined property Ijideals\Likeable\Tests\Post::$id.
+/app/packages/ijideals/likeable/src/Tests/TestCase.php:16:Class Ijideals\Likeable\Tests\TestCase extends unknown class Orchestra\Testbench\TestCase.
+/app/packages/ijideals/likeable/src/Tests/TestCase.php:20:Ijideals\Likeable\Tests\TestCase::setUp() calls parent::setUp() but Ijideals\Likeable\Tests\TestCase does not extend any class.
+/app/packages/ijideals/likeable/src/Tests/TestCase.php:22:Access to an undefined property Ijideals\Likeable\Tests\TestCase::$app.
+/app/packages/ijideals/likeable/src/Traits/CanBeLiked.php (in context of class Ijideals\Likeable\Tests\Article):43:Call to an undefined method Illuminate\Database\Eloquent\Model::likes().
+/app/packages/ijideals/likeable/src/Traits/CanBeLiked.php (in context of class Ijideals\Likeable\Tests\Post):43:Call to an undefined method Illuminate\Database\Eloquent\Model::likes().
+/app/packages/ijideals/likeable/src/Traits/CanLike.php (in context of class Ijideals\Likeable\Tests\User):101:Method Ijideals\Likeable\Tests\User::getLikedModels() should return Illuminate\Database\Eloquent\Collection but returns Illuminate\Support\Collection<int, mixed>.
+/app/packages/ijideals/likeable/src/Traits/CanLike.php (in context of class Ijideals\Likeable\Tests\User):106:Access to an undefined property Illuminate\Database\Eloquent\Model::$likeable.
+/app/packages/ijideals/likeable/tests/Feature/LikeApiTest.php:49:Property Ijideals\Likeable\Tests\Feature\LikeApiTest::$post (Ijideals\Likeable\Tests\Feature\TestPost) does not accept Ijideals\SocialPosts\Models\Post.
+/app/packages/ijideals/likeable/tests/Feature/LikeApiTest.php:72:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeApiTest::postJson().
+/app/packages/ijideals/likeable/tests/Feature/LikeApiTest.php:77:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeApiTest::assertDatabaseHas().
+/app/packages/ijideals/likeable/tests/Feature/LikeApiTest.php:82:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeApiTest::assertTrue().
+/app/packages/ijideals/likeable/tests/Feature/LikeApiTest.php:82:Parameter #1 $likeable of method Ijideals\Likeable\Tests\Feature\TestUser::hasLiked() expects Ijideals\Likeable\Contracts\Likeable, Ijideals\Likeable\Tests\Feature\TestPost given.
+/app/packages/ijideals/likeable/tests/Feature/LikeApiTest.php:83:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeApiTest::assertTrue().
+/app/packages/ijideals/likeable/tests/Feature/LikeApiTest.php:84:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeApiTest::assertEquals().
+/app/packages/ijideals/likeable/tests/Feature/LikeApiTest.php:90:Parameter #1 $likeable of method Ijideals\Likeable\Tests\Feature\TestUser::like() expects Ijideals\Likeable\Contracts\Likeable, Ijideals\Likeable\Tests\Feature\TestPost given.
+/app/packages/ijideals/likeable/tests/Feature/LikeApiTest.php:92:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeApiTest::postJson().
+/app/packages/ijideals/likeable/tests/Feature/LikeApiTest.php:95:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeApiTest::assertEquals().
+/app/packages/ijideals/likeable/tests/Feature/LikeApiTest.php:101:Parameter #1 $likeable of method Ijideals\Likeable\Tests\Feature\TestUser::like() expects Ijideals\Likeable\Contracts\Likeable, Ijideals\Likeable\Tests\Feature\TestPost given.
+/app/packages/ijideals/likeable/tests/Feature/LikeApiTest.php:103:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeApiTest::assertTrue().
+/app/packages/ijideals/likeable/tests/Feature/LikeApiTest.php:103:Parameter #1 $likeable of method Ijideals\Likeable\Tests\Feature\TestUser::hasLiked() expects Ijideals\Likeable\Contracts\Likeable, Ijideals\Likeable\Tests\Feature\TestPost given.
+/app/packages/ijideals/likeable/tests/Feature/LikeApiTest.php:104:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeApiTest::assertEquals().
+/app/packages/ijideals/likeable/tests/Feature/LikeApiTest.php:106:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeApiTest::deleteJson().
+/app/packages/ijideals/likeable/tests/Feature/LikeApiTest.php:111:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeApiTest::assertDatabaseMissing().
+/app/packages/ijideals/likeable/tests/Feature/LikeApiTest.php:116:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeApiTest::assertFalse().
+/app/packages/ijideals/likeable/tests/Feature/LikeApiTest.php:116:Parameter #1 $likeable of method Ijideals\Likeable\Tests\Feature\TestUser::hasLiked() expects Ijideals\Likeable\Contracts\Likeable, Ijideals\Likeable\Tests\Feature\TestPost given.
+/app/packages/ijideals/likeable/tests/Feature/LikeApiTest.php:117:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeApiTest::assertEquals().
+/app/packages/ijideals/likeable/tests/Feature/LikeApiTest.php:124:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeApiTest::deleteJson().
+/app/packages/ijideals/likeable/tests/Feature/LikeApiTest.php:126:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeApiTest::assertEquals().
+/app/packages/ijideals/likeable/tests/Feature/LikeApiTest.php:131:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeApiTest::postJson().
+/app/packages/ijideals/likeable/tests/Feature/LikeApiTest.php:137:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeApiTest::deleteJson().
+/app/packages/ijideals/likeable/tests/Feature/LikeApiTest.php:150:Anonymous class extends unknown class Ijideals\Likeable\Tests\Feature\Model.
+/app/packages/ijideals/likeable/tests/Feature/LikeApiTest.php:151:Call to an undefined method class@anonymous/packages/ijideals/likeable/tests/Feature/LikeApiTest.php:150::forceFill().
+/app/packages/ijideals/likeable/tests/Feature/LikeApiTest.php:159:Call to an undefined method Ijideals\Likeable\Http\Controllers\LikeController::store().
+/app/packages/ijideals/likeable/tests/Feature/LikeApiTest.php:161:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeApiTest::assertEquals().
+/app/packages/ijideals/likeable/tests/Feature/LikeApiTest.php:162:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeApiTest::assertStringContainsString().
+/app/packages/ijideals/likeable/tests/Feature/LikeableTest.php:66:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::actingAs().
+/app/packages/ijideals/likeable/tests/Feature/LikeableTest.php:68:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::postJson().
+/app/packages/ijideals/likeable/tests/Feature/LikeableTest.php:76:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::assertCount().
+/app/packages/ijideals/likeable/tests/Feature/LikeableTest.php:77:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::assertTrue().
+/app/packages/ijideals/likeable/tests/Feature/LikeableTest.php:78:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::assertTrue().
+/app/packages/ijideals/likeable/tests/Feature/LikeableTest.php:79:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::assertEquals().
+/app/packages/ijideals/likeable/tests/Feature/LikeableTest.php:85:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::actingAs().
+/app/packages/ijideals/likeable/tests/Feature/LikeableTest.php:88:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::postJson().
+/app/packages/ijideals/likeable/tests/Feature/LikeableTest.php:93:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::assertCount().
+/app/packages/ijideals/likeable/tests/Feature/LikeableTest.php:94:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::assertEquals().
+/app/packages/ijideals/likeable/tests/Feature/LikeableTest.php:100:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::actingAs().
+/app/packages/ijideals/likeable/tests/Feature/LikeableTest.php:103:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::assertTrue().
+/app/packages/ijideals/likeable/tests/Feature/LikeableTest.php:104:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::assertEquals().
+/app/packages/ijideals/likeable/tests/Feature/LikeableTest.php:106:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::deleteJson().
+/app/packages/ijideals/likeable/tests/Feature/LikeableTest.php:113:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::assertCount().
+/app/packages/ijideals/likeable/tests/Feature/LikeableTest.php:114:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::assertFalse().
+/app/packages/ijideals/likeable/tests/Feature/LikeableTest.php:115:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::assertFalse().
+/app/packages/ijideals/likeable/tests/Feature/LikeableTest.php:116:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::assertEquals().
+/app/packages/ijideals/likeable/tests/Feature/LikeableTest.php:122:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::actingAs().
+/app/packages/ijideals/likeable/tests/Feature/LikeableTest.php:125:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::deleteJson().
+/app/packages/ijideals/likeable/tests/Feature/LikeableTest.php:130:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::assertCount().
+/app/packages/ijideals/likeable/tests/Feature/LikeableTest.php:136:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::actingAs().
+/app/packages/ijideals/likeable/tests/Feature/LikeableTest.php:139:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::postJson().
+/app/packages/ijideals/likeable/tests/Feature/LikeableTest.php:146:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::assertTrue().
+/app/packages/ijideals/likeable/tests/Feature/LikeableTest.php:147:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::assertEquals().
+/app/packages/ijideals/likeable/tests/Feature/LikeableTest.php:150:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::postJson().
+/app/packages/ijideals/likeable/tests/Feature/LikeableTest.php:157:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::assertFalse().
+/app/packages/ijideals/likeable/tests/Feature/LikeableTest.php:158:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::assertEquals().
+/app/packages/ijideals/likeable/tests/Feature/LikeableTest.php:165:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::postJson().
+/app/packages/ijideals/likeable/tests/Feature/LikeableTest.php:175:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::assertCount().
+/app/packages/ijideals/likeable/tests/Feature/LikeableTest.php:180:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::assertDatabaseMissing().
+/app/packages/ijideals/likeable/tests/Feature/LikeableTest.php:182:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::assertDatabaseMissing().
+/app/packages/ijideals/likeable/tests/Feature/LikeableTest.php:200:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::assertCount().
+/app/packages/ijideals/likeable/tests/Feature/LikeableTest.php:201:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::assertTrue().
+/app/packages/ijideals/likeable/tests/Feature/LikeableTest.php:202:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::assertTrue().
+/app/packages/ijideals/likeable/tests/Feature/LikeableTest.php:211:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::assertEquals().
+/app/packages/ijideals/likeable/tests/Feature/LikeableTest.php:212:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::assertEquals().
+/app/packages/ijideals/likeable/tests/Feature/LikeableTest.php:222:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::actingAs().
+/app/packages/ijideals/likeable/tests/Feature/LikeableTest.php:225:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::postJson().
+/app/packages/ijideals/likeable/tests/Feature/LikeableTest.php:241:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::actingAs().
+/app/packages/ijideals/likeable/tests/Feature/LikeableTest.php:245:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::withHeaders().
+/app/packages/ijideals/likeable/tests/Feature/LikeableTest.php:251:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::withHeaders().
+/app/packages/ijideals/likeable/tests/Feature/LikeableTest.php:257:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::withHeaders().
+/app/packages/ijideals/likeable/tests/Feature/LikeableTest.php:263:Call to an undefined method Ijideals\Likeable\Tests\Feature\LikeableTest::withHeaders().
+/app/packages/ijideals/likeable/tests/TestCase.php:17:Class Ijideals\Likeable\Tests\TestCase extends unknown class Orchestra\Testbench\TestCase.
+/app/packages/ijideals/likeable/tests/TestCase.php:23:Ijideals\Likeable\Tests\TestCase::setUp() calls parent::setUp() but Ijideals\Likeable\Tests\TestCase does not extend any class.
+/app/packages/ijideals/likeable/tests/TestCase.php:52:Call to an undefined method Ijideals\Likeable\Tests\TestCase::loadMigrationsFrom().
+/app/packages/ijideals/likeable/tests/Unit/CanBeLikedTest.php:34:Call to static method create() on an unknown class Ijideals\Likeable\Tests\Unit\Schema.
+/app/packages/ijideals/likeable/tests/Unit/CanBeLikedTest.php:51:Call to an undefined method Ijideals\Likeable\Tests\Unit\CanBeLikedTest::assertDatabaseHas().
+/app/packages/ijideals/likeable/tests/Unit/CanBeLikedTest.php:53:Access to an undefined property Ijideals\Likeable\Tests\Unit\LikeableTestModel::$id.
+/app/packages/ijideals/likeable/tests/Unit/CanBeLikedTest.php:56:Call to an undefined method Ijideals\Likeable\Tests\Unit\CanBeLikedTest::assertTrue().
+/app/packages/ijideals/likeable/tests/Unit/CanBeLikedTest.php:67:Call to an undefined method Ijideals\Likeable\Tests\Unit\CanBeLikedTest::assertFalse().
+/app/packages/ijideals/likeable/tests/Unit/CanBeLikedTest.php:68:Call to an undefined method Ijideals\Likeable\Tests\Unit\CanBeLikedTest::assertFalse().
+/app/packages/ijideals/likeable/tests/Unit/CanBeLikedTest.php:77:Call to an undefined method Ijideals\Likeable\Tests\Unit\CanBeLikedTest::assertEquals().
+/app/packages/ijideals/likeable/tests/Unit/CanBeLikedTest.php:78:Call to an undefined method Ijideals\Likeable\Tests\Unit\CanBeLikedTest::assertEquals().
+/app/packages/ijideals/likeable/tests/Unit/CanBeLikedTest.php:81:Call to an undefined method Ijideals\Likeable\Tests\Unit\CanBeLikedTest::assertEquals().
+/app/packages/ijideals/likeable/tests/Unit/CanBeLikedTest.php:82:Call to an undefined method Ijideals\Likeable\Tests\Unit\CanBeLikedTest::assertEquals().
+/app/packages/ijideals/likeable/tests/Unit/CanBeLikedTest.php:85:Call to an undefined method Ijideals\Likeable\Tests\Unit\CanBeLikedTest::assertEquals().
+/app/packages/ijideals/likeable/tests/Unit/CanBeLikedTest.php:86:Call to an undefined method Ijideals\Likeable\Tests\Unit\CanBeLikedTest::assertEquals().
+/app/packages/ijideals/likeable/tests/Unit/CanBeLikedTest.php:96:Call to an undefined method Ijideals\Likeable\Tests\Unit\CanBeLikedTest::assertDatabaseHas().
+/app/packages/ijideals/likeable/tests/Unit/CanBeLikedTest.php:97:Access to an undefined property Ijideals\Likeable\Tests\Unit\LikeableTestModel::$id.
+/app/packages/ijideals/likeable/tests/Unit/CanBeLikedTest.php:100:Call to an undefined method Ijideals\Likeable\Tests\Unit\CanBeLikedTest::assertEquals().
+/app/packages/ijideals/likeable/tests/Unit/CanBeLikedTest.php:104:Call to an undefined method Ijideals\Likeable\Tests\Unit\CanBeLikedTest::assertDatabaseMissing().
+/app/packages/ijideals/likeable/tests/Unit/CanBeLikedTest.php:105:Access to an undefined property Ijideals\Likeable\Tests\Unit\LikeableTestModel::$id.
+/app/packages/ijideals/likeable/tests/Unit/CanBeLikedTest.php:118:Access to an undefined property Ijideals\Likeable\Tests\Unit\LikeableTestModel::$id.
+/app/packages/ijideals/likeable/tests/Unit/CanBeLikedTest.php:120:Call to an undefined method Ijideals\Likeable\Tests\Unit\CanBeLikedTest::assertEquals().
+/app/packages/ijideals/likeable/tests/Unit/CanLikeTraitTest.php:17:Property Ijideals\Likeable\Tests\Unit\CanLikeTraitTest::$user has invalid type Ijideals\Likeable\Concerns\CanLike.
+/app/packages/ijideals/likeable/tests/Unit/CanLikeTraitTest.php:41:Call to an undefined method Mockery\ExpectationInterface|Mockery\HigherOrderMessage::with().
+/app/packages/ijideals/likeable/tests/Unit/CanLikeTraitTest.php:41:Call to method getKey() on an unknown class Ijideals\Likeable\Concerns\CanLike.
+/app/packages/ijideals/likeable/tests/Unit/CanLikeTraitTest.php:45:Call to an undefined method Mockery\ExpectationInterface|Mockery\HigherOrderMessage::with().
+/app/packages/ijideals/likeable/tests/Unit/CanLikeTraitTest.php:47:Call to method like() on an unknown class Ijideals\Likeable\Concerns\CanLike.
+/app/packages/ijideals/likeable/tests/Unit/CanLikeTraitTest.php:50:Call to an undefined method Ijideals\Likeable\Tests\Unit\CanLikeTraitTest::assertTrue().
+/app/packages/ijideals/likeable/tests/Unit/CanLikeTraitTest.php:59:Call to an undefined method Mockery\ExpectationInterface|Mockery\HigherOrderMessage::with().
+/app/packages/ijideals/likeable/tests/Unit/CanLikeTraitTest.php:67:Call to method like() on an unknown class Ijideals\Likeable\Concerns\CanLike.
+/app/packages/ijideals/likeable/tests/Unit/CanLikeTraitTest.php:69:Call to an undefined method Ijideals\Likeable\Tests\Unit\CanLikeTraitTest::assertTrue().
+/app/packages/ijideals/likeable/tests/Unit/CanLikeTraitTest.php:80:Call to an undefined method Mockery\ExpectationInterface|Mockery\HigherOrderMessage::with().
+/app/packages/ijideals/likeable/tests/Unit/CanLikeTraitTest.php:80:Call to method getKey() on an unknown class Ijideals\Likeable\Concerns\CanLike.
+/app/packages/ijideals/likeable/tests/Unit/CanLikeTraitTest.php:83:Call to method unlike() on an unknown class Ijideals\Likeable\Concerns\CanLike.
+/app/packages/ijideals/likeable/tests/Unit/CanLikeTraitTest.php:85:Call to an undefined method Ijideals\Likeable\Tests\Unit\CanLikeTraitTest::assertTrue().
+/app/packages/ijideals/likeable/tests/Unit/CanLikeTraitTest.php:96:Call to an undefined method Mockery\ExpectationInterface|Mockery\HigherOrderMessage::with().
+/app/packages/ijideals/likeable/tests/Unit/CanLikeTraitTest.php:96:Call to method getKey() on an unknown class Ijideals\Likeable\Concerns\CanLike.
+/app/packages/ijideals/likeable/tests/Unit/CanLikeTraitTest.php:99:Call to method toggleLike() on an unknown class Ijideals\Likeable\Concerns\CanLike.
+/app/packages/ijideals/likeable/tests/Unit/CanLikeTraitTest.php:101:Call to an undefined method Ijideals\Likeable\Tests\Unit\CanLikeTraitTest::assertTrue().
+/app/packages/ijideals/likeable/tests/Unit/CanLikeTraitTest.php:109:Call to an undefined method Mockery\ExpectationInterface|Mockery\HigherOrderMessage::with().
+/app/packages/ijideals/likeable/tests/Unit/CanLikeTraitTest.php:110:Call to an undefined method Ijideals\Likeable\Tests\Unit\CanLikeTraitTest::assertTrue().
+/app/packages/ijideals/likeable/tests/Unit/CanLikeTraitTest.php:110:Call to method hasLiked() on an unknown class Ijideals\Likeable\Concerns\CanLike.
+/app/packages/ijideals/likeable/tests/Unit/CanLikeTraitTest.php:112:Call to an undefined method Mockery\ExpectationInterface|Mockery\HigherOrderMessage::with().
+/app/packages/ijideals/likeable/tests/Unit/CanLikeTraitTest.php:113:Call to an undefined method Ijideals\Likeable\Tests\Unit\CanLikeTraitTest::assertFalse().
+/app/packages/ijideals/likeable/tests/Unit/CanLikeTraitTest.php:113:Call to method hasLiked() on an unknown class Ijideals\Likeable\Concerns\CanLike.
+/app/packages/ijideals/likeable/tests/Unit/CanLikeTraitTest.php:119:Call to an undefined static method Ijideals\Likeable\Tests\TestCase::tearDown().
+/app/packages/ijideals/media-uploader/src/Concerns/HasMedia.php (in context of class App\Models\User):71:Method App\Models\User::getFirstMedia() should return Ijideals\MediaUploader\Models\Media|null but returns Illuminate\Database\Eloquent\Model|null.
+/app/packages/ijideals/media-uploader/src/Concerns/HasMedia.php (in context of class Ijideals\CatalogManager\Models\Product):71:Method Ijideals\CatalogManager\Models\Product::getFirstMedia() should return Ijideals\MediaUploader\Models\Media|null but returns Illuminate\Database\Eloquent\Model|null.
+/app/packages/ijideals/media-uploader/src/Concerns/HasMedia.php (in context of class Ijideals\CatalogManager\Models\ProductVariant):71:Method Ijideals\CatalogManager\Models\ProductVariant::getFirstMedia() should return Ijideals\MediaUploader\Models\Media|null but returns Illuminate\Database\Eloquent\Model|null.
+/app/packages/ijideals/media-uploader/src/Concerns/HasMedia.php (in context of class Ijideals\ShopManager\Models\Shop):71:Method Ijideals\ShopManager\Models\Shop::getFirstMedia() should return Ijideals\MediaUploader\Models\Media|null but returns Illuminate\Database\Eloquent\Model|null.
+/app/packages/ijideals/media-uploader/src/Concerns/HasMedia.php (in context of class Ijideals\SocialPosts\Models\Post):71:Method Ijideals\SocialPosts\Models\Post::getFirstMedia() should return Ijideals\MediaUploader\Models\Media|null but returns Illuminate\Database\Eloquent\Model|null.
+/app/packages/ijideals/media-uploader/src/Http/Controllers/MediaController.php:43:Access to an undefined property Illuminate\Database\Eloquent\Model::$user_id.
+/app/packages/ijideals/media-uploader/src/Http/Controllers/MediaController.php:54:Call to an undefined method Illuminate\Database\Eloquent\Model::addMedia().
+/app/packages/ijideals/media-uploader/src/Http/Controllers/MediaController.php:94:Call to an undefined method Illuminate\Database\Eloquent\Model::getMedia().
+/app/packages/ijideals/media-uploader/src/Http/Controllers/MediaController.php:135:Cannot access property $user_id on class-string|object.
+/app/packages/ijideals/media-uploader/src/Http/Controllers/MediaController.php:176:Access to an undefined property Illuminate\Database\Eloquent\Model::$user_id.
+/app/packages/ijideals/media-uploader/src/Http/Controllers/MediaController.php:182:Call to an undefined method Illuminate\Database\Eloquent\Model::updateMediaOrder().
+/app/packages/ijideals/media-uploader/src/Models/Media.php:37:Access to an undefined property Ijideals\MediaUploader\Models\Media::$disk.
+/app/packages/ijideals/media-uploader/src/Models/Media.php:37:Access to an undefined property Ijideals\MediaUploader\Models\Media::$path.
+/app/packages/ijideals/media-uploader/src/Models/Media.php:80:Access to an undefined property Ijideals\MediaUploader\Models\Media::$size.
+/app/packages/ijideals/media-uploader/src/Models/Media.php:96:Class Ijideals\MediaUploader\Database\Factories\MediaFactory not found.
+/app/packages/ijideals/media-uploader/src/Models/Media.php:105:Access to an undefined property Faker\Generator::$fileExtension.
+/app/packages/ijideals/media-uploader/src/Models/Media.php:106:Access to an undefined property Faker\Generator::$systemFileName.
+/app/packages/ijideals/media-uploader/src/Models/Media.php:107:Access to an undefined property Faker\Generator::$systemFileName.
+/app/packages/ijideals/media-uploader/src/Models/Media.php:109:Access to an undefined property Faker\Generator::$mimeType.
+/app/packages/ijideals/media-uploader/src/Services/MediaUploaderService.php:116:Call to static method make() on an unknown class Intervention\Image\Facades\Image.
+/app/packages/ijideals/media-uploader/src/Services/MediaUploaderService.php:229:Access to an undefined property Ijideals\MediaUploader\Models\Media::$model_type.
+/app/packages/ijideals/media-uploader/src/Services/MediaUploaderService.php:230:Access to an undefined property Ijideals\MediaUploader\Models\Media::$model_id.
+/app/packages/ijideals/media-uploader/src/Services/MediaUploaderService.php:231:Access to an undefined property Ijideals\MediaUploader\Models\Media::$collection_name.
+/app/packages/ijideals/media-uploader/tests/Feature/MediaUploaderTest.php:14:Class Ijideals\MediaUploader\Tests\Feature\MediaUploaderTest extends unknown class Ijideals\MediaUploader\Tests\TestCase.
+/app/packages/ijideals/media-uploader/tests/Feature/MediaUploaderTest.php:23:Ijideals\MediaUploader\Tests\Feature\MediaUploaderTest::setUp() calls parent::setUp() but Ijideals\MediaUploader\Tests\Feature\MediaUploaderTest does not extend any class.
+/app/packages/ijideals/media-uploader/tests/Feature/MediaUploaderTest.php:24:Call to an undefined method Ijideals\MediaUploader\Tests\Feature\MediaUploaderTest::createUser().
+/app/packages/ijideals/media-uploader/tests/Feature/MediaUploaderTest.php:25:Call to an undefined method Ijideals\MediaUploader\Tests\Feature\MediaUploaderTest::createPost().
+/app/packages/ijideals/media-uploader/tests/Feature/MediaUploaderTest.php:42:Call to an undefined method Ijideals\MediaUploader\Tests\Feature\MediaUploaderTest::actingAs().
+/app/packages/ijideals/media-uploader/tests/Feature/MediaUploaderTest.php:45:Call to an undefined method Ijideals\MediaUploader\Tests\Feature\MediaUploaderTest::postJson().
+/app/packages/ijideals/media-uploader/tests/Feature/MediaUploaderTest.php:58:Call to an undefined method Ijideals\MediaUploader\Tests\Feature\MediaUploaderTest::assertNotNull().
+/app/packages/ijideals/media-uploader/tests/Feature/MediaUploaderTest.php:59:Access to an undefined property Ijideals\MediaUploader\Models\Media|Illuminate\Database\Eloquent\Collection<int, Ijideals\MediaUploader\Models\Media>::$disk.
+/app/packages/ijideals/media-uploader/tests/Feature/MediaUploaderTest.php:59:Access to an undefined property Ijideals\MediaUploader\Models\Media|Illuminate\Database\Eloquent\Collection<int, Ijideals\MediaUploader\Models\Media>::$path.
+/app/packages/ijideals/media-uploader/tests/Feature/MediaUploaderTest.php:60:Access to an undefined property Ijideals\MediaUploader\Models\Media|Illuminate\Database\Eloquent\Collection<int, Ijideals\MediaUploader\Models\Media>::$collection_name.
+/app/packages/ijideals/media-uploader/tests/Feature/MediaUploaderTest.php:60:Call to an undefined method Ijideals\MediaUploader\Tests\Feature\MediaUploaderTest::assertEquals().
+/app/packages/ijideals/media-uploader/tests/Feature/MediaUploaderTest.php:61:Access to an undefined property Ijideals\MediaUploader\Models\Media|Illuminate\Database\Eloquent\Collection<int, Ijideals\MediaUploader\Models\Media>::$model_id.
+/app/packages/ijideals/media-uploader/tests/Feature/MediaUploaderTest.php:61:Call to an undefined method Ijideals\MediaUploader\Tests\Feature\MediaUploaderTest::assertEquals().
+/app/packages/ijideals/media-uploader/tests/Feature/MediaUploaderTest.php:67:Call to an undefined method Ijideals\MediaUploader\Tests\Feature\MediaUploaderTest::actingAs().
+/app/packages/ijideals/media-uploader/tests/Feature/MediaUploaderTest.php:73:Call to an undefined method Ijideals\MediaUploader\Tests\Feature\MediaUploaderTest::assertNotNull().
+/app/packages/ijideals/media-uploader/tests/Feature/MediaUploaderTest.php:74:Cannot access property $disk on Ijideals\MediaUploader\Models\Media|false.
+/app/packages/ijideals/media-uploader/tests/Feature/MediaUploaderTest.php:74:Cannot access property $path on Ijideals\MediaUploader\Models\Media|false.
+/app/packages/ijideals/media-uploader/tests/Feature/MediaUploaderTest.php:77:Call to an undefined method Ijideals\MediaUploader\Tests\Feature\MediaUploaderTest::postJson().
+/app/packages/ijideals/media-uploader/tests/Feature/MediaUploaderTest.php:88:Call to an undefined method Ijideals\MediaUploader\Tests\Feature\MediaUploaderTest::assertNotNull().
+/app/packages/ijideals/media-uploader/tests/Feature/MediaUploaderTest.php:89:Access to an undefined property Ijideals\MediaUploader\Models\Media|Illuminate\Database\Eloquent\Collection<int, Ijideals\MediaUploader\Models\Media>::$disk.
+/app/packages/ijideals/media-uploader/tests/Feature/MediaUploaderTest.php:89:Access to an undefined property Ijideals\MediaUploader\Models\Media|Illuminate\Database\Eloquent\Collection<int, Ijideals\MediaUploader\Models\Media>::$path.
+/app/packages/ijideals/media-uploader/tests/Feature/MediaUploaderTest.php:91:Call to an undefined method Ijideals\MediaUploader\Tests\Feature\MediaUploaderTest::assertNotEquals().
+/app/packages/ijideals/media-uploader/tests/Feature/MediaUploaderTest.php:92:Cannot access property $disk on Ijideals\MediaUploader\Models\Media|false.
+/app/packages/ijideals/media-uploader/tests/Feature/MediaUploaderTest.php:92:Cannot access property $path on Ijideals\MediaUploader\Models\Media|false.
+/app/packages/ijideals/media-uploader/tests/Feature/MediaUploaderTest.php:93:Call to an undefined method Ijideals\MediaUploader\Tests\Feature\MediaUploaderTest::assertDatabaseMissing().
+/app/packages/ijideals/media-uploader/tests/Feature/MediaUploaderTest.php:94:Call to an undefined method Ijideals\MediaUploader\Tests\Feature\MediaUploaderTest::assertEquals().
+/app/packages/ijideals/media-uploader/tests/Feature/MediaUploaderTest.php:100:Call to an undefined method Ijideals\MediaUploader\Tests\Feature\MediaUploaderTest::actingAs().
+/app/packages/ijideals/media-uploader/tests/Feature/MediaUploaderTest.php:103:Cannot access property $disk on Ijideals\MediaUploader\Models\Media|false.
+/app/packages/ijideals/media-uploader/tests/Feature/MediaUploaderTest.php:103:Cannot access property $path on Ijideals\MediaUploader\Models\Media|false.
+/app/packages/ijideals/media-uploader/tests/Feature/MediaUploaderTest.php:105:Call to an undefined method Ijideals\MediaUploader\Tests\Feature\MediaUploaderTest::deleteJson().
+/app/packages/ijideals/media-uploader/tests/Feature/MediaUploaderTest.php:108:Cannot access property $disk on Ijideals\MediaUploader\Models\Media|false.
+/app/packages/ijideals/media-uploader/tests/Feature/MediaUploaderTest.php:108:Cannot access property $path on Ijideals\MediaUploader\Models\Media|false.
+/app/packages/ijideals/media-uploader/tests/Feature/MediaUploaderTest.php:109:Call to an undefined method Ijideals\MediaUploader\Tests\Feature\MediaUploaderTest::assertDatabaseMissing().
+/app/packages/ijideals/media-uploader/tests/Feature/MediaUploaderTest.php:115:Call to an undefined method Ijideals\MediaUploader\Tests\Feature\MediaUploaderTest::actingAs().
+/app/packages/ijideals/media-uploader/tests/Feature/MediaUploaderTest.php:119:Call to an undefined method Ijideals\MediaUploader\Tests\Feature\MediaUploaderTest::postJson().
+/app/packages/ijideals/media-uploader/tests/Feature/MediaUploaderTest.php:129:Call to an undefined method Ijideals\MediaUploader\Tests\Feature\MediaUploaderTest::actingAs().
+/app/packages/ijideals/media-uploader/tests/Feature/MediaUploaderTest.php:133:Call to an undefined method Ijideals\MediaUploader\Tests\Feature\MediaUploaderTest::postJson().
+/app/packages/ijideals/media-uploader/tests/Feature/MediaUploaderTest.php:146:Call to an undefined method Ijideals\MediaUploader\Tests\Feature\MediaUploaderTest::actingAs().
+/app/packages/ijideals/media-uploader/tests/Feature/MediaUploaderTest.php:151:Call to an undefined method Ijideals\MediaUploader\Tests\Feature\MediaUploaderTest::withHeaders().
+/app/packages/ijideals/media-uploader/tests/Feature/MediaUploaderTest.php:160:Call to an undefined method Ijideals\MediaUploader\Tests\Feature\MediaUploaderTest::withHeaders().
+/app/packages/ijideals/media-uploader/tests/Feature/MediaUploaderTest.php:166:Call to an undefined method Ijideals\MediaUploader\Tests\Feature\MediaUploaderTest::withHeaders().
+/app/packages/ijideals/news-feed-generator/tests/Feature/NewsFeedGeneratorTest.php:12:Class Ijideals\NewsFeedGenerator\Tests\Feature\NewsFeedGeneratorTest extends unknown class Ijideals\NewsFeedGenerator\Tests\TestCase.
+/app/packages/ijideals/news-feed-generator/tests/Feature/NewsFeedGeneratorTest.php:23:Ijideals\NewsFeedGenerator\Tests\Feature\NewsFeedGeneratorTest::setUp() calls parent::setUp() but Ijideals\NewsFeedGenerator\Tests\Feature\NewsFeedGeneratorTest does not extend any class.
+/app/packages/ijideals/news-feed-generator/tests/Feature/NewsFeedGeneratorTest.php:25:Call to an undefined method Ijideals\NewsFeedGenerator\Tests\Feature\NewsFeedGeneratorTest::createUser().
+/app/packages/ijideals/news-feed-generator/tests/Feature/NewsFeedGeneratorTest.php:26:Call to an undefined method Ijideals\NewsFeedGenerator\Tests\Feature\NewsFeedGeneratorTest::createUser().
+/app/packages/ijideals/news-feed-generator/tests/Feature/NewsFeedGeneratorTest.php:27:Call to an undefined method Ijideals\NewsFeedGenerator\Tests\Feature\NewsFeedGeneratorTest::createUser().
+/app/packages/ijideals/news-feed-generator/tests/Feature/NewsFeedGeneratorTest.php:28:Call to an undefined method Ijideals\NewsFeedGenerator\Tests\Feature\NewsFeedGeneratorTest::createUser().
+/app/packages/ijideals/news-feed-generator/tests/Feature/NewsFeedGeneratorTest.php:61:Parameter #1 $likeable of method App\Models\User::like() expects Ijideals\Likeable\Contracts\Likeable, Ijideals\SocialPosts\Models\Post given.
+/app/packages/ijideals/news-feed-generator/tests/Feature/NewsFeedGeneratorTest.php:90:Parameter #1 $likeable of method App\Models\User::like() expects Ijideals\Likeable\Contracts\Likeable, Ijideals\SocialPosts\Models\Post|null given.
+/app/packages/ijideals/news-feed-generator/tests/Feature/NewsFeedGeneratorTest.php:96:Parameter #1 $likeable of method App\Models\User::like() expects Ijideals\Likeable\Contracts\Likeable, Ijideals\SocialPosts\Models\Post|null given.
+/app/packages/ijideals/news-feed-generator/tests/Feature/NewsFeedGeneratorTest.php:102:Parameter #1 $likeable of method App\Models\User::like() expects Ijideals\Likeable\Contracts\Likeable, Ijideals\SocialPosts\Models\Post|null given.
+/app/packages/ijideals/news-feed-generator/tests/Feature/NewsFeedGeneratorTest.php:106:Call to an undefined method Ijideals\NewsFeedGenerator\Tests\Feature\NewsFeedGeneratorTest::actingAs().
+/app/packages/ijideals/news-feed-generator/tests/Feature/NewsFeedGeneratorTest.php:107:Call to an undefined method Ijideals\NewsFeedGenerator\Tests\Feature\NewsFeedGeneratorTest::getJson().
+/app/packages/ijideals/news-feed-generator/tests/Feature/NewsFeedGeneratorTest.php:117:Call to an undefined method Ijideals\NewsFeedGenerator\Tests\Feature\NewsFeedGeneratorTest::assertEquals().
+/app/packages/ijideals/news-feed-generator/tests/Feature/NewsFeedGeneratorTest.php:118:Call to an undefined method Ijideals\NewsFeedGenerator\Tests\Feature\NewsFeedGeneratorTest::assertEquals().
+/app/packages/ijideals/news-feed-generator/tests/Feature/NewsFeedGeneratorTest.php:119:Call to an undefined method Ijideals\NewsFeedGenerator\Tests\Feature\NewsFeedGeneratorTest::assertEquals().
+/app/packages/ijideals/news-feed-generator/tests/Feature/NewsFeedGeneratorTest.php:153:Call to an undefined method Ijideals\NewsFeedGenerator\Tests\Feature\NewsFeedGeneratorTest::actingAs().
+/app/packages/ijideals/news-feed-generator/tests/Feature/NewsFeedGeneratorTest.php:154:Call to an undefined method Ijideals\NewsFeedGenerator\Tests\Feature\NewsFeedGeneratorTest::getJson().
+/app/packages/ijideals/news-feed-generator/tests/Feature/NewsFeedGeneratorTest.php:165:Call to an undefined method Ijideals\NewsFeedGenerator\Tests\Feature\NewsFeedGeneratorTest::assertContains().
+/app/packages/ijideals/news-feed-generator/tests/Feature/NewsFeedGeneratorTest.php:174:Call to an undefined method Ijideals\NewsFeedGenerator\Tests\Feature\NewsFeedGeneratorTest::assertLessThanOrEqual().
+/app/packages/ijideals/news-feed-generator/tests/Feature/NewsFeedGeneratorTest.php:177:Call to an undefined method Ijideals\NewsFeedGenerator\Tests\Feature\NewsFeedGeneratorTest::assertTrue().
+/app/packages/ijideals/notification-system/src/Concerns/HasNotifications.php (in context of class App\Models\User):28:Method App\Models\User::ijidealsSystemUnreadNotifications() should return Illuminate\Database\Eloquent\Relations\HasMany but returns Illuminate\Database\Eloquent\Relations\MorphMany<Illuminate\Notifications\DatabaseNotification>.
+/app/packages/ijideals/notification-system/src/Concerns/HasNotifications.php (in context of class App\Models\User):38:Method App\Models\User::ijidealsSystemReadNotifications() should return Illuminate\Database\Eloquent\Relations\HasMany but returns Illuminate\Database\Eloquent\Relations\MorphMany<Illuminate\Notifications\DatabaseNotification>.
+/app/packages/ijideals/notification-system/src/Http/Controllers/NotificationController.php:66:If condition is always false.
+/app/packages/ijideals/notification-system/src/Http/Controllers/NotificationController.php:66:Result of method Illuminate\Notifications\DatabaseNotification::markAsRead() (void) is used.
+/app/packages/ijideals/notification-system/src/Listeners/SendNewCommentNotificationListener.php:76:Right side of && is always true.
+/app/packages/ijideals/notification-system/src/Listeners/SendNewLikeNotificationListener.php:65:Right side of && is always true.
+/app/packages/ijideals/notification-system/src/Listeners/SendNewLikeNotificationListener.php:74:Call to static method limit() on an unknown class Ijideals\NotificationSystem\Listeners\Str.
+/app/packages/ijideals/notification-system/src/Models/Notification.php:50:Access to an undefined property Ijideals\NotificationSystem\Models\Notification::$read_at.
+/app/packages/ijideals/notification-system/src/Models/Notification.php:63:Access to an undefined property Ijideals\NotificationSystem\Models\Notification::$read_at.
+/app/packages/ijideals/notification-system/src/Models/Notification.php:76:Access to an undefined property Ijideals\NotificationSystem\Models\Notification::$read_at.
+/app/packages/ijideals/notification-system/src/Models/Notification.php:86:Access to an undefined property Ijideals\NotificationSystem\Models\Notification::$read_at.
+/app/packages/ijideals/notification-system/src/Services/NotificationCreationService.php:26:PHPDoc tag @return with type Illuminate\Database\Eloquent\Model|null is not subtype of native type Ijideals\NotificationSystem\Services\Model|null.
+/app/packages/ijideals/notification-system/src/Services/NotificationCreationService.php:31:Method Ijideals\NotificationSystem\Services\NotificationCreationService::createNotification() has invalid return type Ijideals\NotificationSystem\Services\Model.
+/app/packages/ijideals/notification-system/tests/Feature/NotificationSystemTest.php:39:Call to an undefined method Ijideals\NotificationSystem\Tests\Feature\NotificationSystemTest::assertEquals().
+/app/packages/ijideals/notification-system/tests/Feature/NotificationSystemTest.php:43:Parameter #1 $likeable of method App\Models\User::like() expects Ijideals\Likeable\Contracts\Likeable, Ijideals\SocialPosts\Models\Post given.
+/app/packages/ijideals/notification-system/tests/Feature/NotificationSystemTest.php:46:Call to an undefined method Ijideals\NotificationSystem\Tests\Feature\NotificationSystemTest::assertEquals().
+/app/packages/ijideals/notification-system/tests/Feature/NotificationSystemTest.php:49:Access to an undefined property Illuminate\Notifications\DatabaseNotification::$type.
+/app/packages/ijideals/notification-system/tests/Feature/NotificationSystemTest.php:49:Call to an undefined method Ijideals\NotificationSystem\Tests\Feature\NotificationSystemTest::assertEquals().
+/app/packages/ijideals/notification-system/tests/Feature/NotificationSystemTest.php:50:Access to an undefined property Illuminate\Notifications\DatabaseNotification::$data.
+/app/packages/ijideals/notification-system/tests/Feature/NotificationSystemTest.php:50:Call to an undefined method Ijideals\NotificationSystem\Tests\Feature\NotificationSystemTest::assertEquals().
+/app/packages/ijideals/notification-system/tests/Feature/NotificationSystemTest.php:51:Access to an undefined property Illuminate\Notifications\DatabaseNotification::$data.
+/app/packages/ijideals/notification-system/tests/Feature/NotificationSystemTest.php:51:Call to an undefined method Ijideals\NotificationSystem\Tests\Feature\NotificationSystemTest::assertEquals().
+/app/packages/ijideals/notification-system/tests/Feature/NotificationSystemTest.php:52:Access to an undefined property Illuminate\Notifications\DatabaseNotification::$data.
+/app/packages/ijideals/notification-system/tests/Feature/NotificationSystemTest.php:52:Call to an undefined method Ijideals\NotificationSystem\Tests\Feature\NotificationSystemTest::assertEquals().
+/app/packages/ijideals/notification-system/tests/Feature/NotificationSystemTest.php:58:Call to an undefined method Ijideals\NotificationSystem\Tests\Feature\NotificationSystemTest::assertEquals().
+/app/packages/ijideals/notification-system/tests/Feature/NotificationSystemTest.php:65:Call to an undefined method Ijideals\NotificationSystem\Tests\Feature\NotificationSystemTest::assertEquals().
+/app/packages/ijideals/notification-system/tests/Feature/NotificationSystemTest.php:68:Access to an undefined property Illuminate\Notifications\DatabaseNotification::$type.
+/app/packages/ijideals/notification-system/tests/Feature/NotificationSystemTest.php:68:Call to an undefined method Ijideals\NotificationSystem\Tests\Feature\NotificationSystemTest::assertEquals().
+/app/packages/ijideals/notification-system/tests/Feature/NotificationSystemTest.php:69:Access to an undefined property Illuminate\Notifications\DatabaseNotification::$data.
+/app/packages/ijideals/notification-system/tests/Feature/NotificationSystemTest.php:69:Call to an undefined method Ijideals\NotificationSystem\Tests\Feature\NotificationSystemTest::assertEquals().
+/app/packages/ijideals/notification-system/tests/Feature/NotificationSystemTest.php:70:Access to an undefined property Illuminate\Notifications\DatabaseNotification::$data.
+/app/packages/ijideals/notification-system/tests/Feature/NotificationSystemTest.php:70:Call to an undefined method Ijideals\NotificationSystem\Tests\Feature\NotificationSystemTest::assertEquals().
+/app/packages/ijideals/notification-system/tests/Feature/NotificationSystemTest.php:71:Access to an undefined property Illuminate\Notifications\DatabaseNotification::$data.
+/app/packages/ijideals/notification-system/tests/Feature/NotificationSystemTest.php:71:Call to an undefined method Ijideals\NotificationSystem\Tests\Feature\NotificationSystemTest::assertNotNull().
+/app/packages/ijideals/notification-system/tests/Feature/NotificationSystemTest.php:77:Call to an undefined method Ijideals\NotificationSystem\Tests\Feature\NotificationSystemTest::assertEquals().
+/app/packages/ijideals/notification-system/tests/Feature/NotificationSystemTest.php:84:Call to an undefined method Ijideals\NotificationSystem\Tests\Feature\NotificationSystemTest::assertEquals().
+/app/packages/ijideals/notification-system/tests/Feature/NotificationSystemTest.php:87:Access to an undefined property Illuminate\Notifications\DatabaseNotification::$type.
+/app/packages/ijideals/notification-system/tests/Feature/NotificationSystemTest.php:87:Call to an undefined method Ijideals\NotificationSystem\Tests\Feature\NotificationSystemTest::assertEquals().
+/app/packages/ijideals/notification-system/tests/Feature/NotificationSystemTest.php:88:Access to an undefined property Illuminate\Notifications\DatabaseNotification::$data.
+/app/packages/ijideals/notification-system/tests/Feature/NotificationSystemTest.php:88:Call to an undefined method Ijideals\NotificationSystem\Tests\Feature\NotificationSystemTest::assertEquals().
+/app/packages/ijideals/notification-system/tests/Feature/NotificationSystemTest.php:94:Parameter #1 $likeable of method App\Models\User::like() expects Ijideals\Likeable\Contracts\Likeable, Ijideals\SocialPosts\Models\Post given.
+/app/packages/ijideals/notification-system/tests/Feature/NotificationSystemTest.php:96:Call to an undefined method Ijideals\NotificationSystem\Tests\Feature\NotificationSystemTest::actingAs().
+/app/packages/ijideals/notification-system/tests/Feature/NotificationSystemTest.php:97:Call to an undefined method Ijideals\NotificationSystem\Tests\Feature\NotificationSystemTest::getJson().
+/app/packages/ijideals/notification-system/tests/Feature/NotificationSystemTest.php:107:Parameter #1 $likeable of method App\Models\User::like() expects Ijideals\Likeable\Contracts\Likeable, Ijideals\SocialPosts\Models\Post given.
+/app/packages/ijideals/notification-system/tests/Feature/NotificationSystemTest.php:109:Access to an undefined property Illuminate\Notifications\DatabaseNotification::$read_at.
+/app/packages/ijideals/notification-system/tests/Feature/NotificationSystemTest.php:109:Call to an undefined method Ijideals\NotificationSystem\Tests\Feature\NotificationSystemTest::assertNull().
+/app/packages/ijideals/notification-system/tests/Feature/NotificationSystemTest.php:111:Call to an undefined method Ijideals\NotificationSystem\Tests\Feature\NotificationSystemTest::actingAs().
+/app/packages/ijideals/notification-system/tests/Feature/NotificationSystemTest.php:112:Call to an undefined method Ijideals\NotificationSystem\Tests\Feature\NotificationSystemTest::patchJson().
+/app/packages/ijideals/notification-system/tests/Feature/NotificationSystemTest.php:115:Access to an undefined property Illuminate\Notifications\DatabaseNotification::$read_at.
+/app/packages/ijideals/notification-system/tests/Feature/NotificationSystemTest.php:115:Call to an undefined method Ijideals\NotificationSystem\Tests\Feature\NotificationSystemTest::assertNotNull().
+/app/packages/ijideals/notification-system/tests/Feature/NotificationSystemTest.php:121:Parameter #1 $likeable of method App\Models\User::like() expects Ijideals\Likeable\Contracts\Likeable, Ijideals\SocialPosts\Models\Post given.
+/app/packages/ijideals/notification-system/tests/Feature/NotificationSystemTest.php:124:Call to an undefined method Ijideals\NotificationSystem\Tests\Feature\NotificationSystemTest::assertEquals().
+/app/packages/ijideals/notification-system/tests/Feature/NotificationSystemTest.php:126:Call to an undefined method Ijideals\NotificationSystem\Tests\Feature\NotificationSystemTest::actingAs().
+/app/packages/ijideals/notification-system/tests/Feature/NotificationSystemTest.php:127:Call to an undefined method Ijideals\NotificationSystem\Tests\Feature\NotificationSystemTest::postJson().
+/app/packages/ijideals/notification-system/tests/Feature/NotificationSystemTest.php:130:Call to an undefined method Ijideals\NotificationSystem\Tests\Feature\NotificationSystemTest::assertEquals().
+/app/packages/ijideals/notification-system/tests/Feature/NotificationSystemTest.php:136:Parameter #1 $likeable of method App\Models\User::like() expects Ijideals\Likeable\Contracts\Likeable, Ijideals\SocialPosts\Models\Post given.
+/app/packages/ijideals/notification-system/tests/Feature/NotificationSystemTest.php:138:Call to an undefined method Ijideals\NotificationSystem\Tests\Feature\NotificationSystemTest::actingAs().
+/app/packages/ijideals/notification-system/tests/Feature/NotificationSystemTest.php:139:Call to an undefined method Ijideals\NotificationSystem\Tests\Feature\NotificationSystemTest::getJson().
+/app/packages/ijideals/notification-system/tests/Feature/NotificationSystemTest.php:145:Call to an undefined method Ijideals\NotificationSystem\Tests\Feature\NotificationSystemTest::getJson().
+/app/packages/ijideals/notification-system/tests/Feature/NotificationSystemTest.php:153:Parameter #1 $likeable of method App\Models\User::like() expects Ijideals\Likeable\Contracts\Likeable, Ijideals\SocialPosts\Models\Post given.
+/app/packages/ijideals/notification-system/tests/Feature/NotificationSystemTest.php:154:Call to an undefined method Ijideals\NotificationSystem\Tests\Feature\NotificationSystemTest::assertEquals().
+/app/packages/ijideals/notification-system/tests/Feature/NotificationSystemTest.php:161:Call to an undefined method Ijideals\NotificationSystem\Tests\Feature\NotificationSystemTest::assertEquals().
+/app/packages/ijideals/notification-system/tests/Feature/NotificationSystemTest.php:167:Call to an undefined method Ijideals\NotificationSystem\Tests\Feature\NotificationSystemTest::actingAs().
+/app/packages/ijideals/notification-system/tests/Feature/NotificationSystemTest.php:171:Parameter #1 $likeable of method App\Models\User::like() expects Ijideals\Likeable\Contracts\Likeable, Ijideals\SocialPosts\Models\Post given.
+/app/packages/ijideals/notification-system/tests/Feature/NotificationSystemTest.php:173:Call to an undefined method Ijideals\NotificationSystem\Tests\Feature\NotificationSystemTest::assertNotNull().
+/app/packages/ijideals/notification-system/tests/Feature/NotificationSystemTest.php:176:Call to an undefined method Ijideals\NotificationSystem\Tests\Feature\NotificationSystemTest::withHeaders().
+/app/packages/ijideals/notification-system/tests/Feature/NotificationSystemTest.php:186:Call to an undefined method Ijideals\NotificationSystem\Tests\Feature\NotificationSystemTest::assertGreaterThanOrEqual().
+/app/packages/ijideals/notification-system/tests/Feature/NotificationSystemTest.php:187:Call to an undefined method Ijideals\NotificationSystem\Tests\Feature\NotificationSystemTest::withHeaders().
+/app/packages/ijideals/notification-system/tests/Feature/NotificationSystemTest.php:193:Parameter #1 $likeable of method App\Models\User::like() expects Ijideals\Likeable\Contracts\Likeable, Ijideals\SocialPosts\Models\Post given.
+/app/packages/ijideals/notification-system/tests/Feature/NotificationSystemTest.php:197:Call to an undefined method Ijideals\NotificationSystem\Tests\Feature\NotificationSystemTest::withHeaders().
+/app/packages/ijideals/notification-system/tests/Feature/NotificationSystemTest.php:203:Call to an undefined method Ijideals\NotificationSystem\Tests\Feature\NotificationSystemTest::withHeaders().
+/app/packages/ijideals/notification-system/tests/TestCase.php:18:Class Ijideals\NotificationSystem\Tests\TestCase extends unknown class Orchestra\Testbench\TestCase.
+/app/packages/ijideals/notification-system/tests/TestCase.php:24:Ijideals\NotificationSystem\Tests\TestCase::setUp() calls parent::setUp() but Ijideals\NotificationSystem\Tests\TestCase does not extend any class.
+/app/packages/ijideals/notification-system/tests/TestCase.php:88:Call to an undefined method Ijideals\NotificationSystem\Tests\TestCase::loadMigrationsFrom().
+/app/packages/ijideals/search-engine/tests/Feature/SearchEngineTest.php:42:Call to an undefined method Ijideals\SearchEngine\Tests\Feature\SearchEngineTest::getJson().
+/app/packages/ijideals/search-engine/tests/Feature/SearchEngineTest.php:52:Call to an undefined method Ijideals\SearchEngine\Tests\Feature\SearchEngineTest::getJson().
+/app/packages/ijideals/search-engine/tests/Feature/SearchEngineTest.php:62:Call to an undefined method Ijideals\SearchEngine\Tests\Feature\SearchEngineTest::getJson().
+/app/packages/ijideals/search-engine/tests/Feature/SearchEngineTest.php:73:Call to an undefined method Ijideals\SearchEngine\Tests\Feature\SearchEngineTest::getJson().
+/app/packages/ijideals/search-engine/tests/Feature/SearchEngineTest.php:85:Call to an undefined method Ijideals\SearchEngine\Tests\Feature\SearchEngineTest::getJson().
+/app/packages/ijideals/search-engine/tests/Feature/SearchEngineTest.php:94:Call to an undefined method Ijideals\SearchEngine\Tests\Feature\SearchEngineTest::getJson().
+/app/packages/ijideals/search-engine/tests/Feature/SearchEngineTest.php:110:Call to an undefined method Ijideals\SearchEngine\Tests\Feature\SearchEngineTest::getJson().
+/app/packages/ijideals/search-engine/tests/Feature/SearchEngineTest.php:117:Call to an undefined method Ijideals\SearchEngine\Tests\Feature\SearchEngineTest::assertEquals().
+/app/packages/ijideals/search-engine/tests/Feature/SearchEngineTest.php:127:Call to an undefined method Ijideals\SearchEngine\Tests\Feature\SearchEngineTest::getJson().
+/app/packages/ijideals/search-engine/tests/TestCase.php:15:Class Ijideals\SearchEngine\Tests\TestCase extends unknown class Orchestra\Testbench\TestCase.
+/app/packages/ijideals/search-engine/tests/TestCase.php:21:Ijideals\SearchEngine\Tests\TestCase::setUp() calls parent::setUp() but Ijideals\SearchEngine\Tests\TestCase does not extend any class.
+/app/packages/ijideals/search-engine/tests/TestCase.php:138:Access to an undefined property Ijideals\SearchEngine\Tests\TestCase::$faker.
+/app/packages/ijideals/shop-manager/database/factories/ShopFactory.php:17:Access to an undefined property Faker\Generator::$bs.
+/app/packages/ijideals/shop-manager/database/factories/ShopFactory.php:17:Access to an undefined property Faker\Generator::$catchPhrase.
+/app/packages/ijideals/shop-manager/database/seeders/RolesAndPermissionsSeeder.php:41:Undefined variable: $shopPermissions
+/app/packages/ijideals/shop-manager/src/Http/Controllers/ShopController.php:45:Call to an undefined method Ijideals\ShopManager\Http\Controllers\ShopController::authorize().
+/app/packages/ijideals/shop-manager/src/Http/Controllers/ShopController.php:69:Access to an undefined property App\Models\User::$guard_name.
+/app/packages/ijideals/shop-manager/src/Http/Controllers/ShopController.php:70:If condition is always true.
+/app/packages/ijideals/shop-manager/src/Http/Controllers/ShopController.php:73:Access to an undefined property Illuminate\Database\Eloquent\Model::$id.
+/app/packages/ijideals/shop-manager/src/Http/Controllers/ShopController.php:80:Call to an undefined method Illuminate\Database\Eloquent\Model::addMedia().
+/app/packages/ijideals/shop-manager/src/Http/Controllers/ShopController.php:86:Call to an undefined method Illuminate\Database\Eloquent\Model::addMedia().
+/app/packages/ijideals/shop-manager/src/Http/Controllers/ShopController.php:99:Access to an undefined property Ijideals\ShopManager\Models\Shop::$is_active.
+/app/packages/ijideals/shop-manager/src/Http/Controllers/ShopController.php:117:Call to an undefined method Ijideals\ShopManager\Http\Controllers\ShopController::authorize().
+/app/packages/ijideals/shop-manager/src/Http/Controllers/ShopController.php:162:Call to an undefined method Ijideals\ShopManager\Http\Controllers\ShopController::authorize().
+/app/packages/ijideals/shop-manager/src/Http/Controllers/ShopController.php:190:Call to an undefined method Ijideals\ShopManager\Http\Controllers\ShopController::authorize().
+/app/packages/ijideals/shop-manager/src/Http/Controllers/ShopController.php:205:Call to an undefined method Ijideals\ShopManager\Http\Controllers\ShopController::authorize().
+/app/packages/ijideals/shop-manager/src/Http/Controllers/ShopMemberController.php:37:Call to an undefined method Ijideals\ShopManager\Http\Controllers\ShopMemberController::authorize().
+/app/packages/ijideals/shop-manager/src/Http/Controllers/ShopMemberController.php:54:Call to an undefined method Ijideals\ShopManager\Http\Controllers\ShopMemberController::authorize().
+/app/packages/ijideals/shop-manager/src/Http/Controllers/ShopMemberController.php:55:Call to an undefined method Ijideals\ShopManager\Http\Controllers\ShopMemberController::authorize().
+/app/packages/ijideals/shop-manager/src/Http/Controllers/ShopMemberController.php:77:Access to an undefined property Ijideals\ShopManager\Models\Shop::$owner_id.
+/app/packages/ijideals/shop-manager/src/Http/Controllers/ShopMemberController.php:85:Access to an undefined property Ijideals\ShopManager\Models\Shop::$name.
+/app/packages/ijideals/shop-manager/src/Http/Controllers/ShopMemberController.php:102:Access to an undefined property Ijideals\ShopManager\Models\Shop::$owner_id.
+/app/packages/ijideals/shop-manager/src/Http/Controllers/ShopMemberController.php:102:Call to an undefined method App\Models\User::hasShopRole().
+/app/packages/ijideals/shop-manager/src/Http/Controllers/ShopMemberController.php:115:Access to an undefined property Ijideals\ShopManager\Models\Shop::$owner_id.
+/app/packages/ijideals/shop-manager/src/Http/Controllers/ShopMemberController.php:134:Access to an undefined property Ijideals\ShopManager\Models\Shop::$name.
+/app/packages/ijideals/shop-manager/src/Http/Controllers/ShopMemberController.php:150:Call to an undefined method Ijideals\ShopManager\Http\Controllers\ShopMemberController::authorize().
+/app/packages/ijideals/shop-manager/src/Http/Controllers/ShopMemberController.php:157:Access to an undefined property Ijideals\ShopManager\Models\Shop::$owner_id.
+/app/packages/ijideals/shop-manager/src/Http/Controllers/ShopMemberController.php:162:Access to an undefined property Ijideals\ShopManager\Models\Shop::$name.
+/app/packages/ijideals/shop-manager/src/Http/Controllers/ShopPostController.php:42:Call to an undefined method Ijideals\ShopManager\Http\Controllers\ShopPostController::authorize().
+/app/packages/ijideals/shop-manager/src/Http/Controllers/ShopPostController.php:52:If condition is always true.
+/app/packages/ijideals/shop-manager/src/Http/Controllers/ShopPostController.php:56:Unreachable statement - code above always terminates.
+/app/packages/ijideals/shop-manager/src/Models/Shop.php:145:Access to an undefined property App\Models\User::$guard_name.
+/app/packages/ijideals/shop-manager/src/Models/Shop.php:146:Negated boolean expression is always false.
+/app/packages/ijideals/shop-manager/src/Models/Shop.php:173:Call to an undefined method App\Models\User::hasShopRole().
+/app/packages/ijideals/shop-manager/src/Models/Shop.php:191:Access to an undefined property App\Models\User::$guard_name.
+/app/packages/ijideals/shop-manager/src/Models/Shop.php:192:If condition is always true.
+/app/packages/ijideals/shop-manager/src/Models/Shop.php:193:Parameter #2 $touch of method Illuminate\Database\Eloquent\Relations\BelongsToMany<Illuminate\Database\Eloquent\Model>::detach() expects bool, array<int> given.
+/app/packages/ijideals/shop-manager/src/Models/Shop.php:197:Parameter #2 $touch of method Illuminate\Database\Eloquent\Relations\BelongsToMany<Illuminate\Database\Eloquent\Model>::detach() expects bool, array<int> given.
+/app/packages/ijideals/shop-manager/src/Models/Shop.php:199:Unreachable statement - code above always terminates.
+/app/packages/ijideals/shop-manager/src/Models/Shop.php:268:Access to an undefined property Ijideals\ShopManager\Models\Shop::$name.
+/app/packages/ijideals/shop-manager/src/Models/Shop.php:269:Access to an undefined property Ijideals\ShopManager\Models\Shop::$slug.
+/app/packages/ijideals/shop-manager/src/Models/Shop.php:270:Access to an undefined property Ijideals\ShopManager\Models\Shop::$description.
+/app/packages/ijideals/shop-manager/src/Models/Shop.php:271:Access to an undefined property Illuminate\Database\Eloquent\Model::$name.
+/app/packages/ijideals/shop-manager/src/Policies/ShopPolicy.php:29:Access to an undefined property Ijideals\ShopManager\Models\Shop::$is_active.
+/app/packages/ijideals/shop-manager/src/Policies/ShopPolicy.php:34:Access to an undefined property Ijideals\ShopManager\Models\Shop::$owner_id.
+/app/packages/ijideals/shop-manager/src/Policies/ShopPolicy.php:35:Call to an undefined method App\Models\User::hasShopRole().
+/app/packages/ijideals/shop-manager/src/Policies/ShopPolicy.php:55:Access to an undefined property Ijideals\ShopManager\Models\Shop::$owner_id.
+/app/packages/ijideals/shop-manager/src/Policies/ShopPolicy.php:56:Call to an undefined method App\Models\User::hasShopRole().
+/app/packages/ijideals/shop-manager/src/Policies/ShopPolicy.php:66:Access to an undefined property Ijideals\ShopManager\Models\Shop::$owner_id.
+/app/packages/ijideals/shop-manager/src/Policies/ShopPolicy.php:75:Access to an undefined property Ijideals\ShopManager\Models\Shop::$owner_id.
+/app/packages/ijideals/shop-manager/src/Policies/ShopPolicy.php:76:Call to an undefined method App\Models\User::hasShopRole().
+/app/packages/ijideals/shop-manager/src/Policies/ShopPolicy.php:89:Access to an undefined property Ijideals\ShopManager\Models\Shop::$owner_id.
+/app/packages/ijideals/shop-manager/src/Policies/ShopPolicy.php:90:Call to an undefined method App\Models\User::hasShopRole().
+/app/packages/ijideals/shop-manager/tests/Feature/ShopManagerTest.php:38:Call to an undefined method Ijideals\ShopManager\Tests\Feature\ShopManagerTest::actingAs().
+/app/packages/ijideals/shop-manager/tests/Feature/ShopManagerTest.php:39:Call to an undefined method Ijideals\ShopManager\Tests\Feature\ShopManagerTest::postJson().
+/app/packages/ijideals/shop-manager/tests/Feature/ShopManagerTest.php:59:Call to an undefined method Ijideals\ShopManager\Tests\Feature\ShopManagerTest::actingAs().
+/app/packages/ijideals/shop-manager/tests/Feature/ShopManagerTest.php:64:Call to an undefined method Ijideals\ShopManager\Tests\Feature\ShopManagerTest::postJson().
+/app/packages/ijideals/shop-manager/tests/Feature/ShopManagerTest.php:70:Call to an undefined method App\Models\User::hasShopRole().
+/app/packages/ijideals/shop-manager/tests/Feature/ShopManagerTest.php:70:Call to an undefined method Ijideals\ShopManager\Tests\Feature\ShopManagerTest::assertTrue().
+/app/packages/ijideals/shop-manager/tests/Feature/ShopManagerTest.php:76:Call to an undefined method Ijideals\ShopManager\Tests\Feature\ShopManagerTest::actingAs().
+/app/packages/ijideals/shop-manager/tests/Feature/ShopManagerTest.php:78:Access to an undefined property Ijideals\ShopManager\Models\Shop::$slug.
+/app/packages/ijideals/shop-manager/tests/Feature/ShopManagerTest.php:78:Call to an undefined method Ijideals\ShopManager\Tests\Feature\ShopManagerTest::putJson().
+/app/packages/ijideals/shop-manager/tests/Feature/ShopManagerTest.php:86:Call to an undefined method Ijideals\ShopManager\Tests\Feature\ShopManagerTest::actingAs().
+/app/packages/ijideals/shop-manager/tests/Feature/ShopManagerTest.php:87:Access to an undefined property Ijideals\ShopManager\Models\Shop::$slug.
+/app/packages/ijideals/shop-manager/tests/Feature/ShopManagerTest.php:87:Call to an undefined method Ijideals\ShopManager\Tests\Feature\ShopManagerTest::putJson().
+/app/packages/ijideals/shop-manager/tests/Feature/ShopManagerTest.php:94:Call to an undefined method Ijideals\ShopManager\Tests\Feature\ShopManagerTest::actingAs().
+/app/packages/ijideals/shop-manager/tests/Feature/ShopManagerTest.php:96:Access to an undefined property Ijideals\ShopManager\Models\Shop::$slug.
+/app/packages/ijideals/shop-manager/tests/Feature/ShopManagerTest.php:96:Call to an undefined method Ijideals\ShopManager\Tests\Feature\ShopManagerTest::putJson().
+/app/packages/ijideals/shop-manager/tests/Feature/ShopManagerTest.php:104:Call to an undefined method Ijideals\ShopManager\Tests\Feature\ShopManagerTest::actingAs().
+/app/packages/ijideals/shop-manager/tests/Feature/ShopManagerTest.php:110:Access to an undefined property Ijideals\ShopManager\Models\Shop::$slug.
+/app/packages/ijideals/shop-manager/tests/Feature/ShopManagerTest.php:110:Call to an undefined method Ijideals\ShopManager\Tests\Feature\ShopManagerTest::putJson().
+/app/packages/ijideals/shop-manager/tests/Feature/ShopManagerTest.php:111:Access to an undefined property Ijideals\ShopManager\Models\Shop::$name.
+/app/packages/ijideals/shop-manager/tests/Feature/ShopManagerTest.php:118:Call to an undefined method Ijideals\ShopManager\Tests\Feature\ShopManagerTest::assertNotNull().
+/app/packages/ijideals/shop-manager/tests/Feature/ShopManagerTest.php:119:Call to an undefined method Ijideals\ShopManager\Tests\Feature\ShopManagerTest::assertNotNull().
+/app/packages/ijideals/shop-manager/tests/Feature/ShopManagerTest.php:122:Access to an undefined property Ijideals\MediaUploader\Models\Media::$disk.
+/app/packages/ijideals/shop-manager/tests/Feature/ShopManagerTest.php:122:Access to an undefined property Ijideals\MediaUploader\Models\Media::$path.
+/app/packages/ijideals/shop-manager/tests/Feature/ShopManagerTest.php:129:Call to an undefined method Ijideals\ShopManager\Tests\Feature\ShopManagerTest::actingAs().
+/app/packages/ijideals/shop-manager/tests/Feature/ShopManagerTest.php:131:Access to an undefined property Ijideals\ShopManager\Models\Shop::$slug.
+/app/packages/ijideals/shop-manager/tests/Feature/ShopManagerTest.php:131:Call to an undefined method Ijideals\ShopManager\Tests\Feature\ShopManagerTest::postJson().
+/app/packages/ijideals/shop-manager/tests/Feature/ShopManagerTest.php:136:Call to an undefined method App\Models\User::hasShopRole().
+/app/packages/ijideals/shop-manager/tests/Feature/ShopManagerTest.php:136:Call to an undefined method Ijideals\ShopManager\Tests\Feature\ShopManagerTest::assertTrue().
+/app/packages/ijideals/shop-manager/tests/Feature/ShopManagerTest.php:145:Call to an undefined method Ijideals\ShopManager\Tests\Feature\ShopManagerTest::actingAs().
+/app/packages/ijideals/shop-manager/tests/Feature/ShopManagerTest.php:146:Access to an undefined property Ijideals\ShopManager\Models\Shop::$slug.
+/app/packages/ijideals/shop-manager/tests/Feature/ShopManagerTest.php:146:Call to an undefined method Ijideals\ShopManager\Tests\Feature\ShopManagerTest::getJson().
+/app/packages/ijideals/shop-manager/tests/Feature/ShopManagerTest.php:160:Call to an undefined method Ijideals\ShopManager\Tests\Feature\ShopManagerTest::assertTrue().
+/app/packages/ijideals/shop-manager/tests/Feature/ShopManagerTest.php:167:Call to an undefined method App\Models\User::hasShopRole().
+/app/packages/ijideals/shop-manager/tests/Feature/ShopManagerTest.php:167:Call to an undefined method Ijideals\ShopManager\Tests\Feature\ShopManagerTest::assertTrue().
+/app/packages/ijideals/shop-manager/tests/Feature/ShopManagerTest.php:168:Call to an undefined method App\Models\User::hasShopRole().
+/app/packages/ijideals/shop-manager/tests/Feature/ShopManagerTest.php:168:Call to an undefined method Ijideals\ShopManager\Tests\Feature\ShopManagerTest::assertFalse().
+/app/packages/ijideals/shop-manager/tests/Feature/ShopManagerTest.php:170:Call to an undefined method Ijideals\ShopManager\Tests\Feature\ShopManagerTest::actingAs().
+/app/packages/ijideals/shop-manager/tests/Feature/ShopManagerTest.php:171:Access to an undefined property Ijideals\ShopManager\Models\Shop::$slug.
+/app/packages/ijideals/shop-manager/tests/Feature/ShopManagerTest.php:171:Call to an undefined method Ijideals\ShopManager\Tests\Feature\ShopManagerTest::putJson().
+/app/packages/ijideals/shop-manager/tests/Feature/ShopManagerTest.php:177:Call to an undefined method App\Models\User::hasShopRole().
+/app/packages/ijideals/shop-manager/tests/Feature/ShopManagerTest.php:177:Call to an undefined method Ijideals\ShopManager\Tests\Feature\ShopManagerTest::assertTrue().
+/app/packages/ijideals/shop-manager/tests/Feature/ShopManagerTest.php:178:Call to an undefined method App\Models\User::hasShopRole().
+/app/packages/ijideals/shop-manager/tests/Feature/ShopManagerTest.php:178:Call to an undefined method Ijideals\ShopManager\Tests\Feature\ShopManagerTest::assertFalse().
+/app/packages/ijideals/shop-manager/tests/Feature/ShopManagerTest.php:185:Call to an undefined method App\Models\User::hasShopRole().
+/app/packages/ijideals/shop-manager/tests/Feature/ShopManagerTest.php:185:Call to an undefined method Ijideals\ShopManager\Tests\Feature\ShopManagerTest::assertTrue().
+/app/packages/ijideals/shop-manager/tests/Feature/ShopManagerTest.php:187:Call to an undefined method Ijideals\ShopManager\Tests\Feature\ShopManagerTest::actingAs().
+/app/packages/ijideals/shop-manager/tests/Feature/ShopManagerTest.php:188:Access to an undefined property Ijideals\ShopManager\Models\Shop::$slug.
+/app/packages/ijideals/shop-manager/tests/Feature/ShopManagerTest.php:188:Call to an undefined method Ijideals\ShopManager\Tests\Feature\ShopManagerTest::deleteJson().
+/app/packages/ijideals/shop-manager/tests/Feature/ShopManagerTest.php:192:Call to an undefined method App\Models\User::hasShopRole().
+/app/packages/ijideals/shop-manager/tests/Feature/ShopManagerTest.php:192:Call to an undefined method Ijideals\ShopManager\Tests\Feature\ShopManagerTest::assertFalse().
+/app/packages/ijideals/shop-manager/tests/Feature/ShopManagerTest.php:198:Call to an undefined method Ijideals\ShopManager\Tests\Feature\ShopManagerTest::actingAs().
+/app/packages/ijideals/shop-manager/tests/Feature/ShopManagerTest.php:199:Access to an undefined property Ijideals\ShopManager\Models\Shop::$slug.
+/app/packages/ijideals/shop-manager/tests/Feature/ShopManagerTest.php:199:Call to an undefined method Ijideals\ShopManager\Tests\Feature\ShopManagerTest::deleteJson().
+/app/packages/ijideals/shop-manager/tests/Feature/ShopManagerTest.php:207:Call to an undefined method Ijideals\ShopManager\Tests\Feature\ShopManagerTest::actingAs().
+/app/packages/ijideals/shop-manager/tests/Feature/ShopManagerTest.php:217:Access to an undefined property Ijideals\ShopManager\Models\Shop::$name.
+/app/packages/ijideals/shop-manager/tests/Feature/ShopManagerTest.php:220:Call to an undefined method Ijideals\ShopManager\Tests\Feature\ShopManagerTest::assertNotNull().
+/app/packages/ijideals/shop-manager/tests/Feature/ShopManagerTest.php:221:Access to an undefined property Illuminate\Database\Eloquent\Model::$author_id.
+/app/packages/ijideals/shop-manager/tests/Feature/ShopManagerTest.php:221:Call to an undefined method Ijideals\ShopManager\Tests\Feature\ShopManagerTest::assertEquals().
+/app/packages/ijideals/shop-manager/tests/Feature/ShopManagerTest.php:222:Access to an undefined property Illuminate\Database\Eloquent\Model::$author_type.
+/app/packages/ijideals/shop-manager/tests/Feature/ShopManagerTest.php:222:Call to an undefined method Ijideals\ShopManager\Tests\Feature\ShopManagerTest::assertEquals().
+/app/packages/ijideals/shop-manager/tests/Feature/ShopManagerTest.php:223:Access to an undefined property Illuminate\Database\Eloquent\Model::$content.
+/app/packages/ijideals/shop-manager/tests/Feature/ShopManagerTest.php:223:Call to an undefined method Ijideals\ShopManager\Tests\Feature\ShopManagerTest::assertEquals().
+/app/packages/ijideals/shop-manager/tests/TestCase.php:20:Class Ijideals\ShopManager\Tests\TestCase extends unknown class Orchestra\Testbench\TestCase.
+/app/packages/ijideals/shop-manager/tests/TestCase.php:26:Ijideals\ShopManager\Tests\TestCase::setUp() calls parent::setUp() but Ijideals\ShopManager\Tests\TestCase does not extend any class.
+/app/packages/ijideals/shop-manager/tests/TestCase.php:65:Access to static property $pivotPermission on an unknown class Ijideals\ShopManager\Tests\PermissionRegistrar.
+/app/packages/ijideals/shop-manager/tests/TestCase.php:70:Access to static property $pivotPermission on an unknown class Ijideals\ShopManager\Tests\PermissionRegistrar.
+/app/packages/ijideals/shop-manager/tests/TestCase.php:71:Access to static property $pivotPermission on an unknown class Ijideals\ShopManager\Tests\PermissionRegistrar.
+/app/packages/ijideals/shop-manager/tests/TestCase.php:77:Access to static property $pivotRole on an unknown class Ijideals\ShopManager\Tests\PermissionRegistrar.
+/app/packages/ijideals/shop-manager/tests/TestCase.php:82:Access to static property $pivotRole on an unknown class Ijideals\ShopManager\Tests\PermissionRegistrar.
+/app/packages/ijideals/shop-manager/tests/TestCase.php:83:Access to static property $pivotRole on an unknown class Ijideals\ShopManager\Tests\PermissionRegistrar.
+/app/packages/ijideals/shop-manager/tests/TestCase.php:89:Access to static property $pivotPermission on an unknown class Ijideals\ShopManager\Tests\PermissionRegistrar.
+/app/packages/ijideals/shop-manager/tests/TestCase.php:90:Access to static property $pivotRole on an unknown class Ijideals\ShopManager\Tests\PermissionRegistrar.
+/app/packages/ijideals/shop-manager/tests/TestCase.php:91:Access to static property $pivotPermission on an unknown class Ijideals\ShopManager\Tests\PermissionRegistrar.
+/app/packages/ijideals/shop-manager/tests/TestCase.php:92:Access to static property $pivotRole on an unknown class Ijideals\ShopManager\Tests\PermissionRegistrar.
+/app/packages/ijideals/shop-manager/tests/TestCase.php:93:Access to static property $pivotPermission on an unknown class Ijideals\ShopManager\Tests\PermissionRegistrar.
+/app/packages/ijideals/shop-manager/tests/TestCase.php:93:Access to static property $pivotRole on an unknown class Ijideals\ShopManager\Tests\PermissionRegistrar.
+/app/packages/ijideals/shop-manager/tests/TestCase.php:128:Call to an undefined method Ijideals\ShopManager\Tests\TestCase::loadMigrationsFrom().
+/app/packages/ijideals/shop-manager/tests/TestCase.php:131:Call to an undefined method Ijideals\ShopManager\Tests\TestCase::seed().
+/app/packages/ijideals/shop-manager/tests/TestCase.php:132:Call to method forgetCachedPermissions() on an unknown class Ijideals\ShopManager\Tests\PermissionRegistrar.
+/app/packages/ijideals/shop-manager/tests/TestCase.php:132:Class Ijideals\ShopManager\Tests\PermissionRegistrar not found.
+/app/packages/ijideals/shop-manager/tests/TestCase.php:190:Call to static method fake() on an unknown class Ijideals\ShopManager\Tests\Storage.
+/app/packages/ijideals/shop-manager/tests/TestCase.php:229:Access to an undefined property Ijideals\ShopManager\Tests\TestCase::$faker.
+/app/packages/ijideals/shop-manager/tests/TestCase.php:231:Access to an undefined property Ijideals\ShopManager\Tests\TestCase::$faker.
+/app/packages/ijideals/social-posts/src/Http/Controllers/PostController.php:70:Class Ijideals\SocialPosts\Models\Post referenced with incorrect case: IJIDeals\SocialPosts\Models\Post.
+/app/packages/ijideals/social-posts/src/Http/Controllers/PostController.php:84:Class Ijideals\SocialPosts\Models\Post referenced with incorrect case: IJIDeals\SocialPosts\Models\Post.
+/app/packages/ijideals/social-posts/src/Models/Post.php:68:Class Ijideals\SocialPosts\Database\Factories\PostFactory referenced with incorrect case: IJIDeals\SocialPosts\Database\Factories\PostFactory.
+/app/packages/ijideals/user-profile/src/Concerns/HasProfile.php (in context of class@anonymous/packages/ijideals/user-profile/tests/TestCase.php:40):17:Call to an undefined method class@anonymous/packages/ijideals/user-profile/tests/TestCase.php:40::getKeyName().
+/app/packages/ijideals/user-profile/src/Concerns/HasProfile.php (in context of class@anonymous/packages/ijideals/user-profile/tests/TestCase.php:40):17:Call to an undefined method class@anonymous/packages/ijideals/user-profile/tests/TestCase.php:40::hasOne().
+/app/packages/ijideals/user-profile/src/Concerns/HasProfile.php (in context of class@anonymous/packages/ijideals/user-profile/tests/TestCase.php:40):33:Call to an undefined method class@anonymous/packages/ijideals/user-profile/tests/TestCase.php:40::relationLoaded().
+/app/packages/ijideals/user-profile/src/Concerns/HasProfile.php (in context of class@anonymous/packages/ijideals/user-profile/tests/TestCase.php:40):34:Call to an undefined method class@anonymous/packages/ijideals/user-profile/tests/TestCase.php:40::getRelation().
+/app/packages/ijideals/user-profile/src/Concerns/HasProfile.php (in context of class@anonymous/packages/ijideals/user-profile/tests/TestCase.php:40):46:Call to an undefined method class@anonymous/packages/ijideals/user-profile/tests/TestCase.php:40::getKey().
+/app/packages/ijideals/user-profile/src/Concerns/HasProfile.php (in context of class@anonymous/packages/ijideals/user-profile/tests/TestCase.php:40):50:Call to an undefined method class@anonymous/packages/ijideals/user-profile/tests/TestCase.php:40::getRelation().
+/app/packages/ijideals/user-profile/src/Concerns/HasProfile.php (in context of class@anonymous/packages/ijideals/user-profile/tests/TestCase.php:40):50:Call to an undefined method class@anonymous/packages/ijideals/user-profile/tests/TestCase.php:40::relationLoaded().
+/app/packages/ijideals/user-profile/src/Concerns/HasProfile.php (in context of class@anonymous/packages/ijideals/user-profile/tests/TestCase.php:40):51:Call to an undefined method class@anonymous/packages/ijideals/user-profile/tests/TestCase.php:40::setRelation().
+/app/packages/ijideals/user-profile/src/Http/Controllers/UserProfileController.php:35:Negated boolean expression is always false.
+/app/packages/ijideals/user-profile/src/Http/Controllers/UserProfileController.php:53:Negated boolean expression is always false.
+/app/packages/ijideals/user-profile/tests/Feature/UserProfileApiTest.php:37:Call to an undefined method Ijideals\UserProfile\Tests\Feature\UserProfileApiTest::getJson().
+/app/packages/ijideals/user-profile/tests/Feature/UserProfileApiTest.php:52:Call to an undefined method Ijideals\UserProfile\Tests\Feature\UserProfileApiTest::getJson().
+/app/packages/ijideals/user-profile/tests/Feature/UserProfileApiTest.php:62:Call to an undefined method Ijideals\UserProfile\Tests\Feature\UserProfileApiTest::getJson().
+/app/packages/ijideals/user-profile/tests/Feature/UserProfileApiTest.php:77:Call to an undefined method Ijideals\UserProfile\Tests\Feature\UserProfileApiTest::putJson().
+/app/packages/ijideals/user-profile/tests/Feature/UserProfileApiTest.php:85:Call to an undefined method Ijideals\UserProfile\Tests\Feature\UserProfileApiTest::assertDatabaseHas().
+/app/packages/ijideals/user-profile/tests/Feature/UserProfileApiTest.php:100:Call to an undefined method Ijideals\UserProfile\Tests\Feature\UserProfileApiTest::putJson().
+/app/packages/ijideals/user-profile/tests/Feature/UserProfileApiTest.php:106:Call to an undefined method Ijideals\UserProfile\Tests\Feature\UserProfileApiTest::putJson().
+/app/packages/ijideals/user-profile/tests/Feature/UserProfileApiTest.php:126:Call to an undefined method Ijideals\UserProfile\Tests\Feature\UserProfileApiTest::putJson().
+/app/packages/ijideals/user-profile/tests/Feature/UserProfileApiTest.php:132:Call to an undefined method Ijideals\UserProfile\Tests\Feature\UserProfileApiTest::assertDatabaseHas().
+/app/packages/ijideals/user-profile/tests/Feature/UserProfileApiTest.php:142:Call to an undefined method Ijideals\UserProfile\Tests\Feature\UserProfileApiTest::putJson().
+/app/packages/ijideals/user-profile/tests/TestCase.php:13:Class Ijideals\UserProfile\Tests\TestCase extends unknown class Orchestra\Testbench\TestCase.
+/app/packages/ijideals/user-profile/tests/TestCase.php:19:Ijideals\UserProfile\Tests\TestCase::setUp() calls parent::setUp() but Ijideals\UserProfile\Tests\TestCase does not extend any class.
+/app/packages/ijideals/user-profile/tests/TestCase.php:35:Call to an undefined method Ijideals\UserProfile\Tests\TestCase::loadMigrationsFrom().
+/app/packages/ijideals/user-profile/tests/Unit/HasProfileTraitTest.php:21:Call to an undefined method Ijideals\UserProfile\Tests\Unit\HasProfileTraitTest::assertInstanceOf().
+/app/packages/ijideals/user-profile/tests/Unit/HasProfileTraitTest.php:22:Call to an undefined method Ijideals\UserProfile\Tests\Unit\HasProfileTraitTest::assertEquals().
+/app/packages/ijideals/user-profile/tests/Unit/HasProfileTraitTest.php:24:Call to an undefined method Ijideals\UserProfile\Tests\Unit\HasProfileTraitTest::assertDatabaseHas().
+/app/packages/ijideals/user-profile/tests/Unit/HasProfileTraitTest.php:31:Call to an undefined method Ijideals\UserProfile\Tests\Unit\HasProfileTraitTest::assertDatabaseMissing().
+/app/packages/ijideals/user-profile/tests/Unit/HasProfileTraitTest.php:35:Call to an undefined method Ijideals\UserProfile\Tests\Unit\HasProfileTraitTest::assertDatabaseHas().
+/app/packages/ijideals/user-profile/tests/Unit/HasProfileTraitTest.php:36:Call to an undefined method Ijideals\UserProfile\Tests\Unit\HasProfileTraitTest::assertEquals().
+/app/packages/ijideals/user-profile/tests/Unit/HasProfileTraitTest.php:49:Call to an undefined method Ijideals\UserProfile\Tests\Unit\HasProfileTraitTest::assertEquals().
+/app/packages/ijideals/user-profile/tests/Unit/HasProfileTraitTest.php:50:Call to an undefined method Ijideals\UserProfile\Tests\Unit\HasProfileTraitTest::assertEquals().
+/app/packages/ijideals/user-profile/tests/Unit/HasProfileTraitTest.php:60:Call to an undefined method Ijideals\UserProfile\Tests\Unit\HasProfileTraitTest::assertInstanceOf().
+/app/packages/ijideals/user-profile/tests/Unit/HasProfileTraitTest.php:61:Call to an undefined method Ijideals\UserProfile\Tests\Unit\HasProfileTraitTest::assertEquals().
+/app/packages/ijideals/user-profile/tests/Unit/HasProfileTraitTest.php:62:Call to an undefined method Ijideals\UserProfile\Tests\Unit\HasProfileTraitTest::assertEquals().
+/app/packages/ijideals/user-profile/tests/Unit/HasProfileTraitTest.php:71:Call to an undefined method Ijideals\UserProfile\Tests\Unit\HasProfileTraitTest::assertInstanceOf().
+/app/packages/ijideals/user-profile/tests/Unit/HasProfileTraitTest.php:85:Call to an undefined method Ijideals\UserProfile\Tests\Unit\HasProfileTraitTest::assertSame().
+/app/packages/ijideals/user-profile/tests/Unit/HasProfileTraitTest.php:86:Call to an undefined method Ijideals\UserProfile\Tests\Unit\HasProfileTraitTest::assertEquals().
+/app/packages/ijideals/user-settings/src/Concerns/HasSettings.php (in context of class App\Models\User):34:Access to an undefined property Illuminate\Database\Eloquent\Model::$value.
+/app/packages/ijideals/user-settings/src/Concerns/HasSettings.php (in context of class App\Models\User):61:Method App\Models\User::setSetting() should return Ijideals\UserSettings\Models\UserSetting|false but returns Illuminate\Database\Eloquent\Model.
+/app/packages/ijideals/user-settings/src/Models/UserSetting.php:20:PHPDoc type array of property Ijideals\UserSettings\Models\UserSetting::$casts is not covariant with PHPDoc type array<string, string> of overridden property Illuminate\Database\Eloquent\Model::$casts.
+/app/packages/ijideals/user-settings/tests/Feature/UserSettingsTest.php:20:Call to an undefined method Ijideals\UserSettings\Tests\Feature\UserSettingsTest::actingAs().
+/app/packages/ijideals/user-settings/tests/Feature/UserSettingsTest.php:25:Call to an undefined method Ijideals\UserSettings\Tests\Feature\UserSettingsTest::getJson().
+/app/packages/ijideals/user-settings/tests/Feature/UserSettingsTest.php:42:Call to an undefined method Ijideals\UserSettings\Tests\Feature\UserSettingsTest::actingAs().
+/app/packages/ijideals/user-settings/tests/Feature/UserSettingsTest.php:46:Call to an undefined method Ijideals\UserSettings\Tests\Feature\UserSettingsTest::getJson().
+/app/packages/ijideals/user-settings/tests/Feature/UserSettingsTest.php:59:Call to an undefined method Ijideals\UserSettings\Tests\Feature\UserSettingsTest::actingAs().
+/app/packages/ijideals/user-settings/tests/Feature/UserSettingsTest.php:66:Call to an undefined method Ijideals\UserSettings\Tests\Feature\UserSettingsTest::putJson().
+/app/packages/ijideals/user-settings/tests/Feature/UserSettingsTest.php:73:Call to an undefined method Ijideals\UserSettings\Tests\Feature\UserSettingsTest::assertEquals().
+/app/packages/ijideals/user-settings/tests/Feature/UserSettingsTest.php:74:Call to an undefined method Ijideals\UserSettings\Tests\Feature\UserSettingsTest::assertEquals().
+/app/packages/ijideals/user-settings/tests/Feature/UserSettingsTest.php:75:Call to an undefined method Ijideals\UserSettings\Tests\Feature\UserSettingsTest::assertEquals().
+/app/packages/ijideals/user-settings/tests/Feature/UserSettingsTest.php:81:Call to an undefined method Ijideals\UserSettings\Tests\Feature\UserSettingsTest::actingAs().
+/app/packages/ijideals/user-settings/tests/Feature/UserSettingsTest.php:87:Call to an undefined method Ijideals\UserSettings\Tests\Feature\UserSettingsTest::putJson().
+/app/packages/ijideals/user-settings/tests/Feature/UserSettingsTest.php:91:Call to an undefined method Ijideals\UserSettings\Tests\Feature\UserSettingsTest::assertFalse().
+/app/packages/ijideals/user-settings/tests/Feature/UserSettingsTest.php:91:Call to static method has() on an unknown class Ijideals\UserSettings\Tests\Feature\Arr.
+/app/packages/ijideals/user-settings/tests/Feature/UserSettingsTest.php:92:Call to an undefined method Ijideals\UserSettings\Tests\Feature\UserSettingsTest::assertEquals().
+/app/packages/ijideals/user-settings/tests/Feature/UserSettingsTest.php:98:Call to an undefined method Ijideals\UserSettings\Tests\Feature\UserSettingsTest::actingAs().
+/app/packages/ijideals/user-settings/tests/Feature/UserSettingsTest.php:101:Call to an undefined method Ijideals\UserSettings\Tests\Feature\UserSettingsTest::putJson().
+/app/packages/ijideals/user-settings/tests/Feature/UserSettingsTest.php:102:Call to an undefined method Ijideals\UserSettings\Tests\Feature\UserSettingsTest::assertFalse().
+/app/packages/ijideals/user-settings/tests/Feature/UserSettingsTest.php:104:Call to an undefined method Ijideals\UserSettings\Tests\Feature\UserSettingsTest::putJson().
+/app/packages/ijideals/user-settings/tests/Feature/UserSettingsTest.php:105:Call to an undefined method Ijideals\UserSettings\Tests\Feature\UserSettingsTest::assertTrue().
+/app/packages/ijideals/user-settings/tests/Feature/UserSettingsTest.php:107:Call to an undefined method Ijideals\UserSettings\Tests\Feature\UserSettingsTest::getJson().
+/app/packages/ijideals/user-settings/tests/Feature/UserSettingsTest.php:123:Call to an undefined method Ijideals\UserSettings\Tests\Feature\UserSettingsTest::assertEquals().
+/app/packages/ijideals/user-settings/tests/Feature/UserSettingsTest.php:124:Call to an undefined method Ijideals\UserSettings\Tests\Feature\UserSettingsTest::assertEquals().
+/app/packages/ijideals/user-settings/tests/Feature/UserSettingsTest.php:129:Parameter #1 $likeable of method App\Models\User::like() expects Ijideals\Likeable\Contracts\Likeable, Ijideals\SocialPosts\Models\Post given.
+/app/packages/ijideals/user-settings/tests/Feature/UserSettingsTest.php:132:Call to an undefined method Ijideals\UserSettings\Tests\Feature\UserSettingsTest::assertEquals().
+/app/packages/ijideals/user-settings/tests/Feature/UserSettingsTest.php:145:Call to an undefined method Ijideals\UserSettings\Tests\Feature\UserSettingsTest::assertEquals().
+/app/packages/ijideals/user-settings/tests/Feature/UserSettingsTest.php:146:Call to an undefined method Ijideals\UserSettings\Tests\Feature\UserSettingsTest::assertEquals().
+/app/packages/ijideals/user-settings/tests/Feature/UserSettingsTest.php:163:Call to an undefined method Ijideals\UserSettings\Tests\Feature\UserSettingsTest::assertEquals().
+/app/packages/ijideals/user-settings/tests/TestCase.php:20:Class Ijideals\UserSettings\Tests\TestCase extends unknown class Orchestra\Testbench\TestCase.
+/app/packages/ijideals/user-settings/tests/TestCase.php:28:Ijideals\UserSettings\Tests\TestCase::setUp() calls parent::setUp() but Ijideals\UserSettings\Tests\TestCase does not extend any class.
+/app/packages/ijideals/user-settings/tests/TestCase.php:76:Call to an undefined method Ijideals\UserSettings\Tests\TestCase::loadMigrationsFrom().

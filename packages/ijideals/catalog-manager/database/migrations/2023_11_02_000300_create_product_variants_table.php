@@ -10,9 +10,9 @@
         {
             $tableName = config('catalog-manager.tables.product_variants', 'product_variants');
             $productsTable = config('catalog-manager.tables.products', 'products');
-            $shopsTable = app(config('catalog-manager.shop_model'))->getTable(); // To get shop_id for unique SKU
+            // $shopsTable = app(config('catalog-manager.shop_model'))->getTable(); // Unused in this closure
 
-            Schema::create($tableName, function (Blueprint $table) use ($productsTable, $shopsTable) {
+            Schema::create($tableName, function (Blueprint $table) use ($productsTable) { // Removed $shopsTable
                 $table->id();
                 $table->unsignedBigInteger('product_id');
                 $table->foreign('product_id')

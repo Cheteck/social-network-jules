@@ -12,8 +12,6 @@ class SetLocale
     /**
      * Handle an incoming request.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure  $next
      * @return mixed
      */
     public function handle(Request $request, Closure $next)
@@ -31,7 +29,7 @@ class SetLocale
         }
 
         // Priority 3: Locale from 'Accept-Language' header
-        if (!$locale) {
+        if (! $locale) {
             $headerLocale = $request->getPreferredLanguage(config('app.supported_locales', ['en']));
             if ($headerLocale) {
                 $locale = $headerLocale;
@@ -39,19 +37,19 @@ class SetLocale
         }
 
         // Priority 4: Default locale from config
-        if (!$locale) {
+        if (! $locale) {
             $locale = config('app.locale', 'en');
         }
 
         // Validate if the determined locale is supported, otherwise use fallback
-        if (!in_array($locale, config('app.supported_locales', ['en']))) {
+        if (! in_array($locale, config('app.supported_locales', ['en']))) {
             $locale = config('app.fallback_locale', 'en');
         }
 
         App::setLocale($locale);
 
         // Optional: Store the locale in session for subsequent requests if it was determined by header or default
-        if ($request->hasHeader('Accept-Language') || !Session::has('locale')) {
+        if ($request->hasHeader('Accept-Language') || ! Session::has('locale')) {
             Session::put('locale', $locale);
         }
 

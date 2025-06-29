@@ -45,12 +45,10 @@ class PostController extends Controller
             $post->load('author');
 
             // Sync hashtags from content
-            /* // Temporarily commented out for debugging 500 error
             if (method_exists($post, 'syncHashtags')) {
                 $post->syncHashtags($validatedData['content']);
                 $post->load('hashtags'); // Load hashtags for the response
             }
-            */
 
             return response()->json($post, 201); // 201 Created
         } catch (\Exception $e) {
@@ -64,7 +62,7 @@ class PostController extends Controller
 
     /**
      * Display the specified resource.
-     * @param \IJIDeals\SocialPosts\Models\Post $post
+     * @param \Ijideals\SocialPosts\Models\Post $post
      * @return \Illuminate\Http\JsonResponse
      */
     public function show(Post $post): JsonResponse
@@ -78,44 +76,35 @@ class PostController extends Controller
     /**
      * Update the specified resource in storage.
      * @param \Illuminate\Http\Request $request
-     * @param \IJIDeals\SocialPosts\Models\Post $post
+     * @param \Ijideals\SocialPosts\Models\Post $post
      * @return \Illuminate\Http\JsonResponse
      */
     public function update(Request $request, Post $post): JsonResponse
     {
-        // /** @var \App\Models\User $currentUser */
-        // $currentUser = Auth::user();
+        /** @var \App\Models\User $currentUser */
+        $currentUser = Auth::user();
 
-        // // Vérifier si l'utilisateur authentifié est l'auteur du post
-        // if ($post->author_id !== $currentUser->getKey() || $post->author_type !== get_class($currentUser)) {
-        //     return response()->json(['message' => 'Unauthorized to update this post.'], 403);
-        // }
+        // Vérifier si l'utilisateur authentifié est l'auteur du post
+        if ($post->author_id !== $currentUser->getKey() || $post->author_type !== get_class($currentUser)) {
+            return response()->json(['message' => 'Unauthorized to update this post.'], 403);
+        }
 
-        // $validatedData = $request->validate([
-        //     'content' => 'required|string|max:1000',
-        // ]);
+        $validatedData = $request->validate([
+            'content' => 'required|string|max:1000',
+        ]);
 
-        // $post->update($validatedData);
+        $post->update($validatedData);
 
-        // // Recharger le post avec l'auteur pour la réponse
-        // $post->load('author');
+        // Recharger le post avec l'auteur pour la réponse
+        $post->load('author');
 
-        // // Sync hashtags from content
-        // try {
-        //     if (method_exists($post, 'syncHashtags')) {
-        //         $post->syncHashtags($validatedData['content']);
-        //         $post->load('hashtags'); // Load hashtags for the response
-        //     }
-        // } catch (\Exception $hashtagException) {
-        //     return response()->json([
-        //         'message' => 'Error during hashtag processing in update.',
-        //         'error' => $hashtagException->getMessage(),
-        //         'trace' => $hashtagException->getTraceAsString(),
-        //     ], 500);
-        // }
+        // Sync hashtags from content
+        if (method_exists($post, 'syncHashtags')) {
+            $post->syncHashtags($validatedData['content']);
+            $post->load('hashtags'); // Load hashtags for the response
+        }
 
-        // return response()->json($post);
-        return response()->json(['status' => 'ok'], 200);
+        return response()->json($post);
     }
 
     /**

@@ -3,37 +3,63 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Ijideals\Commentable\Concerns\CanComment;
+use Ijideals\Commentable\Contracts\CommenterContract;
+use Ijideals\Followable\Followable;
+use Ijideals\Likeable\Concerns\CanLike;
+use Ijideals\Likeable\Contracts\Liker as LikerContract;
+use Ijideals\MediaUploader\Concerns\HasMedia;
+use Ijideals\NotificationSystem\Concerns\HasNotifications;
+use Ijideals\SocialPosts\Concerns\HasSocialPosts;
+use Ijideals\UserProfile\Concerns\HasProfile;
+use Ijideals\UserSettings\Concerns\HasSettings;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
-use Ijideals\Followable\Followable;
-use Ijideals\SocialPosts\Concerns\HasSocialPosts;
-use Ijideals\UserProfile\Concerns\HasProfile;
-use Ijideals\Likeable\Concerns\CanLike;
-use Ijideals\Likeable\Contracts\Liker as LikerContract;
-use Ijideals\Commentable\Concerns\CanComment;
-use Ijideals\Commentable\Contracts\CommenterContract;
-use Ijideals\MediaUploader\Concerns\HasMedia;
-use Ijideals\NotificationSystem\Concerns\HasNotifications;
 use Laravel\Scout\Searchable;
-use Spatie\Permission\Traits\HasRoles;
-use Ijideals\UserSettings\Concerns\HasSettings; // Import HasSettings trait
+use Spatie\Permission\Traits\HasRoles; // Import HasSettings trait
 
-class User extends Authenticatable implements LikerContract, CommenterContract // Implement contracts
+/**
+ * @property int $id
+ * @property string $name
+ * @property string $email
+ * @property \Illuminate\Support\Carbon|null $email_verified_at
+ * @property string $password
+ * @property string|null $remember_token
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \Illuminate\Database\Eloquent\Collection|\Ijideals\SocialPosts\Models\Post[] $posts
+ * @property-read \Illuminate\Database\Eloquent\Collection|\Ijideals\ShopManager\Models\Shop[] $shopsOwned
+ * @property-read \Ijideals\UserProfile\Models\UserProfile|null $profile
+ * @property-read string|null $avatar_url
+ * @property-read string|null $banner_url
+ *
+ * @method bool hasShopRole(string|array $role, \Ijideals\ShopManager\Models\Shop $shop)
+ * @method \Illuminate\Database\Eloquent\Relations\MorphMany ijidealsSystemNotifications()
+ * @method \Illuminate\Database\Eloquent\Relations\MorphMany ijidealsSystemReadNotifications()
+ * @method \Illuminate\Database\Eloquent\Relations\MorphMany ijidealsSystemUnreadNotifications()
+ *
+ * @mixin \Illuminate\Notifications\Notifiable
+ * @mixin \Spatie\Permission\Traits\HasRoles
+ * @mixin \Ijideals\Followable\Followable
+ * @mixin \Ijideals\SocialPosts\Concerns\HasSocialPosts
+ * @mixin \Ijideals\UserProfile\Concerns\HasProfile
+ * @mixin \Ijideals\Likeable\Concerns\CanLike
+ * @mixin \Ijideals\Commentable\Concerns\CanComment
+ * @mixin \Ijideals\MediaUploader\Concerns\HasMedia
+ * @mixin \Ijideals\NotificationSystem\Concerns\HasNotifications
+ * @mixin \Ijideals\UserSettings\Concerns\HasSettings
+ */
+class User extends Authenticatable implements CommenterContract, LikerContract // Implement contracts
 {
+    use CanComment;
+    use CanLike;
+    use Followable;
     use HasApiTokens;
     use HasFactory;
-    use Followable;
-    use HasSocialPosts;
-    use HasProfile;
-    use CanLike;
-    use CanComment;
     use HasMedia;
-    use Searchable;
-    use HasRoles;
-    use HasSettings;
-    use Notifiable; // Laravel's default Notifiable trait
+    // Laravel's default Notifiable trait
     use HasNotifications { // Custom HasNotifications trait with conflict resolution
         Notifiable::notifications insteadof HasNotifications;
         HasNotifications::notifications as ijidealsSystemNotifications;
@@ -42,7 +68,12 @@ class User extends Authenticatable implements LikerContract, CommenterContract /
         Notifiable::unreadNotifications insteadof HasNotifications;
         HasNotifications::unreadNotifications as ijidealsSystemUnreadNotifications;
     }
-
+    use HasProfile;
+    use HasRoles;
+    use HasSettings;
+    use HasSocialPosts;
+    use Notifiable;
+    use Searchable;
 
     // If your primary guard for users managing shops is 'api', uncomment and set this:
     // protected $guard_name = 'api';
@@ -56,12 +87,14 @@ class User extends Authenticatable implements LikerContract, CommenterContract /
     public function getAvatarUrlAttribute(): ?string
     {
         $avatar = $this->getFirstMedia('avatar'); // 'avatar' is the collection name
+
         return $avatar ? $avatar->getFullUrl() : null; // Or return a default avatar URL
     }
 
     public function getBannerUrlAttribute(): ?string
     {
         $banner = $this->getFirstMedia('banner'); // 'banner' is the collection name
+
         return $banner ? $banner->getFullUrl() : null; // Or return a default banner URL
     }
 
@@ -117,8 +150,6 @@ class User extends Authenticatable implements LikerContract, CommenterContract /
 
     /**
      * Get the name of the index associated with the model.
-     *
-     * @return string
      */
     public function searchableAs(): string
     {
@@ -127,8 +158,6 @@ class User extends Authenticatable implements LikerContract, CommenterContract /
 
     /**
      * Get the shops owned by the user.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function shopsOwned(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
@@ -160,7 +189,6 @@ class User extends Authenticatable implements LikerContract, CommenterContract /
     /**
      * Get the user's roles for a specific shop.
      *
-     * @param \Ijideals\ShopManager\Models\Shop $shop
      * @return \Illuminate\Support\Collection Collection of Spatie\Permission\Models\Role
      */
     public function getShopRoles(\Ijideals\ShopManager\Models\Shop $shop): \Illuminate\Support\Collection
@@ -168,6 +196,7 @@ class User extends Authenticatable implements LikerContract, CommenterContract /
         // Spatie's HasRoles trait provides roles() relationship.
         // We filter it by the team_id (shop_id).
         $teamKeyField = config('permission.table_names.model_has_roles').'.'.config('permission.column_names.team_foreign_key');
+
         return $this->roles()->wherePivot($teamKeyField, $shop->id)->get();
     }
 
@@ -175,8 +204,7 @@ class User extends Authenticatable implements LikerContract, CommenterContract /
      * Assign a role to the user for a specific shop.
      * This is a helper that leverages Spatie's team functionality.
      *
-     * @param string|\Spatie\Permission\Contracts\Role $role
-     * @param \Ijideals\ShopManager\Models\Shop $shop
+     * @param  string|\Spatie\Permission\Contracts\Role  $role
      * @return $this
      */
     public function assignShopRole($role, \Ijideals\ShopManager\Models\Shop $shop)
@@ -242,5 +270,4 @@ class User extends Authenticatable implements LikerContract, CommenterContract /
         // The role itself is global, its assignment to user is scoped to shop_id.
         return $this; // Placeholder
     }
-
 }

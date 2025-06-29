@@ -6,6 +6,16 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 
+/**
+ * Class Hashtag
+ * @package Ijideals\HashtagSystem\Models
+ *
+ * @property int $id
+ * @property string $name
+ * @property string $slug
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ */
 class Hashtag extends Model
 {
     use HasFactory;
@@ -40,7 +50,7 @@ class Hashtag extends Model
     {
         // This is a simple way to define relationships for known hashtagged models.
         // A more robust solution might involve configuration or a discovery mechanism.
-        if (Str::ends_with($method, 's') && !method_exists($this, $method)) {
+        if (Str::endsWith($method, 's') && !method_exists($this, $method)) { // Changed ends_with to endsWith
                 $modelNameSingular = Str::singular($method);
                 $modelNameStudly = Str::studly($modelNameSingular);
 

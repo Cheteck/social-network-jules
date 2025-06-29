@@ -8,6 +8,16 @@ use Illuminate\Support\Facades\Schema;
 use Ijideals\HashtagSystem\Traits\HasHashtags;
 use Illuminate\Database\Eloquent\Factories\HasFactory; // Optional: if you want to use factories for TestPost
 
+/**
+ * Class TestPost
+ * For testing purposes.
+ *
+ * @property int $id
+ * @property string $title
+ * @property ?string $content
+ * @property \Illuminate\Support\Carbon $created_at
+ * @property \Illuminate\Support\Carbon $updated_at
+ */
 class TestPost extends Model
 {
     use HasHashtags;
@@ -22,8 +32,8 @@ class TestPost extends Model
      */
     public static function migrate()
     {
-        if (!Schema::hasTable((new static)->getTable())) {
-            Schema::create((new static)->getTable(), function (Blueprint $table) {
+        if (!Schema::hasTable((new self)->getTable())) {
+            Schema::create((new self)->getTable(), function (Blueprint $table) {
                 $table->id();
                 $table->string('title');
                 $table->text('content')->nullable();

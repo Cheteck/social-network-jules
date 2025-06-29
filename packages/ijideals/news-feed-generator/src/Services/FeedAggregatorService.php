@@ -199,69 +199,6 @@ class FeedAggregatorService
 
 
     // Future methods for more advanced aggregation:
-        // This depends on what you want to show in the feed item.
-        if (method_exists($this->postModelClass, 'author')) {
-            $postsQuery->with('author');
-        }
-        if (method_exists($this->postModelClass, 'likes')) { // from ijideals/likeable
-            $postsQuery->withCount('likes');
-        }
-        if (method_exists($this->postModelClass, 'comments')) { // from ijideals/commentable
-            $postsQuery->withCount('comments');
-        }
-        // Example for media, if posts can have media from ijideals/media-uploader
-        // Assumes a 'media' relation and you want to load a specific collection, e.g., 'post_images'
-        // if (method_exists($this->postModelClass, 'media')) {
-        //    $postsQuery->with(['media' => function ($query) {
-        //        $query->where('collection_name', 'post_images'); // Or your relevant collection
-        //    }]);
-        // }
-
-
-        $allPotentialPosts = $postsQuery->get();
-
-        // Rank the fetched posts
-        $rankedPosts = $this->rankingEngine->rankPosts($allPotentialPosts);
-
-        // Manually paginate the ranked collection
-        $currentPageItems = $rankedPosts->slice(($page - 1) * $this->paginationItems, $this->paginationItems)->values();
-
-        return new LengthAwarePaginator(
-            $currentPageItems,
-            $rankedPosts->count(),
-            $this->paginationItems,
-            $page,
-            ['path' => request()->url(), 'query' => request()->query()]
-        );
-    }
-
-    // Renaming the old MVP method for clarity or if needed as a fallback
-    public function getAggregatedFeedForUserChronological(int|string $userId, int $page = 1): LengthAwarePaginator
-    {
-        $user = $this->userModelClass::find($userId);
-
-        if (!$user || !method_exists($user, 'followings')) {
-            return new LengthAwarePaginator([], 0, $this->paginationItems, $page);
-        }
-        $followedUserIds = $user->followings()->pluck('id')->all();
-        if (empty($followedUserIds)) {
-            return new LengthAwarePaginator([], 0, $this->paginationItems, $page);
-        }
-
-        $postsQuery = $this->postModelClass::whereIn('author_id', $followedUserIds)
-            ->where('author_type', (new $this->userModelClass)->getMorphClass())
-            ->orderBy(config('news-feed-generator.ranking.default_sort_column', 'created_at'),
-                      config('news-feed-generator.ranking.default_sort_direction', 'desc'));
-
-        if (method_exists($this->postModelClass, 'author')) $postsQuery->with('author');
-        if (method_exists($this->postModelClass, 'likes')) $postsQuery->withCount('likes');
-        if (method_exists($this->postModelClass, 'comments')) $postsQuery->withCount('comments');
-
-        return $postsQuery->paginate($this->paginationItems, ['*'], 'page', $page);
-    }
-
-
-    // Future methods for more advanced aggregation:
     // - getDiscoveryContent()
     // - getSponsoredContent()
     // - applyContentFilters()

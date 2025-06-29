@@ -11,7 +11,7 @@ class HashtagFactory extends Factory
     /**
      * The name of the factory's corresponding model.
      *
-     * @var string
+     * @var class-string<\Ijideals\HashtagSystem\Models\Hashtag>
      */
     protected $model = Hashtag::class;
 

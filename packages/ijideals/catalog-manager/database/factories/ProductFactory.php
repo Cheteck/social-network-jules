@@ -21,7 +21,7 @@
                 'name' => $this->faker->words(3, true),
                 'description' => $this->faker->paragraph,
                 'price' => $this->faker->randomFloat(2, 5, 1000),
-                'sku' => $this->faker->optional(0.8)->unique()->ean8, // SKU is optional but unique if present
+                'sku' => $this->faker->optional(0.8)->unique()->numerify('########'), // SKU is optional but unique if present
                 'stock_quantity' => $this->faker->numberBetween(0, 200),
                 'manage_stock' => config('catalog-manager.stock_management_enabled', true),
                 'is_active' => true,
@@ -50,6 +50,8 @@
                 if (is_numeric($categories)) {
                     // Create N new categories if not already existing or get random ones
                     $categoryIds = \Ijideals\CatalogManager\Models\Category::factory()->count($categories)->create()->pluck('id');
+                } elseif ($categories instanceof \Ijideals\CatalogManager\Models\Category) {
+                    $categoryIds = [$categories->id];
                 } elseif ($categories instanceof \Illuminate\Support\Collection || is_array($categories)) {
                     $categoryIds = collect($categories)->map(function ($category) {
                         return $category instanceof \Ijideals\CatalogManager\Models\Category ? $category->id : $category;

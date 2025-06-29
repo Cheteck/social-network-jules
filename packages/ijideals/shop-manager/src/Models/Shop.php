@@ -9,6 +9,34 @@ use Illuminate\Support\Str;
 use Ijideals\MediaUploader\Concerns\HasMedia;
 use Laravel\Scout\Searchable; // Import Scout's Searchable trait
 
+/**
+ * Class Shop
+ * @package Ijideals\ShopManager\Models
+ *
+ * @property int $id
+ * @property string $name
+ * @property string|null $slug
+ * @property int $owner_id
+ * @property string|null $description
+ * @property string|null $website
+ * @property string|null $phone
+ * @property string|null $address_line_1
+ * @property string|null $city
+ * @property string|null $postal_code
+ * @property string|null $country_code
+ * @property bool $is_active
+ * @property array|null $settings
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ *
+ * @property-read User $owner
+ * @property-read string|null $logo_url
+ * @property-read string|null $cover_image_url
+ * @property-read \Illuminate\Database\Eloquent\Collection|\Ijideals\SocialPosts\Models\Post[] $posts
+ * @property-read \Illuminate\Database\Eloquent\Collection|\Ijideals\CatalogManager\Models\Product[] $products
+ *
+ * @method \Illuminate\Database\Eloquent\Relations\HasMany products()
+ */
 class Shop extends Model
 {
     use HasFactory, HasMedia, Searchable; // Use Scout's Searchable trait
@@ -280,5 +308,16 @@ class Shop extends Model
     public function searchableAs(): string
     {
         return config('scout.prefix').'shops_index';
+    }
+
+    /**
+     * Get the products associated with this shop.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function products(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        $productModelClass = config('catalog-manager.product_model', \Ijideals\CatalogManager\Models\Product::class);
+        return $this->hasMany($productModelClass, 'shop_id');
     }
 }

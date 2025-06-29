@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use IJIDeals\SocialPosts\Http\Controllers\PostController;
+use Ijideals\SocialPosts\Http\Controllers\PostController; // Corrected Namespace
 
 /*
 |--------------------------------------------------------------------------
