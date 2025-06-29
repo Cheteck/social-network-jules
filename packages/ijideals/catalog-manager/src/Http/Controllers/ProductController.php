@@ -101,9 +101,15 @@ class ProductController extends Controller
             'category_ids.*' => 'integer|exists:'.app($this->categoryModelClass)->getTable().',id',
             'images' => 'sometimes|array|max:5', // Max 5 images per upload for now
             'images.*' => 'image|max:'.(config('media-uploader.collections.default.max_file_size', 5120)), // Validate each image
+            'specifications' => 'sometimes|array',
+            'specifications.*.key_id' => 'sometimes|required_without:specifications.*.key_name|integer|exists:specification_keys,id',
+            'specifications.*.key_name' => 'sometimes|required_without:specifications.*.key_id|string|max:255',
+            'specifications.*.key_type' => 'sometimes|string|max:50', // Optional, used if creating new key via name
+            'specifications.*.key_unit' => 'sometimes|nullable|string|max:50', // Optional, used if creating new key via name
+            'specifications.*.value' => 'required_with:specifications.*.key_id,specifications.*.key_name|string|max:1000', // Value is required if key is provided
         ]);
 
-        $productData = Arr::except($validatedData, ['category_ids', 'images']);
+        $productData = Arr::except($validatedData, ['category_ids', 'images', 'specifications']);
         $productData['shop_id'] = $shop->id; // Ensure shop_id is set
 
         $product = $this->productModelClass::create($productData);
@@ -119,8 +125,12 @@ class ProductController extends Controller
             }
         }
 
+        if (isset($validatedData['specifications'])) {
+            $product->syncSpecifications($validatedData['specifications']);
+        }
+
         // TODO: Use API Resource
-        return response()->json($product->load(['shop', 'categories', 'media']), 201);
+        return response()->json($product->load(['shop', 'categories', 'media', 'specificationValues.specificationKey']), 201);
     }
 
     /**
@@ -141,7 +151,8 @@ class ProductController extends Controller
         }
 
         // TODO: Use API Resource
-        return response()->json($product->load(['shop', 'categories', 'media']));
+        // Eager load specificationValues and their keys for the response
+        return response()->json($product->load(['shop', 'categories', 'media', 'specificationValues.specificationKey']));
     }
 
     /**
@@ -178,18 +189,28 @@ class ProductController extends Controller
             'properties' => 'sometimes|array',
             'category_ids' => 'sometimes|array',
             'category_ids.*' => 'integer|exists:'.app($this->categoryModelClass)->getTable().',id',
+            'specifications' => 'sometimes|array',
+            'specifications.*.key_id' => 'sometimes|required_without:specifications.*.key_name|integer|exists:specification_keys,id',
+            'specifications.*.key_name' => 'sometimes|required_without:specifications.*.key_id|string|max:255',
+            'specifications.*.key_type' => 'sometimes|string|max:50',
+            'specifications.*.key_unit' => 'sometimes|nullable|string|max:50',
+            'specifications.*.value' => 'required_with:specifications.*.key_id,specifications.*.key_name|string|max:1000',
             // Image updates are often handled by separate endpoints (add image, delete image, reorder)
         ]);
 
-        $product->update(Arr::except($validatedData, ['category_ids']));
+        $product->update(Arr::except($validatedData, ['category_ids', 'specifications']));
 
         if (isset($validatedData['category_ids'])) {
             $product->categories()->sync($validatedData['category_ids']);
         }
 
+        if (isset($validatedData['specifications'])) {
+            $product->syncSpecifications($validatedData['specifications']);
+        }
+
         // TODO: Handle image updates (e.g., adding new ones, deleting old ones if needed via separate requests or more complex logic here)
 
-        return response()->json($product->load(['shop', 'categories', 'media']));
+        return response()->json($product->load(['shop', 'categories', 'media', 'specificationValues.specificationKey']));
     }
 
     /**

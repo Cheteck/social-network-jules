@@ -7,26 +7,28 @@
     "require": {
         "php": "^8.1",
         "guzzlehttp/guzzle": "^7.2",
+        "ijideals/catalog-manager": "@dev",
+        "ijideals/commentable": "@dev",
+        "ijideals/followable": "@dev",
+        "ijideals/hashtag-system": "@dev",
+        "ijideals/likeable": "@dev",
+        "ijideals/media-uploader": "@dev",
+        "ijideals/mention-system": "@dev",
+        "ijideals/news-feed-generator": "@dev",
+        "ijideals/notification-system": "@dev",
+        "ijideals/product-specifications": "@dev",
+        "ijideals/search-engine": "@dev",
+        "ijideals/shop-manager": "@dev",
+        "ijideals/social-posts": "@dev",
+        "ijideals/user-profile": "@dev",
+        "ijideals/user-settings": "@dev",
+        "intervention/image": "^2.7|^3.0",
         "laravel/framework": "^10.10",
         "laravel/jetstream": "^4.3",
         "laravel/sanctum": "^3.3",
-        "laravel/tinker": "^2.8",
         "laravel/scout": "^10.0",
-        "spatie/laravel-permission": "^5.10|^6.0",
-        "ijideals/social-posts": "@dev",
-        "ijideals/followable": "@dev",
-        "ijideals/likeable": "@dev",
-        "ijideals/commentable": "@dev",
-        "ijideals/media-uploader": "@dev",
-        "ijideals/news-feed-generator": "@dev",
-        "ijideals/notification-system": "@dev",
-        "ijideals/search-engine": "@dev",
-        "ijideals/shop-manager": "@dev",
-        "ijideals/catalog-manager": "@dev",
-        "ijideals/user-settings": "@dev",
-        "ijideals/hashtag-system": "@dev",
-        "ijideals/user-profile": "@dev",
-        "intervention/image": "^2.7|^3.0"
+        "laravel/tinker": "^2.8",
+        "spatie/laravel-permission": "^5.10|^6.0"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
@@ -137,6 +139,14 @@
         {
             "type": "path",
             "url": "packages/ijideals/user-profile"
+        },
+        {
+            "type": "path",
+            "url": "packages/ijideals/mention-system"
+        },
+        {
+            "type": "path",
+            "url": "packages/ijideals/product-specifications"
         }
     ]
 }

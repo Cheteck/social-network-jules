@@ -1,0 +1,37 @@
+{
+    "name": "ijideals/product-specifications",
+    "description": "A Laravel package to manage non-variant-generating product specifications.",
+    "type": "laravel-package",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Your Name / Company",
+            "email": "your@email.com"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "illuminate/support": "^10.0|^11.0",
+        "illuminate/database": "^10.0|^11.0",
+        "ijideals/catalog-manager": "@dev"
+    },
+    "autoload": {
+        "psr-4": {
+            "IJIDeals\\ProductSpecifications\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "IJIDeals\\ProductSpecifications\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "IJIDeals\\ProductSpecifications\\Providers\\ProductSpecificationsServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

@@ -1,15 +1,9 @@
 "use client";
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { register } from '@/lib/api/auth'; // Import the new register function
 
-function getCookie(name: string) {
-  if (typeof document === 'undefined') return '';
-  return decodeURIComponent(
-    document.cookie
-      .split('; ')
-      .find(row => row.startsWith(name + '='))?.split('=')[1] || ''
-  );
-}
+// The getCookie function is no longer needed here as apiClient handles XSRF token.
 
 export default function RegisterPage() {
   const [name, setName] = useState('');
@@ -25,25 +19,15 @@ export default function RegisterPage() {
     setLoading(true);
     setError(null);
     try {
-      await fetch('/sanctum/csrf-cookie', { credentials: 'include' });
-      const xsrfToken = getCookie('XSRF-TOKEN');
-      const res = await fetch('/register', {
-        method: 'POST',
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json',
-          'X-XSRF-TOKEN': xsrfToken,
-        },
-        credentials: 'include',
-        body: JSON.stringify({ name, email, password, password_confirmation: passwordConfirmation }),
-      });
-      if (!res.ok) {
-        const data = await res.json();
-        throw new Error(data.message || 'Erreur d\'inscription');
-      }
-      router.replace('/feed');
+      // The fetchCsrfToken call and XSRF header are handled inside the register function in auth.ts
+      await register(name, email, password, passwordConfirmation);
+      // Handle successful registration:
+      // console.log('Registration successful:', responseData); // responseData is returned by register if needed
+      router.replace('/feed'); // Or your desired redirect path
     } catch (err: any) {
-      setError(err.message || 'Erreur inconnue');
+      // Error handling can be more specific based on error structure from apiClient
+      // For now, using the same logic:
+      setError(err.response?.data?.message || err.message || 'Erreur inconnue lors de l\'inscription');
     } finally {
       setLoading(false);
     }

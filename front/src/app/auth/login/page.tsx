@@ -2,15 +2,9 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import { login } from '@/lib/api/auth'; // Import the new login function
 
-function getCookie(name: string) {
-  if (typeof document === 'undefined') return '';
-  return decodeURIComponent(
-    document.cookie
-      .split('; ')
-      .find(row => row.startsWith(name + '='))?.split('=')[1] || ''
-  );
-}
+// The getCookie function is no longer needed here as apiClient handles XSRF token.
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');
@@ -24,25 +18,15 @@ export default function LoginPage() {
     setLoading(true);
     setError(null);
     try {
-      await fetch('/sanctum/csrf-cookie', { credentials: 'include' });
-      const xsrfToken = getCookie('XSRF-TOKEN');
-      const res = await fetch('/login', {
-        method: 'POST',
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json',
-          'X-XSRF-TOKEN': xsrfToken,
-        },
-        credentials: 'include',
-        body: JSON.stringify({ email, password }),
-      });
-      if (!res.ok) {
-        const data = await res.json();
-        throw new Error(data.message || 'Erreur de connexion');
-      }
-      router.replace('/feed');
+      // The fetchCsrfToken call and XSRF header are handled inside the login function in auth.ts
+      // The login function in auth.ts also handles saving the auth_token if returned.
+      await login(email, password);
+      // Handle successful login:
+      // console.log('Login successful:', responseData); // responseData is returned by login if needed
+      router.replace('/feed'); // Or your desired redirect path
     } catch (err: any) {
-      setError(err.message || 'Erreur inconnue');
+      // Error handling can be more specific based on error structure from apiClient
+      setError(err.response?.data?.message || err.message || 'Erreur de connexion inconnue');
     } finally {
       setLoading(false);
     }
