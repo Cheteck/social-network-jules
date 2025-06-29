@@ -28,12 +28,22 @@ interface RegisterData {
   // Ajoutez d'autres champs si nécessaire (ex: username)
 }
 
+// Type for password reset data
+interface ResetPasswordData {
+  token: string;
+  email: string;
+  password: string;
+  password_confirmation: string;
+}
+
 interface AuthContextType {
   user: User | null;
   isLoading: boolean;
   login: (credentials: LoginCredentials) => Promise<void>;
   register: (data: RegisterData) => Promise<void>;
   logout: () => Promise<void>;
+  forgotPassword: (email: string) => Promise<void>;
+  resetPassword: (data: ResetPasswordData) => Promise<void>; // Added for password reset
   error: string | null;
   clearError: () => void; // Pour effacer les erreurs
 }
@@ -44,9 +54,11 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [user, setUser] = useState<User | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  // const [status, setStatus] = useState<string | null>(null); // For status messages like 'password reset link sent'
   const router = useRouter();
 
   const clearError = () => setError(null);
+  // const clearStatus = () => setStatus(null);
 
   const fetchUser = async () => {
     try {
@@ -143,8 +155,84 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     }
   };
 
+  const forgotPassword = async (email: string) => {
+    setIsLoading(true);
+    setError(null);
+    // setStatus(null);
+    try {
+      await fetchCsrfToken();
+      // Fortify typically returns a 200 OK with a status message in the body or a session flash.
+      // For an SPA, you might get a JSON response with a status message.
+      await apiClient.post('/forgot-password', { email }); // Removed 'response' variable
+      // setStatus(response.data.status || 'Password reset link sent.'); // Adjust based on actual API response
+      // No need to fetch user here
+    } catch (err: unknown) {
+      let errorMessage = 'Échec de l\'envoi du lien de réinitialisation.';
+      if (err instanceof Error) {
+        if (typeof err === 'object' && err !== null && 'response' in err) {
+          const errorResponse = (err as { response?: { status?: number, data?: { message?: string, errors?: Record<string, string[]> } } }).response;
+          if (errorResponse?.status === 422) {
+            // Handle validation errors, e.g., invalid email format
+            errorMessage = errorResponse?.data?.message || 'Veuillez vérifier l\'adresse e-mail saisie.';
+            if (errorResponse?.data?.errors) {
+              const fieldErrors = Object.values(errorResponse.data.errors).flat().join(' ');
+              errorMessage = `${errorMessage} ${fieldErrors}`;
+            }
+          } else {
+            errorMessage = errorResponse?.data?.message || err.message || errorMessage;
+          }
+        } else {
+           errorMessage = err.message || errorMessage;
+        }
+      }
+      console.error('Forgot password failed:', err);
+      setError(errorMessage);
+      throw err; // Re-throw to allow form to catch it if needed
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const resetPassword = async (data: ResetPasswordData) => {
+    setIsLoading(true);
+    setError(null);
+    // setStatus(null); // If you were using a status state
+    try {
+      await fetchCsrfToken();
+      // Fortify's /reset-password endpoint expects: token, email, password, password_confirmation
+      await apiClient.post('/reset-password', data);
+      // setStatus('Password has been reset successfully.'); // Or get from response if available
+      // The ResetPasswordForm component handles redirection to login on success.
+    } catch (err: unknown) {
+      let errorMessage = 'Échec de la réinitialisation du mot de passe.';
+       if (err instanceof Error) {
+        if (typeof err === 'object' && err !== null && 'response' in err) {
+          const errorResponse = (err as { response?: { status?: number, data?: { message?: string, errors?: Record<string, string[]> } } }).response;
+          if (errorResponse?.status === 422) {
+            // Common errors: token invalid, email not found for token, password validation
+            errorMessage = errorResponse?.data?.message || 'Veuillez vérifier les données saisies. Le jeton peut être invalide ou expiré.';
+            if (errorResponse?.data?.errors) {
+              // If specific errors are provided by backend (e.g. Laravel validation)
+              const fieldErrors = Object.values(errorResponse.data.errors).flat().join(' ');
+              errorMessage = `${errorMessage} ${fieldErrors}`;
+            }
+          } else {
+            errorMessage = errorResponse?.data?.message || err.message || errorMessage;
+          }
+        } else {
+           errorMessage = err.message || errorMessage;
+        }
+      }
+      console.error('Reset password failed:', err);
+      setError(errorMessage);
+      throw err; // Re-throw to allow form to catch it and display message
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   return (
-    <AuthContext.Provider value={{ user, isLoading, login, register, logout, error, clearError }}>
+    <AuthContext.Provider value={{ user, isLoading, login, register, logout, forgotPassword, resetPassword, error, clearError }}>
       {children}
     </AuthContext.Provider>
   );

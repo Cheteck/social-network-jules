@@ -59,7 +59,7 @@ export default function HomePage() {
   if (authLoading || isLoadingTweets) {
     return (
       <div className="flex justify-center items-center min-h-screen text-white">
-        Chargement du fil d'actualité...
+        Chargement du fil d&apos;actualité...
       </div>
     );
   }

@@ -4,61 +4,59 @@ import React, { useState, useEffect } from 'react';
 import { useAuth } from '@/lib/contexts/AuthContext';
 import { useRouter } from 'next/navigation';
 
-export default function RegisterForm() {
-  const [name, setName] = useState('');
+interface ResetPasswordFormProps {
+  token: string;
+}
+
+export default function ResetPasswordForm({ token }: ResetPasswordFormProps) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [passwordConfirmation, setPasswordConfirmation] = useState('');
-  const { register, isLoading, error: authError, clearError, user } = useAuth();
+  const [message, setMessage] = useState('');
+
+  const { resetPassword, isLoading, error: authError, clearError } = useAuth(); // Assuming resetPassword will be added to AuthContext
   const router = useRouter();
 
   useEffect(() => {
     if (authError) {
       clearError();
     }
-  }, [name, email, password, passwordConfirmation, clearError, authError]);
-
-  useEffect(() => {
-    if (user && !isLoading) {
-      router.push('/main_group/home');
-    }
-  }, [user, isLoading, router]);
+    setMessage('');
+  }, [email, password, passwordConfirmation, clearError, authError]);
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    setMessage('');
+
     if (password !== passwordConfirmation) {
-      // Ideally, use the authError state for this, or a separate local error state
-      alert("Passwords do not match."); // Replace with a better UI notification
+      setMessage('Les mots de passe ne correspondent pas.');
       return;
     }
+    if (!token) {
+        setMessage('Jeton de réinitialisation manquant ou invalide.');
+        return;
+    }
+
     try {
-      await register({ name, email, password, password_confirmation: passwordConfirmation });
-      // Redirection is handled by the useEffect above
+      // The resetPassword function in AuthContext will handle the API call
+      await resetPassword({ email, password, password_confirmation: passwordConfirmation, token });
+      setMessage('Votre mot de passe a été réinitialisé avec succès. Vous allez être redirigé vers la page de connexion.');
+      setEmail('');
+      setPassword('');
+      setPasswordConfirmation('');
+      setTimeout(() => {
+        router.push('/auth_group/login?status=password-reset-success');
+      }, 3000);
     } catch {
-      // Error is handled by AuthContext and displayed via authError
+      if (!authError) { // If AuthContext didn't set a specific error from API
+        setMessage('Une erreur est survenue lors de la réinitialisation. Veuillez réessayer.');
+      }
+      // authError from AuthContext will be displayed by the form
     }
   };
 
   return (
     <form className="space-y-6" onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="name" className="block text-sm font-medium text-x-secondary-text">
-          Nom complet
-        </label>
-        <div className="mt-1">
-          <input
-            id="name"
-            name="name"
-            type="text"
-            autoComplete="name"
-            required
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            className="block w-full appearance-none rounded-md border border-x-border bg-x-card-bg px-3 py-2 placeholder-x-secondary-text text-x-primary-text shadow-sm focus:border-x-accent focus:outline-none focus:ring-x-accent sm:text-sm"
-          />
-        </div>
-      </div>
-
       <div>
         <label htmlFor="email" className="block text-sm font-medium text-x-secondary-text">
           Adresse e-mail
@@ -79,7 +77,7 @@ export default function RegisterForm() {
 
       <div>
         <label htmlFor="password" className="block text-sm font-medium text-x-secondary-text">
-          Mot de passe
+          Nouveau mot de passe
         </label>
         <div className="mt-1">
           <input
@@ -97,7 +95,7 @@ export default function RegisterForm() {
 
       <div>
         <label htmlFor="password_confirmation" className="block text-sm font-medium text-x-secondary-text">
-          Confirmez le mot de passe
+          Confirmez le nouveau mot de passe
         </label>
         <div className="mt-1">
           <input
@@ -119,9 +117,10 @@ export default function RegisterForm() {
           disabled={isLoading}
           className="flex w-full justify-center rounded-md border border-transparent bg-x-accent py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-x-accent-hover focus:outline-none focus:ring-2 focus:ring-x-accent focus:ring-offset-2 focus:ring-offset-x-bg disabled:opacity-50"
         >
-          {isLoading ? 'Création du compte...' : 'S\'inscrire'}
+          {isLoading ? 'Réinitialisation en cours...' : 'Réinitialiser le mot de passe'}
         </button>
       </div>
+      {message && <p className="mt-2 text-sm text-center text-x-primary-text">{message}</p>}
       {authError && <p className="mt-2 text-sm text-red-500 text-center">{authError}</p>}
     </form>
   );
