@@ -33,10 +33,9 @@ export default function TagPage() {
           setPosts(response.data.data || response.data || []);
         } catch (err: unknown) {
           const errorMessageBase = `Impossible de charger les posts pour le tag #${tagName}.`;
-          let specificMessage = "";
-
+          let detailMessage = "";
           if (err instanceof Error) {
-            specificMessage = err.message; // Default to generic error message
+            detailMessage = err.message;
             // Check for Axios-like error structure more safely
             if (typeof err === 'object' && err !== null && 'response' in err) {
               const errorResponse = (err as { response?: { status?: number, data?: { message?: string } } }).response;
@@ -47,13 +46,17 @@ export default function TagPage() {
                 return; // Exit early for 404
               }
               if (errorResponse?.data?.message) {
-                specificMessage = errorResponse.data.message;
+                detailMessage = errorResponse.data.message; // This becomes the primary detail if available
               }
             }
           }
 
           console.error(`Failed to fetch posts for tag #${tagName}:`, err);
-          setError(specificMessage && specificMessage !== err.message ? `${errorMessageBase} Détail: ${specificMessage}` : errorMessageBase);
+          if (detailMessage) {
+            setError(`${errorMessageBase} Détail: ${detailMessage}`);
+          } else {
+            setError(errorMessageBase);
+          }
           setPosts([]);
         } finally {
           setIsLoading(false);
