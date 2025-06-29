@@ -32,8 +32,6 @@ class SocialPostsApiTest extends TestCase
         $response = $this->actingAs($this->user, 'sanctum') // Utiliser 'sanctum' pour l'authentification API
                          ->postJson(route('socialposts.posts.store'), $postData);
 
-        $response->dump(); // Dump the response to see the error details
-
         $response->assertStatus(201) // Vérifier le code de statut HTTP 201 Created
                  ->assertJsonStructure([ // Vérifier la structure de la réponse JSON
                      'id',
@@ -112,10 +110,20 @@ class SocialPostsApiTest extends TestCase
     public function test_authenticated_user_can_update_own_post(): void
     {
         $post = Post::factory()->for($this->user, 'author')->create(['content' => 'Original content']);
+
+        // Verify database state immediately after creation
+        $this->assertDatabaseHas('posts', [
+            'id' => $post->id,
+            'author_id' => $this->user->id,
+            'author_type' => get_class($this->user)
+        ]);
+
         $updatedData = ['content' => 'Updated test post content.'];
 
         $response = $this->actingAs($this->user, 'sanctum')
-                         ->putJson(route('socialposts.posts.update', $post), $updatedData);
+                         ->putJson(route('socialposts.posts.update', ['post' => $post->id]), $updatedData);
+
+        $response->dump();
 
         $response->assertStatus(200)
                  ->assertJson(['content' => $updatedData['content']]); // Correction ici
@@ -147,7 +155,9 @@ class SocialPostsApiTest extends TestCase
         $post = Post::factory()->for($this->user, 'author')->create();
 
         $response = $this->actingAs($this->user, 'sanctum')
-                         ->deleteJson(route('socialposts.posts.destroy', $post));
+                         ->deleteJson(route('socialposts.posts.destroy', ['post' => $post->id]));
+
+        // $response->dump();
 
         $response->assertStatus(204); // No Content
         $this->assertDatabaseMissing('posts', ['id' => $post->id]);

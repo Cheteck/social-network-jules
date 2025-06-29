@@ -86,7 +86,17 @@ class PostController extends Controller
 
         // Vérifier si l'utilisateur authentifié est l'auteur du post
         if ($post->author_id !== $currentUser->getKey() || $post->author_type !== get_class($currentUser)) {
-            return response()->json(['message' => 'Unauthorized to update this post.'], 403);
+            // Debugging information
+            $debugInfo = [
+                'message' => 'Unauthorized to update this post.',
+                'post_author_id' => $post->author_id,
+                'current_user_id' => $currentUser->getKey(),
+                'post_author_type' => $post->author_type,
+                'current_user_class' => get_class($currentUser),
+                'id_comparison' => $post->author_id !== $currentUser->getKey(),
+                'type_comparison' => $post->author_type !== get_class($currentUser),
+            ];
+            return response()->json($debugInfo, 403);
         }
 
         $validatedData = $request->validate([
@@ -112,12 +122,27 @@ class PostController extends Controller
      */
     public function destroy(Post $post): JsonResponse
     {
+        // Explicitly reload the post
+        $reloadedPost = Post::find($post->getKey());
+        if (!$reloadedPost) {
+            return response()->json(['message' => 'Post not found during reload.'], 404);
+        }
+        $post = $reloadedPost; // Use the reloaded instance
+
         /** @var \App\Models\User $currentUser */
         $currentUser = Auth::user();
 
         // Vérifier si l'utilisateur authentifié est l'auteur du post
         if ($post->author_id !== $currentUser->getKey() || $post->author_type !== get_class($currentUser)) {
-            return response()->json(['message' => 'Unauthorized to delete this post.'], 403);
+            // Debugging information (similar to update)
+            $debugInfo = [
+                'message' => 'Unauthorized to delete this post.',
+                'post_author_id' => $post->author_id,
+                'current_user_id' => $currentUser->getKey(),
+                'post_author_type' => $post->author_type,
+                'current_user_class' => get_class($currentUser),
+            ];
+            return response()->json($debugInfo, 403);
         }
 
         $post->delete();
