@@ -27,7 +27,7 @@ return [
 
     'allowed_methods' => ['*'], // Peut être restreint si besoin (GET, POST, PUT, DELETE, etc.)
 
-    'allowed_origins' => explode(',', env('SANCTUM_STATEFUL_DOMAINS', env('FRONTEND_URL', 'http://localhost:3000'))),
+    'allowed_origins' => ['http://localhost:3000', 'http://localhost:5173'],
 
     'allowed_origins_patterns' => [],
 

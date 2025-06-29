@@ -1,0 +1,2414 @@
+{
+    "totals": {
+        "errors": 0,
+        "file_errors": 325
+    },
+    "files": {
+        "C:\\laragon\\www\\social-network\\app\\Models\\User.php": {
+            "errors": 10,
+            "messages": [
+                {
+                    "message": "PHPDoc tag @mixin contains invalid type Ijideals\\Commentable\\Concerns\\CanComment.",
+                    "line": 54,
+                    "ignorable": true,
+                    "identifier": "mixin.trait"
+                },
+                {
+                    "message": "PHPDoc tag @mixin contains invalid type Ijideals\\Followable\\Followable.",
+                    "line": 54,
+                    "ignorable": true,
+                    "identifier": "mixin.trait"
+                },
+                {
+                    "message": "PHPDoc tag @mixin contains invalid type Ijideals\\Likeable\\Concerns\\CanLike.",
+                    "line": 54,
+                    "ignorable": true,
+                    "identifier": "mixin.trait"
+                },
+                {
+                    "message": "PHPDoc tag @mixin contains invalid type Ijideals\\MediaUploader\\Concerns\\HasMedia.",
+                    "line": 54,
+                    "ignorable": true,
+                    "identifier": "mixin.trait"
+                },
+                {
+                    "message": "PHPDoc tag @mixin contains invalid type Ijideals\\NotificationSystem\\Concerns\\HasNotifications.",
+                    "line": 54,
+                    "ignorable": true,
+                    "identifier": "mixin.trait"
+                },
+                {
+                    "message": "PHPDoc tag @mixin contains invalid type Ijideals\\SocialPosts\\Concerns\\HasSocialPosts.",
+                    "line": 54,
+                    "ignorable": true,
+                    "identifier": "mixin.trait"
+                },
+                {
+                    "message": "PHPDoc tag @mixin contains invalid type Ijideals\\UserProfile\\Concerns\\HasProfile.",
+                    "line": 54,
+                    "ignorable": true,
+                    "identifier": "mixin.trait"
+                },
+                {
+                    "message": "PHPDoc tag @mixin contains invalid type Ijideals\\UserSettings\\Concerns\\HasSettings.",
+                    "line": 54,
+                    "ignorable": true,
+                    "identifier": "mixin.trait"
+                },
+                {
+                    "message": "PHPDoc tag @mixin contains invalid type Illuminate\\Notifications\\Notifiable.",
+                    "line": 54,
+                    "ignorable": true,
+                    "identifier": "mixin.trait"
+                },
+                {
+                    "message": "PHPDoc tag @mixin contains invalid type Spatie\\Permission\\Traits\\HasRoles.",
+                    "line": 54,
+                    "ignorable": true,
+                    "identifier": "mixin.trait"
+                }
+            ]
+        },
+        "C:\\laragon\\www\\social-network\\packages\\ijideals\\catalog-manager\\database\\factories\\ProductFactory.php": {
+            "errors": 3,
+            "messages": [
+                {
+                    "message": "Parameter #1 $callback of method Illuminate\\Database\\Eloquent\\Factories\\Factory<Illuminate\\Database\\Eloquent\\Model>::afterCreating() expects Closure(Illuminate\\Database\\Eloquent\\Model): mixed, Closure(Ijideals\\CatalogManager\\Models\\Product): void given.",
+                    "line": 49,
+                    "ignorable": true,
+                    "identifier": "argument.type"
+                },
+                {
+                    "message": "Instanceof between array|Illuminate\\Support\\Collection and Ijideals\\CatalogManager\\Models\\Category will always evaluate to false.",
+                    "line": 53,
+                    "ignorable": true,
+                    "tip": "Because the type is coming from a PHPDoc, you can turn off this check by setting treatPhpDocTypesAsCertain: false in your %configurationFile%.",
+                    "identifier": "instanceof.alwaysFalse"
+                },
+                {
+                    "message": "Result of || is always true.",
+                    "line": 55,
+                    "ignorable": true,
+                    "tip": "Remove remaining cases below this one and this error will disappear too.",
+                    "identifier": "booleanOr.alwaysTrue"
+                }
+            ]
+        },
+        "C:\\laragon\\www\\social-network\\packages\\ijideals\\catalog-manager\\database\\factories\\ProductVariantFactory.php": {
+            "errors": 1,
+            "messages": [
+                {
+                    "message": "Parameter #1 $callback of method Illuminate\\Database\\Eloquent\\Factories\\Factory<Illuminate\\Database\\Eloquent\\Model>::afterCreating() expects Closure(Illuminate\\Database\\Eloquent\\Model): mixed, Closure(Ijideals\\CatalogManager\\Models\\ProductVariant): void given.",
+                    "line": 39,
+                    "ignorable": true,
+                    "identifier": "argument.type"
+                }
+            ]
+        },
+        "C:\\laragon\\www\\social-network\\packages\\ijideals\\catalog-manager\\src\\Http\\Controllers\\ProductController.php": {
+            "errors": 3,
+            "messages": [
+                {
+                    "message": "Access to an undefined property Ijideals\\CatalogManager\\Models\\Product::$is_active.",
+                    "line": 137,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "Method Ijideals\\CatalogManager\\Http\\Controllers\\ProductController::findProductInShop() should return Ijideals\\CatalogManager\\Models\\Product|null but returns Illuminate\\Database\\Eloquent\\Model|null.",
+                    "line": 226,
+                    "ignorable": true,
+                    "identifier": "return.type"
+                },
+                {
+                    "message": "Method Ijideals\\CatalogManager\\Http\\Controllers\\ProductController::findProductInShop() should return Ijideals\\CatalogManager\\Models\\Product|null but returns Illuminate\\Database\\Eloquent\\Model|null.",
+                    "line": 228,
+                    "ignorable": true,
+                    "identifier": "return.type"
+                }
+            ]
+        },
+        "C:\\laragon\\www\\social-network\\packages\\ijideals\\catalog-manager\\src\\Http\\Controllers\\ProductVariantController.php": {
+            "errors": 9,
+            "messages": [
+                {
+                    "message": "Method Ijideals\\CatalogManager\\Http\\Controllers\\ProductVariantController::findProductInShop() should return Ijideals\\CatalogManager\\Models\\Product|null but returns Illuminate\\Database\\Eloquent\\Model|null.",
+                    "line": 40,
+                    "ignorable": true,
+                    "identifier": "return.type"
+                },
+                {
+                    "message": "Call to protected method findExistingVariant() of class Ijideals\\CatalogManager\\Services\\VariantGeneratorService.",
+                    "line": 94,
+                    "ignorable": true,
+                    "identifier": "method.protected"
+                },
+                {
+                    "message": "Call to an undefined method Illuminate\\Support\\Collection::load().",
+                    "line": 149,
+                    "ignorable": true,
+                    "identifier": "method.notFound"
+                },
+                {
+                    "message": "Access to an undefined property Illuminate\\Database\\Eloquent\\Model::$is_active.",
+                    "line": 166,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "Access to an undefined property Illuminate\\Database\\Eloquent\\Model::$id.",
+                    "line": 192,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "Call to an undefined method Illuminate\\Database\\Eloquent\\Model::optionValues().",
+                    "line": 207,
+                    "ignorable": true,
+                    "identifier": "method.notFound"
+                },
+                {
+                    "message": "Call to protected method findExistingVariant() of class Ijideals\\CatalogManager\\Services\\VariantGeneratorService.",
+                    "line": 211,
+                    "ignorable": true,
+                    "identifier": "method.protected"
+                },
+                {
+                    "message": "Access to an undefined property Illuminate\\Database\\Eloquent\\Model::$id.",
+                    "line": 212,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "Call to an undefined method Illuminate\\Database\\Eloquent\\Model::optionValues().",
+                    "line": 215,
+                    "ignorable": true,
+                    "identifier": "method.notFound"
+                }
+            ]
+        },
+        "C:\\laragon\\www\\social-network\\packages\\ijideals\\catalog-manager\\src\\Models\\Product.php": {
+            "errors": 9,
+            "messages": [
+                {
+                    "message": "Access to an undefined property Ijideals\\CatalogManager\\Models\\Product::$shop_id.",
+                    "line": 44,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "Call to an undefined method Illuminate\\Database\\Eloquent\\Model::getFullUrl().",
+                    "line": 117,
+                    "ignorable": true,
+                    "identifier": "method.notFound"
+                },
+                {
+                    "message": "Access to an undefined property Ijideals\\CatalogManager\\Models\\Product::$name.",
+                    "line": 129,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "Access to an undefined property Ijideals\\CatalogManager\\Models\\Product::$slug.",
+                    "line": 130,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "Access to an undefined property Ijideals\\CatalogManager\\Models\\Product::$description.",
+                    "line": 131,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "Access to an undefined property Ijideals\\CatalogManager\\Models\\Product::$sku.",
+                    "line": 132,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "Access to an undefined property Ijideals\\CatalogManager\\Models\\Product::$shop_id.",
+                    "line": 133,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "Access to an undefined property Illuminate\\Database\\Eloquent\\Model::$name.",
+                    "line": 134,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "Access to an undefined property Illuminate\\Database\\Eloquent\\Model::$optionValues.",
+                    "line": 142,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                }
+            ]
+        },
+        "C:\\laragon\\www\\social-network\\packages\\ijideals\\catalog-manager\\src\\Models\\ProductVariant.php": {
+            "errors": 3,
+            "messages": [
+                {
+                    "message": "Negated boolean expression is always true.",
+                    "line": 57,
+                    "ignorable": true,
+                    "tip": "Because the type is coming from a PHPDoc, you can turn off this check by setting treatPhpDocTypesAsCertain: false in your %configurationFile%.",
+                    "identifier": "booleanNot.alwaysTrue"
+                },
+                {
+                    "message": "Access to an undefined property Illuminate\\Database\\Eloquent\\Model::$value.",
+                    "line": 86,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "Access to an undefined property Ijideals\\CatalogManager\\Models\\ProductVariant::$sku.",
+                    "line": 90,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                }
+            ]
+        },
+        "C:\\laragon\\www\\social-network\\packages\\ijideals\\catalog-manager\\src\\Services\\VariantGeneratorService.php": {
+            "errors": 5,
+            "messages": [
+                {
+                    "message": "Parameter #1 $option of method Ijideals\\CatalogManager\\Models\\Product::getAllowedValuesForOption() expects Ijideals\\CatalogManager\\Models\\ProductOption, Illuminate\\Database\\Eloquent\\Model given.",
+                    "line": 35,
+                    "ignorable": true,
+                    "identifier": "argument.type"
+                },
+                {
+                    "message": "Call to an undefined method Illuminate\\Database\\Eloquent\\Model::optionValues().",
+                    "line": 63,
+                    "ignorable": true,
+                    "identifier": "method.notFound"
+                },
+                {
+                    "message": "Access to an undefined property Ijideals\\CatalogManager\\Models\\Product::$sku.",
+                    "line": 81,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "Access to an undefined property Ijideals\\CatalogManager\\Models\\Product::$slug.",
+                    "line": 90,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "Method Ijideals\\CatalogManager\\Services\\VariantGeneratorService::findExistingVariant() should return Ijideals\\CatalogManager\\Models\\ProductVariant|null but returns Illuminate\\Database\\Eloquent\\Model|null.",
+                    "line": 110,
+                    "ignorable": true,
+                    "identifier": "return.type"
+                }
+            ]
+        },
+        "C:\\laragon\\www\\social-network\\packages\\ijideals\\catalog-manager\\tests\\Feature\\CatalogManagerTest.php": {
+            "errors": 26,
+            "messages": [
+                {
+                    "message": "Access to an undefined property Ijideals\\CatalogManager\\Tests\\Feature\\CatalogManagerTest::$platformAdmin.",
+                    "line": 30,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "Access to an undefined property Ijideals\\CatalogManager\\Tests\\Feature\\CatalogManagerTest::$platformAdmin.",
+                    "line": 55,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "Access to an undefined property Ijideals\\CatalogManager\\Tests\\Feature\\CatalogManagerTest::$shopOwner.",
+                    "line": 82,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "Access to an undefined property Ijideals\\CatalogManager\\Models\\Category::$slug.",
+                    "line": 87,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "Access to an undefined property Ijideals\\CatalogManager\\Models\\Category::$slug.",
+                    "line": 90,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "Access to an undefined property Ijideals\\CatalogManager\\Tests\\Feature\\CatalogManagerTest::$shopOwner.",
+                    "line": 100,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "Access to an undefined property Ijideals\\CatalogManager\\Tests\\Feature\\CatalogManagerTest::$testShop.",
+                    "line": 112,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "Access to an undefined property Ijideals\\CatalogManager\\Tests\\Feature\\CatalogManagerTest::$testShop.",
+                    "line": 115,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "Access to an undefined property Ijideals\\CatalogManager\\Tests\\Feature\\CatalogManagerTest::$testShop.",
+                    "line": 117,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "Access to an undefined property Ijideals\\CatalogManager\\Tests\\Feature\\CatalogManagerTest::$shopOwner.",
+                    "line": 125,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "Access to an undefined property Ijideals\\CatalogManager\\Tests\\Feature\\CatalogManagerTest::$testShop.",
+                    "line": 132,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "Access to an undefined property Ijideals\\CatalogManager\\Tests\\Feature\\CatalogManagerTest::$testShop.",
+                    "line": 142,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "Access to an undefined property Ijideals\\CatalogManager\\Tests\\Feature\\CatalogManagerTest::$shopOwner.",
+                    "line": 143,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "Access to an undefined property Ijideals\\CatalogManager\\Tests\\Feature\\CatalogManagerTest::$testShop.",
+                    "line": 151,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "Access to an undefined property Ijideals\\CatalogManager\\Tests\\Feature\\CatalogManagerTest::$testShop.",
+                    "line": 165,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "Access to an undefined property Ijideals\\CatalogManager\\Tests\\Feature\\CatalogManagerTest::$shopOwner.",
+                    "line": 166,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "Access to an undefined property Ijideals\\CatalogManager\\Tests\\Feature\\CatalogManagerTest::$testShop.",
+                    "line": 169,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "Access to an undefined property Ijideals\\CatalogManager\\Tests\\Feature\\CatalogManagerTest::$basicUser.",
+                    "line": 180,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "Access to an undefined property Ijideals\\CatalogManager\\Tests\\Feature\\CatalogManagerTest::$testShop.",
+                    "line": 182,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "Access to an undefined property Ijideals\\CatalogManager\\Tests\\Feature\\CatalogManagerTest::$testShop.",
+                    "line": 189,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "Access to an undefined property Ijideals\\CatalogManager\\Tests\\Feature\\CatalogManagerTest::$testShop.",
+                    "line": 190,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "Access to an undefined property Ijideals\\CatalogManager\\Tests\\Feature\\CatalogManagerTest::$testShop.",
+                    "line": 192,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "Access to an undefined property Ijideals\\CatalogManager\\Tests\\Feature\\CatalogManagerTest::$testShop.",
+                    "line": 200,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "Access to an undefined property Ijideals\\CatalogManager\\Tests\\Feature\\CatalogManagerTest::$testShop.",
+                    "line": 201,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "Access to an undefined property Ijideals\\CatalogManager\\Tests\\Feature\\CatalogManagerTest::$testShop.",
+                    "line": 209,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "Access to an undefined property Ijideals\\CatalogManager\\Tests\\Feature\\CatalogManagerTest::$testShop.",
+                    "line": 210,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                }
+            ]
+        },
+        "C:\\laragon\\www\\social-network\\packages\\ijideals\\commentable\\database\\factories\\CommentFactory.php": {
+            "errors": 3,
+            "messages": [
+                {
+                    "message": "Access to an undefined property Illuminate\\Database\\Eloquent\\Model::$id.",
+                    "line": 35,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "Access to an undefined property Ijideals\\Commentable\\Models\\Comment::$commentable_id.",
+                    "line": 56,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "Access to an undefined property Ijideals\\Commentable\\Models\\Comment::$commentable_type.",
+                    "line": 57,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                }
+            ]
+        },
+        "C:\\laragon\\www\\social-network\\packages\\ijideals\\commentable\\src\\Concerns\\CanBeCommentedOn.php (in context of class Ijideals\\SocialPosts\\Models\\Post)": {
+            "errors": 4,
+            "messages": [
+                {
+                    "message": "Call to an undefined method Illuminate\\Database\\Eloquent\\Model::comments().",
+                    "line": 23,
+                    "ignorable": true,
+                    "identifier": "method.notFound"
+                },
+                {
+                    "message": "Access to an undefined property Ijideals\\Commentable\\Models\\Comment::$commentable_id.",
+                    "line": 73,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "Access to an undefined property Ijideals\\Commentable\\Models\\Comment::$commentable_type.",
+                    "line": 73,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "Access to an undefined property Ijideals\\Commentable\\Models\\Comment::$parent_id.",
+                    "line": 82,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                }
+            ]
+        },
+        "C:\\laragon\\www\\social-network\\packages\\ijideals\\commentable\\src\\Concerns\\CanComment.php (in context of class App\\Models\\User)": {
+            "errors": 2,
+            "messages": [
+                {
+                    "message": "Access to an undefined property Ijideals\\Commentable\\Models\\Comment::$user_id.",
+                    "line": 48,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "Access to an undefined property Ijideals\\Commentable\\Models\\Comment::$user_id.",
+                    "line": 64,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                }
+            ]
+        },
+        "C:\\laragon\\www\\social-network\\packages\\ijideals\\commentable\\src\\Http\\Controllers\\CommentController.php": {
+            "errors": 2,
+            "messages": [
+                {
+                    "message": "Call to an undefined method Illuminate\\Database\\Eloquent\\Model::comments().",
+                    "line": 36,
+                    "ignorable": true,
+                    "identifier": "method.notFound"
+                },
+                {
+                    "message": "Parameter #1 $commentable of method App\\Models\\User::comment() expects Ijideals\\Commentable\\Contracts\\CommentableContract, Illuminate\\Database\\Eloquent\\Model given.",
+                    "line": 80,
+                    "ignorable": true,
+                    "identifier": "argument.type"
+                }
+            ]
+        },
+        "C:\\laragon\\www\\social-network\\packages\\ijideals\\commentable\\src\\Models\\Comment.php": {
+            "errors": 3,
+            "messages": [
+                {
+                    "message": "Call to an undefined static method Ijideals\\Commentable\\Models\\Comment::addTrait().",
+                    "line": 40,
+                    "ignorable": true,
+                    "identifier": "staticMethod.notFound"
+                },
+                {
+                    "message": "Access to an undefined property Ijideals\\Commentable\\Models\\Comment::$approved_at.",
+                    "line": 106,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "Unsafe usage of new static().",
+                    "line": 116,
+                    "ignorable": true,
+                    "tip": "See: https://phpstan.org/blog/solving-phpstan-error-unsafe-usage-of-new-static",
+                    "identifier": "new.static"
+                }
+            ]
+        },
+        "C:\\laragon\\www\\social-network\\packages\\ijideals\\followable\\tests\\Feature\\FollowableTest.php": {
+            "errors": 8,
+            "messages": [
+                {
+                    "message": "Access to an undefined property App\\Models\\User::$followers.",
+                    "line": 99,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "Access to an undefined property App\\Models\\User::$followers.",
+                    "line": 100,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "Access to an undefined property App\\Models\\User::$followers.",
+                    "line": 101,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "Access to an undefined property App\\Models\\User::$followings.",
+                    "line": 104,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "Access to an undefined property App\\Models\\User::$followings.",
+                    "line": 105,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "Access to an undefined property App\\Models\\User::$followings.",
+                    "line": 106,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "Access to an undefined property App\\Models\\User::$followers.",
+                    "line": 109,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "Access to an undefined property App\\Models\\User::$followings.",
+                    "line": 112,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                }
+            ]
+        },
+        "C:\\laragon\\www\\social-network\\packages\\ijideals\\likeable\\database\\factories\\LikeFactory.php": {
+            "errors": 1,
+            "messages": [
+                {
+                    "message": "Access to an undefined property Illuminate\\Database\\Eloquent\\Model::$id.",
+                    "line": 37,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                }
+            ]
+        },
+        "C:\\laragon\\www\\social-network\\packages\\ijideals\\likeable\\src\\Concerns\\CanBeLiked.php (in context of class Ijideals\\Likeable\\Tests\\Feature\\TestPost)": {
+            "errors": 1,
+            "messages": [
+                {
+                    "message": "Call to an undefined method Illuminate\\Database\\Eloquent\\Model::removeLikes().",
+                    "line": 25,
+                    "ignorable": true,
+                    "identifier": "method.notFound"
+                }
+            ]
+        },
+        "C:\\laragon\\www\\social-network\\packages\\ijideals\\likeable\\src\\Concerns\\CanBeLiked.php (in context of class Ijideals\\Likeable\\Tests\\Unit\\LikeableTestModel)": {
+            "errors": 1,
+            "messages": [
+                {
+                    "message": "Call to an undefined method Illuminate\\Database\\Eloquent\\Model::removeLikes().",
+                    "line": 25,
+                    "ignorable": true,
+                    "identifier": "method.notFound"
+                }
+            ]
+        },
+        "C:\\laragon\\www\\social-network\\packages\\ijideals\\likeable\\src\\Concerns\\CanBeLiked.php (in context of class Ijideals\\SocialPosts\\Models\\Post)": {
+            "errors": 1,
+            "messages": [
+                {
+                    "message": "Call to an undefined method Illuminate\\Database\\Eloquent\\Model::removeLikes().",
+                    "line": 25,
+                    "ignorable": true,
+                    "identifier": "method.notFound"
+                }
+            ]
+        },
+        "C:\\laragon\\www\\social-network\\packages\\ijideals\\likeable\\src\\Concerns\\CanLike.php (in context of class App\\Models\\User)": {
+            "errors": 1,
+            "messages": [
+                {
+                    "message": "Method App\\Models\\User::getLikedItems() should return Illuminate\\Database\\Eloquent\\Collection but returns Illuminate\\Support\\Collection<(int|string), mixed>.",
+                    "line": 104,
+                    "ignorable": true,
+                    "identifier": "return.type"
+                }
+            ]
+        },
+        "C:\\laragon\\www\\social-network\\packages\\ijideals\\likeable\\src\\Concerns\\CanLike.php (in context of class Ijideals\\Likeable\\Tests\\Feature\\TestUser)": {
+            "errors": 1,
+            "messages": [
+                {
+                    "message": "Method Ijideals\\Likeable\\Tests\\Feature\\TestUser::getLikedItems() should return Illuminate\\Database\\Eloquent\\Collection but returns Illuminate\\Support\\Collection<(int|string), mixed>.",
+                    "line": 104,
+                    "ignorable": true,
+                    "identifier": "return.type"
+                }
+            ]
+        },
+        "C:\\laragon\\www\\social-network\\packages\\ijideals\\likeable\\src\\Concerns\\CanLike.php (in context of class@anonymous/packages/ijideals/likeable/tests/Unit/CanLikeTraitTest.php:23)": {
+            "errors": 1,
+            "messages": [
+                {
+                    "message": "Method class@anonymous/packages/ijideals/likeable/tests/Unit/CanLikeTraitTest.php:23::getLikedItems() should return Illuminate\\Database\\Eloquent\\Collection but returns Illuminate\\Support\\Collection<(int|string), mixed>.",
+                    "line": 104,
+                    "ignorable": true,
+                    "identifier": "return.type"
+                }
+            ]
+        },
+        "C:\\laragon\\www\\social-network\\packages\\ijideals\\likeable\\src\\Http\\Controllers\\LikeController.php": {
+            "errors": 11,
+            "messages": [
+                {
+                    "message": "Parameter #1 $likeable of method App\\Models\\User::hasLiked() expects Ijideals\\Likeable\\Contracts\\Likeable, Illuminate\\Database\\Eloquent\\Model given.",
+                    "line": 42,
+                    "ignorable": true,
+                    "identifier": "argument.type"
+                },
+                {
+                    "message": "Call to an undefined method Illuminate\\Database\\Eloquent\\Model::likes().",
+                    "line": 43,
+                    "ignorable": true,
+                    "identifier": "method.notFound"
+                },
+                {
+                    "message": "Access to an undefined property Illuminate\\Database\\Eloquent\\Model::$likes_count.",
+                    "line": 47,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "Parameter #1 $likeable of method App\\Models\\User::like() expects Ijideals\\Likeable\\Contracts\\Likeable, Illuminate\\Database\\Eloquent\\Model given.",
+                    "line": 51,
+                    "ignorable": true,
+                    "identifier": "argument.type"
+                },
+                {
+                    "message": "Access to an undefined property Illuminate\\Database\\Eloquent\\Model::$likes_count.",
+                    "line": 57,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "Parameter #1 $likeable of method App\\Models\\User::hasLiked() expects Ijideals\\Likeable\\Contracts\\Likeable, Illuminate\\Database\\Eloquent\\Model given.",
+                    "line": 84,
+                    "ignorable": true,
+                    "identifier": "argument.type"
+                },
+                {
+                    "message": "Parameter #1 $likeable of method App\\Models\\User::unlike() expects Ijideals\\Likeable\\Contracts\\Likeable, Illuminate\\Database\\Eloquent\\Model given.",
+                    "line": 88,
+                    "ignorable": true,
+                    "identifier": "argument.type"
+                },
+                {
+                    "message": "Access to an undefined property Illuminate\\Database\\Eloquent\\Model::$likes_count.",
+                    "line": 91,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "Parameter #1 $likeable of method App\\Models\\User::toggleLike() expects Ijideals\\Likeable\\Contracts\\Likeable, Illuminate\\Database\\Eloquent\\Model given.",
+                    "line": 118,
+                    "ignorable": true,
+                    "identifier": "argument.type"
+                },
+                {
+                    "message": "Access to an undefined property Illuminate\\Database\\Eloquent\\Model::$likes_count.",
+                    "line": 125,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "Access to an undefined property Illuminate\\Database\\Eloquent\\Model::$likes_count.",
+                    "line": 132,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                }
+            ]
+        },
+        "C:\\laragon\\www\\social-network\\packages\\ijideals\\likeable\\tests\\Feature\\LikeApiTest.php": {
+            "errors": 9,
+            "messages": [
+                {
+                    "message": "Property Ijideals\\Likeable\\Tests\\Feature\\LikeApiTest::$post (Ijideals\\Likeable\\Tests\\Feature\\TestPost) does not accept Ijideals\\SocialPosts\\Models\\Post.",
+                    "line": 49,
+                    "ignorable": true,
+                    "identifier": "assign.propertyType"
+                },
+                {
+                    "message": "Parameter #1 $likeable of method Ijideals\\Likeable\\Tests\\Feature\\TestUser::hasLiked() expects Ijideals\\Likeable\\Contracts\\Likeable, Ijideals\\Likeable\\Tests\\Feature\\TestPost given.",
+                    "line": 82,
+                    "ignorable": true,
+                    "identifier": "argument.type"
+                },
+                {
+                    "message": "Parameter #1 $likeable of method Ijideals\\Likeable\\Tests\\Feature\\TestUser::like() expects Ijideals\\Likeable\\Contracts\\Likeable, Ijideals\\Likeable\\Tests\\Feature\\TestPost given.",
+                    "line": 90,
+                    "ignorable": true,
+                    "identifier": "argument.type"
+                },
+                {
+                    "message": "Parameter #1 $likeable of method Ijideals\\Likeable\\Tests\\Feature\\TestUser::like() expects Ijideals\\Likeable\\Contracts\\Likeable, Ijideals\\Likeable\\Tests\\Feature\\TestPost given.",
+                    "line": 101,
+                    "ignorable": true,
+                    "identifier": "argument.type"
+                },
+                {
+                    "message": "Parameter #1 $likeable of method Ijideals\\Likeable\\Tests\\Feature\\TestUser::hasLiked() expects Ijideals\\Likeable\\Contracts\\Likeable, Ijideals\\Likeable\\Tests\\Feature\\TestPost given.",
+                    "line": 103,
+                    "ignorable": true,
+                    "identifier": "argument.type"
+                },
+                {
+                    "message": "Parameter #1 $likeable of method Ijideals\\Likeable\\Tests\\Feature\\TestUser::hasLiked() expects Ijideals\\Likeable\\Contracts\\Likeable, Ijideals\\Likeable\\Tests\\Feature\\TestPost given.",
+                    "line": 116,
+                    "ignorable": true,
+                    "identifier": "argument.type"
+                },
+                {
+                    "message": "Anonymous class extends unknown class Ijideals\\Likeable\\Tests\\Feature\\Model.",
+                    "line": 150,
+                    "ignorable": false,
+                    "tip": "Learn more at https://phpstan.org/user-guide/discovering-symbols",
+                    "identifier": "class.notFound"
+                },
+                {
+                    "message": "Call to an undefined method class@anonymous/packages/ijideals/likeable/tests/Feature/LikeApiTest.php:150::forceFill().",
+                    "line": 151,
+                    "ignorable": true,
+                    "identifier": "method.notFound"
+                },
+                {
+                    "message": "Call to an undefined method Ijideals\\Likeable\\Http\\Controllers\\LikeController::store().",
+                    "line": 159,
+                    "ignorable": true,
+                    "identifier": "method.notFound"
+                }
+            ]
+        },
+        "C:\\laragon\\www\\social-network\\packages\\ijideals\\likeable\\tests\\TestCase.php": {
+            "errors": 1,
+            "messages": [
+                {
+                    "message": "Class Ijideals\\Likeable\\Tests\\SocialPostsServiceProvider not found.",
+                    "line": 31,
+                    "ignorable": true,
+                    "tip": "Learn more at https://phpstan.org/user-guide/discovering-symbols",
+                    "identifier": "class.notFound"
+                }
+            ]
+        },
+        "C:\\laragon\\www\\social-network\\packages\\ijideals\\likeable\\tests\\Unit\\CanBeLikedTest.php": {
+            "errors": 5,
+            "messages": [
+                {
+                    "message": "Call to static method create() on an unknown class Ijideals\\Likeable\\Tests\\Unit\\Schema.",
+                    "line": 34,
+                    "ignorable": true,
+                    "tip": "Learn more at https://phpstan.org/user-guide/discovering-symbols",
+                    "identifier": "class.notFound"
+                },
+                {
+                    "message": "Access to an undefined property Ijideals\\Likeable\\Tests\\Unit\\LikeableTestModel::$id.",
+                    "line": 53,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "Access to an undefined property Ijideals\\Likeable\\Tests\\Unit\\LikeableTestModel::$id.",
+                    "line": 97,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "Access to an undefined property Ijideals\\Likeable\\Tests\\Unit\\LikeableTestModel::$id.",
+                    "line": 105,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "Access to an undefined property Ijideals\\Likeable\\Tests\\Unit\\LikeableTestModel::$id.",
+                    "line": 118,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                }
+            ]
+        },
+        "C:\\laragon\\www\\social-network\\packages\\ijideals\\likeable\\tests\\Unit\\CanLikeTraitTest.php": {
+            "errors": 17,
+            "messages": [
+                {
+                    "message": "Property Ijideals\\Likeable\\Tests\\Unit\\CanLikeTraitTest::$user has invalid type Ijideals\\Likeable\\Concerns\\CanLike.",
+                    "line": 17,
+                    "ignorable": true,
+                    "identifier": "property.trait"
+                },
+                {
+                    "message": "Call to an undefined method Mockery\\ExpectationInterface|Mockery\\HigherOrderMessage::with().",
+                    "line": 41,
+                    "ignorable": true,
+                    "identifier": "method.notFound"
+                },
+                {
+                    "message": "Call to method getKey() on an unknown class Ijideals\\Likeable\\Concerns\\CanLike.",
+                    "line": 41,
+                    "ignorable": true,
+                    "tip": "Learn more at https://phpstan.org/user-guide/discovering-symbols",
+                    "identifier": "class.notFound"
+                },
+                {
+                    "message": "Call to an undefined method Mockery\\ExpectationInterface|Mockery\\HigherOrderMessage::with().",
+                    "line": 45,
+                    "ignorable": true,
+                    "identifier": "method.notFound"
+                },
+                {
+                    "message": "Call to method like() on an unknown class Ijideals\\Likeable\\Concerns\\CanLike.",
+                    "line": 47,
+                    "ignorable": true,
+                    "tip": "Learn more at https://phpstan.org/user-guide/discovering-symbols",
+                    "identifier": "class.notFound"
+                },
+                {
+                    "message": "Call to an undefined method Mockery\\ExpectationInterface|Mockery\\HigherOrderMessage::with().",
+                    "line": 59,
+                    "ignorable": true,
+                    "identifier": "method.notFound"
+                },
+                {
+                    "message": "Call to method like() on an unknown class Ijideals\\Likeable\\Concerns\\CanLike.",
+                    "line": 67,
+                    "ignorable": true,
+                    "tip": "Learn more at https://phpstan.org/user-guide/discovering-symbols",
+                    "identifier": "class.notFound"
+                },
+                {
+                    "message": "Call to an undefined method Mockery\\ExpectationInterface|Mockery\\HigherOrderMessage::with().",
+                    "line": 80,
+                    "ignorable": true,
+                    "identifier": "method.notFound"
+                },
+                {
+                    "message": "Call to method getKey() on an unknown class Ijideals\\Likeable\\Concerns\\CanLike.",
+                    "line": 80,
+                    "ignorable": true,
+                    "tip": "Learn more at https://phpstan.org/user-guide/discovering-symbols",
+                    "identifier": "class.notFound"
+                },
+                {
+                    "message": "Call to method unlike() on an unknown class Ijideals\\Likeable\\Concerns\\CanLike.",
+                    "line": 83,
+                    "ignorable": true,
+                    "tip": "Learn more at https://phpstan.org/user-guide/discovering-symbols",
+                    "identifier": "class.notFound"
+                },
+                {
+                    "message": "Call to an undefined method Mockery\\ExpectationInterface|Mockery\\HigherOrderMessage::with().",
+                    "line": 96,
+                    "ignorable": true,
+                    "identifier": "method.notFound"
+                },
+                {
+                    "message": "Call to method getKey() on an unknown class Ijideals\\Likeable\\Concerns\\CanLike.",
+                    "line": 96,
+                    "ignorable": true,
+                    "tip": "Learn more at https://phpstan.org/user-guide/discovering-symbols",
+                    "identifier": "class.notFound"
+                },
+                {
+                    "message": "Call to method toggleLike() on an unknown class Ijideals\\Likeable\\Concerns\\CanLike.",
+                    "line": 99,
+                    "ignorable": true,
+                    "tip": "Learn more at https://phpstan.org/user-guide/discovering-symbols",
+                    "identifier": "class.notFound"
+                },
+                {
+                    "message": "Call to an undefined method Mockery\\ExpectationInterface|Mockery\\HigherOrderMessage::with().",
+                    "line": 109,
+                    "ignorable": true,
+                    "identifier": "method.notFound"
+                },
+                {
+                    "message": "Call to method hasLiked() on an unknown class Ijideals\\Likeable\\Concerns\\CanLike.",
+                    "line": 110,
+                    "ignorable": true,
+                    "tip": "Learn more at https://phpstan.org/user-guide/discovering-symbols",
+                    "identifier": "class.notFound"
+                },
+                {
+                    "message": "Call to an undefined method Mockery\\ExpectationInterface|Mockery\\HigherOrderMessage::with().",
+                    "line": 112,
+                    "ignorable": true,
+                    "identifier": "method.notFound"
+                },
+                {
+                    "message": "Call to method hasLiked() on an unknown class Ijideals\\Likeable\\Concerns\\CanLike.",
+                    "line": 113,
+                    "ignorable": true,
+                    "tip": "Learn more at https://phpstan.org/user-guide/discovering-symbols",
+                    "identifier": "class.notFound"
+                }
+            ]
+        },
+        "C:\\laragon\\www\\social-network\\packages\\ijideals\\media-uploader\\src\\Concerns\\HasMedia.php (in context of class App\\Models\\User)": {
+            "errors": 1,
+            "messages": [
+                {
+                    "message": "Method App\\Models\\User::getFirstMedia() should return Ijideals\\MediaUploader\\Models\\Media|null but returns Illuminate\\Database\\Eloquent\\Model|null.",
+                    "line": 71,
+                    "ignorable": true,
+                    "identifier": "return.type"
+                }
+            ]
+        },
+        "C:\\laragon\\www\\social-network\\packages\\ijideals\\media-uploader\\src\\Concerns\\HasMedia.php (in context of class Ijideals\\CatalogManager\\Models\\Product)": {
+            "errors": 1,
+            "messages": [
+                {
+                    "message": "Method Ijideals\\CatalogManager\\Models\\Product::getFirstMedia() should return Ijideals\\MediaUploader\\Models\\Media|null but returns Illuminate\\Database\\Eloquent\\Model|null.",
+                    "line": 71,
+                    "ignorable": true,
+                    "identifier": "return.type"
+                }
+            ]
+        },
+        "C:\\laragon\\www\\social-network\\packages\\ijideals\\media-uploader\\src\\Concerns\\HasMedia.php (in context of class Ijideals\\CatalogManager\\Models\\ProductVariant)": {
+            "errors": 1,
+            "messages": [
+                {
+                    "message": "Method Ijideals\\CatalogManager\\Models\\ProductVariant::getFirstMedia() should return Ijideals\\MediaUploader\\Models\\Media|null but returns Illuminate\\Database\\Eloquent\\Model|null.",
+                    "line": 71,
+                    "ignorable": true,
+                    "identifier": "return.type"
+                }
+            ]
+        },
+        "C:\\laragon\\www\\social-network\\packages\\ijideals\\media-uploader\\src\\Concerns\\HasMedia.php (in context of class Ijideals\\ShopManager\\Models\\Shop)": {
+            "errors": 1,
+            "messages": [
+                {
+                    "message": "Method Ijideals\\ShopManager\\Models\\Shop::getFirstMedia() should return Ijideals\\MediaUploader\\Models\\Media|null but returns Illuminate\\Database\\Eloquent\\Model|null.",
+                    "line": 71,
+                    "ignorable": true,
+                    "identifier": "return.type"
+                }
+            ]
+        },
+        "C:\\laragon\\www\\social-network\\packages\\ijideals\\media-uploader\\src\\Concerns\\HasMedia.php (in context of class Ijideals\\SocialPosts\\Models\\Post)": {
+            "errors": 1,
+            "messages": [
+                {
+                    "message": "Method Ijideals\\SocialPosts\\Models\\Post::getFirstMedia() should return Ijideals\\MediaUploader\\Models\\Media|null but returns Illuminate\\Database\\Eloquent\\Model|null.",
+                    "line": 71,
+                    "ignorable": true,
+                    "identifier": "return.type"
+                }
+            ]
+        },
+        "C:\\laragon\\www\\social-network\\packages\\ijideals\\media-uploader\\src\\Http\\Controllers\\MediaController.php": {
+            "errors": 6,
+            "messages": [
+                {
+                    "message": "Access to an undefined property Illuminate\\Database\\Eloquent\\Model::$user_id.",
+                    "line": 43,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "Call to an undefined method Illuminate\\Database\\Eloquent\\Model::addMedia().",
+                    "line": 54,
+                    "ignorable": true,
+                    "identifier": "method.notFound"
+                },
+                {
+                    "message": "Call to an undefined method Illuminate\\Database\\Eloquent\\Model::getMedia().",
+                    "line": 94,
+                    "ignorable": true,
+                    "identifier": "method.notFound"
+                },
+                {
+                    "message": "Cannot access property $user_id on class-string|object.",
+                    "line": 135,
+                    "ignorable": true,
+                    "identifier": "property.nonObject"
+                },
+                {
+                    "message": "Access to an undefined property Illuminate\\Database\\Eloquent\\Model::$user_id.",
+                    "line": 176,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "Call to an undefined method Illuminate\\Database\\Eloquent\\Model::updateMediaOrder().",
+                    "line": 182,
+                    "ignorable": true,
+                    "identifier": "method.notFound"
+                }
+            ]
+        },
+        "C:\\laragon\\www\\social-network\\packages\\ijideals\\media-uploader\\src\\Models\\Media.php": {
+            "errors": 8,
+            "messages": [
+                {
+                    "message": "Access to an undefined property Ijideals\\MediaUploader\\Models\\Media::$disk.",
+                    "line": 37,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "Access to an undefined property Ijideals\\MediaUploader\\Models\\Media::$path.",
+                    "line": 37,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "Access to an undefined property Ijideals\\MediaUploader\\Models\\Media::$size.",
+                    "line": 80,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "Class Ijideals\\MediaUploader\\Database\\Factories\\MediaFactory not found.",
+                    "line": 96,
+                    "ignorable": true,
+                    "tip": "Learn more at https://phpstan.org/user-guide/discovering-symbols",
+                    "identifier": "class.notFound"
+                },
+                {
+                    "message": "Access to an undefined property Faker\\Generator::$fileExtension.",
+                    "line": 105,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "Access to an undefined property Faker\\Generator::$systemFileName.",
+                    "line": 106,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "Access to an undefined property Faker\\Generator::$systemFileName.",
+                    "line": 107,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "Access to an undefined property Faker\\Generator::$mimeType.",
+                    "line": 109,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                }
+            ]
+        },
+        "C:\\laragon\\www\\social-network\\packages\\ijideals\\media-uploader\\src\\Services\\MediaUploaderService.php": {
+            "errors": 4,
+            "messages": [
+                {
+                    "message": "Call to static method make() on an unknown class Intervention\\Image\\Facades\\Image.",
+                    "line": 116,
+                    "ignorable": true,
+                    "tip": "Learn more at https://phpstan.org/user-guide/discovering-symbols",
+                    "identifier": "class.notFound"
+                },
+                {
+                    "message": "Access to an undefined property Ijideals\\MediaUploader\\Models\\Media::$model_type.",
+                    "line": 229,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "Access to an undefined property Ijideals\\MediaUploader\\Models\\Media::$model_id.",
+                    "line": 230,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "Access to an undefined property Ijideals\\MediaUploader\\Models\\Media::$collection_name.",
+                    "line": 231,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                }
+            ]
+        },
+        "C:\\laragon\\www\\social-network\\packages\\ijideals\\media-uploader\\tests\\Feature\\MediaUploaderTest.php": {
+            "errors": 41,
+            "messages": [
+                {
+                    "message": "Class Ijideals\\MediaUploader\\Tests\\Feature\\MediaUploaderTest extends unknown class Ijideals\\MediaUploader\\Tests\\TestCase.",
+                    "line": 14,
+                    "ignorable": false,
+                    "tip": "Learn more at https://phpstan.org/user-guide/discovering-symbols",
+                    "identifier": "class.notFound"
+                },
+                {
+                    "message": "Ijideals\\MediaUploader\\Tests\\Feature\\MediaUploaderTest::setUp() calls parent::setUp() but Ijideals\\MediaUploader\\Tests\\Feature\\MediaUploaderTest does not extend any class.",
+                    "line": 23,
+                    "ignorable": true,
+                    "identifier": "class.noParent"
+                },
+                {
+                    "message": "Call to an undefined method Ijideals\\MediaUploader\\Tests\\Feature\\MediaUploaderTest::createUser().",
+                    "line": 24,
+                    "ignorable": true,
+                    "identifier": "method.notFound"
+                },
+                {
+                    "message": "Call to an undefined method Ijideals\\MediaUploader\\Tests\\Feature\\MediaUploaderTest::createPost().",
+                    "line": 25,
+                    "ignorable": true,
+                    "identifier": "method.notFound"
+                },
+                {
+                    "message": "Call to an undefined method Ijideals\\MediaUploader\\Tests\\Feature\\MediaUploaderTest::actingAs().",
+                    "line": 42,
+                    "ignorable": true,
+                    "identifier": "method.notFound"
+                },
+                {
+                    "message": "Call to an undefined method Ijideals\\MediaUploader\\Tests\\Feature\\MediaUploaderTest::postJson().",
+                    "line": 45,
+                    "ignorable": true,
+                    "identifier": "method.notFound"
+                },
+                {
+                    "message": "Call to an undefined method Ijideals\\MediaUploader\\Tests\\Feature\\MediaUploaderTest::assertNotNull().",
+                    "line": 58,
+                    "ignorable": true,
+                    "identifier": "method.notFound"
+                },
+                {
+                    "message": "Access to an undefined property Ijideals\\MediaUploader\\Models\\Media|Illuminate\\Database\\Eloquent\\Collection<int, Ijideals\\MediaUploader\\Models\\Media>::$disk.",
+                    "line": 59,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "Access to an undefined property Ijideals\\MediaUploader\\Models\\Media|Illuminate\\Database\\Eloquent\\Collection<int, Ijideals\\MediaUploader\\Models\\Media>::$path.",
+                    "line": 59,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "Access to an undefined property Ijideals\\MediaUploader\\Models\\Media|Illuminate\\Database\\Eloquent\\Collection<int, Ijideals\\MediaUploader\\Models\\Media>::$collection_name.",
+                    "line": 60,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "Call to an undefined method Ijideals\\MediaUploader\\Tests\\Feature\\MediaUploaderTest::assertEquals().",
+                    "line": 60,
+                    "ignorable": true,
+                    "identifier": "method.notFound"
+                },
+                {
+                    "message": "Access to an undefined property Ijideals\\MediaUploader\\Models\\Media|Illuminate\\Database\\Eloquent\\Collection<int, Ijideals\\MediaUploader\\Models\\Media>::$model_id.",
+                    "line": 61,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "Call to an undefined method Ijideals\\MediaUploader\\Tests\\Feature\\MediaUploaderTest::assertEquals().",
+                    "line": 61,
+                    "ignorable": true,
+                    "identifier": "method.notFound"
+                },
+                {
+                    "message": "Call to an undefined method Ijideals\\MediaUploader\\Tests\\Feature\\MediaUploaderTest::actingAs().",
+                    "line": 67,
+                    "ignorable": true,
+                    "identifier": "method.notFound"
+                },
+                {
+                    "message": "Call to an undefined method Ijideals\\MediaUploader\\Tests\\Feature\\MediaUploaderTest::assertNotNull().",
+                    "line": 73,
+                    "ignorable": true,
+                    "identifier": "method.notFound"
+                },
+                {
+                    "message": "Cannot access property $disk on Ijideals\\MediaUploader\\Models\\Media|false.",
+                    "line": 74,
+                    "ignorable": true,
+                    "identifier": "property.nonObject"
+                },
+                {
+                    "message": "Cannot access property $path on Ijideals\\MediaUploader\\Models\\Media|false.",
+                    "line": 74,
+                    "ignorable": true,
+                    "identifier": "property.nonObject"
+                },
+                {
+                    "message": "Call to an undefined method Ijideals\\MediaUploader\\Tests\\Feature\\MediaUploaderTest::postJson().",
+                    "line": 77,
+                    "ignorable": true,
+                    "identifier": "method.notFound"
+                },
+                {
+                    "message": "Call to an undefined method Ijideals\\MediaUploader\\Tests\\Feature\\MediaUploaderTest::assertNotNull().",
+                    "line": 88,
+                    "ignorable": true,
+                    "identifier": "method.notFound"
+                },
+                {
+                    "message": "Access to an undefined property Ijideals\\MediaUploader\\Models\\Media|Illuminate\\Database\\Eloquent\\Collection<int, Ijideals\\MediaUploader\\Models\\Media>::$disk.",
+                    "line": 89,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "Access to an undefined property Ijideals\\MediaUploader\\Models\\Media|Illuminate\\Database\\Eloquent\\Collection<int, Ijideals\\MediaUploader\\Models\\Media>::$path.",
+                    "line": 89,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "Call to an undefined method Ijideals\\MediaUploader\\Tests\\Feature\\MediaUploaderTest::assertNotEquals().",
+                    "line": 91,
+                    "ignorable": true,
+                    "identifier": "method.notFound"
+                },
+                {
+                    "message": "Cannot access property $disk on Ijideals\\MediaUploader\\Models\\Media|false.",
+                    "line": 92,
+                    "ignorable": true,
+                    "identifier": "property.nonObject"
+                },
+                {
+                    "message": "Cannot access property $path on Ijideals\\MediaUploader\\Models\\Media|false.",
+                    "line": 92,
+                    "ignorable": true,
+                    "identifier": "property.nonObject"
+                },
+                {
+                    "message": "Call to an undefined method Ijideals\\MediaUploader\\Tests\\Feature\\MediaUploaderTest::assertDatabaseMissing().",
+                    "line": 93,
+                    "ignorable": true,
+                    "identifier": "method.notFound"
+                },
+                {
+                    "message": "Call to an undefined method Ijideals\\MediaUploader\\Tests\\Feature\\MediaUploaderTest::assertEquals().",
+                    "line": 94,
+                    "ignorable": true,
+                    "identifier": "method.notFound"
+                },
+                {
+                    "message": "Call to an undefined method Ijideals\\MediaUploader\\Tests\\Feature\\MediaUploaderTest::actingAs().",
+                    "line": 100,
+                    "ignorable": true,
+                    "identifier": "method.notFound"
+                },
+                {
+                    "message": "Cannot access property $disk on Ijideals\\MediaUploader\\Models\\Media|false.",
+                    "line": 103,
+                    "ignorable": true,
+                    "identifier": "property.nonObject"
+                },
+                {
+                    "message": "Cannot access property $path on Ijideals\\MediaUploader\\Models\\Media|false.",
+                    "line": 103,
+                    "ignorable": true,
+                    "identifier": "property.nonObject"
+                },
+                {
+                    "message": "Call to an undefined method Ijideals\\MediaUploader\\Tests\\Feature\\MediaUploaderTest::deleteJson().",
+                    "line": 105,
+                    "ignorable": true,
+                    "identifier": "method.notFound"
+                },
+                {
+                    "message": "Cannot access property $disk on Ijideals\\MediaUploader\\Models\\Media|false.",
+                    "line": 108,
+                    "ignorable": true,
+                    "identifier": "property.nonObject"
+                },
+                {
+                    "message": "Cannot access property $path on Ijideals\\MediaUploader\\Models\\Media|false.",
+                    "line": 108,
+                    "ignorable": true,
+                    "identifier": "property.nonObject"
+                },
+                {
+                    "message": "Call to an undefined method Ijideals\\MediaUploader\\Tests\\Feature\\MediaUploaderTest::assertDatabaseMissing().",
+                    "line": 109,
+                    "ignorable": true,
+                    "identifier": "method.notFound"
+                },
+                {
+                    "message": "Call to an undefined method Ijideals\\MediaUploader\\Tests\\Feature\\MediaUploaderTest::actingAs().",
+                    "line": 115,
+                    "ignorable": true,
+                    "identifier": "method.notFound"
+                },
+                {
+                    "message": "Call to an undefined method Ijideals\\MediaUploader\\Tests\\Feature\\MediaUploaderTest::postJson().",
+                    "line": 119,
+                    "ignorable": true,
+                    "identifier": "method.notFound"
+                },
+                {
+                    "message": "Call to an undefined method Ijideals\\MediaUploader\\Tests\\Feature\\MediaUploaderTest::actingAs().",
+                    "line": 129,
+                    "ignorable": true,
+                    "identifier": "method.notFound"
+                },
+                {
+                    "message": "Call to an undefined method Ijideals\\MediaUploader\\Tests\\Feature\\MediaUploaderTest::postJson().",
+                    "line": 133,
+                    "ignorable": true,
+                    "identifier": "method.notFound"
+                },
+                {
+                    "message": "Call to an undefined method Ijideals\\MediaUploader\\Tests\\Feature\\MediaUploaderTest::actingAs().",
+                    "line": 146,
+                    "ignorable": true,
+                    "identifier": "method.notFound"
+                },
+                {
+                    "message": "Call to an undefined method Ijideals\\MediaUploader\\Tests\\Feature\\MediaUploaderTest::withHeaders().",
+                    "line": 151,
+                    "ignorable": true,
+                    "identifier": "method.notFound"
+                },
+                {
+                    "message": "Call to an undefined method Ijideals\\MediaUploader\\Tests\\Feature\\MediaUploaderTest::withHeaders().",
+                    "line": 160,
+                    "ignorable": true,
+                    "identifier": "method.notFound"
+                },
+                {
+                    "message": "Call to an undefined method Ijideals\\MediaUploader\\Tests\\Feature\\MediaUploaderTest::withHeaders().",
+                    "line": 166,
+                    "ignorable": true,
+                    "identifier": "method.notFound"
+                }
+            ]
+        },
+        "C:\\laragon\\www\\social-network\\packages\\ijideals\\news-feed-generator\\tests\\Feature\\NewsFeedGeneratorTest.php": {
+            "errors": 20,
+            "messages": [
+                {
+                    "message": "Class Ijideals\\NewsFeedGenerator\\Tests\\Feature\\NewsFeedGeneratorTest extends unknown class Ijideals\\NewsFeedGenerator\\Tests\\TestCase.",
+                    "line": 12,
+                    "ignorable": false,
+                    "tip": "Learn more at https://phpstan.org/user-guide/discovering-symbols",
+                    "identifier": "class.notFound"
+                },
+                {
+                    "message": "Ijideals\\NewsFeedGenerator\\Tests\\Feature\\NewsFeedGeneratorTest::setUp() calls parent::setUp() but Ijideals\\NewsFeedGenerator\\Tests\\Feature\\NewsFeedGeneratorTest does not extend any class.",
+                    "line": 23,
+                    "ignorable": true,
+                    "identifier": "class.noParent"
+                },
+                {
+                    "message": "Call to an undefined method Ijideals\\NewsFeedGenerator\\Tests\\Feature\\NewsFeedGeneratorTest::createUser().",
+                    "line": 25,
+                    "ignorable": true,
+                    "identifier": "method.notFound"
+                },
+                {
+                    "message": "Call to an undefined method Ijideals\\NewsFeedGenerator\\Tests\\Feature\\NewsFeedGeneratorTest::createUser().",
+                    "line": 26,
+                    "ignorable": true,
+                    "identifier": "method.notFound"
+                },
+                {
+                    "message": "Call to an undefined method Ijideals\\NewsFeedGenerator\\Tests\\Feature\\NewsFeedGeneratorTest::createUser().",
+                    "line": 27,
+                    "ignorable": true,
+                    "identifier": "method.notFound"
+                },
+                {
+                    "message": "Call to an undefined method Ijideals\\NewsFeedGenerator\\Tests\\Feature\\NewsFeedGeneratorTest::createUser().",
+                    "line": 28,
+                    "ignorable": true,
+                    "identifier": "method.notFound"
+                },
+                {
+                    "message": "Parameter #1 $likeable of method App\\Models\\User::like() expects Ijideals\\Likeable\\Contracts\\Likeable, Ijideals\\SocialPosts\\Models\\Post given.",
+                    "line": 61,
+                    "ignorable": true,
+                    "identifier": "argument.type"
+                },
+                {
+                    "message": "Parameter #1 $likeable of method App\\Models\\User::like() expects Ijideals\\Likeable\\Contracts\\Likeable, Ijideals\\SocialPosts\\Models\\Post|null given.",
+                    "line": 90,
+                    "ignorable": true,
+                    "identifier": "argument.type"
+                },
+                {
+                    "message": "Parameter #1 $likeable of method App\\Models\\User::like() expects Ijideals\\Likeable\\Contracts\\Likeable, Ijideals\\SocialPosts\\Models\\Post|null given.",
+                    "line": 96,
+                    "ignorable": true,
+                    "identifier": "argument.type"
+                },
+                {
+                    "message": "Parameter #1 $likeable of method App\\Models\\User::like() expects Ijideals\\Likeable\\Contracts\\Likeable, Ijideals\\SocialPosts\\Models\\Post|null given.",
+                    "line": 102,
+                    "ignorable": true,
+                    "identifier": "argument.type"
+                },
+                {
+                    "message": "Call to an undefined method Ijideals\\NewsFeedGenerator\\Tests\\Feature\\NewsFeedGeneratorTest::actingAs().",
+                    "line": 106,
+                    "ignorable": true,
+                    "identifier": "method.notFound"
+                },
+                {
+                    "message": "Call to an undefined method Ijideals\\NewsFeedGenerator\\Tests\\Feature\\NewsFeedGeneratorTest::getJson().",
+                    "line": 107,
+                    "ignorable": true,
+                    "identifier": "method.notFound"
+                },
+                {
+                    "message": "Call to an undefined method Ijideals\\NewsFeedGenerator\\Tests\\Feature\\NewsFeedGeneratorTest::assertEquals().",
+                    "line": 117,
+                    "ignorable": true,
+                    "identifier": "method.notFound"
+                },
+                {
+                    "message": "Call to an undefined method Ijideals\\NewsFeedGenerator\\Tests\\Feature\\NewsFeedGeneratorTest::assertEquals().",
+                    "line": 118,
+                    "ignorable": true,
+                    "identifier": "method.notFound"
+                },
+                {
+                    "message": "Call to an undefined method Ijideals\\NewsFeedGenerator\\Tests\\Feature\\NewsFeedGeneratorTest::assertEquals().",
+                    "line": 119,
+                    "ignorable": true,
+                    "identifier": "method.notFound"
+                },
+                {
+                    "message": "Call to an undefined method Ijideals\\NewsFeedGenerator\\Tests\\Feature\\NewsFeedGeneratorTest::actingAs().",
+                    "line": 153,
+                    "ignorable": true,
+                    "identifier": "method.notFound"
+                },
+                {
+                    "message": "Call to an undefined method Ijideals\\NewsFeedGenerator\\Tests\\Feature\\NewsFeedGeneratorTest::getJson().",
+                    "line": 154,
+                    "ignorable": true,
+                    "identifier": "method.notFound"
+                },
+                {
+                    "message": "Call to an undefined method Ijideals\\NewsFeedGenerator\\Tests\\Feature\\NewsFeedGeneratorTest::assertContains().",
+                    "line": 165,
+                    "ignorable": true,
+                    "identifier": "method.notFound"
+                },
+                {
+                    "message": "Call to an undefined method Ijideals\\NewsFeedGenerator\\Tests\\Feature\\NewsFeedGeneratorTest::assertLessThanOrEqual().",
+                    "line": 174,
+                    "ignorable": true,
+                    "identifier": "method.notFound"
+                },
+                {
+                    "message": "Call to an undefined method Ijideals\\NewsFeedGenerator\\Tests\\Feature\\NewsFeedGeneratorTest::assertTrue().",
+                    "line": 177,
+                    "ignorable": true,
+                    "identifier": "method.notFound"
+                }
+            ]
+        },
+        "C:\\laragon\\www\\social-network\\packages\\ijideals\\notification-system\\src\\Concerns\\HasNotifications.php (in context of class App\\Models\\User)": {
+            "errors": 2,
+            "messages": [
+                {
+                    "message": "Method App\\Models\\User::ijidealsSystemUnreadNotifications() should return Illuminate\\Database\\Eloquent\\Relations\\HasMany but returns Illuminate\\Database\\Eloquent\\Relations\\MorphMany<Illuminate\\Notifications\\DatabaseNotification>.",
+                    "line": 28,
+                    "ignorable": true,
+                    "identifier": "return.type"
+                },
+                {
+                    "message": "Method App\\Models\\User::ijidealsSystemReadNotifications() should return Illuminate\\Database\\Eloquent\\Relations\\HasMany but returns Illuminate\\Database\\Eloquent\\Relations\\MorphMany<Illuminate\\Notifications\\DatabaseNotification>.",
+                    "line": 38,
+                    "ignorable": true,
+                    "identifier": "return.type"
+                }
+            ]
+        },
+        "C:\\laragon\\www\\social-network\\packages\\ijideals\\notification-system\\src\\Http\\Controllers\\NotificationController.php": {
+            "errors": 2,
+            "messages": [
+                {
+                    "message": "If condition is always false.",
+                    "line": 66,
+                    "ignorable": true,
+                    "tip": "Because the type is coming from a PHPDoc, you can turn off this check by setting treatPhpDocTypesAsCertain: false in your %configurationFile%.",
+                    "identifier": "if.alwaysFalse"
+                },
+                {
+                    "message": "Result of method Illuminate\\Notifications\\DatabaseNotification::markAsRead() (void) is used.",
+                    "line": 66,
+                    "ignorable": true,
+                    "identifier": "method.void"
+                }
+            ]
+        },
+        "C:\\laragon\\www\\social-network\\packages\\ijideals\\notification-system\\src\\Listeners\\SendNewCommentNotificationListener.php": {
+            "errors": 1,
+            "messages": [
+                {
+                    "message": "Right side of && is always true.",
+                    "line": 76,
+                    "ignorable": true,
+                    "tip": "Because the type is coming from a PHPDoc, you can turn off this check by setting treatPhpDocTypesAsCertain: false in your %configurationFile%.",
+                    "identifier": "booleanAnd.rightAlwaysTrue"
+                }
+            ]
+        },
+        "C:\\laragon\\www\\social-network\\packages\\ijideals\\notification-system\\src\\Listeners\\SendNewLikeNotificationListener.php": {
+            "errors": 2,
+            "messages": [
+                {
+                    "message": "Right side of && is always true.",
+                    "line": 65,
+                    "ignorable": true,
+                    "tip": "Because the type is coming from a PHPDoc, you can turn off this check by setting treatPhpDocTypesAsCertain: false in your %configurationFile%.",
+                    "identifier": "booleanAnd.rightAlwaysTrue"
+                },
+                {
+                    "message": "Call to static method limit() on an unknown class Ijideals\\NotificationSystem\\Listeners\\Str.",
+                    "line": 74,
+                    "ignorable": true,
+                    "tip": "Learn more at https://phpstan.org/user-guide/discovering-symbols",
+                    "identifier": "class.notFound"
+                }
+            ]
+        },
+        "C:\\laragon\\www\\social-network\\packages\\ijideals\\notification-system\\src\\Models\\Notification.php": {
+            "errors": 4,
+            "messages": [
+                {
+                    "message": "Access to an undefined property Ijideals\\NotificationSystem\\Models\\Notification::$read_at.",
+                    "line": 50,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "Access to an undefined property Ijideals\\NotificationSystem\\Models\\Notification::$read_at.",
+                    "line": 63,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "Access to an undefined property Ijideals\\NotificationSystem\\Models\\Notification::$read_at.",
+                    "line": 76,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "Access to an undefined property Ijideals\\NotificationSystem\\Models\\Notification::$read_at.",
+                    "line": 86,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                }
+            ]
+        },
+        "C:\\laragon\\www\\social-network\\packages\\ijideals\\notification-system\\src\\Services\\NotificationCreationService.php": {
+            "errors": 2,
+            "messages": [
+                {
+                    "message": "PHPDoc tag @return with type Illuminate\\Database\\Eloquent\\Model|null is not subtype of native type Ijideals\\NotificationSystem\\Services\\Model|null.",
+                    "line": 26,
+                    "ignorable": true,
+                    "identifier": "return.phpDocType"
+                },
+                {
+                    "message": "Method Ijideals\\NotificationSystem\\Services\\NotificationCreationService::createNotification() has invalid return type Ijideals\\NotificationSystem\\Services\\Model.",
+                    "line": 31,
+                    "ignorable": true,
+                    "identifier": "class.notFound"
+                }
+            ]
+        },
+        "C:\\laragon\\www\\social-network\\packages\\ijideals\\notification-system\\tests\\Feature\\NotificationSystemTest.php": {
+            "errors": 20,
+            "messages": [
+                {
+                    "message": "Parameter #1 $likeable of method App\\Models\\User::like() expects Ijideals\\Likeable\\Contracts\\Likeable, Ijideals\\SocialPosts\\Models\\Post given.",
+                    "line": 43,
+                    "ignorable": true,
+                    "identifier": "argument.type"
+                },
+                {
+                    "message": "Access to an undefined property Illuminate\\Notifications\\DatabaseNotification::$type.",
+                    "line": 49,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "Access to an undefined property Illuminate\\Notifications\\DatabaseNotification::$data.",
+                    "line": 50,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "Access to an undefined property Illuminate\\Notifications\\DatabaseNotification::$data.",
+                    "line": 51,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "Access to an undefined property Illuminate\\Notifications\\DatabaseNotification::$data.",
+                    "line": 52,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "Access to an undefined property Illuminate\\Notifications\\DatabaseNotification::$type.",
+                    "line": 68,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "Access to an undefined property Illuminate\\Notifications\\DatabaseNotification::$data.",
+                    "line": 69,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "Access to an undefined property Illuminate\\Notifications\\DatabaseNotification::$data.",
+                    "line": 70,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "Access to an undefined property Illuminate\\Notifications\\DatabaseNotification::$data.",
+                    "line": 71,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "Access to an undefined property Illuminate\\Notifications\\DatabaseNotification::$type.",
+                    "line": 87,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "Access to an undefined property Illuminate\\Notifications\\DatabaseNotification::$data.",
+                    "line": 88,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "Parameter #1 $likeable of method App\\Models\\User::like() expects Ijideals\\Likeable\\Contracts\\Likeable, Ijideals\\SocialPosts\\Models\\Post given.",
+                    "line": 94,
+                    "ignorable": true,
+                    "identifier": "argument.type"
+                },
+                {
+                    "message": "Parameter #1 $likeable of method App\\Models\\User::like() expects Ijideals\\Likeable\\Contracts\\Likeable, Ijideals\\SocialPosts\\Models\\Post given.",
+                    "line": 107,
+                    "ignorable": true,
+                    "identifier": "argument.type"
+                },
+                {
+                    "message": "Access to an undefined property Illuminate\\Notifications\\DatabaseNotification::$read_at.",
+                    "line": 109,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "Access to an undefined property Illuminate\\Notifications\\DatabaseNotification::$read_at.",
+                    "line": 115,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "Parameter #1 $likeable of method App\\Models\\User::like() expects Ijideals\\Likeable\\Contracts\\Likeable, Ijideals\\SocialPosts\\Models\\Post given.",
+                    "line": 121,
+                    "ignorable": true,
+                    "identifier": "argument.type"
+                },
+                {
+                    "message": "Parameter #1 $likeable of method App\\Models\\User::like() expects Ijideals\\Likeable\\Contracts\\Likeable, Ijideals\\SocialPosts\\Models\\Post given.",
+                    "line": 136,
+                    "ignorable": true,
+                    "identifier": "argument.type"
+                },
+                {
+                    "message": "Parameter #1 $likeable of method App\\Models\\User::like() expects Ijideals\\Likeable\\Contracts\\Likeable, Ijideals\\SocialPosts\\Models\\Post given.",
+                    "line": 153,
+                    "ignorable": true,
+                    "identifier": "argument.type"
+                },
+                {
+                    "message": "Parameter #1 $likeable of method App\\Models\\User::like() expects Ijideals\\Likeable\\Contracts\\Likeable, Ijideals\\SocialPosts\\Models\\Post given.",
+                    "line": 171,
+                    "ignorable": true,
+                    "identifier": "argument.type"
+                },
+                {
+                    "message": "Parameter #1 $likeable of method App\\Models\\User::like() expects Ijideals\\Likeable\\Contracts\\Likeable, Ijideals\\SocialPosts\\Models\\Post given.",
+                    "line": 193,
+                    "ignorable": true,
+                    "identifier": "argument.type"
+                }
+            ]
+        },
+        "C:\\laragon\\www\\social-network\\packages\\ijideals\\search-engine\\tests\\TestCase.php": {
+            "errors": 1,
+            "messages": [
+                {
+                    "message": "Access to an undefined property Ijideals\\SearchEngine\\Tests\\TestCase::$faker.",
+                    "line": 138,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                }
+            ]
+        },
+        "C:\\laragon\\www\\social-network\\packages\\ijideals\\shop-manager\\database\\factories\\ShopFactory.php": {
+            "errors": 2,
+            "messages": [
+                {
+                    "message": "Access to an undefined property Faker\\Generator::$bs.",
+                    "line": 17,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "Access to an undefined property Faker\\Generator::$catchPhrase.",
+                    "line": 17,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                }
+            ]
+        },
+        "C:\\laragon\\www\\social-network\\packages\\ijideals\\shop-manager\\database\\seeders\\RolesAndPermissionsSeeder.php": {
+            "errors": 1,
+            "messages": [
+                {
+                    "message": "Undefined variable: $shopPermissions",
+                    "line": 41,
+                    "ignorable": true,
+                    "identifier": "variable.undefined"
+                }
+            ]
+        },
+        "C:\\laragon\\www\\social-network\\packages\\ijideals\\shop-manager\\src\\Http\\Controllers\\ShopController.php": {
+            "errors": 10,
+            "messages": [
+                {
+                    "message": "Call to an undefined method Ijideals\\ShopManager\\Http\\Controllers\\ShopController::authorize().",
+                    "line": 45,
+                    "ignorable": true,
+                    "identifier": "method.notFound"
+                },
+                {
+                    "message": "Access to an undefined property App\\Models\\User::$guard_name.",
+                    "line": 69,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "If condition is always true.",
+                    "line": 70,
+                    "ignorable": true,
+                    "tip": "Because the type is coming from a PHPDoc, you can turn off this check by setting treatPhpDocTypesAsCertain: false in your %configurationFile%.",
+                    "identifier": "if.alwaysTrue"
+                },
+                {
+                    "message": "Access to an undefined property Illuminate\\Database\\Eloquent\\Model::$id.",
+                    "line": 73,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "Call to an undefined method Illuminate\\Database\\Eloquent\\Model::addMedia().",
+                    "line": 80,
+                    "ignorable": true,
+                    "identifier": "method.notFound"
+                },
+                {
+                    "message": "Call to an undefined method Illuminate\\Database\\Eloquent\\Model::addMedia().",
+                    "line": 86,
+                    "ignorable": true,
+                    "identifier": "method.notFound"
+                },
+                {
+                    "message": "Call to an undefined method Ijideals\\ShopManager\\Http\\Controllers\\ShopController::authorize().",
+                    "line": 117,
+                    "ignorable": true,
+                    "identifier": "method.notFound"
+                },
+                {
+                    "message": "Call to an undefined method Ijideals\\ShopManager\\Http\\Controllers\\ShopController::authorize().",
+                    "line": 162,
+                    "ignorable": true,
+                    "identifier": "method.notFound"
+                },
+                {
+                    "message": "Call to an undefined method Ijideals\\ShopManager\\Http\\Controllers\\ShopController::authorize().",
+                    "line": 190,
+                    "ignorable": true,
+                    "identifier": "method.notFound"
+                },
+                {
+                    "message": "Call to an undefined method Ijideals\\ShopManager\\Http\\Controllers\\ShopController::authorize().",
+                    "line": 205,
+                    "ignorable": true,
+                    "identifier": "method.notFound"
+                }
+            ]
+        },
+        "C:\\laragon\\www\\social-network\\packages\\ijideals\\shop-manager\\src\\Http\\Controllers\\ShopMemberController.php": {
+            "errors": 4,
+            "messages": [
+                {
+                    "message": "Call to an undefined method Ijideals\\ShopManager\\Http\\Controllers\\ShopMemberController::authorize().",
+                    "line": 37,
+                    "ignorable": true,
+                    "identifier": "method.notFound"
+                },
+                {
+                    "message": "Call to an undefined method Ijideals\\ShopManager\\Http\\Controllers\\ShopMemberController::authorize().",
+                    "line": 54,
+                    "ignorable": true,
+                    "identifier": "method.notFound"
+                },
+                {
+                    "message": "Call to an undefined method Ijideals\\ShopManager\\Http\\Controllers\\ShopMemberController::authorize().",
+                    "line": 55,
+                    "ignorable": true,
+                    "identifier": "method.notFound"
+                },
+                {
+                    "message": "Call to an undefined method Ijideals\\ShopManager\\Http\\Controllers\\ShopMemberController::authorize().",
+                    "line": 150,
+                    "ignorable": true,
+                    "identifier": "method.notFound"
+                }
+            ]
+        },
+        "C:\\laragon\\www\\social-network\\packages\\ijideals\\shop-manager\\src\\Http\\Controllers\\ShopPostController.php": {
+            "errors": 3,
+            "messages": [
+                {
+                    "message": "Call to an undefined method Ijideals\\ShopManager\\Http\\Controllers\\ShopPostController::authorize().",
+                    "line": 42,
+                    "ignorable": true,
+                    "identifier": "method.notFound"
+                },
+                {
+                    "message": "If condition is always true.",
+                    "line": 52,
+                    "ignorable": true,
+                    "identifier": "if.alwaysTrue"
+                },
+                {
+                    "message": "Unreachable statement - code above always terminates.",
+                    "line": 56,
+                    "ignorable": true,
+                    "identifier": "deadCode.unreachable"
+                }
+            ]
+        },
+        "C:\\laragon\\www\\social-network\\packages\\ijideals\\shop-manager\\src\\Models\\Shop.php": {
+            "errors": 9,
+            "messages": [
+                {
+                    "message": "Access to an undefined property App\\Models\\User::$guard_name.",
+                    "line": 173,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "Negated boolean expression is always false.",
+                    "line": 174,
+                    "ignorable": true,
+                    "tip": "Because the type is coming from a PHPDoc, you can turn off this check by setting treatPhpDocTypesAsCertain: false in your %configurationFile%.",
+                    "identifier": "booleanNot.alwaysFalse"
+                },
+                {
+                    "message": "Access to an undefined property App\\Models\\User::$guard_name.",
+                    "line": 219,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "If condition is always true.",
+                    "line": 220,
+                    "ignorable": true,
+                    "tip": "Because the type is coming from a PHPDoc, you can turn off this check by setting treatPhpDocTypesAsCertain: false in your %configurationFile%.",
+                    "identifier": "if.alwaysTrue"
+                },
+                {
+                    "message": "Parameter #2 $touch of method Illuminate\\Database\\Eloquent\\Relations\\BelongsToMany<Illuminate\\Database\\Eloquent\\Model>::detach() expects bool, array<int> given.",
+                    "line": 221,
+                    "ignorable": true,
+                    "identifier": "argument.type"
+                },
+                {
+                    "message": "Parameter #2 $touch of method Illuminate\\Database\\Eloquent\\Relations\\BelongsToMany<Illuminate\\Database\\Eloquent\\Model>::detach() expects bool, array<int> given.",
+                    "line": 225,
+                    "ignorable": true,
+                    "identifier": "argument.type"
+                },
+                {
+                    "message": "Unreachable statement - code above always terminates.",
+                    "line": 227,
+                    "ignorable": true,
+                    "identifier": "deadCode.unreachable"
+                },
+                {
+                    "message": "Access to property $name on an unknown class Ijideals\\ShopManager\\Models\\User.",
+                    "line": 299,
+                    "ignorable": true,
+                    "tip": "Learn more at https://phpstan.org/user-guide/discovering-symbols",
+                    "identifier": "class.notFound"
+                },
+                {
+                    "message": "Using nullsafe property access on non-nullable type Ijideals\\ShopManager\\Models\\User. Use -> instead.",
+                    "line": 299,
+                    "ignorable": true,
+                    "identifier": "nullsafe.neverNull"
+                }
+            ]
+        },
+        "C:\\laragon\\www\\social-network\\packages\\ijideals\\shop-manager\\tests\\Feature\\ShopManagerTest.php": {
+            "errors": 5,
+            "messages": [
+                {
+                    "message": "Access to an undefined property Ijideals\\MediaUploader\\Models\\Media::$disk.",
+                    "line": 122,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "Access to an undefined property Ijideals\\MediaUploader\\Models\\Media::$path.",
+                    "line": 122,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "Access to an undefined property Illuminate\\Database\\Eloquent\\Model::$author_id.",
+                    "line": 221,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "Access to an undefined property Illuminate\\Database\\Eloquent\\Model::$author_type.",
+                    "line": 222,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "Access to an undefined property Illuminate\\Database\\Eloquent\\Model::$content.",
+                    "line": 223,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                }
+            ]
+        },
+        "C:\\laragon\\www\\social-network\\packages\\ijideals\\shop-manager\\tests\\TestCase.php": {
+            "errors": 17,
+            "messages": [
+                {
+                    "message": "Access to static property $pivotPermission on an unknown class Ijideals\\ShopManager\\Tests\\PermissionRegistrar.",
+                    "line": 65,
+                    "ignorable": true,
+                    "tip": "Learn more at https://phpstan.org/user-guide/discovering-symbols",
+                    "identifier": "class.notFound"
+                },
+                {
+                    "message": "Access to static property $pivotPermission on an unknown class Ijideals\\ShopManager\\Tests\\PermissionRegistrar.",
+                    "line": 70,
+                    "ignorable": true,
+                    "tip": "Learn more at https://phpstan.org/user-guide/discovering-symbols",
+                    "identifier": "class.notFound"
+                },
+                {
+                    "message": "Access to static property $pivotPermission on an unknown class Ijideals\\ShopManager\\Tests\\PermissionRegistrar.",
+                    "line": 71,
+                    "ignorable": true,
+                    "tip": "Learn more at https://phpstan.org/user-guide/discovering-symbols",
+                    "identifier": "class.notFound"
+                },
+                {
+                    "message": "Access to static property $pivotRole on an unknown class Ijideals\\ShopManager\\Tests\\PermissionRegistrar.",
+                    "line": 77,
+                    "ignorable": true,
+                    "tip": "Learn more at https://phpstan.org/user-guide/discovering-symbols",
+                    "identifier": "class.notFound"
+                },
+                {
+                    "message": "Access to static property $pivotRole on an unknown class Ijideals\\ShopManager\\Tests\\PermissionRegistrar.",
+                    "line": 82,
+                    "ignorable": true,
+                    "tip": "Learn more at https://phpstan.org/user-guide/discovering-symbols",
+                    "identifier": "class.notFound"
+                },
+                {
+                    "message": "Access to static property $pivotRole on an unknown class Ijideals\\ShopManager\\Tests\\PermissionRegistrar.",
+                    "line": 83,
+                    "ignorable": true,
+                    "tip": "Learn more at https://phpstan.org/user-guide/discovering-symbols",
+                    "identifier": "class.notFound"
+                },
+                {
+                    "message": "Access to static property $pivotPermission on an unknown class Ijideals\\ShopManager\\Tests\\PermissionRegistrar.",
+                    "line": 89,
+                    "ignorable": true,
+                    "tip": "Learn more at https://phpstan.org/user-guide/discovering-symbols",
+                    "identifier": "class.notFound"
+                },
+                {
+                    "message": "Access to static property $pivotRole on an unknown class Ijideals\\ShopManager\\Tests\\PermissionRegistrar.",
+                    "line": 90,
+                    "ignorable": true,
+                    "tip": "Learn more at https://phpstan.org/user-guide/discovering-symbols",
+                    "identifier": "class.notFound"
+                },
+                {
+                    "message": "Access to static property $pivotPermission on an unknown class Ijideals\\ShopManager\\Tests\\PermissionRegistrar.",
+                    "line": 91,
+                    "ignorable": true,
+                    "tip": "Learn more at https://phpstan.org/user-guide/discovering-symbols",
+                    "identifier": "class.notFound"
+                },
+                {
+                    "message": "Access to static property $pivotRole on an unknown class Ijideals\\ShopManager\\Tests\\PermissionRegistrar.",
+                    "line": 92,
+                    "ignorable": true,
+                    "tip": "Learn more at https://phpstan.org/user-guide/discovering-symbols",
+                    "identifier": "class.notFound"
+                },
+                {
+                    "message": "Access to static property $pivotPermission on an unknown class Ijideals\\ShopManager\\Tests\\PermissionRegistrar.",
+                    "line": 93,
+                    "ignorable": true,
+                    "tip": "Learn more at https://phpstan.org/user-guide/discovering-symbols",
+                    "identifier": "class.notFound"
+                },
+                {
+                    "message": "Access to static property $pivotRole on an unknown class Ijideals\\ShopManager\\Tests\\PermissionRegistrar.",
+                    "line": 93,
+                    "ignorable": true,
+                    "tip": "Learn more at https://phpstan.org/user-guide/discovering-symbols",
+                    "identifier": "class.notFound"
+                },
+                {
+                    "message": "Call to method forgetCachedPermissions() on an unknown class Ijideals\\ShopManager\\Tests\\PermissionRegistrar.",
+                    "line": 132,
+                    "ignorable": true,
+                    "tip": "Learn more at https://phpstan.org/user-guide/discovering-symbols",
+                    "identifier": "class.notFound"
+                },
+                {
+                    "message": "Class Ijideals\\ShopManager\\Tests\\PermissionRegistrar not found.",
+                    "line": 132,
+                    "ignorable": true,
+                    "tip": "Learn more at https://phpstan.org/user-guide/discovering-symbols",
+                    "identifier": "class.notFound"
+                },
+                {
+                    "message": "Call to static method fake() on an unknown class Ijideals\\ShopManager\\Tests\\Storage.",
+                    "line": 190,
+                    "ignorable": true,
+                    "tip": "Learn more at https://phpstan.org/user-guide/discovering-symbols",
+                    "identifier": "class.notFound"
+                },
+                {
+                    "message": "Access to an undefined property Ijideals\\ShopManager\\Tests\\TestCase::$faker.",
+                    "line": 229,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "Access to an undefined property Ijideals\\ShopManager\\Tests\\TestCase::$faker.",
+                    "line": 231,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                }
+            ]
+        },
+        "C:\\laragon\\www\\social-network\\packages\\ijideals\\user-profile\\src\\Concerns\\HasProfile.php (in context of class@anonymous/packages/ijideals/user-profile/tests/TestCase.php:40)": {
+            "errors": 8,
+            "messages": [
+                {
+                    "message": "Call to an undefined method class@anonymous/packages/ijideals/user-profile/tests/TestCase.php:40::getKeyName().",
+                    "line": 17,
+                    "ignorable": true,
+                    "identifier": "method.notFound"
+                },
+                {
+                    "message": "Call to an undefined method class@anonymous/packages/ijideals/user-profile/tests/TestCase.php:40::hasOne().",
+                    "line": 17,
+                    "ignorable": true,
+                    "identifier": "method.notFound"
+                },
+                {
+                    "message": "Call to an undefined method class@anonymous/packages/ijideals/user-profile/tests/TestCase.php:40::relationLoaded().",
+                    "line": 33,
+                    "ignorable": true,
+                    "identifier": "method.notFound"
+                },
+                {
+                    "message": "Call to an undefined method class@anonymous/packages/ijideals/user-profile/tests/TestCase.php:40::getRelation().",
+                    "line": 34,
+                    "ignorable": true,
+                    "identifier": "method.notFound"
+                },
+                {
+                    "message": "Call to an undefined method class@anonymous/packages/ijideals/user-profile/tests/TestCase.php:40::getKey().",
+                    "line": 46,
+                    "ignorable": true,
+                    "identifier": "method.notFound"
+                },
+                {
+                    "message": "Call to an undefined method class@anonymous/packages/ijideals/user-profile/tests/TestCase.php:40::getRelation().",
+                    "line": 50,
+                    "ignorable": true,
+                    "identifier": "method.notFound"
+                },
+                {
+                    "message": "Call to an undefined method class@anonymous/packages/ijideals/user-profile/tests/TestCase.php:40::relationLoaded().",
+                    "line": 50,
+                    "ignorable": true,
+                    "identifier": "method.notFound"
+                },
+                {
+                    "message": "Call to an undefined method class@anonymous/packages/ijideals/user-profile/tests/TestCase.php:40::setRelation().",
+                    "line": 51,
+                    "ignorable": true,
+                    "identifier": "method.notFound"
+                }
+            ]
+        },
+        "C:\\laragon\\www\\social-network\\packages\\ijideals\\user-profile\\src\\Http\\Controllers\\UserProfileController.php": {
+            "errors": 2,
+            "messages": [
+                {
+                    "message": "Negated boolean expression is always false.",
+                    "line": 35,
+                    "ignorable": true,
+                    "tip": "Because the type is coming from a PHPDoc, you can turn off this check by setting treatPhpDocTypesAsCertain: false in your %configurationFile%.",
+                    "identifier": "booleanNot.alwaysFalse"
+                },
+                {
+                    "message": "Negated boolean expression is always false.",
+                    "line": 53,
+                    "ignorable": true,
+                    "tip": "Because the type is coming from a PHPDoc, you can turn off this check by setting treatPhpDocTypesAsCertain: false in your %configurationFile%.",
+                    "identifier": "booleanNot.alwaysFalse"
+                }
+            ]
+        },
+        "C:\\laragon\\www\\social-network\\packages\\ijideals\\user-settings\\src\\Concerns\\HasSettings.php (in context of class App\\Models\\User)": {
+            "errors": 2,
+            "messages": [
+                {
+                    "message": "Access to an undefined property Illuminate\\Database\\Eloquent\\Model::$value.",
+                    "line": 34,
+                    "ignorable": true,
+                    "tip": "Learn more: https://phpstan.org/blog/solving-phpstan-access-to-undefined-property",
+                    "identifier": "property.notFound"
+                },
+                {
+                    "message": "Method App\\Models\\User::setSetting() should return Ijideals\\UserSettings\\Models\\UserSetting|false but returns Illuminate\\Database\\Eloquent\\Model.",
+                    "line": 61,
+                    "ignorable": true,
+                    "identifier": "return.type"
+                }
+            ]
+        },
+        "C:\\laragon\\www\\social-network\\packages\\ijideals\\user-settings\\src\\Models\\UserSetting.php": {
+            "errors": 1,
+            "messages": [
+                {
+                    "message": "PHPDoc type array of property Ijideals\\UserSettings\\Models\\UserSetting::$casts is not covariant with PHPDoc type array<string, string> of overridden property Illuminate\\Database\\Eloquent\\Model::$casts.",
+                    "line": 20,
+                    "ignorable": true,
+                    "tip": "You can fix 3rd party PHPDoc types with stub files:\n   https://phpstan.org/user-guide/stub-files",
+                    "identifier": "property.phpDocType"
+                }
+            ]
+        },
+        "C:\\laragon\\www\\social-network\\packages\\ijideals\\user-settings\\tests\\Feature\\UserSettingsTest.php": {
+            "errors": 2,
+            "messages": [
+                {
+                    "message": "Call to static method has() on an unknown class Ijideals\\UserSettings\\Tests\\Feature\\Arr.",
+                    "line": 91,
+                    "ignorable": true,
+                    "tip": "Learn more at https://phpstan.org/user-guide/discovering-symbols",
+                    "identifier": "class.notFound"
+                },
+                {
+                    "message": "Parameter #1 $likeable of method App\\Models\\User::like() expects Ijideals\\Likeable\\Contracts\\Likeable, Ijideals\\SocialPosts\\Models\\Post given.",
+                    "line": 129,
+                    "ignorable": true,
+                    "identifier": "argument.type"
+                }
+            ]
+        }
+    },
+    "errors": []
+}

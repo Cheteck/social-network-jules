@@ -1,10 +1,8 @@
 parameters:
     paths:
         - app/
-        - ../packages/ijideals/social-posts/src/
-        - ../packages/ijideals/followable/src/
-        - ../packages/ijideals/user-profile/src/
-        - ../packages/ijideals/likeable/src/
+        - packages/ijideals/
+
     level: 5
     checkModelProperties: true
     # checkOctaneCompatibility: true # Commenté car non pertinent pour l'instant
