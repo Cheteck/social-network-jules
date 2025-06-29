@@ -28,7 +28,7 @@ class CatalogManagerServiceProvider extends ServiceProvider
         }
 
         $this->loadMigrationsFrom(__DIR__.'/../../database/migrations');
-        // $this->loadRoutesFrom(__DIR__.'/../../src/Routes/api.php'); // Temporarily commented out to avoid TypeError
+        $this->loadRoutesFrom(__DIR__.'/../../src/Routes/api.php');
         // $this->loadTranslationsFrom(__DIR__.'/../../resources/lang', 'catalog-manager');
     }
 

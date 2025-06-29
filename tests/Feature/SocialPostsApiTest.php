@@ -32,6 +32,8 @@ class SocialPostsApiTest extends TestCase
         $response = $this->actingAs($this->user, 'sanctum') // Utiliser 'sanctum' pour l'authentification API
                          ->postJson(route('socialposts.posts.store'), $postData);
 
+        $response->dump(); // Dump the response to see the error details
+
         $response->assertStatus(201) // Vérifier le code de statut HTTP 201 Created
                  ->assertJsonStructure([ // Vérifier la structure de la réponse JSON
                      'id',

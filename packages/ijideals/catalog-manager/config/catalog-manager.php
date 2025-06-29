@@ -88,6 +88,7 @@ return [
     'route_prefixes' => [
         'categories' => 'api/v1/catalog/categories', // For global categories
         'shop_products' => 'api/v1/shops/{shopSlugOrId}/products', // For shop-specific products
+        'product_options' => 'api/v1/catalog/product-options', // For global product options
     ],
 
     /*
